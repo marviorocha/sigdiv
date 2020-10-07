@@ -1,0 +1,29 @@
+version: '3'
+networks:
+    RUBY:
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    restart: always
+    env_file: .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - RUBY
+  app:
+    build: .
+    container_name: ruby
+    command: bundle exec puma -C config/puma.rb
+    env_file: .env
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/marviorocha/teste-backend
+    depends_on:
+      - db
+    networks:
+      - RUBY
+volumes:
+  postgres_data: {}
+
