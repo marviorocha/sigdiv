@@ -10,6 +10,7 @@ class ProjectionDebt
 		self.start_date = start_date
 		self.amortizations_count = start_date_to_amortizations_count
 		self.transaction_items = build_transaction_items
+		self.final_outstanding_balance = final_outstanding_balance
 	end
 	
 	def build_transaction_items
@@ -23,7 +24,10 @@ class ProjectionDebt
 					if self.start_date == signature_date
 						self.balance_projection = debt.transaction_items.where.not(confirmed: false).last.final_outstanding_balance
 					else
+						binding.pry
 						self.balance_projection = debt.transaction_items.where('date <= ?', self.start_date).last.final_outstanding_balance
+						
+						
 					end
 				else 
 					self.balance_projection = result.last.final_outstanding_balance
