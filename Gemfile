@@ -19,6 +19,8 @@ gem 'cocoon'
 gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp'
 
+gem "webpacker"
+
 
 gem 'dentaku'
 gem 'banco_central'
