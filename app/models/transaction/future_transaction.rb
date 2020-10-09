@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FutureTransaction < TransactionItem
+class Future::Transaction < TransactionItem
   attr_accessor :projection_debt
 
   def editable?

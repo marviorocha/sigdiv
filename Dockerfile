@@ -27,9 +27,33 @@ RUN apk add --update --no-cache \
       postgresql-dev \
       tzdata \
       yarn 
+# Install binary to run PDF
+# libstdc++ \
+# libx11 \
+# libxrender \
+# libxext \
+# libssl1.1 \
+# ca-certificates \
+# fontconfig \
+# freetype \
+# ttf-dejavu \
+# ttf-droid \
+# ttf-freefont \
+# ttf-liberation \
+# ttf-ubuntu-font-family \
+# && apk add --update --no-cache --virtual .build-deps \
+# msttcorefonts-installer \
+# \
+# # Install microsoft fonts
+# && update-ms-fonts \
+# && fc-cache -f \
+# \
+# # Clean up when done
+# && rm -rf /tmp/* \
+# && apk del .build-deps
 
 RUN gem install bundler -v 2.0.2
-ENV HOME /home/marviorocha/teste-backend
+ENV HOME /home/marviorocha/sigdiv
 
 WORKDIR $HOME
 

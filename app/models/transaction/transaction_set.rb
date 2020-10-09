@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TransactionSet
+class Transaction::Set
   attr_accessor :items
 
   def initialize(debt, start_date)

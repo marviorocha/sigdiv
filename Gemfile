@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 
  
-gem 'rails', '~> 5.2.2.1'
+gem 'rails', '~> 6.0.3.4'
  
 gem 'pg'
  
@@ -21,6 +21,7 @@ gem 'cocoon'
 gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp'
 
+gem 'zeitwerk'
 
 gem 'dentaku'
 gem 'banco_central'
@@ -41,7 +42,7 @@ gem 'jquery-datatables'
 
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
-
+gem "webpacker", "~> 5.0"
 gem 'bootsnap', '>= 1.1.0', :require => false
 
 group :development, :test do

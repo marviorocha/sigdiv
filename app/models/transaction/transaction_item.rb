@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TransactionItem < ApplicationRecord
+class Transaction::Item < ApplicationRecord
   belongs_to :transaction_info
   has_one :debt, :through => :transaction_info
 
