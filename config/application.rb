@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -16,7 +18,7 @@ module Sigdiv
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    config.i18n.default_locale = "pt-BR"
+    config.i18n.default_locale = 'pt-BR'
 
     config.autoload_paths += Dir["#{config.root}/lib/services/*"]
     config.autoload_paths += Dir["#{config.root}/app/models/*"]
@@ -26,10 +28,10 @@ module Sigdiv
 
     config.generators do |g|
       g.test_framework :rspec,
-        fixtures: false,
-        view_specs: false,
-        helper_specs: false,
-        routing_specs: false
+        :fixtures => false,
+        :view_specs => false,
+        :helper_specs => false,
+        :routing_specs => false
     end
   end
 end

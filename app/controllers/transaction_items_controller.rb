@@ -1,24 +1,26 @@
+# frozen_string_literal: true
+
 class TransactionItemsController < ApplicationController  
-  before_action :set_transaction, only: [:edit, :update, :destroy]
-  before_action :set_debt, only: [:index, :new, :edit, :create, :update]
-  before_action :set_start_date, only: [:index, :create, :update]
-  before_action :set_transaction_set, only: [:index]  
+  before_action :set_transaction, :only => [:edit, :update, :destroy]
+  before_action :set_debt, :only => [:index, :new, :edit, :create, :update]
+  before_action :set_start_date, :only => [:index, :create, :update]
+  before_action :set_transaction_set, :only => [:index]  
 
   # GET :debt_id/transactions/
   def index    
-    render :index, layout: false
+    render :index, :layout => false
   end
 
   # GET :debt_id/transaction/new
   def new  	
     @transaction_item = TransactionItem.new()
     @transaction_item.debt = @debt
-    render :new, layout: false
+    render :new, :layout => false
   end
 
   # GET :debt_id/transactions/1/edit
   def edit
-  	render :edit, layout: false
+    render :edit, :layout => false
   end
 
   # POST :debt_id/transactions
@@ -27,9 +29,9 @@ class TransactionItemsController < ApplicationController
     
     if @transaction_item.save
       set_transaction_set
-      render :index, layout: false, notice: 'O registro foi salvo com sucesso.'        
+      render :index, :layout => false, :notice => 'O registro foi salvo com sucesso.'        
     else
-      render :new, layout: false, status: :unprocessable_entity
+      render :new, :layout => false, :status => :unprocessable_entity
     end
   end
 
@@ -37,9 +39,9 @@ class TransactionItemsController < ApplicationController
   def update
     if @transaction_item.update(transaction_item_params)
       set_transaction_set
-      render :index, layout: false, notice: 'O registro foi salvo com sucesso.'        
+      render :index, :layout => false, :notice => 'O registro foi salvo com sucesso.'        
     else
-      render :edit, layout: false, status: :unprocessable_entity        
+      render :edit, :layout => false, :status => :unprocessable_entity        
     end
   end
 
@@ -48,7 +50,7 @@ class TransactionItemsController < ApplicationController
   def destroy
     @transaction_item.destroy
     respond_to do |format|
-      format.html { redirect_to transactions_url, notice: 'O registro foi removido com sucesso.' }
+      format.html { redirect_to transactions_url, :notice => 'O registro foi removido com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -56,7 +58,7 @@ class TransactionItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_debt
-    	@debt = Debt.find(params[:debt_id])
+      @debt = Debt.find(params[:debt_id])
     end
 
     def set_transaction

@@ -1,0 +1,1 @@
+[{"severity":"warning","location":{"begin_pos":0,"end_pos":19},"message":"Lint/ScriptPermission: Script file spring doesn't have execute permission.","cop_name":"Lint/ScriptPermission","status":"uncorrected"}]

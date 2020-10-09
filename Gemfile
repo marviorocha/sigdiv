@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -29,7 +31,7 @@ gem 'turbolinks', '~> 5'
 
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '>= 4.3.1'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -40,18 +42,19 @@ gem 'jquery-datatables'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.1.0', :require => false
 
 group :development, :test do
   
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', :platforms => [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails', '~> 4.0'
-  gem "capistrano", "~> 3.11", require: false
-  gem "capistrano-rails", "~> 1.4", require: false
+  gem 'capistrano', '~> 3.11', :require => false
+  gem 'capistrano-rails', '~> 1.4', :require => false
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'pry'
+  
 end
 
 group :development do
@@ -62,6 +65,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
+  gem 'robocop', :require => false
+  gem 'rubocop-performance', :require => false
+  gem 'rubocop-rspec', :require => false
 end
 
 group :test do
@@ -80,7 +86,8 @@ group :test do
   gem 'vcr'
   gem 'rspec-json_expectations'
   gem 'json_matchers'
+  gem 'robocop', :require => false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', :platforms => [:mingw, :mswin, :x64_mingw, :jruby]

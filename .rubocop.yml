@@ -1,0 +1,32 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rspec
+inherit_mode:
+  merge:
+    - Exclude
+AllCops:
+  TargetRubyVersion: 2.5
+  NewCops: enable
+  Exclude:
+    - "db/schema.rb"
+    - "db/seed.rb"
+    - "bin/*"
+    - "spec/**/*"
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*
+
+Style/Documentation:
+  Enabled: false
+Rails:
+  Enabled: true
+Metrics/BlockLength:
+  Exclude:
+    - "config/initializers/simple_form_bootstrap.rb"
+    - "db/seeds.rb"
+  Max: 45
+RSpec/LetSetup:
+  Enabled: false

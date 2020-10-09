@@ -1,0 +1,1 @@
+[{"severity":"convention","location":{"begin_pos":213,"end_pos":214},"message":"Layout/SpaceAroundOperators: Operator `=` should be surrounded by a single space.","cop_name":"Layout/SpaceAroundOperators","status":"uncorrected"}]

@@ -1,38 +1,40 @@
+# frozen_string_literal: true
+
 require 'open-uri'
 
 class BNDES
-	CURRENCY_FILE_URL =	"https://www.bndes.gov.br/Moedas/umCODE.txt"
+  CURRENCY_FILE_URL =	'https://www.bndes.gov.br/Moedas/umCODE.txt'
 
-	class << self
+  class << self
 
-		def last code
-			get_currency(code).values.first
-		end		
+    def last(code)
+      get_currency(code).values.first
+    end		
 
-		private
-			def get_currency code
-				result = Hash.new
+    private
+      def get_currency(code)
+        result = Hash.new
 
-				open(CURRENCY_FILE_URL.gsub("CODE", code.to_s), "r") do |file|
-				  result = parse file
-				end
-				
-				result
-			end
+        open(CURRENCY_FILE_URL.gsub('CODE', code.to_s), 'r') do |file|
+          result = parse file
+        end
+        
+        result
+      end
 
-			def parse file
-				result = Hash.new
+      def parse(file)
+        result = Hash.new
 
-				lines = file.readlines.map(&:chomp)
-				lines.shift
+        lines = file.readlines.map(&:chomp)
+        lines.shift
 
-				lines.each do |line|
-					# 01/04/2019;       2,050422	    	
-		    	line_array = line.split(' ')
-		    	result[line_array.first.chomp(';')] = line_array.last
-		    end
+        lines.each do |line|
+          # 01/04/2019;       2,050422	    	
+          line_array = line.split(' ')
+          result[line_array.first.chomp(';')] = line_array.last
+        end
 
-		    result
-			end
-	end
+        result
+      end
+  end
 end

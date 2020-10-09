@@ -1,8 +1,10 @@
-class PaymentCharge < ApplicationRecord
-	belongs_to :payment
-	belongs_to :charge
+# frozen_string_literal: true
 
-	def show_value
-		Decimal.new(value.to_f).round(5)
-	end
+class PaymentCharge < ApplicationRecord
+  belongs_to :payment
+  belongs_to :charge
+
+  def show_value
+    Decimal.new(value.to_f).round(5)
+  end
 end

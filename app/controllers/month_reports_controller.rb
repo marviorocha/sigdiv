@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MonthReportsController < ApplicationController
   
   def show
@@ -10,7 +12,7 @@ class MonthReportsController < ApplicationController
     
             respond_to do |format|
               format.pdf do
-                  render pdf: "relatorio"
+                  render :pdf => 'relatorio'
               end
               
             end

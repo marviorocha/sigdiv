@@ -41,6 +41,8 @@ RUN bundle check || bundle install
 
 RUN yarn install --check-files
 
+RUN gem install rubocop
+
 RUN apk update
 
 COPY . ./ 

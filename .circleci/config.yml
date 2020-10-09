@@ -1,0 +1,10 @@
+version: 2.1
+# orbs:
+    #   ruby: circleci/ruby@0.1.2 
+workflows:
+   RSpec:
+    jobs:
+    - 'bundle exec rspec --format documentation'
+    Rubocop:
+       jobs:
+    - 'bundle exec rubocop'

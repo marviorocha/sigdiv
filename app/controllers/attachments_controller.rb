@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class AttachmentsController < ApplicationController
-  before_action :set_attachment, only: [:show, :edit, :update, :destroy]
-  before_action :set_debt, only: [:index, :new, :create, :edit, :destroy, :update]
-  before_action :set_attachments, only: [:index, :create, :update, :destroy]
+  before_action :set_attachment, :only => [:show, :edit, :update, :destroy]
+  before_action :set_debt, :only => [:index, :new, :create, :edit, :destroy, :update]
+  before_action :set_attachments, :only => [:index, :create, :update, :destroy]
  # before_action :authenticate, only: [:crete, :update, :destroy, :show]
   
   # GET /attachments
   # GET /attachments.json
   def index   
-    render :index, layout: false
+    render :index, :layout => false
   end
 
   # GET /attachments/1
@@ -19,12 +21,12 @@ class AttachmentsController < ApplicationController
   # GET /attachments/new
   def new
     @attachment = Attachment.new   
-    render :new, layout: false
+    render :new, :layout => false
   end
 
   # GET /attachments/1/edit
   def edit   
-    render :edit, layout: false
+    render :edit, :layout => false
   end
 
   # POST /attachments
@@ -36,11 +38,11 @@ class AttachmentsController < ApplicationController
     
     respond_to do |format|
       if @attachment.save
-        format.html { render :index, layout: false, notice: 'O registro foi salvo com sucesso.' }
-        format.json { render :show, status: :created, location: @attachment }
+        format.html { render :index, :layout => false, :notice => 'O registro foi salvo com sucesso.' }
+        format.json { render :show, :status => :created, :location => @attachment }
       else
         format.html { render :new }
-        format.json { render json: @attachment.errors, status: :unprocessable_entity }
+        format.json { render :json => @attachment.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -50,11 +52,11 @@ class AttachmentsController < ApplicationController
   def update
     respond_to do |format|
       if @attachment.update(attachment_params)
-        format.html { render :index, layout: false, notice: 'O registro foi salvo com sucesso.' }
-        format.json { render :show, status: :ok, location: @attachment }
+        format.html { render :index, :layout => false, :notice => 'O registro foi salvo com sucesso.' }
+        format.json { render :show, :status => :ok, :location => @attachment }
       else
         format.html { render :edit }
-        format.json { render json: @attachment.errors, status: :unprocessable_entity }
+        format.json { render :json => @attachment.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -64,7 +66,7 @@ class AttachmentsController < ApplicationController
   def destroy
     @attachment.destroy
     respond_to do |format|
-      format.html { render :index, layout: false, notice: 'O registro foi removido com sucesso.' }
+      format.html { render :index, :layout => false, :notice => 'O registro foi removido com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -76,7 +78,7 @@ class AttachmentsController < ApplicationController
     end
 
     def set_attachments
-      @attachments = Attachment.all.where(debt_id: @debt.id)
+      @attachments = Attachment.all.where(:debt_id => @debt.id)
     end
 
     def set_debt
@@ -85,7 +87,7 @@ class AttachmentsController < ApplicationController
 
     def authenticate
       authenticate_or_request_with_http_basic do |username, password|
-        username == "sadp" && password == Rails.application.credentials.storage_server_passwd
+        username == 'sadp' && password == Rails.application.credentials.storage_server_passwd
       end
     end
 
