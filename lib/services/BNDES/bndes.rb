@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'open-uri'
 
 class BNDES
-	CURRENCY_FILE_URL =	"https://www.bndes.gov.br/Moedas/umCODE.txt"
+	CURRENCY_FILE_URL =	"umCODE.txt"
 
 	class << self
 

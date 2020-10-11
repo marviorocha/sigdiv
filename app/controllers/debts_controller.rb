@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class DebtsController < ApplicationController
-  before_action :set_debt, only: [:show, :edit, :update, :destroy]
+  before_action :set_debt, :only => [:show, :edit, :update, :destroy]
  
   # GET /debts
   # GET /debts.json
@@ -29,11 +31,11 @@ class DebtsController < ApplicationController
 
     respond_to do |format|
       if @debt.save
-        format.html { redirect_to @debt, notice: I18n.t(:save_success) }
-        format.json { render :show, status: :created, location: @debt }
+        format.html { redirect_to @debt, :notice => I18n.t(:save_success) }
+        format.json { render :show, :status => :created, :location => @debt }
       else
         format.html { render :new }
-        format.json { render json: @debt.errors, status: :unprocessable_entity }
+        format.json { render :json => @debt.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -43,11 +45,11 @@ class DebtsController < ApplicationController
   def update
     respond_to do |format|
       if @debt.update(debt_params)
-        format.html { redirect_to @debt, notice: I18n.t(:save_success) }
-        format.json { render :show, status: :ok, location: @debt }
+        format.html { redirect_to @debt, :notice => I18n.t(:save_success) }
+        format.json { render :show, :status => :ok, :location => @debt }
       else
         format.html { render :edit }
-        format.json { render json: @debt.errors, status: :unprocessable_entity }
+        format.json { render :json => @debt.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -57,7 +59,7 @@ class DebtsController < ApplicationController
   def destroy
     @debt.destroy
     respond_to do |format|
-      format.html { redirect_to debts_url, notice: 'Debt was successfully destroyed.' }
+      format.html { redirect_to debts_url, :notice => 'Debt was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -89,16 +91,16 @@ class DebtsController < ApplicationController
                                    :interest_rate,
                                    :decimal_places,
                                    :start_amt_next_month_to_grace_period,
-                                   transaction_infos_attributes: [:id,
-                                                                  :_destroy,
-                                                                  :base,
-                                                                  :formula,
-                                                                  :payment_day,
-                                                                  :description,                                                                  
-                                                                  :frequency,
-                                                                  :slug,
-                                                                  :category_number,
-                                                                  :bind_withdraw
+                                   :transaction_infos_attributes => [:id,
+                                                                     :_destroy,
+                                                                     :base,
+                                                                     :formula,
+                                                                     :payment_day,
+                                                                     :description,                                                                  
+                                                                     :frequency,
+                                                                     :slug,
+                                                                     :category_number,
+                                                                     :bind_withdraw
                                                                   ])
     end
 end

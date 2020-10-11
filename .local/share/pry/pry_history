@@ -1,0 +1,11 @@
+exit
+ProjectionDebt.new(id: '6')
+ProjectionDebt
+exit
+ProjectionDebt(1, 2018)
+ProjectionDebt.new(1)
+require('app/model/projection_debt.rb')
+require('model/projection_debt.rb')
+require('projection_debt.rb')
+exxit
+exit

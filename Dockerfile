@@ -1,4 +1,4 @@
-FROM ruby:2.5.3-alpine
+FROM ruby:2.7.2-alpine
 LABEL maintainer="Marvio Rocha"
 
 ENV BUNDLER_VERSION=2.0.2
@@ -26,10 +26,39 @@ RUN apk add --update --no-cache \
       pkgconfig \
       postgresql-dev \
       tzdata \
-      yarn 
+      yarn \
+      imagemagick \
+      graphicsmagick-dev \
+      ruby-dev \
+      musl-dev 
 
-RUN gem install bundler -v 2.0.2
-ENV HOME /home/marviorocha/teste-backend
+# Install binary to run PDF
+# libstdc++ \
+# libx11 \
+# libxrender \
+# libxext \
+# libssl1.1 \
+# ca-certificates \
+# fontconfig \
+# freetype \
+# ttf-dejavu \
+# ttf-droid \
+# ttf-freefont \
+# ttf-liberation \
+# ttf-ubuntu-font-family \
+# && apk add --update --no-cache --virtual .build-deps \
+# msttcorefonts-installer \
+# \
+# # Install microsoft fonts
+# && update-ms-fonts \
+# && fc-cache -f \
+# \
+# # Clean up when done
+# && rm -rf /tmp/* \
+# && apk del .build-deps
+
+RUN gem install bundler
+ENV HOME /home/marviorocha/sigdiv
 
 WORKDIR $HOME
 
@@ -40,6 +69,8 @@ RUN bundle config build.nokogiri --use-system-libraries
 RUN bundle check || bundle install 
 
 RUN yarn install --check-files
+
+RUN gem install rubocop
 
 RUN apk update
 

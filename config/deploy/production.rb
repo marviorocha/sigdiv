@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 set :stage, :production
 set :rails_env, :production
-set :branch, "master"
+set :branch, 'master'
 
-server "192.168.15.238", user: "sigdiv", roles: %w{app db web}
+server '192.168.15.238', :user => 'sigdiv', :roles => %w{app db web}
 #server "189.39.0.129", user: "sigdiv", roles: %w{app db web}, port: 2308
 
 # server-based syntax

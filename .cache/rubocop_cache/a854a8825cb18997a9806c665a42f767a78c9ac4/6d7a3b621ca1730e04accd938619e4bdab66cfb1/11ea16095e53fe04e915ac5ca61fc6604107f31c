@@ -1,0 +1,1 @@
+[{"severity":"convention","location":{"begin_pos":3740,"end_pos":3746},"message":"Style/GlobalStdStream: Use `$stdout` instead of `STDOUT`.","cop_name":"Style/GlobalStdStream","status":"uncorrected"}]

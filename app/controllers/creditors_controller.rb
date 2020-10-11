@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CreditorsController < ApplicationController
-  before_action :set_creditor, only: [:show, :edit, :update, :destroy]
+  before_action :set_creditor, :only => [:show, :edit, :update, :destroy]
 
   # GET /creditors
   # GET /creditors.json
@@ -28,11 +30,11 @@ class CreditorsController < ApplicationController
 
     respond_to do |format|
       if @creditor.save
-        format.html { redirect_to @creditor, notice: I18n.t(:save_success) }
-        format.json { render :show, status: :created, location: @creditor }
+        format.html { redirect_to @creditor, :notice => I18n.t(:save_success) }
+        format.json { render :show, :status => :created, :location => @creditor }
       else
         format.html { render :new }
-        format.json { render json: @creditor.errors, status: :unprocessable_entity }
+        format.json { render :json => @creditor.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -42,11 +44,11 @@ class CreditorsController < ApplicationController
   def update
     respond_to do |format|
       if @creditor.update(creditor_params)
-        format.html { redirect_to @creditor, notice: I18n.t(:save_success) }
-        format.json { render :show, status: :ok, location: @creditor }
+        format.html { redirect_to @creditor, :notice => I18n.t(:save_success) }
+        format.json { render :show, :status => :ok, :location => @creditor }
       else
         format.html { render :edit }
-        format.json { render json: @creditor.errors, status: :unprocessable_entity }
+        format.json { render :json => @creditor.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -56,7 +58,7 @@ class CreditorsController < ApplicationController
   def destroy
     @creditor.destroy
     respond_to do |format|
-      format.html { redirect_to creditors_url, notice: I18n.t(:destroy_success) }
+      format.html { redirect_to creditors_url, :notice => I18n.t(:destroy_success) }
       format.json { head :no_content }
     end
   end

@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 # JSON Schema
-require "json_matchers/rspec"
+require 'json_matchers/rspec'
 # Capybara
 require 'capybara/rspec'
 # VCR
 require 'vcr'
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
   config.configure_rspec_metadata!  
 
@@ -15,8 +17,8 @@ end
 
 # Capybara Chrome Headless
 Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new app, browser: :chrome,
-    options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu])
+  Capybara::Selenium::Driver.new app, :browser => :chrome,
+    :options => Selenium::WebDriver::Chrome::Options.new(:args => %w[headless disable-gpu])
 end
 
 Capybara.javascript_driver = :chrome

@@ -30,7 +30,7 @@
         debt_id: $(this).parents('tr').find('.month_report_debt').val(),
         month: $(this).parents('tr').find('.month_report_month').val(),
         year: $(this).parents('tr').find('.month_report_year').val(),
-        format: 'pdf'
+        format: 'html'
       }
 
   		$('.show-month-report').attr("href", '<%= month_report_path %>' + '?' + $.param(monthReportParams));  		
