@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Transaction::Info < ApplicationRecord
+class TransactionInfo < ApplicationRecord
   BASIC_TYPES = { 1 => { :name => 'Desembolso', :operation => '+', :slug => 'D', :order => 1 }, 							    
                   2 => { :name => 'Amortização', :operation => '-', :slug => 'A', :order => 4 },
                   3 => { :name => 'Juros', :operation => '-', :slug => 'J', :order => 2 },

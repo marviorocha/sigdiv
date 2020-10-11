@@ -12,7 +12,7 @@ class ProjectionDebt
     self.start_date = start_date
     self.amortizations_count = start_date_to_amortizations_count
     self.transaction_items = build_transaction_items
-    self.final_outstanding_balance = final_outstanding_balance
+    #self.final_outstanding_balance = final_outstanding_balance
   end
   
   def build_transaction_items
@@ -114,7 +114,8 @@ class ProjectionDebt
   end	
 
   private
-    def method_missing(method_name, *args, &block)	    
+    def method_missing(method_name, *args, &block)	
+      
       debt.send(method_name)
     end
 end

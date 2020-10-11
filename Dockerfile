@@ -52,7 +52,7 @@ RUN apk add --update --no-cache \
 # && rm -rf /tmp/* \
 # && apk del .build-deps
 
-RUN gem install bundler -v 2.0.2
+RUN gem install bundler
 ENV HOME /home/marviorocha/sigdiv
 
 WORKDIR $HOME
