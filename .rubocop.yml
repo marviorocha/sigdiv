@@ -7,7 +7,7 @@ inherit_mode:
   merge:
     - Exclude
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.7.2
   NewCops: enable
   Exclude:
     - "db/schema.rb"
