@@ -1,0 +1,1 @@
+[{"severity":"convention","location":{"begin_pos":548,"end_pos":558},"message":"Style/NumericPredicate: Use `index.zero?` instead of `index == 0`.","cop_name":"Style/NumericPredicate","status":"uncorrected"}]
