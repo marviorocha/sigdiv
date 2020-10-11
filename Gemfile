@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.3'
+ruby '2.7.2'
 
  
 gem 'rails', '~> 6.0.3.4'
@@ -40,8 +40,11 @@ gem 'jquery-validation-rails'
 gem 'jquery-mask-plugin'
 gem 'jquery-datatables'
 
-gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+#gem 'wicked_pdf'
+#gem 'wkhtmltopdf-binary'
+
+gem 'prawn'
+
 gem "webpacker", "~> 5.0"
 gem 'bootsnap', '>= 1.1.0', :require => false
 

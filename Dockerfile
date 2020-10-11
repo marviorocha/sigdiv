@@ -1,4 +1,4 @@
-FROM ruby:2.5.3-alpine
+FROM ruby:2.7.2-alpine
 LABEL maintainer="Marvio Rocha"
 
 ENV BUNDLER_VERSION=2.0.2
@@ -26,7 +26,12 @@ RUN apk add --update --no-cache \
       pkgconfig \
       postgresql-dev \
       tzdata \
-      yarn 
+      yarn \
+      imagemagick \
+      graphicsmagick-dev \
+      ruby-dev \
+      musl-dev 
+
 # Install binary to run PDF
 # libstdc++ \
 # libx11 \

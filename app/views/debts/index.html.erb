@@ -41,7 +41,7 @@
           <td><%= debt.code %></td>
           <td><%= debt.name %></td>
           <td><%= debt.signature_date %></td>
-         
+          <td><%= debt.creditor.name %></td>
           <td><%= debt.status %></td>
           <td><%= link_to fa_icon("eye 2x", title: "Mostrar"), debt, id: "mostra-#{debt.id}" %></td>
           <td><%= link_to fa_icon("edit 2x", title: "Editar"), edit_debt_path(debt) %></td>
