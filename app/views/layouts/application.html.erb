@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag 'application'  %>
+    <%= javascript_pack_tag 'application'  %>
   </head>
 
   <body>
@@ -19,11 +20,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
-            <%= link_to 'Operações', debts_path, class: "nav-item nav-link" %>
-            <%= link_to 'Credores', creditors_path, class: "nav-item nav-link" %>
-            <%= link_to 'Moedas', currencies_path, class: "nav-item nav-link" %>
-            <%= link_to 'Relatórios', reports_path, class: "nav-item nav-link" %>
+            <a class="nav-item nav-link <%= controller_name == root_path ? "active" : "" %>" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
+            <%= link_to 'Operações', debts_path, class: "nav-item nav-link #{controller_name == "debts" ? "active" : ""}" %>
+            <%= link_to 'Credores', creditors_path, class: "nav-item nav-link #{controller_name == "creditors" ? "active" : ""}" %>
+            <%= link_to 'Moedas', currencies_path, class: "nav-item nav-link #{controller_name == "currencies" ? "active" : ""}"  %>
+            <%= link_to 'Relatórios', reports_path, class: "nav-item nav-link  #{controller_name == "reports" ? "active" : ""}" %>
+            
           </div>
         </div>
       </div>

@@ -28,8 +28,6 @@ gem 'banco_central'
 
 gem 'coffee-rails', '~> 4.2'
 
-#gem 'turbolinks', '~> 5'
-
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '>= 4.3.1'
 gem 'font-awesome-rails'
@@ -39,9 +37,6 @@ gem 'jquery-ui-rails'
 gem 'jquery-validation-rails'
 gem 'jquery-mask-plugin'
 gem 'jquery-datatables'
-
-#gem 'wicked_pdf'
-#gem 'wkhtmltopdf-binary'
 
 gem 'prawn'
 

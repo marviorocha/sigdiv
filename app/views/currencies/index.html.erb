@@ -2,6 +2,20 @@
 
 <h1>Moedas</h1>
 
+
+<table class='table table-striped table-hover'>
+  <div class="card-columns">
+  
+  <div class="card bg-info">
+    <div class="card-body text-white">
+      <p class="card-text">1 $USD Dólar americano é = R$5,53 </p>
+    </div>
+  </div>
+</div>
+</table>  
+
+
+
 <table class='table table-striped table-hover'>
   <thead>
     <tr>
@@ -19,7 +33,7 @@
         <td><%= currency.name %></td>
         <td><%= currency.formula %></td>
         <td><%= currency.description %></td>
-        <td><%= currency.to_brl %></td>        
+        <td><%# currency.to_brl %></td>        
         <td><%= link_to fa_icon("eye 2x", title: "Mostrar"), currency %></td>
         <td><%= link_to fa_icon("edit 2x", title: "Editar"), edit_currency_path(currency) %></td>        
         <td><%= link_to fa_icon("trash 2x", title: "Remover"), currency, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
