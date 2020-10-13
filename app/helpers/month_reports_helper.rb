@@ -2,7 +2,6 @@
 
 module MonthReportsHelper
 
-
  
 
 end

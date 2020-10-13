@@ -141,7 +141,7 @@ class Debt < ApplicationRecord
   end
 
   def withdraws_values_by_year(end_date)		
-    withdraws.where('date <= ?', end_date).order('extract(year from date)').group('extract(year from date)').pluck('extract(year from date), sum(value), sum(value_brl)')
+    withdraws.where('date <= ?', end_date).order(Arel.sql('extract(year from date)')).group('extract(year from date)').pluck(Arel.sql('extract(year from date), sum(value), sum(value_brl)'))
   end
 
   def transaction_items_month_total(date, category_number = nil)	

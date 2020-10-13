@@ -7,7 +7,7 @@ class TransactionItem < ApplicationRecord
   before_save :set_start_balance, :if => :blank_start_balance?
 
   validates :transaction_info_id, :presence => true
-    validates :value_brl, :presence => true
+  validates :value_brl, :presence => true
   validates :exchange_rate, :presence => true
   validates :value, :presence => true
   
@@ -25,7 +25,7 @@ class TransactionItem < ApplicationRecord
   end
 
   def period
-    result = ((transaction_info.payment_date) - date).to_i
+    result = (Arel.sql((transaction_info.payment_date) - date)).to_i
     result = 30 if result == 31
     result
   end
