@@ -39,6 +39,7 @@ gem 'jquery-mask-plugin'
 gem 'jquery-datatables'
 
 gem 'prawn'
+gem 'prawn-table'
 
 gem "webpacker", "~> 5.0"
 gem 'bootsnap', '>= 1.1.0', :require => false

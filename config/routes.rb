@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   get 'reports/index', :to => 'reports#index', :as => 'reports'
   get '/month_report/', :to => 'month_reports#show', :as => 'month_report'
+  get '/month_report/export', :to => 'month_reports#export', :as => 'export'
   get '/formulas/show/:formula', :to => 'formulas#show', :as => 'formula'
 
   resources :transaction_types
