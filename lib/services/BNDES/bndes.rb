@@ -7,12 +7,12 @@ class BNDES
 
   class << self
 
-    def last code
+    def last(code)
       get_currency(code).values.first
     end		
 
     private
-      def get_currency code
+      def get_currency(code)
         result = Hash.new
 
         open(CURRENCY_FILE_URL.gsub("CODE", code.to_s), "r") do |file|
@@ -22,7 +22,7 @@ class BNDES
         result
       end
 
-      def parse file
+      def parse(file)
         result = Hash.new
 
         lines = file.readlines.map(&:chomp)
