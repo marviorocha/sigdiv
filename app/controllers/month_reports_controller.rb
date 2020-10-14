@@ -69,79 +69,71 @@ class MonthReportsController < ApplicationController
 		pdf.stroke_horizontal_rule
 		pdf.move_down 5 
 		
-		paid_principal_year_amount =  @projection_debt.debt.transaction_items_year_total @start_date, 2 
-		paid_interest_year_amount =  @projection_debt.debt.transaction_items_year_total @start_date, 3 
-		paid_charges_year_amount =  @projection_debt.debt.transaction_items_year_total @start_date, 4 
-		paid_total_year_amount =  @projection_debt.debt.transaction_items_year_total @start_date 
 		
 		# 1 - A Realizado no Exercício
 		
-		pdf.bounding_box([0, 300], width: 540, height: 140) do
-			
+		pdf.bounding_box([0, 300], width: 540, height: 440) do
+
 			exercicio_1(@projection_debt, pdf)
-			
-		end
-		
-		# 2 - A Realizado no Exercício
-		pdf.bounding_box([0, 220], width: 540, height: 140) do
-			
+			pdf.move_down 10
 			exercicio_2(@projection_debt, pdf)
-			
+			pdf.move_down 10
+			exercicio_3(@projection_debt, pdf)
 		end
 		
-		# 3 - A Realizado no Exercício
-		pdf.bounding_box([0, 120], width: 540, height: 140) do
-			
-			exercicio_3(@projection_debt, pdf)
-			
-		end
+		 
 		
 		pdf.start_new_page
 		
-		total_principal = 0 
-		total_principal_brl = 0 
-		total_interest_brl = 0 
-		total_charges_brl = 0 
-		total = 0 
-		
-		
+	
 		
 		# 4 - A Realizar nos Próximos Exercícios
 		pdf.bounding_box([0, 700], width: 540) do	
 			exercicio_4(@projection_debt, pdf)
 		end
-		
+
 		# 5- Saldo Devedor
-		box_size =	((@start_date.year + 1)..@projection_debt.last_year).map{|x|}
-		pdf.bounding_box([0, 2300 / box_size.count  ], width: 540, height: 320) do
-			pdf.move_up 100
-			pdf.text "4 - Saldo Devedor", style: :bold, size: 9
+				
+		pdf.bounding_box([0, 580 ], width: 540, height: 320) do
+
+			saldo_devedor(@projection_debt, pdf)
+			pdf.move_down 20
+			pdf.text "D - Observações", style: :bold, size: 10
+			pdf.move_down 5
+			pdf.stroke_horizontal_rule
+			pdf.move_down 10 
 			
-			pdf.move_down 2
+			pdf.table([[@projection_debt.notes]],width: 540)
+
+			pdf.move_down 30
+			data = [ ["E - Local e Data", "F - Órgão", "G - Assinatura do Responsável"],
+			[ "Niterói, 28 de fevereiro de 2019",
+			  "Secretaria Municipal de Fazenda de Niterói",
+			  ""]]
+			pdf.table(data, width: 540, :row_colors => ["E9ECEF", "FFFFFF", "FFFFFF","FFFFFF","FFFFFF"])                   
+
+
+		end
+
+		# D - Observações
+		pdf.bounding_box([0, 300], width: 540, height: 200) do
+		
+		pdf.move_up 300  	 
+	   end		
+		
+				
+				
+		pdf.render_file 'public/reports.pdf' 
+		
+		#redirect_to root_path + 'reports.pdf'
+		
+				
+				
+ 	end
 			
-			data = [ ["","Principal em R$", "Juros em R$", "Outros encargos em R$", "Total"],
-			[ "Vencido:",
-				"",
-				"",
-				"",
-				"",]]
-				pdf.table(data, width: 540, :row_colors => ["E9ECEF", "FFFFFF", "FFFFFF","FFFFFF","FFFFFF"])
-			end
-				
-				
-				
-				
-				pdf.render_file 'public/reports.pdf' 
-				
-				#redirect_to root_path + 'reports.pdf'
-				
-				
-				
-			end
+		def export		
 			
-			def export		
-				
-			end
+		end
 			
 		end
 		
