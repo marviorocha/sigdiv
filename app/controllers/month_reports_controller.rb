@@ -2,6 +2,7 @@
 
 class MonthReportsController < ApplicationController
 	include ApplicationHelper
+	include MonthReportsHelper
 	include ActionView::Helpers::NumberHelper
 	def show
 		
@@ -29,31 +30,18 @@ class MonthReportsController < ApplicationController
 		
 		pdf.bounding_box([0, 595], width: 260, height: 220) do
 			
-			pdf.text "<b>Tipo:</b> #{@projection_debt.category}", inline_format: true
-			pdf.text "<b>Mutuário:</b> Prefeitura Municipal de Niterói", inline_format: true
-			pdf.text "<b>Credor:</b> #{@projection_debt.creditor.name}", inline_format: true
-			pdf.text "<b>Valor do Contrato:</b> #{'R$ ' + big_decimal_to_currency_cents(@projection_debt.contract_value)}", inline_format: true
-			pdf.text "<b>Fator de Conversão do Mês (moeda original) REAL:</b> #{@projection_debt.category}", inline_format: true
-			pdf.text "<b>Fator de Conversão do Mês (em Real):</b> #{@projection_debt.category}", inline_format: true
-			pdf.text "<b>Taxa de Encargos:</b> #{@projection_debt.transaction_infos.reduce('') { |result, info| info.charge? ? result + "#{info.description}: #{info.base}% " : result }}", inline_format: true
-			pdf.text "<b>Taxa de juros:</b> #{@projection_debt.interest_rate}%", inline_format: true              
+			indentification(@projection_debt, pdf)         
 			
 		end
 		
 		pdf.bounding_box([310, 595], width: 260, height: 220) do
-			pdf.text "<b>Data da Assinatura:</b> #{@projection_debt.signature_date.strftime('%d/%m/%Y')}", inline_format: true
-			pdf.text "<b>Agente Financeiro:</b> #{@projection_debt.creditor.name}", inline_format: true
-			pdf.text "<b>Moeda Original:</b> #{@projection_debt.currency.name}", inline_format: true
-			pdf.text "<b>Prazo de Carência:</b> #{@projection_debt.grace_period.strftime('%d/%m/%Y')}", inline_format: true
-			pdf.text "<b>Prazo de Amortização:</b> #{@projection_debt.amortization_period.strftime('%d/%m/%Y')}", inline_format: true
-			pdf.text "<b>Forma de Pagamento:</b> #{@projection_debt.amortization_type}", inline_format: true
-			pdf.text "<b>Objetivo da Operação:</b> #{@projection_debt.purpose}", inline_format: true
-			pdf.move_down 5
-			last_rate = @projection_debt.debt.last_exchange_rate(@start_date)
-			pdf.text "<b>Fator de Conversão em:</b> #{ @start_date.end_of_month.strftime('%d/%m/%Y')} #{last_rate.present? ? last_rate : "-"}", inline_format: true   
+			
+			indentification_right(@projection_debt, pdf)			
+			
 		end 
 		
 		## B - Esquema de Liberação de Recursos
+		
 		pdf.move_up 95 
 		pdf.text "B - Esquema de Liberação de Recursos", style: :bold, size: 10
 		pdf.move_down 5
@@ -61,33 +49,15 @@ class MonthReportsController < ApplicationController
 		pdf.move_down 5
 		
 		pdf.bounding_box([0, 440], width: 260, height: 220) do
-			pdf.text "1 - Parcelas Recebidas", style: :bold, size: 9
-			pdf.move_down 2
-			sum_values = 0
-			sum_values_brl = 0
-			data = [ ["Mês/Ano", "Valores - Moeda Original", "Valores em R$	"] ]  
 			
-			@projection_debt.debt.withdraws_values_by_year(@start_date).each do |year_values|
-				
-				data += [[year_values[0].to_i, big_decimal_to_currency_cents(year_values[1]), big_decimal_to_currency_cents(year_values[2])]]
-				sum_values += year_values[1]
-				sum_values_brl += year_values[2]
-			end
-			
-			the_color = ["FFFFFF"]
-			data += [["TOTAL", big_decimal_to_currency_cents(sum_values), big_decimal_to_currency_cents(sum_values_brl)]]
-			
-			
-			pdf.table(data, width: 250, :row_colors => ["E9ECEF", "FFFFFF", "FFFFFF", "FFFFFF", "FFFFFF", "FFFFFF"])
+			schema_b(@projection_debt, pdf)
 			
 		end
 		
+		
 		pdf.bounding_box([310, 440], width: 240, height: 220) do
-			pdf.text "1 - Parcelas Recebidas", style: :bold, size: 9
-			pdf.move_down 2
-			data = [ ["Mês/Ano", "Valores - Moeda Original"],
-			["", ""] ]
-			pdf.table(data, width: 220, :row_colors => ["E9ECEF", "FFFFFF", "FFFFFF"])
+			
+			schema_b_right(@projection_debt, pdf)
 			
 		end
 		
@@ -107,30 +77,46 @@ class MonthReportsController < ApplicationController
 		# 1 - A Realizado no Exercício
 		
 		pdf.bounding_box([0, 300], width: 540, height: 140) do
-			pdf.text "1- Realizado no Exercício", style: :bold, size: 9
-			pdf.move_down 2
-			data = [ ["","Principal em R$", "Juros em R$", "Outros encargos em R$", "Total"],
-			["No mês:",
-				big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total(@start_date, 2)),
-				big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total @start_date, 3),
-				big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total @start_date, 4),
-				big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total @start_date) 
-			],
 			
-			["Até mês", big_decimal_to_currency_cents(paid_principal_year_amount),
-				big_decimal_to_currency_cents(paid_interest_year_amount),
-				big_decimal_to_currency_cents(paid_charges_year_amount),
-				big_decimal_to_currency_cents(paid_total_year_amount)]
-			]
-			
-			
-			pdf.table(data, width: 540, :row_colors => ["E9ECEF", "FFFFFF", "FFFFFF"])
+			exercicio_1(@projection_debt, pdf)
 			
 		end
 		
 		# 2 - A Realizado no Exercício
 		pdf.bounding_box([0, 220], width: 540, height: 140) do
-			pdf.text "2 - A Realizado no Exercício", style: :bold, size: 9
+			
+			exercicio_2(@projection_debt, pdf)
+			
+		end
+		
+		# 3 - A Realizado no Exercício
+		pdf.bounding_box([0, 120], width: 540, height: 140) do
+			
+			exercicio_3(@projection_debt, pdf)
+			
+		end
+		
+		pdf.start_new_page
+		
+		total_principal = 0 
+		total_principal_brl = 0 
+		total_interest_brl = 0 
+		total_charges_brl = 0 
+		total = 0 
+		
+		
+		
+		# 4 - A Realizar nos Próximos Exercícios
+		pdf.bounding_box([0, 700], width: 540) do	
+			exercicio_4(@projection_debt, pdf)
+		end
+		
+		# 5- Saldo Devedor
+		box_size =	((@start_date.year + 1)..@projection_debt.last_year).map{|x|}
+		pdf.bounding_box([0, 2300 / box_size.count  ], width: 540, height: 320) do
+			pdf.move_up 100
+			pdf.text "4 - Saldo Devedor", style: :bold, size: 9
+			
 			pdf.move_down 2
 			
 			data = [ ["","Principal em R$", "Juros em R$", "Outros encargos em R$", "Total"],
@@ -138,138 +124,24 @@ class MonthReportsController < ApplicationController
 				"",
 				"",
 				"",
-				"",],
-				[
-					"No mês:",
-					big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total(@start_date, 2)),
-					big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total @start_date, 3),
-					big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total @start_date, 4),
-					big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total @start_date) 
-				],
-				
-				["Até mês", big_decimal_to_currency_cents(paid_principal_year_amount),
-					big_decimal_to_currency_cents(paid_interest_year_amount),
-					big_decimal_to_currency_cents(paid_charges_year_amount),
-					big_decimal_to_currency_cents(paid_total_year_amount)]
-				]
-				
-				
+				"",]]
 				pdf.table(data, width: 540, :row_colors => ["E9ECEF", "FFFFFF", "FFFFFF","FFFFFF","FFFFFF"])
+			end
+				
+				
+				
+				
+				pdf.render_file 'public/reports.pdf' 
+				
+				#redirect_to root_path + 'reports.pdf'
+				
+				
 				
 			end
 			
-			# 3 - A Realizado no Exercício
-			pdf.bounding_box([0, 120], width: 540, height: 140) do
-				pdf.text "3 - A Realizado no Exercício", style: :bold, size: 9
-				pdf.move_down 2
-				
-				data = [ ["","Principal em R$", "Juros em R$", "Outros encargos em R$", "Total"],
-				[ "Vencido:",
-					"",
-					"",
-					"",
-					"",],
-					[
-						"No mês:",
-						big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total(@start_date, 2)),
-						big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total @start_date, 3),
-						big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total @start_date, 4),
-						big_decimal_to_currency_cents(@projection_debt.debt.transaction_items_month_total @start_date) 
-					],
-					
-					["Até mês", big_decimal_to_currency_cents(paid_principal_year_amount),
-						big_decimal_to_currency_cents(paid_interest_year_amount),
-						big_decimal_to_currency_cents(paid_charges_year_amount),
-						big_decimal_to_currency_cents(paid_total_year_amount)]
-					]
-					
-					
-					pdf.table(data, width: 540, :row_colors => ["E9ECEF", "FFFFFF", "FFFFFF","FFFFFF","FFFFFF"])
-					pdf.move_up 200
-				end
-				
-				pdf.start_new_page
-				
-				total_principal = 0 
-				total_principal_brl = 0 
-				total_interest_brl = 0 
-				total_charges_brl = 0 
-				total = 0 
-				
-				
-				
-				# 4 - A Realizar nos Próximos Exercícios
-				pdf.bounding_box([0, 700], width: 540) do
-					
-					pdf.text "4 - A Realizar nos Próximos Exercícios", style: :bold, size: 9
-					pdf.move_down 2
-					
-					data = [ ["Ano","Principal em Moeda Original", "Principal em R$", "Juros em R$", "Outros encargos em R$", "Total"]]
-					
-					
-					((@start_date.year + 1)..@projection_debt.last_year).each do |year| 
-						
-						year_total_principal = @projection_debt.brl_total_by year, 2 
-						year_total_principal_brl = @projection_debt.brl_total_by year, 2 
-						year_total_interest_brl = @projection_debt.brl_total_by year, 3 
-						year_total_charges_brl = @projection_debt.brl_total_by year, 4 
-						year_total = year_total_principal_brl + year_total_interest_brl + year_total_charges_brl 
-						
-						data += [[year,	big_decimal_to_currency_cents(year_total_principal_brl),
-							big_decimal_to_currency_cents(year_total_principal_brl),
-							big_decimal_to_currency_cents(year_total_interest_brl),
-							big_decimal_to_currency_cents(year_total_charges_brl),
-							big_decimal_to_currency_cents(year_total) 
-							
-							]]
-
-							
-							
-							total_principal += year_total_principal 
-							total_principal_brl += year_total_principal_brl 
-							total_interest_brl += year_total_interest_brl 
-							total_charges_brl += year_total_charges_brl 
-							total += year_total 
-							
-						end 
-					
-						make_color = data.map{|x| + "FFFFFF"}
-			
-					 
-						pdf.table(data, width: 540, row_colors: ['E9ECEF'] + make_color )
-				
-					end
-						# 5- Saldo Devedor
-					box_size =	((@start_date.year + 1)..@projection_debt.last_year).map{|x|}
-						pdf.bounding_box([0, 1500 / box_size.count  ], width: 540, height: 320) do
-							pdf.move_up 100
-					pdf.text "4 - Saldo Devedor", style: :bold, size: 9
-
-					pdf.move_down 2
-				
-					data = [ ["","Principal em R$", "Juros em R$", "Outros encargos em R$", "Total"],
-					[ "Vencido:",
-						"",
-						"",
-						"",
-						"",]]
-						pdf.table(data, width: 540, :row_colors => ["E9ECEF", "FFFFFF", "FFFFFF","FFFFFF","FFFFFF"])
-						end
-
-				
-			 
-
-					pdf.render_file 'public/reports.pdf' 
-					
-					#redirect_to root_path + 'reports.pdf'
-				 
-
-	 
-				end
-				
-				def export		
-					
-				end
+			def export		
 				
 			end
 			
+		end
+		
