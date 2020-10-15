@@ -3,10 +3,12 @@
     <%= f.input :transaction_info_id, label: 'Tipo', collection: debt.transaction_infos, label_method: :category_name, value_method: :id, disabled: f.object.persisted? %>
     
     <%= f.input :value_brl, as: :string, placeholder: "Digite o valor", input_html: {value: big_decimal_to_currency(f.object.value_brl, 2) || '', class: 'currency-brl mask-field'} %> 
+   
     <%= f.input :exchange_rate, placeholder: "Digite o valor",  as: :string, input_html: {class: 'currency_exchange_rate'}%>
     <div class="row transaction-formula">
       <div class="col-6">
-        <%= f.input :value, placeholder: "Digite o valor", as: :string, input_html: {value: big_decimal_to_currency(f.object.value, 6), class: 'currency mask-field'} %>
+        <%= f.input :value, placeholder: "Digite o valor", as: :string,
+         input_html: {value: big_decimal_to_currency(f.object.value, 6), class: 'currency mask-field'} %>
       </div>
       <div class="col-6">
         <%= f.input :formula %>
@@ -33,17 +35,36 @@
 </div>
 
 <script type="text/javascript">
+    function formula(){
+      
+      $("#transaction_item_exchange_rate").keyup(function(){
+      var value = $('#transaction_item_value').val().replace(/[,]/g, '');
+       $( "#transaction_item_formula" ).val( value * (1.12/100/365*(48)) + 1203000 * (115/100/365*(104)) - 001 );
+      });
+  
+    }
+    
   $('.currency-brl').unmask();
   $('.currency').unmask();
 
+
   $('#transaction_item_exchange_rate').on('keyup', function(e) {    
     updateValue();    
+  });
+
+
+  $('#transaction_item_formula').on('change',function(e){
+      const plan = $(this).val();
+      $(formula()).val(plan);
+      
   });
 
   $('.mask-field').on('keyup', function(e) {    
     $('.currency-brl').mask('#.##0,0000', {reverse: true});
     $('.currency').mask('#.##0,00000', {reverse: true});
   });
+
+
 
   function updateValue(){
     if($.isNumeric($('#transaction_item_exchange_rate').val())){
@@ -52,6 +73,8 @@
     $('.currency').unmask();
     $('.currency').mask('#.##0,00000', {reverse: true});
   };
+
+  console.log(formula());
 
   $('div.transaction_item_formula').on('keyup', 'input', function(e) {
     $.get('/formulas/show/' + $('.transaction_item_formula input').val() + '.json')
