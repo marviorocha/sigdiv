@@ -7,6 +7,14 @@ Rails.application.routes.draw do
   get '/month_report/export', :to => 'month_reports#export', :as => 'export'
   get '/formulas/show/:formula', :to => 'formulas#show', :as => 'formula'
 
+  # Api v1
+  namespace :api do
+    namespace :v1 do
+    resources :currencies
+    end
+  end
+
+
   resources :transaction_types
   resources :currencies
   resources :creditors
