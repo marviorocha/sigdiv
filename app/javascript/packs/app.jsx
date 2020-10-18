@@ -3,11 +3,16 @@
 // of the page.
 
 import React from 'react'
-// import Form from './components/transation_item/form'
+import Currencies from './components/currencies/index'
+
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
- 
 
 document.addEventListener('DOMContentLoaded', () => {
- 
-})
+
+    ReactDOM.render(
+        <Currencies />,
+        document.getElementById("root")
+    );
+
+});

@@ -110,17 +110,10 @@ class MonthReportsController < ApplicationController
 
     end
 
-    # 5- Saldo Devedor
-        
-   
-
-   
-    
-        
         
     pdf.render_file 'public/reports.pdf' 
     
-    #redirect_to root_path + 'reports.pdf'
+    redirect_to root_path + 'reports.pdf'
     
         
         

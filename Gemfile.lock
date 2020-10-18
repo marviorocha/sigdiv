@@ -138,6 +138,8 @@ GEM
       railties (>= 3.0.0)
     faker (2.14.0)
       i18n (>= 1.6, < 2)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.13.1)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
@@ -409,6 +411,7 @@ DEPENDENCIES
   dentaku
   factory_bot_rails (~> 4.0)
   faker
+  fast_jsonapi (~> 1.5)
   font-awesome-rails
   httparty
   jbuilder (~> 2.5)

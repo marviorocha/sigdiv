@@ -8,10 +8,15 @@ module MonthReportsHelper
     pdf.text "<b>Tipo:</b> #{@projection_debt.category}", inline_format: true
     pdf.text "<b>Mutuário:</b> Prefeitura Municipal de Niterói", inline_format: true
     pdf.text "<b>Credor:</b> #{@projection_debt.creditor.name}", inline_format: true
-    pdf.text "<b>Valor do Contrato:</b> #{'R$ ' + big_decimal_to_currency_cents(@projection_debt.contract_value)}", inline_format: true
-    pdf.text "<b>Fator de Conversão do Mês (moeda original) REAL:</b> #{@projection_debt.category}", inline_format: true
-    pdf.text "<b>Fator de Conversão do Mês (em Real):</b> #{@projection_debt.category}", inline_format: true
-    pdf.text "<b>Taxa de Encargos:</b> #{@projection_debt.transaction_infos.reduce('') { |result, info| info.charge? ? result + "#{info.description}: #{info.base}% " : result }}", inline_format: true
+    pdf.text "<b>Valor do Contrato:</b> 
+    #{'R$ ' + big_decimal_to_currency_cents(@projection_debt.contract_value)}", inline_format: true
+    pdf.text "<b>Fator de Conversão do Mês (moeda original) REAL:</b>
+    #{@projection_debt.category}", inline_format: true
+    pdf.text "<b>Fator de Conversão do Mês (em Real):</b>
+    #{@projection_debt.category}", inline_format: true
+    pdf.text "<b>Taxa de Encargos:</b> 
+    #{@projection_debt.transaction_infos.reduce('') { |result, info| info.charge? ? result + 
+    "#{info.description}: #{info.base}% " : result }}", inline_format: true
     pdf.text "<b>Taxa de juros:</b> #{@projection_debt.interest_rate}%", inline_format: true   
   end
   
@@ -250,7 +255,7 @@ module MonthReportsHelper
             pdf.table(data, width: 540, :row_colors => ["E9ECEF", "FFFFFF", "FFFFFF","FFFFFF","FFFFFF"])                   
           end
 
-          ## 1 - Saldo devedor
+          
 
           
         end

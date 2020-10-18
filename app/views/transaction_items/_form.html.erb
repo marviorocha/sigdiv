@@ -35,7 +35,8 @@
 </div>
 
 <script type="text/javascript">
-    function formula(){
+   
+   function TransactionFormula(){
       
       $("#transaction_item_exchange_rate").keyup(function(){
       var value = $('#transaction_item_value').val().replace(/[,]/g, '');
@@ -51,14 +52,7 @@
   $('#transaction_item_exchange_rate').on('keyup', function(e) {    
     updateValue();    
   });
-
-
-  $('#transaction_item_formula').on('change',function(e){
-      const plan = $(this).val();
-      $(formula()).val(plan);
-      
-  });
-
+ 
   $('.mask-field').on('keyup', function(e) {    
     $('.currency-brl').mask('#.##0,0000', {reverse: true});
     $('.currency').mask('#.##0,00000', {reverse: true});
@@ -74,7 +68,6 @@
     $('.currency').mask('#.##0,00000', {reverse: true});
   };
 
-  console.log(formula());
 
   $('div.transaction_item_formula').on('keyup', 'input', function(e) {
     $.get('/formulas/show/' + $('.transaction_item_formula input').val() + '.json')
@@ -84,6 +77,7 @@
 
   });
 
+   TransactionFormula();
 </script>
 
 
