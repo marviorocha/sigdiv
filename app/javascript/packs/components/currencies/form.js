@@ -19,26 +19,32 @@ const Form = (propos) => {
         <label className="mr-sm-2 " htmlFor="inlineFormCustomSelect">
           De:
         </label>
-        <select className="custom-select mr-sm-2  form-control" id="inlineFormCustomSelect">
+        <select
+          className="custom-select mr-sm-2  form-control"
+          id="inlineFormCustomSelect"
+        >
           <option defaultValue>moeda...</option>
+          {console.log(corrency)}
           <option value="1">USD</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
         </select>
       </div>
-      <i className="fa fa-refresh  fa-1x"></i> 
+      <i className="fa fa-refresh  fa-1x"></i>
       <div className="col">
         <label className="mr-sm-2" htmlFor="inlineFormCustomSelect">
-        Para:
+          Para:
         </label>
-        <select className="custom-select mr-sm-2  form-control" id="inlineFormCustomSelect">
+        <select
+          className="custom-select mr-sm-2  form-control"
+          id="inlineFormCustomSelect"
+        >
           <option defaultValue>moeda...</option>
           <option value="1">USD</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
         </select>
       </div>
- 
     </div>
   );
 };

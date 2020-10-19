@@ -9,3 +9,5 @@ require('model/projection_debt.rb')
 require('projection_debt.rb')
 exxit
 exit
+debt_transaction_items_path
+exit

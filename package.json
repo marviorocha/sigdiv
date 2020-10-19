@@ -6,6 +6,10 @@
     "@rails/webpacker": "5.2.1",
     "axios": "^0.20.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "formulajs": "^1.0.8",
+    "jquery": "^3.5.1",
+    "jquery-mask-plugin": "^1.14.16",
+    "jstat": "^1.9.4",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

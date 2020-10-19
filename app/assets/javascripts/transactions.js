@@ -61,7 +61,7 @@ function getTransaction() {
   
   return result;
 }
-
+ 
 // $('.currency-brl').mask('#.##0,00', {reverse: true});
 // $('.currency').mask('#.##0,00000', {reverse: true});
 

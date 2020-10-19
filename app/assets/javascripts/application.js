@@ -21,6 +21,8 @@
 //= require big.min
 //= require_tree .
 
+
+ 
 $(function() {
 	$(".datepicker").datepicker({
     dateFormat: 'dd-mm-yy',

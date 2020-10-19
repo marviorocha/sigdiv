@@ -17,8 +17,9 @@ class MonthReportsController < ApplicationController
     pdf.font "Helvetica", size: 8
     pdf.stroke_color 'aaaaaa'
     pdf.stroke_axis
-    pdf.image "app/assets/images/logo_niteroi.jpg", :at => [0, 700], :scale => 0.75
-    pdf.draw_text "PREFEITURA NITERÓI - SECRETARIA MUNICIPAL DE FAZENDA", at: [90, 660], size: 13
+    pdf.image "app/assets/images/logo_niteroi.jpg", :at => [0, 700], :scale => 0.60
+    pdf.draw_text "PREFEITURA NITERÓI - SECRETARIA MUNICIPAL DE FAZENDA", at: [90, 680], size: 13
+   
     pdf.move_down 100
     
     pdf.text "A - Identificação do Contrato", style: :bold, size: 10
