@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # Api v1
   namespace :api do
     namespace :v1 do
-    resources :currencies
+     resources :currencies
     end
   end
 
