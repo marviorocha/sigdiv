@@ -1,7 +1,7 @@
 import "jstat/dist/jstat";
 import formulajs from "formulajs";
 import "jquery-mask-plugin/dist/jquery.mask";
-import $ from "jquery/dist/jquery";
+ 
   
 $(".currency-brl").unmask();
 $(".currency").unmask();
@@ -32,11 +32,31 @@ function updateValue() {
   $(".currency").mask("#.##0,00000", { reverse: true });
 } 
  
-$("#transaction_item_formula").keyup(function () {
-  var value = $("#transaction_item_formula").val();
-  console.log(formulajs.SUM(5 + 5 + 5));
-  $("#transaction_item_value").val(value);
-});
+// $("#transaction_item_formula").keyup(function () {
+//   var value = $("#transaction_item_formula").val();
+  
+//   $("#transaction_item_value").val(value);
+// });
  
+    $("#transaction_item_formula").on("keyup", function (event) {
+      event.preventDefault();
+      $("#transaction_item_value").val(
+        eval($("#transaction_item_formula").val())
+      );
+    });
+
+    $(".function").each((index, component) => {
+      var call = $(component).find(".function-call");
+      call.on("click", function () {
+        $("#in").val($(this).attr("data-function-call"));
+        $("#formula-box").submit();
+      });
+    });
+
+    const formulaKeys = Object.keys(formulajs);
+    formulaKeys.forEach((key) => {
+      window[key] = formulajs[key];
+    });
 
  
+
