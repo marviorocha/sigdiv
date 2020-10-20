@@ -1,21 +1,8 @@
+import "jstat/dist/jstat";
 import formulajs from "formulajs";
-import $ from "jquery";
-import "jquery-mask-plugin";
-const transactionValue = document.getElementById("transactionModal");
-
-// function logKey(e) {
-//   log.textContent += ` ${e.code}`;
-// }
-
-console.log(transactionValue);
-
-function TransactionFormula() {
-  $("#transaction_item_exchange_rate").keyup(function () {
-    var value = $("#transaction_item_value").val().replace(/[,]/g, "");
-    $("#transaction_item_formula").val(value);
-  });
-}
-
+import "jquery-mask-plugin/dist/jquery.mask";
+import $ from "jquery/dist/jquery";
+  
 $(".currency-brl").unmask();
 $(".currency").unmask();
 
@@ -43,14 +30,13 @@ function updateValue() {
   }
   $(".currency").unmask();
   $(".currency").mask("#.##0,00000", { reverse: true });
-}
-
-$("div.transaction_item_formula").on("keyup", "input", function (e) {
-  $.get(
-    "/formulas/show/" + $(".transaction_item_formula input").val() + ".json"
-  ).done(function (data) {
-    $(".transaction_item_value input").val(data.response);
-  });
+} 
+ 
+$("#transaction_item_formula").keyup(function () {
+  var value = $("#transaction_item_formula").val();
+  console.log(formulajs.SUM(5 + 5 + 5));
+  $("#transaction_item_value").val(value);
 });
+ 
 
-TransactionFormula();
+ 
