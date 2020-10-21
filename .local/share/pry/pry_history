@@ -11,3 +11,6 @@ exxit
 exit
 debt_transaction_items_path
 exit
+require('banco_central')
+BancoCentral.last(:dolar)
+exit

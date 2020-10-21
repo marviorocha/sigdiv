@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "./form";
+import Data from "./data";
 
 const Currencies = () => {
   return (
@@ -7,7 +8,7 @@ const Currencies = () => {
       <div className="col-auto">
         <div className="card-columns">
           <div className="card bg-default">
-            <div className="card-header bolder">Cotação</div>
+            <div className="card-header bolder">Cotação em tempo real</div>
             <div className="card-body">
               <div className="card-text">{<Form />}</div>
               <div className="card-text">
@@ -21,6 +22,7 @@ const Currencies = () => {
           </div>
         </div>
       </div>
+      {<Data />}
     </div>
   );
 };
