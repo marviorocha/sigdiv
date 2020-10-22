@@ -1,5 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
+import strftime from "strftime";
 import axios from "axios";
+ 
 const Data = (propos) => {
   const [currency, setCurrency] = useState([]);
 
@@ -18,10 +20,27 @@ const Data = (propos) => {
         <td>{item.attributes.name}</td>
         <td> {item.attributes.formula}</td>
         <td> {item.attributes.descricao}</td>
-        <td> Last Cotação </td>
-        <td>Cotação</td>
-        <td>Editar</td>
-        <td>Excluír</td>
+        <td>
+          {strftime("%d/%m/%Y `as %H:%M", new Date(item.attributes.created_at))}
+        </td>
+        <td>
+          {strftime("%d/%m/%Y `as %H:%M", new Date(item.attributes.updated_at))}
+        </td>
+        <td>
+          <a href="#">
+            <i title="Cotação" className="fa fa-money fa-2x"></i>
+          </a>
+        </td>
+        <td>
+          <a href="">
+            <i title="Editar" className="fa fa-edit fa-2x"></i>
+          </a>
+        </td>
+        <td>
+          <a href="">
+            <i title="Delete" className="fa fa-trash fa-2x"></i>
+          </a>
+        </td>
       </tr>
     );
   });
