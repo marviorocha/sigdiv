@@ -14,3 +14,25 @@ exit
 require('banco_central')
 BancoCentral.last(:dolar)
 exit
+require "banco_central"
+BancoCentral.last(:dolar)
+BancoCentral.last
+BancoCentral.all
+BancoCentral.all(:dolar)
+BancoCentral.all(:euro)
+BancoCentral.all(:dolar)
+exit
+require 'banco_central'
+BancoCentral.last(:euro)
+BancoCentral.last(:usd)
+BancoCentral.last(:dolar_americano)
+BancoCentral.last(:dolar)
+BancoCentral.last(1)
+BancoCentral.last(2)
+BancoCentral.last(3)
+BancoCentral.all(3)
+BancoCentral.all
+BancoCentral.last(:dolar_compra)
+BancoCentral.last(:dolar_venda)
+BancoCentral.last(:real)
+exit

@@ -16,7 +16,6 @@ class MonthReportsController < ApplicationController
     pdf = Prawn::Document.new
     pdf.font "Helvetica", size: 8
     pdf.stroke_color 'aaaaaa'
-    pdf.stroke_axis
     pdf.image "app/assets/images/logo_niteroi.jpg", :at => [0, 700], :scale => 0.60
     pdf.draw_text "PREFEITURA NITERÓI - SECRETARIA MUNICIPAL DE FAZENDA", at: [90, 680], size: 13
    
@@ -100,7 +99,7 @@ class MonthReportsController < ApplicationController
       pdf.stroke_horizontal_rule
       pdf.move_down 10 
       
-      pdf.table([[@projection_debt.notes]],width: 540)
+      pdf.table([[@projection_debt.notes]], width: 540, :cell_style => {:height => 50})
 
       pdf.move_down 30
       data = [ ["E - Local e Data", "F - Órgão", "G - Assinatura do Responsável"],

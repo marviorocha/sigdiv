@@ -15,16 +15,18 @@ const Data = (propos) => {
   }, [currency.length]);
 
   const list = currency.map((item) => {
+    const currencies_path = 'currencies/' + item.attributes.id 
+    
     return (
       <tr key={item.attributes.name}>
         <td>{item.attributes.name}</td>
-        <td> {item.attributes.formula}</td>
-        <td> {item.attributes.descricao}</td>
+        <td>{item.attributes.formula}</td>
+        <td>{item.attributes.descricao}</td>
         <td>
-          {strftime("%d/%m/%Y `as %H:%M", new Date(item.attributes.created_at))}
+          {strftime("%d/%m/%Y", new Date(item.attributes.created_at))}
         </td>
         <td>
-          {strftime("%d/%m/%Y `as %H:%M", new Date(item.attributes.updated_at))}
+          {strftime("%d/%m/%Y", new Date(item.attributes.updated_at))}
         </td>
         <td>
           <a href="#">
@@ -32,12 +34,12 @@ const Data = (propos) => {
           </a>
         </td>
         <td>
-          <a href="">
+          <a href={currencies_path + '/edit'} >
             <i title="Editar" className="fa fa-edit fa-2x"></i>
           </a>
         </td>
         <td>
-          <a href="">
+          <a data-confirm='Você tem certeza?' data-method="delete" href={currencies_path} >
             <i title="Delete" className="fa fa-trash fa-2x"></i>
           </a>
         </td>

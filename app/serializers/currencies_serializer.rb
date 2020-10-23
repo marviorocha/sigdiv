@@ -1,4 +1,4 @@
 class CurrenciesSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :formula, :description, :updated_at, :created_at
+  attributes :id, :name, :formula, :description, :updated_at, :created_at
 end

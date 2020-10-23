@@ -3,15 +3,14 @@
 // of the page.
 
 import React from 'react'
-import Currencies from './components/currencies/index'
-
 import ReactDOM from 'react-dom'
+import Routes from './components/routes'
 import PropTypes from 'prop-types'
 
 document.addEventListener('DOMContentLoaded', () => {
 
     ReactDOM.render(
-        <Currencies />,
+        <Routes />,
         document.getElementById("root")
     );
 
