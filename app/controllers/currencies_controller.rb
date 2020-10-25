@@ -38,8 +38,8 @@ class CurrenciesController < ApplicationController
 
     respond_to do |format|
       if @currency.save
-        format.html { redirect_to currencies_path, :notice => "A moeda (#{@currency.name}) foi criado com sucesso!" }
-        format.js
+        format.html 
+        format.js { flash.now[:notice] = "A moeda (#{@currency.name}) foi criado com sucesso!" }
       else
         format.html {render :new}
         format.js { render :new, :alert => "Não foi possível adicionar"}
@@ -51,9 +51,10 @@ class CurrenciesController < ApplicationController
     respond_to do |format|
       if @currency.update(currency_params)
         format.html { redirect_to currencies_path, :notice => 'Moeda atualizada com sucesso!' }
+        format.js { flash.now[:notice] = 'Moeda atualizada com sucesso!' } 
       else
         format.html {render :edit}
-        format.js { render :edit, :alert => "Não foi possível adicionar"}
+        format.js {render :edit} 
       end
     end
   end

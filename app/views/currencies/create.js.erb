@@ -2,6 +2,8 @@
 $('form-input').append("<%= j render :new %>");
 <% else %>
  $('#openModal').modal('hide');
-  $(".table").find(".tr").fadeIn(40000);
-  document.location.reload(true);
+ $(".table").find(".tr").fadeIn(40000);
+ $('.notifications').html("<%= j render "notifications/alert"  %>");  
+ setTimeout(function(){  document.location.reload(true); }, 3000);
+
 <% end %>
