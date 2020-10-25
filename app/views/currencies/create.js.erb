@@ -1,0 +1,9 @@
+<% if @currency.errors.any? %>
+    $("#openModal").find(".modal-body").html('<%= j render "notifications/alert" %>');
+<% else %>
+ 
+    $('#openModal').modal('hide');
+    
+     $("table").find(".tr").fadeIn(40000);
+    document.location.reload(true);
+<% end %>

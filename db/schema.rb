@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2020_10_08_211338) do
     t.string "name"
     t.string "formula"
     t.text "description"
+    t.string "last_currency"
+    t.date "date_currency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

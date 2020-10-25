@@ -63,6 +63,8 @@ pt-BR:
         name: Nome
         formula: Fórmula
         description: Descrição
+        last_currency: Última cotação
+        date_currency: Data da cotação
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

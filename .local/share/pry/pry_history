@@ -36,3 +36,155 @@ BancoCentral.last(:dolar_compra)
 BancoCentral.last(:dolar_venda)
 BancoCentral.last(:real)
 exit
+require 'banco_central'
+BancoCentral.last(:dolar)
+BancoCentral.last(:brl)
+BancoCentral.last
+BancoCentral
+bundle add brcotacao
+exit
+require('brcotacao')
+require 'date'
+date.now
+Date.now
+require 'date'
+date
+Date
+Date.now
+uma_date = Date.new(2020, 23, 9)
+require 'date'
+uma_date = Date.new(2020, 23, 9)
+Date.new(2020, 23, 9)
+date = Date.new(2007, 11, 10)  
+date = Date.new(2020, 23, 10)
+date = Date.new(2020, 10, 23)
+euro.cotacao_agora 
+euro.cotacao(data)
+euro = BrCotacao::Euro.new
+dolar = BrCotacao::Euro.new
+dolar.cotacao(data)
+data
+dolar.cotacao(date)
+euro.cotacao(dete)
+euro.cotacao(date)
+dolar.cotacao('23/10/2020')
+dolar.cotacao('23/10/2020'.strp)
+dolar.cotacao(Date.new('2020'))
+dolar.cotacao(Date.new('2020, 12, 9'))
+dolar.cotacao(Date.new(2020, 12, 9))
+dolar.cotacao(Date.new(2011, 12, 9))
+exit
+require 'banco_central'
+BancoCentral.last
+BancoCentral.last(:dolar)
+BancoCentral.last(:euro)
+str = %[EuroTaxa de câmbio - Livre - Euro (venda)]
+str = %i[EuroTaxa de câmbio - Livre - Euro (venda)]
+str[6]
+str[6].lowcase
+str[6].downcase
+banco_central = BancoCentral.last(
+exit
+require 'banco_central'
+BancoCentral(:dolar)
+BancoCentral.last(:dolar)
+BancoCentral.last(:euro)
+BancoCentral.last(:coroa_dinamarquesa)
+moeda = BancoCentral.last(:coroa_dinamarquesa)
+substr = moeda['nome']
+substr = moeda['name']
+substr = moeda.name
+substr = moeda[:name]
+substr = %i[moeda[:name])
+require
+exit
+require 'banco_central'
+moeda = BancoCentral.last(:coroa_dinamarquesa)
+string = %i[moreda(:name)]
+string = %i[moeda(:name)]
+moeda
+moeda(:name)
+moeda[:name]
+string = %i[moeda[:name]]
+string = %i(moeda[:name])
+string = %imoeda[:name]
+string = %moeda[:name]
+string = moeda[:name]
+string
+exit
+reload!
+require 'banco_central'
+moeda = BancoCentral.last(:coroa_dinamarquesa)
+moeda[:name]
+string = %i[moeda[:name]]
+string = %i["moeda[:name]"]
+string = %i[moeda[:name]]
+string = [moeda[:name]]
+string = i%[moeda[:name]]
+string = %i[moeda[:name]]
+string = %i[]
+string = %i[lorem ipsor]
+string = moeda[:nome]
+string = moeda[:name]
+string
+%i[string]
+i%[string]
+%i[string]
+string
+string.strf
+string.str
+string.strip
+%i[string.strip]
+moeda
+moeda.name
+moeda
+moeda[:name]
+moeda[%i[:name]]
+moeda[:name]
+%i[moeda[:name]]
+%i[BancoCentral.last(:coroa_norueguesa)]
+BancoCentral.last(:coroa_norueguesa)
+BancoCentral.last(:coroa_norueguesa).name
+BancoCentral.last(:coroa_norueguesa)[:name]
+name = BancoCentral.last(:coroa_norueguesa)[:name]
+name
+name.to_s
+%[name.to_s]
+%i[name.to_s]
+%i[:name]
+%i[name]
+%i[]
+%i["Taxa de câmbio - Livre - Coroa Norueguesa (venda)"]
+%i[name.to_a]
+name
+name.to_a
+name.to_s
+name.to_r
+name.to_f
+name.to_r
+name.to_c
+name.as_json
+require 'json'
+name.json
+name.constantize
+exit
+require 'banco_central'
+BancoCentral.last
+BancoCentral.last.each do |moeda|
+  moeda
+end
+times.12 BancoCentral.last do
+end
+times.12 BancoCentral.last(:labels)
+BancoCentral.last(:labels)
+BancoCentral.last(:bovespa)
+EXIT
+exut
+exit
+require = banco_central'
+require = 'banco_central'
+require = "banco_central"
+require"banco_central"
+BancoCentral.last
+BancoCentral.last(:dolar)
+exit

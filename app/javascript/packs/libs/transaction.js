@@ -1,8 +1,8 @@
 import "jstat/dist/jstat";
 import "flatpickr/dist/flatpickr.min.css";
+import flatpickr from "flatpickr";
 import { Portuguese } from "flatpickr/dist/l10n/pt.js";
 import formulajs from "formulajs";
-import flatpickr from "flatpickr";
 import "jquery-mask-plugin/dist/jquery.mask";
 
 // function to flatpickr

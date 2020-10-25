@@ -6,7 +6,8 @@ class CreateCurrencies < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :formula
       t.text :description
-
+      t.string :last_currency
+      t.date :date_currency
       t.timestamps
     end
   end
