@@ -1,5 +1,5 @@
 <% if @currency.errors.any? %>
-$('form-input').append("<%= j render :new %>");
+$('form-input').append("<%= j render :edit %>");
 <% else %>
  $('#openModal').modal('hide');
   $(".table").find(".tr").fadeIn(40000);
