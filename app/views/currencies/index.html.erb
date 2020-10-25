@@ -21,7 +21,7 @@
   <tbody>
     <% @currencies.each do |currency| %>
       <tr>
-        <td><%= currency.name %></td>
+        <td><%= currency.name.upcase %></td>
         <td><%= currency.formula %></td>
         <td><%= currency.description %></td>
         <td><%= currency.last_currency %></td>        
