@@ -33,6 +33,10 @@ default: &default
     - .woff2
 
   extensions:
+<<<<<<< HEAD
+=======
+    - .jsx
+>>>>>>> developer
     - .mjs
     - .js
     - .sass

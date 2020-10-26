@@ -1,0 +1,11 @@
+<% if @currency.errors.any? %>
+
+$('form-input').append("<%= j render :edit %>");
+
+<% else %>
+ 
+ $('#openModal').modal('hide');
+ $('.notifications').html("<%= j render "notifications/alert"  %>");  
+ setTimeout(function(){  document.location.reload(true); }, 3000);
+   
+<% end %>

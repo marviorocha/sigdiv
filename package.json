@@ -2,7 +2,24 @@
   "name": "sigdiv",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@rails/webpacker": "5.2.1"
+=======
+    "@babel/preset-react": "^7.10.4",
+    "@rails/webpacker": "5.2.1",
+    "axios": "^0.20.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "flatpickr": "^4.6.6",
+    "formulajs": "^1.0.8",
+    "jquery": "^3.5.1",
+    "jquery-mask-plugin": "^1.14.16",
+    "jstat": "^1.9.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "strftime": "^0.10.0"
+>>>>>>> developer
   },
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"

@@ -14,5 +14,13 @@
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+<<<<<<< HEAD
 
 console.log('Hello World from Webpacker')
+=======
+// rails
+//require("@rails/ujs").start()
+// require("@rails/activestorage").start()
+// require("channels");
+import "./libs/transaction";
+>>>>>>> developer

@@ -1,0 +1,1 @@
+[{"severity":"convention","location":{"begin_pos":707,"end_pos":21325},"message":"Metrics/BlockLength: Block has too many lines. [302/35]","cop_name":"Metrics/BlockLength","status":"unsupported"}]

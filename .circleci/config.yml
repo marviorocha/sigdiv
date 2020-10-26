@@ -1,0 +1,40 @@
+
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.1.0
+  node: circleci/node@2
+
+jobs:
+  build:
+    docker:
+      - image: cimg/ruby:2.7-node
+     # steps:
+    #   - checkout
+    #   - ruby/install-deps
+    #   # Store bundle cache
+    #   - node/install-packages:
+    #       pkg-manager: yarn
+    #       cache-key: "yarn.lock"
+#   test:
+#     parallelism: 3
+#     docker:
+#       - image: cimg/ruby:2.7-node
+#       - image: circleci/postgres:9.5-alpine
+#         environment:
+#             POSTGRES_USER: postgres
+#             POSTGRES_PASSWORD: admin123
+#             POSTGRES_HOST: db
+#      steps:
+#       # Run rspec in parallel
+#       - ruby/rspec-test
+#       - ruby/rubocop-check
+
+# workflows:
+#   version: 2
+#   build_and_test:
+#     jobs:
+#       - build
+#       - test:
+#           requires:
+#             - build
