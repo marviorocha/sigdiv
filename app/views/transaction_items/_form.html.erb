@@ -6,6 +6,7 @@
     <%= f.input :value_brl, as: :string, placeholder: "Digite o valor", input_html: {value: big_decimal_to_currency(f.object.value_brl, 2) || '', class: 'currency-brl mask-field'} %> 
    
     <%= f.input :exchange_rate, placeholder: "Digite o valor",  as: :string, input_html: {class: 'currency_exchange_rate'}%>
+   
     <div class="row transaction-formula">
       <div class="col-6">
         <%= f.input :value, placeholder: "Digite o valor", as: :string,

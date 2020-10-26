@@ -12,7 +12,7 @@ class CurrenciesController < ApplicationController
   
   def show
     respond_to do |format|
-      format.html
+      
       format.js
     end
   end
@@ -20,7 +20,7 @@ class CurrenciesController < ApplicationController
   def new
     @currency = Currency.new
     respond_to do |format|
-      format.html
+     
       format.js
     end
      
@@ -28,7 +28,7 @@ class CurrenciesController < ApplicationController
 
   def edit
     respond_to do |format|
-      format.html
+     
       format.js
     end
   end
@@ -38,10 +38,8 @@ class CurrenciesController < ApplicationController
 
     respond_to do |format|
       if @currency.save
-        format.html 
-        format.js { flash.now[:notice] = "A moeda (#{@currency.name}) foi criado com sucesso!" }
+        format.js { flash.now[:notice] = "A moeda foi criado com sucesso!" }
       else
-        format.html {render :new}
         format.js { render :new, :alert => "Não foi possível adicionar"}
       end
     end
@@ -50,10 +48,10 @@ class CurrenciesController < ApplicationController
   def update
     respond_to do |format|
       if @currency.update(currency_params)
-        format.html { redirect_to currencies_path, :notice => 'Moeda atualizada com sucesso!' }
-        format.js { flash.now[:notice] = 'Moeda atualizada com sucesso!' } 
+       
+        format.js { flash.now[:notice] = "A moeda (#{@currency.name}) foi atualizada!" } 
       else
-        format.html {render :edit}
+       
         format.js {render :edit} 
       end
     end
@@ -64,7 +62,7 @@ class CurrenciesController < ApplicationController
     @currency.destroy
     respond_to do |format|
       format.js
-      format.html { redirect_to currencies_url, :notice => 'Currency was successfully destroyed.' }
+       
     end
   end
 
