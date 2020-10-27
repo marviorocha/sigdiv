@@ -448,7 +448,7 @@ DEPENDENCIES
   vcr
   web-console (>= 3.3.0)
   webmock
-  webpacker (~> 5.0)
+  webpacker
   zeitwerk
 
 RUBY VERSION

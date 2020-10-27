@@ -79,6 +79,9 @@ COPY . ./
 COPY ./docker-tools/docker-entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/docker-entrypoint.sh
 
-ENTRYPOINT ["./docker-tools/docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
+EXPOSE 3000
+
+CMD ["rails", "server"]
+
