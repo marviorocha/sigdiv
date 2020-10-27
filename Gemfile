@@ -42,7 +42,7 @@ gem 'jquery-datatables'
 gem 'prawn'
 gem 'prawn-table'
 
-gem "webpacker", ">= 5.0"
+gem "webpacker"
 gem 'bootsnap', '>= 1.1.0', :require => false
 
 group :development, :test do
