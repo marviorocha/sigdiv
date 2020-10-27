@@ -14,24 +14,16 @@ services:
   app:
     build: .
     container_name: ruby
-    command: "bundle exec puma -p 9001 -e production"
+    command: "bundle exec puma -p 3000 -e production"
     environment:
       - RAILS_ENV=production
     env_file: .env
-    expose:
-      - 9001
+    ports:
+      - "80:80"
     volumes:
       - webdata:/home/marviorocha/sigdiv
     depends_on:
       - db
-    networks:
-      - RUBY
-  web:
-    build: ./Dockerproduction
-    depends_on:
-      - app
-    ports:
-      - 80:80 
     networks:
       - RUBY
 volumes:
