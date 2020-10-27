@@ -18,7 +18,7 @@ services:
     environment:
       - RAILS_ENV=production
     env_file: .env
-    ports:
+    expose:
       - 9001
     volumes:
       - webdata:/home/marviorocha/sigdiv
