@@ -131,11 +131,11 @@ GEM
     double-bag-ftps (0.1.3)
     erubi (1.9.0)
     execjs (2.7.0)
-    factory_bot (4.11.1)
-      activesupport (>= 3.0.0)
-    factory_bot_rails (4.11.1)
-      factory_bot (~> 4.11.1)
-      railties (>= 3.0.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     faker (2.14.0)
       i18n (>= 1.6, < 2)
     fast_jsonapi (1.5)
@@ -410,7 +410,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.2)
   dentaku
-  factory_bot_rails (~> 4.0)
+  factory_bot_rails
   faker
   fast_jsonapi (~> 1.5)
   font-awesome-rails
@@ -449,8 +449,6 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webmock
   webpacker
-  wicked_pdf
-  wkhtmltopdf-binary
 
 RUBY VERSION
    ruby 2.7.2p137

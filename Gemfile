@@ -48,7 +48,7 @@ gem 'bootsnap', '>= 1.1.0', :require => false
 group :development, :test do
   
   gem 'byebug', :platforms => [:mri, :mingw, :x64_mingw]
-  gem 'factory_bot_rails', '~> 4.0'
+  gem 'factory_bot_rails'
   gem 'capistrano', '~> 3.11', :require => false
   gem 'capistrano-rails', '~> 1.4', :require => false
   gem 'capistrano-passenger'
