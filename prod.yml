@@ -27,13 +27,11 @@ services:
     networks:
       - RUBY
   web:
-    image: infoslack/nginx-puma
-    volumes:
-      - webdata:/home/web/sigdiv
-    ports:
-      - 80:80
+    build: ./Dockerproduction
     depends_on:
-      - app      
+      - app
+    ports:
+      - 80:80 
     networks:
       - RUBY
 volumes:
