@@ -31,12 +31,7 @@ default: &default
     - .ttf
     - .woff
     - .woff2
-
   extensions:
-<<<<<<< HEAD
-=======
-    - .jsx
->>>>>>> developer
     - .mjs
     - .js
     - .sass
@@ -50,7 +45,6 @@ default: &default
     - .gif
     - .jpeg
     - .jpg
-
 development:
   <<: *default
   compile: true
