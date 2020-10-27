@@ -447,14 +447,9 @@ DEPENDENCIES
   vcr
   web-console (>= 3.3.0)
   webmock
-<<<<<<< HEAD
   webpacker
   wicked_pdf
   wkhtmltopdf-binary
-=======
-  webpacker (~> 5.0)
-  zeitwerk
->>>>>>> developer
 
 RUBY VERSION
    ruby 2.7.2p137
