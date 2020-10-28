@@ -3,8 +3,6 @@
 set -e
 
 if [ -f tmp/pids/server.pid ]; then
-  rake db:create db:migrate
-  rails credentials:edit
   rm tmp/pids/server.pid
 fi
 
