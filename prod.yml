@@ -26,6 +26,18 @@ services:
       - db
     networks:
       - RUBY
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+    links:
+      - app
+    ports:
+      - "80:80"
+    networks:
+      - RUBY
 volumes:
   postgres_data: {}
-  webdata:
+
