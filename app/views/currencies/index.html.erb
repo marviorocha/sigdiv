@@ -33,6 +33,7 @@
     <% end %>
   </tbody>
 </table>
+ <%= link_to 'Nova moeda', new_currency_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#openModal', class: "btn btn-success pull-right"} %>
 
  <br>
 
@@ -52,9 +53,5 @@
     </div>
   </div>
 </div>
-
- 
- <%= link_to 'Nova moeda', new_currency_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#openModal', class: "btn btn-success pull-right"} %>
-
 
  

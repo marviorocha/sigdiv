@@ -18,4 +18,7 @@
 //require("@rails/ujs").start()
 // require("@rails/activestorage").start()
 // require("channels");
-import "./libs/transaction";
+
+ 
+require("/libs/transaction");
+import "/libs/flatpicker";

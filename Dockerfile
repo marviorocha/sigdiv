@@ -79,7 +79,7 @@ COPY . ./
 COPY ./docker-tools/docker-entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/docker-entrypoint.sh
 
-RUN RAILS_ENV=production rails assets:precompile
+
 # create credentials
 #ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
 
