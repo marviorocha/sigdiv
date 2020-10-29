@@ -1,6 +1,4 @@
-app :=arquivo
-web :=
-db :=txt
+app_name := app
 run := docker-compose run 
 prod := docker-compose -f prod.yml 
 stop ?= (docker ps -aq)
@@ -19,4 +17,6 @@ uninstall:
 	docker stop ($(stop)) 
 logs:
 	tail -f log/production.log
+deploy:
+	cap production deploy 
  
