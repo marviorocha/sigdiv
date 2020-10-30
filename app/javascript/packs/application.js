@@ -20,5 +20,5 @@
 // require("channels");
 
  
-require("/libs/transaction");
+import "./libs/transaction";
 import "/libs/flatpicker";

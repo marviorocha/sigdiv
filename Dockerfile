@@ -32,30 +32,7 @@ RUN apk add --update --no-cache \
       ruby-dev \
       musl-dev 
 
-# Install binary to run PDF
-# libstdc++ \
-# libx11 \
-# libxrender \
-# libxext \
-# libssl1.1 \
-# ca-certificates \
-# fontconfig \
-# freetype \
-# ttf-dejavu \
-# ttf-droid \
-# ttf-freefont \
-# ttf-liberation \
-# ttf-ubuntu-font-family \
-# && apk add --update --no-cache --virtual .build-deps \
-# msttcorefonts-installer \
-# \
-# # Install microsoft fonts
-# && update-ms-fonts \
-# && fc-cache -f \
-# \
-# # Clean up when done
-# && rm -rf /tmp/* \
-# && apk del .build-deps
+
 
 RUN gem install bundler
 ENV HOME /home/marviorocha/sigdiv
@@ -81,7 +58,7 @@ RUN chmod +x /usr/bin/docker-entrypoint.sh
 
 
 # create credentials
-#ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
 
 EXPOSE 3000
 
