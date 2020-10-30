@@ -1,3 +1,6 @@
 .ash_history
 .local/share/pry/pry_history
+<<<<<<< HEAD
 config/master.key
+=======
+>>>>>>> developer
