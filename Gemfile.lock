@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/netguru/capistrano-docker.git
-  revision: 873aa5fdce66c6962dad555a914d31d4fdc77f5c
-  specs:
-    capistrano-docker (0.2.11)
-      capistrano (>= 3.3)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -84,11 +77,6 @@ GEM
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
-    capistrano (3.14.1)
-      airbrussh (>= 1.0.0)
-      i18n
-      rake (>= 10.0.0)
-      sshkit (>= 1.9.0)
     capybara (3.33.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -388,11 +376,6 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (>= 4.3.1)
   byebug
-<<<<<<< HEAD
-  capistrano
-  capistrano-docker!
-=======
->>>>>>> developer
   capybara (>= 2.15)
   carrierwave (~> 1.0)
   carrierwave-ftp
@@ -438,11 +421,7 @@ DEPENDENCIES
   vcr
   web-console (>= 3.3.0)
   webmock
-<<<<<<< HEAD
   webpacker
-=======
-  webpacker (>= 5.0)
->>>>>>> developer
   zeitwerk
 
 RUBY VERSION
