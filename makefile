@@ -18,5 +18,5 @@ uninstall:
 logs:
 	tail -f log/production.log
 deploy:
-	cap production deploy 
- 
+	git merge developer 
+	git commit -m "deployer to production"
