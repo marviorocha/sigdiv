@@ -12,7 +12,7 @@ class CurrenciesController < ApplicationController
   
   def show
     respond_to do |format|
-      
+      format.html
       format.js
     end
   end
@@ -20,7 +20,7 @@ class CurrenciesController < ApplicationController
   def new
     @currency = Currency.new
     respond_to do |format|
-     
+      format.html
       format.js
     end
      
@@ -28,7 +28,7 @@ class CurrenciesController < ApplicationController
 
   def edit
     respond_to do |format|
-     
+      format.html
       format.js
     end
   end
@@ -62,6 +62,7 @@ class CurrenciesController < ApplicationController
     @currency.destroy
     respond_to do |format|
       format.js
+      
        
     end
   end

@@ -48,8 +48,6 @@ group :development, :test do
   
   gem 'byebug', :platforms => [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails', '~> 4.0'
-  gem 'capistrano', :require => false
-  gem 'capistrano-docker', github: 'netguru/capistrano-docker'
   gem 'pry'
   
 end
