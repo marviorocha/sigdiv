@@ -74,6 +74,8 @@ RUN gem install rubocop
 
 RUN apk update
 
+
+
 COPY . ./ 
 
 COPY ./docker-tools/docker-entrypoint.sh /usr/bin/
