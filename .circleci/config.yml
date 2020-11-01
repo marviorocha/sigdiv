@@ -22,7 +22,7 @@ jobs:
       - image: circleci/postgres:9.5-alpine
         environment:
           POSTGRES_USER: postgres
-          POSTGRES_DB: sigdiv_development
+          POSTGRES_DB: sigdiv_test
           POSTGRES_PASSWORD: admin123
     environment:
       BUNDLE_JOBS: "3"
