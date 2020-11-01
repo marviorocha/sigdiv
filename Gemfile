@@ -26,9 +26,7 @@ gem 'zeitwerk'
 gem 'dentaku'
 gem 'banco_central'
 
-gem 'coffee-rails', '~> 4.2'
-
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', github: 'rails/jbuilder', branch: 'master'
 gem 'bootstrap', '>= 4.3.1'
 gem 'font-awesome-rails'
 
@@ -70,7 +68,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # gem 'chromedriver-helper' is deprecated
   gem 'rspec-rails', '~> 3.6' 
   gem 'rspec-collection_matchers'
   gem 'faker'  
