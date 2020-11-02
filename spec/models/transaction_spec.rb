@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe Transaction, :type => :model do
+describe TransactionSet, :type => :model do
 
   before do    
     create_list(:transaction_2019, 12)

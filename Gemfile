@@ -43,11 +43,13 @@ gem "webpacker", ">= 5.0"
 gem 'bootsnap', '>= 1.1.0', :require => false
 
 group :development, :test do
-  
   gem 'byebug', :platforms => [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails', '~> 4.0'
   gem 'pry'
-  
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'rspec_junit_formatter'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -60,16 +62,16 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'robocop', :require => false
   gem 'rubocop-performance', :require => false
-  gem 'rubocop-rspec', :require => false
+
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper' is deprecated
-  gem 'rspec-rails', '~> 3.6' 
+  gem 'rspec-rails'
   gem 'rspec-collection_matchers'
   gem 'faker'  
   gem 'shoulda-matchers', '4.0.0.rc1'
