@@ -22,15 +22,8 @@ module.exports = function(api) {
         {
           targets: {
             node: 'current'
-<<<<<<< HEAD
           }
         }
-=======
-          },
-          modules: 'commonjs'
-        },
-        '@babel/preset-react'
->>>>>>> developer
       ],
       (isProductionEnv || isDevelopmentEnv) && [
         '@babel/preset-env',
@@ -41,16 +34,6 @@ module.exports = function(api) {
           modules: false,
           exclude: ['transform-typeof-symbol']
         }
-<<<<<<< HEAD
-=======
-      ],
-      [
-        '@babel/preset-react',
-        {
-          development: isDevelopmentEnv || isTestEnv,
-          useBuiltIns: true
-        }
->>>>>>> developer
       ]
     ].filter(Boolean),
     plugins: [
