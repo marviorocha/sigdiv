@@ -17,15 +17,13 @@ class TransactionItem < ApplicationRecord
 
   def final_outstanding_balance
     result = start_balance
-    if amortization? || withdraw?
-      result = Dentaku("#{start_balance} #{transaction_info.category.operation} #{value}")
-    end
+    result = Dentaku("#{start_balance} #{transaction_info.category.operation} #{value}") if amortization? || withdraw?
     
     result
   end
 
   def period
-    result = (Arel.sql((transaction_info.payment_date) - date)).to_i
+    result = Arel.sql(transaction_info.payment_date - date).to_i
     result = 30 if result == 31
     result
   end
@@ -55,11 +53,12 @@ class TransactionItem < ApplicationRecord
   end
 
   private
-    def set_start_balance
-      self.start_balance = debt.outstanding_balance
-    end
 
-    def blank_start_balance?
-      self.start_balance.blank?
-    end
+  def set_start_balance
+    self.start_balance = debt.outstanding_balance
+  end
+
+  def blank_start_balance?
+    start_balance.blank?
+  end
 end

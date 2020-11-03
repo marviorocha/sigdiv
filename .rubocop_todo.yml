@@ -26,7 +26,7 @@ Bundler/OrderedGems:
 # Configuration parameters: EnabledMethods.
 Capybara/FeatureMethods:
   Exclude:
-    - 'spec/features/transaction_item_spec.rb'
+
 
 # Offense count: 10
 # Cop supports --auto-correct.

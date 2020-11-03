@@ -14,9 +14,7 @@ class AttachmentsController < ApplicationController
 
   # GET /attachments/1
   # GET /attachments/1.json
-  def show
-     
-  end
+  def show; end
 
   # GET /attachments/new
   def new

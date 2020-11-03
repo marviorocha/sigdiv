@@ -18,15 +18,15 @@ gem 'uglifier', '>= 1.3.0'
  
 gem 'simple_form'
 gem 'cocoon'
-gem 'carrierwave', '~> 1.0'
-gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp'
+# gem 'carrierwave', '~> 1.0'
+# gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp'
 
 gem 'zeitwerk'
 
 gem 'dentaku'
 gem 'banco_central'
 
-gem 'jbuilder', github: 'rails/jbuilder', branch: 'master'
+gem 'jbuilder', :github => 'rails/jbuilder', :branch => 'master'
 gem 'bootstrap', '>= 4.3.1'
 gem 'font-awesome-rails'
 
@@ -39,12 +39,12 @@ gem 'jquery-datatables'
 gem 'prawn'
 gem 'prawn-table'
 
-gem "webpacker", ">= 5.0"
+gem 'webpacker', '>= 5.0'
 gem 'bootsnap', '>= 1.1.0', :require => false
 
 group :development, :test do
   gem 'byebug', :platforms => [:mri, :mingw, :x64_mingw]
-  gem 'factory_bot_rails', '~> 4.0'
+  gem 'factory_bot_rails'
   gem 'pry'
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -60,9 +60,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
-  gem 'robocop', :require => false
+  gem 'rubocop-rails', :require => false
   gem 'rubocop-performance', :require => false
-
 end
 
 group :test do
@@ -81,10 +80,12 @@ group :test do
   gem 'vcr'
   gem 'rspec-json_expectations'
   gem 'json_matchers'
-  gem 'robocop', :require => false
+  gem 'rubocop-rails', :require => false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', :platforms => [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "fast_jsonapi", "~> 1.5"
+gem 'fast_jsonapi', '~> 1.5'
+
+gem 'rubocop-rspec', '~> 1.42'

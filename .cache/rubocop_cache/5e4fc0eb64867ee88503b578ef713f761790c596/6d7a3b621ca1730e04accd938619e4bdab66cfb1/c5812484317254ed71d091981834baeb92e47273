@@ -1,0 +1,1 @@
+[{"severity":"convention","location":{"begin_pos":151,"end_pos":182},"message":"Layout/LineLength: Line is too long. [151/120]","cop_name":"Layout/LineLength","status":"uncorrected"},{"severity":"convention","location":{"begin_pos":207,"end_pos":217},"message":"Style/HashSyntax: Use the new Ruby 1.9 hash syntax.","cop_name":"Style/HashSyntax","status":"uncorrected"}]

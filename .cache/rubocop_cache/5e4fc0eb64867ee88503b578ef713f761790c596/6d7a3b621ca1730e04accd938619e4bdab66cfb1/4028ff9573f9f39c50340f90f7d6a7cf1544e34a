@@ -1,0 +1,1 @@
+[{"severity":"convention","location":{"begin_pos":151,"end_pos":161},"message":"Style/HashSyntax: Use the new Ruby 1.9 hash syntax.","cop_name":"Style/HashSyntax","status":"uncorrected"}]

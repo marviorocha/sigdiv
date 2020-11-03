@@ -3,7 +3,7 @@
 require 'open-uri'
 
 class BNDES
-  CURRENCY_FILE_URL =	"umCODE.txt"
+  CURRENCY_FILE_URL =	'umCODE.txt'
 
   class << self
 
@@ -15,7 +15,7 @@ class BNDES
       def get_currency(code)
         result = Hash.new
 
-        open(CURRENCY_FILE_URL.gsub("CODE", code.to_s), "r") do |file|
+        open(CURRENCY_FILE_URL.gsub('CODE', code.to_s), 'r') do |file|
           result = parse file
         end
         

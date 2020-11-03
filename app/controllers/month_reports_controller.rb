@@ -4,6 +4,7 @@ class MonthReportsController < ApplicationController
   include ApplicationHelper
   include MonthReportsHelper
   include ActionView::Helpers::NumberHelper
+ 
   def show
     
     start_date = Date.new(params[:year].to_i, params[:month].to_i)
@@ -14,27 +15,27 @@ class MonthReportsController < ApplicationController
     
     
     pdf = Prawn::Document.new
-    pdf.font "Helvetica", size: 8
+    pdf.font 'Helvetica', :size => 8
     pdf.stroke_color 'aaaaaa'
-    pdf.image "app/assets/images/logo_niteroi.jpg", :at => [0, 700], :scale => 0.60
-    pdf.draw_text "PREFEITURA NITERÓI - SECRETARIA MUNICIPAL DE FAZENDA", at: [90, 680], size: 13
+    pdf.image 'app/assets/images/logo_niteroi.jpg', :at => [0, 700], :scale => 0.60
+    pdf.draw_text 'PREFEITURA NITERÓI - SECRETARIA MUNICIPAL DE FAZENDA', :at => [90, 680], :size => 13
    
     pdf.move_down 100
     
-    pdf.text "A - Identificação do Contrato", style: :bold, size: 10
+    pdf.text 'A - Identificação do Contrato', :style => :bold, :size => 10
     ## A Indentificação do Contrato
     pdf.move_down 5
     pdf.stroke_horizontal_rule
     pdf.move_down 5
     
     
-    pdf.bounding_box([0, 595], width: 260, height: 220) do
+    pdf.bounding_box([0, 595], :width => 260, :height => 220) do
       
       indentification(@projection_debt, pdf)         
       
     end
     
-    pdf.bounding_box([310, 595], width: 260, height: 220) do
+    pdf.bounding_box([310, 595], :width => 260, :height => 220) do
       
       indentification_right(@projection_debt, pdf)			
       
@@ -43,19 +44,19 @@ class MonthReportsController < ApplicationController
     ## B - Esquema de Liberação de Recursos
     
     pdf.move_up 95 
-    pdf.text "B - Esquema de Liberação de Recursos", style: :bold, size: 10
+    pdf.text 'B - Esquema de Liberação de Recursos', :style => :bold, :size => 10
     pdf.move_down 5
     pdf.stroke_horizontal_rule
     pdf.move_down 5
     
-    pdf.bounding_box([0, 440], width: 260, height: 220) do
+    pdf.bounding_box([0, 440], :width => 260, :height => 220) do
       
       schema_b(@projection_debt, pdf)
       
     end
     
     
-    pdf.bounding_box([310, 440], width: 240, height: 220) do
+    pdf.bounding_box([310, 440], :width => 240, :height => 220) do
       
       schema_b_right(@projection_debt, pdf)
       
@@ -64,7 +65,7 @@ class MonthReportsController < ApplicationController
     
     ## C - Esquema de Pagamentos
     pdf.move_up 110  
-    pdf.text "C - Esquema de Pagamentos", style: :bold, size: 10
+    pdf.text 'C - Esquema de Pagamentos', :style => :bold, :size => 10
     pdf.move_down 5
     pdf.stroke_horizontal_rule
     pdf.move_down 5 
@@ -72,8 +73,7 @@ class MonthReportsController < ApplicationController
     
     # 1 - A Realizado no Exercício
     
-    pdf.bounding_box([0, 300], width: 540, height: 440) do
-
+    pdf.bounding_box([0, 300], :width => 540, :height => 440) do
       exercicio_1(@projection_debt, pdf)
       pdf.move_down 10
       exercicio_2(@projection_debt, pdf)
@@ -88,40 +88,38 @@ class MonthReportsController < ApplicationController
   
     
     # 4 - A Realizar nos Próximos Exercícios
-    pdf.bounding_box([0, 700], width: 540) do	
+    pdf.bounding_box([0, 700], :width => 540) do	
+     
       exercicio_4(@projection_debt, pdf)
       pdf.move_down 10 
       saldo_devedor(@projection_debt, pdf)
 
       pdf.move_down 20
-      pdf.text "D - Observações", style: :bold, size: 10
+      pdf.text 'D - Observações', :style => :bold, :size => 10
       pdf.move_down 5
       pdf.stroke_horizontal_rule
       pdf.move_down 10 
       
-      pdf.table([[@projection_debt.notes]], width: 540, :cell_style => {:height => 50})
+      pdf.table([[@projection_debt.notes]], :width => 540, :cell_style => { :height => 50 })
 
       pdf.move_down 30
-      data = [ ["E - Local e Data", "F - Órgão", "G - Assinatura do Responsável"],
-      [ "Niterói, 28 de fevereiro de 2019",
-        "Secretaria Municipal de Fazenda de Niterói",
-        ""]]
-      pdf.table(data, width: 540, :row_colors => ["E9ECEF", "FFFFFF", "FFFFFF","FFFFFF","FFFFFF"])                   
-
+      data = [['E - Local e Data', 'F - Órgão', 'G - Assinatura do Responsável'],
+              ['Niterói, 28 de fevereiro de 2019',
+               'Secretaria Municipal de Fazenda de Niterói',
+               '']]
+      pdf.table(data, :width => 540, :row_colors => %w[E9ECEF FFFFFF FFFFFF FFFFFF FFFFFF])                   
     end
 
         
     pdf.render_file 'public/reports.pdf' 
     
-    redirect_to root_path + 'reports.pdf'
+    redirect_to "#{root_path}reports.pdf"
     
         
         
-   end
+  end
       
-    def export		
+   
       
-    end
-      
-    end
+end
     
