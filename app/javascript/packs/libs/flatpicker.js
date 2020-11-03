@@ -1,4 +1,3 @@
-import "flatpickr/dist/flatpickr.min.css";
 import flatpickr from "flatpickr/dist/flatpickr";
 import { Portuguese } from "flatpickr/dist/l10n/pt.js";
 
