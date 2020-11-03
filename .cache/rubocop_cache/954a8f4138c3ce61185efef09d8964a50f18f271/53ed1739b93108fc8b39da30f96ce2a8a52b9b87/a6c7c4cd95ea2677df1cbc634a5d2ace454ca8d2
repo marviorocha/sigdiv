@@ -1,0 +1,1 @@
+[{"severity":"convention","location":{"begin_pos":111,"end_pos":140},"message":"Rails/ReversibleMigration: drop_table(without block) is not reversible.","cop_name":"Rails/ReversibleMigration","status":"unsupported"}]
