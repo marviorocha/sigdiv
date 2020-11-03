@@ -26,16 +26,10 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-<<<<<<< HEAD
-=======
-.irb_history
-.ash_history
->>>>>>> developer
 /public/packs
 /public/packs-test
 /node_modules
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-
- 
+yarn.lock
