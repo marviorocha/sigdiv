@@ -105,15 +105,15 @@ describe Debt, :type => :model do
     end    
 
     context 'when debt is finished' do
-      # it 'is not in grace period' do
-      # 	expect(@debt.in_grace_period?).to be false
-      # end
-      # it 'is not is amortization period' do
-      # 	expect(@debt_in_grace_period.in_amortization_period?).to be false
-      # end
-      # it 'status returns finished' do
-      # 	expect(@debt.status).to eq('Finalizado')
-      # end
+      it 'is not in grace period' do
+      	expect(@debt.in_grace_period?).to be false
+      end
+      it 'is not is amortization period' do
+      	expect(@debt_in_grace_period.in_amortization_period?).to be false
+      end
+      it 'status returns finished' do
+      	expect(@debt.status).to eq('Finalizado')
+      end
     end
   end
 
