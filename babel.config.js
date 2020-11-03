@@ -56,13 +56,7 @@ module.exports = function(api) {
       [
         '@babel/plugin-transform-runtime',
         {
-<<<<<<< HEAD
           helpers: false
-=======
-          helpers: false,
-          regenerator: true,
-          corejs: false
->>>>>>> developer
         }
       ],
       [
@@ -70,15 +64,12 @@ module.exports = function(api) {
         {
           async: false
         }
-<<<<<<< HEAD
-=======
       ],
       isProductionEnv && [
         'babel-plugin-transform-react-remove-prop-types',
         {
           removeImport: true
         }
->>>>>>> developer
       ]
     ].filter(Boolean)
   }
