@@ -3,7 +3,6 @@ inherit_from: .rubocop_todo.yml
 require:
   - rubocop-rails
   - rubocop-performance
-  - rubocop-rspec
 inherit_mode:
   merge:
     - Exclude
@@ -19,6 +18,7 @@ AllCops:
 Metrics/MethodLength:
   Exclude:
     - db/migrate/*
+    
 
 Style/Documentation:
   Enabled: false
@@ -29,5 +29,3 @@ Metrics/BlockLength:
     - "config/initializers/simple_form_bootstrap.rb"
     - "db/seeds.rb"
   Max: 45
-RSpec/LetSetup:
-  Enabled: false

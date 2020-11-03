@@ -16,10 +16,10 @@ VCR.configure do |config|
 end
 
 # Capybara Chrome Headless
-Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new app, :browser => :chrome,
-    :options => Selenium::WebDriver::Chrome::Options.new(:args => %w[headless disable-gpu])
-end
+# Capybara.register_driver :chrome do |app|
+#   Capybara::Selenium::Driver.new app, :browser => :chrome,
+#     :options => Selenium::WebDriver::Chrome::Options.new(:args => %w[headless disable-gpu])
+# end
 
 Capybara.javascript_driver = :chrome
 Capybara.default_max_wait_time = 5
@@ -40,6 +40,10 @@ Capybara.default_max_wait_time = 5
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+   
+  config.exclude_pattern = '**/{models,features,services}/*_spec.rb'
+ 
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

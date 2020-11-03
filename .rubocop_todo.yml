@@ -24,8 +24,8 @@ Bundler/OrderedGems:
 # Offense count: 5
 # Cop supports --auto-correct.
 # Configuration parameters: EnabledMethods.
-Capybara/FeatureMethods:
-  Exclude:
+# Capybara/FeatureMethods:
+#   Exclude:
 
 
 # Offense count: 10
@@ -390,84 +390,84 @@ Performance/StringReplacement:
     - 'app/models/currency.rb'
     - 'app/services/formula_service.rb'
 
-# Offense count: 13
-# Configuration parameters: Prefixes.
-# Prefixes: when, with, without
-RSpec/ContextWording:
-  Exclude:
-    - 'spec/models/charge_spec.rb'
-    - 'spec/models/debt_spec.rb'
+# # Offense count: 13
+# # Configuration parameters: Prefixes.
+# # Prefixes: when, with, without
+# RSpec/ContextWording:
+#   Exclude:
+#     - 'spec/models/charge_spec.rb'
+#     - 'spec/models/debt_spec.rb'
 
-# Offense count: 28
-# Cop supports --auto-correct.
-# Configuration parameters: SkipBlocks, EnforcedStyle.
-# SupportedStyles: described_class, explicit
-RSpec/DescribedClass:
-  Exclude:
-    - 'spec/models/creditor_spec.rb'
-    - 'spec/models/debt_spec.rb'
-    - 'spec/models/future_transaction_spec.rb'
-    - 'spec/models/transaction_info_spec.rb'
-    - 'spec/models/transaction_spec.rb'
-    - 'spec/services/formula_service_spec.rb'
+# # Offense count: 28
+# # Cop supports --auto-correct.
+# # Configuration parameters: SkipBlocks, EnforcedStyle.
+# # SupportedStyles: described_class, explicit
+# RSpec/DescribedClass:
+#   Exclude:
+#     - 'spec/models/creditor_spec.rb'
+#     - 'spec/models/debt_spec.rb'
+#     - 'spec/models/future_transaction_spec.rb'
+#     - 'spec/models/transaction_info_spec.rb'
+#     - 'spec/models/transaction_spec.rb'
+#     - 'spec/services/formula_service_spec.rb'
 
-# Offense count: 4
-# Configuration parameters: CustomIncludeMethods.
-RSpec/EmptyExampleGroup:
-  Exclude:
-    - 'spec/controllers/formulas_controller_spec.rb'
-    - 'spec/models/debt_spec.rb'
-    - 'spec/models/payment_charge_spec.rb'
+# # Offense count: 4
+# # Configuration parameters: CustomIncludeMethods.
+# RSpec/EmptyExampleGroup:
+#   Exclude:
+#     - 'spec/controllers/formulas_controller_spec.rb'
+#     - 'spec/models/debt_spec.rb'
+#     - 'spec/models/payment_charge_spec.rb'
 
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: AllowConsecutiveOneLiners.
-RSpec/EmptyLineAfterExample:
-  Exclude:
-    - 'spec/models/debt_spec.rb'
+# # Offense count: 5
+# # Cop supports --auto-correct.
+# # Configuration parameters: AllowConsecutiveOneLiners.
+# RSpec/EmptyLineAfterExample:
+#   Exclude:
+#     - 'spec/models/debt_spec.rb'
 
-# Offense count: 9
-# Cop supports --auto-correct.
-RSpec/EmptyLineAfterExampleGroup:
-  Exclude:
-    - 'spec/models/debt_spec.rb'
+# # Offense count: 9
+# # Cop supports --auto-correct.
+# RSpec/EmptyLineAfterExampleGroup:
+#   Exclude:
+#     - 'spec/models/debt_spec.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-RSpec/EmptyLineAfterHook:
-  Exclude:
-    - 'spec/models/debt_spec.rb'
+# # Offense count: 2
+# # Cop supports --auto-correct.
+# RSpec/EmptyLineAfterHook:
+#   Exclude:
+#     - 'spec/models/debt_spec.rb'
 
-# Offense count: 3
-# Configuration parameters: Max.
-RSpec/ExampleLength:
-  Exclude:
-    - 'spec/features/transaction_item_spec.rb'
+# # Offense count: 3
+# # Configuration parameters: Max.
+# RSpec/ExampleLength:
+#   Exclude:
+#     - 'spec/features/transaction_item_spec.rb'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: implicit, each, example
-RSpec/HookArgument:
-  Exclude:
-    - 'spec/features/transaction_item_spec.rb'
-    - 'spec/models/debt_spec.rb'
-    - 'spec/models/future_transaction_spec.rb'
+# # Offense count: 3
+# # Cop supports --auto-correct.
+# # Configuration parameters: EnforcedStyle.
+# # SupportedStyles: implicit, each, example
+# RSpec/HookArgument:
+#   Exclude:
+#     - 'spec/features/transaction_item_spec.rb'
+#     - 'spec/models/debt_spec.rb'
+#     - 'spec/models/future_transaction_spec.rb'
 
-# Offense count: 93
-# Configuration parameters: AssignmentOnly.
-RSpec/InstanceVariable:
-  Exclude:
-    - 'spec/features/transaction_item_spec.rb'
-    - 'spec/models/charge_spec.rb'
-    - 'spec/models/debt_spec.rb'
-    - 'spec/models/future_transaction_spec.rb'
-    - 'spec/models/transaction_info_spec.rb'
-    - 'spec/services/formula_service_spec.rb'
+# # Offense count: 93
+# # Configuration parameters: AssignmentOnly.
+# RSpec/InstanceVariable:
+#   Exclude:
+#     - 'spec/features/transaction_item_spec.rb'
+#     - 'spec/models/charge_spec.rb'
+#     - 'spec/models/debt_spec.rb'
+#     - 'spec/models/future_transaction_spec.rb'
+#     - 'spec/models/transaction_info_spec.rb'
+#     - 'spec/services/formula_service_spec.rb'
 
-# Offense count: 4
-RSpec/MultipleExpectations:
-  Max: 4
+# # Offense count: 4
+# RSpec/MultipleExpectations:
+#   Max: 4
 
 # Offense count: 1
 Security/Open:

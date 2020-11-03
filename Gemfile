@@ -9,39 +9,26 @@ ruby '2.7.2'
 gem 'rails', '~> 6.0.3.4'
  
 gem 'pg'
- 
 gem 'puma', '~> 3.11'
- 
 gem 'sass-rails', '~> 5.0'
- 
 gem 'uglifier', '>= 1.3.0'
- 
+gem 'bootsnap', '>= 1.1.0', :require => false
+
 gem 'simple_form'
 gem 'cocoon'
-# gem 'carrierwave', '~> 1.0'
-# gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp'
-
 gem 'zeitwerk'
-
 gem 'dentaku'
 gem 'banco_central'
-
 gem 'jbuilder', :github => 'rails/jbuilder', :branch => 'master'
 gem 'bootstrap', '>= 4.3.1'
 gem 'font-awesome-rails'
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-validation-rails'
 gem 'jquery-mask-plugin'
 gem 'jquery-datatables'
 
-gem 'prawn'
-gem 'prawn-table'
-
-gem 'webpacker', '>= 5.0'
-gem 'bootsnap', '>= 1.1.0', :require => false
-
+ 
 group :development, :test do
   gem 'byebug', :platforms => [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
@@ -50,25 +37,26 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec_junit_formatter'
   gem 'rspec-rails'
+  # gem 'rubocop-rspec', '~> 1.44.1', require: false
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+ 
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
   gem 'rubocop-rails', :require => false
   gem 'rubocop-performance', :require => false
+   
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
+ 
   gem 'capybara'
   gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
+ 
   # gem 'chromedriver-helper' is deprecated
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
@@ -87,5 +75,6 @@ end
 gem 'tzinfo-data', :platforms => [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'fast_jsonapi', '~> 1.5'
-
-gem 'rubocop-rspec', '~> 1.42'
+gem 'prawn'
+gem 'prawn-table'
+gem 'webpacker', '>= 5.0'

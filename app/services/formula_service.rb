@@ -62,7 +62,7 @@ class FormulaService
       result = []
 
       debt.send(object_name.to_s.pluralize).each do |object|
-        result << object.send(var1) * object.send(var2)
+      result << object.send(var1) * object.send(var2)
       end
 
       result
