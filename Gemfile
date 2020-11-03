@@ -16,16 +16,7 @@ gem 'bootsnap', '>= 1.1.0', :require => false
 
 gem 'simple_form'
 gem 'cocoon'
-<<<<<<< HEAD
-gem 'carrierwave', '~> 1.0'
-gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp'
-
-gem "webpacker"
-
-
-=======
 gem 'zeitwerk'
->>>>>>> developer
 gem 'dentaku'
 gem 'banco_central'
 gem 'jbuilder', :github => 'rails/jbuilder', :branch => 'master'
@@ -37,27 +28,10 @@ gem 'jquery-validation-rails'
 gem 'jquery-mask-plugin'
 gem 'jquery-datatables'
 
-<<<<<<< HEAD
-gem 'prawn'
-gem 'prawn-table'
-
-gem "webpacker"
-gem 'bootsnap', '>= 1.1.0', :require => false
-
-=======
  
->>>>>>> developer
 group :development, :test do
   gem 'byebug', :platforms => [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
-<<<<<<< HEAD
-  gem 'capistrano', '~> 3.11', :require => false
-  gem 'capistrano-rails', '~> 1.4', :require => false
-  gem 'capistrano-passenger'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
-=======
->>>>>>> developer
   gem 'pry'
   gem 'capybara'
   gem 'selenium-webdriver'
@@ -103,4 +77,4 @@ gem 'tzinfo-data', :platforms => [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'fast_jsonapi', '~> 1.5'
 gem 'prawn'
 gem 'prawn-table'
-gem 'webpacker', '>= 5.0'
+gem 'webpacker'
