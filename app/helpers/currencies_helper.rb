@@ -1,32 +1,30 @@
+# frozen_string_literal: true
+
 module CurrenciesHelper
     
     
 
     def name_to_currency(name)
         case name
-        when "USD"
+        when 'USD'
              BancoCentral.last(:dolar)
-        when "EURO"
+        when 'EURO'
              BancoCentral.last(:euro)
-        when "DOLAR_VENDA"
+        when 'DOLAR_VENDA'
             BancoCentral.last(:dolar_venda)
-        when "DOLAR_VENDA"
+        when 'DOLAR_VENDA'
             BancoCentral.last(:dolar_compra)
-        when "EURO VENDA"
+        when 'EURO VENDA'
             BancoCentral.last(:euro_venda)
-        when "EURO COMPRA"
+        when 'EURO COMPRA'
             BancoCentral.last(:euro_compra)
-        when "IENE"
+        when 'IENE'
             BancoCentral.last(:iene)
-        when "FRANCO SUIÇO"
+        when 'FRANCO SUIÇO'
             BancoCentral.last(:franco_suico)
-         else
-  
-         end
+        end
         
     end
 
     
-
-
 end

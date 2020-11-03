@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'factory_bot'
 FactoryBot.define do
   sequence :date_2019 do |n|				
     Date.new(2019, n, n)

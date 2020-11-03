@@ -8,7 +8,6 @@ class CurrenciesController < ApplicationController
     @currencies = Currency.all
     
   end
-
   
   def show
     respond_to do |format|
@@ -38,9 +37,9 @@ class CurrenciesController < ApplicationController
 
     respond_to do |format|
       if @currency.save
-        format.js { flash.now[:notice] = "A moeda foi criado com sucesso!" }
+        format.js { flash.now[:notice] = 'A moeda foi criado com sucesso!' }
       else
-        format.js { render :new, :alert => "Não foi possível adicionar"}
+        format.js { render :new, :alert => 'Não foi possível adicionar' }
       end
     end
   end
@@ -52,11 +51,10 @@ class CurrenciesController < ApplicationController
         format.js { flash.now[:notice] = "A moeda (#{@currency.name}) foi atualizada!" } 
       else
        
-        format.js {render :edit} 
+        format.js { render :edit } 
       end
     end
   end
-
  
   def destroy
     @currency.destroy
@@ -70,12 +68,10 @@ class CurrenciesController < ApplicationController
   private
     
   def set_currency
-    @currency = Currency.find_by(id: params[:id])
+    @currency = Currency.find_by(:id => params[:id])
   end
-
   
   def currency_params
     params.require(:currency).permit(:name, :formula, :description, :last_currency, :date_currency)
   end
-
 end

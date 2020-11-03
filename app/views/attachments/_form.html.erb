@@ -1,4 +1,4 @@
-<%= simple_form_for [@debt, @attachment], url: [@debt, @attachment] do |f| %>
+<%=  simple_form_for [@debt, @attachment], url: [@debt, @attachment] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div class="modal-body">
@@ -6,7 +6,7 @@
       <%= f.input :name %>
       <%= f.input :description %>
       <h6><%= "Arquivo original: #{@attachment.file_identifier}" if @attachment.persisted?  %></h6>
-      <%= f.input :file, as: :file %>
+      <%= f.input :file, as: :file, direct_upload: true %>
     </div>
   </div>
 <% end %>

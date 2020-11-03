@@ -14,7 +14,6 @@ Rails.application.routes.draw do
     end
   end
 
-
   resources :transaction_types
   resources :currencies
   resources :creditors

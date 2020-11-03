@@ -30,9 +30,14 @@ RUN apk add --update --no-cache \
       imagemagick \
       graphicsmagick-dev \
       ruby-dev \
+<<<<<<< HEAD
       musl-dev 
 
 
+=======
+      musl-dev \
+      chromium-chromedriver
+>>>>>>> developer
 
 RUN gem install bundler
 ENV HOME /home/marviorocha/sigdiv
@@ -50,7 +55,6 @@ RUN yarn install --check-files
 RUN gem install rubocop
 
 RUN apk update
-
 
 
 COPY . ./ 

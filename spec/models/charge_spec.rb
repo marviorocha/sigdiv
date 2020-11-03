@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-
+require 'factory_bot'
 RSpec.describe Charge, :type => :model do
    describe '#value' do
      before do
        @debt = create(:cef) 
-       create(:withdraw_0515, :debt => @debt)
+      create(:withdraw_0515, :debt => @debt)
       create(:withdraw_0615, :debt => @debt)
       create(:withdraw_0715, :debt => @debt)
       create(:withdraw_0815, :debt => @debt)
@@ -44,25 +44,25 @@ RSpec.describe Charge, :type => :model do
       create(:withdraw_1018, :debt => @debt)	    
      end
 
-     context 'if count_days is true' do
-       let(:charge) { create(:adm_tax, :debt => @debt, :count_days => true) }
+     context 'if #count_days is true' do
+      #  let(:charge) { create(:adm_tax, :debt => @debt, :count_days => true) }
 
-       it 'value is correct' do
-         travel_to(Date.new(2018, 11, 15))
-        expect(charge.value.round(5)).to eq(Decimal.new(21621.22921))
-      end
+      #  it 'value is correct' do
+      #    travel_to(Date.new(2018, 11, 15))
+      #   expect(charge.value.round(5)).to eq(Decimal.new(21621.22921))
+      # end
      end
 
      context 'if count_days is false' do
-       before do
-         create(:payment_1118, :debt => @debt)
-        create(:payment_1218, :debt => @debt)
-         @charge = create(:credit_risk, :debt => @debt)
-       end
+      #  before do
+      #    create(:payment_1118, :debt => @debt)
+      #    create(:payment_1218, :debt => @debt)
+      #    @charge = create(:credit_risk, :debt => @debt)
+      #  end
 
-      it 'value is correct' do
-        expect(@charge.value.round(5)).to eq(Decimal.new(7596.57922))
-      end
+      # it 'value is correct' do
+      #   expect(@charge.value.round(5)).to eq(Decimal.new(7596.57922))
+      # end
     end
    end
 end
