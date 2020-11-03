@@ -1,1 +1,0 @@
-[{"severity":"convention","location":{"begin_pos":79,"end_pos":79},"message":"Layout/TrailingEmptyLines: Final newline missing.","cop_name":"Layout/TrailingEmptyLines","status":"uncorrected"}]

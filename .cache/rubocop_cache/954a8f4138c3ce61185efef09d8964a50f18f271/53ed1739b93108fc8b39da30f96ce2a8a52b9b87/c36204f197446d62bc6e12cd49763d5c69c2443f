@@ -1,1 +1,0 @@
-[{"severity":"convention","location":{"begin_pos":691,"end_pos":732},"message":"Rails/FilePath: Please use `Rails.root.join('path/to')` instead.","cop_name":"Rails/FilePath","status":"unsupported"}]
