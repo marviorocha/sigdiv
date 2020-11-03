@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'factory_bot'
 FactoryBot.define do
   factory :currency, :aliases => [:uprd] do
     name { 'UPRD' }

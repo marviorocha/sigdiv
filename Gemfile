@@ -9,75 +9,82 @@ ruby '2.7.2'
 gem 'rails', '~> 6.0.3.4'
  
 gem 'pg'
- 
 gem 'puma', '~> 3.11'
- 
 gem 'sass-rails', '~> 5.0'
- 
 gem 'uglifier', '>= 1.3.0'
- 
+gem 'bootsnap', '>= 1.1.0', :require => false
+
 gem 'simple_form'
 gem 'cocoon'
+<<<<<<< HEAD
 gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp'
 
 gem "webpacker"
 
 
+=======
+gem 'zeitwerk'
+>>>>>>> developer
 gem 'dentaku'
 gem 'banco_central'
-
-gem 'coffee-rails', '~> 4.2'
-
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', :github => 'rails/jbuilder', :branch => 'master'
 gem 'bootstrap', '>= 4.3.1'
 gem 'font-awesome-rails'
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-validation-rails'
 gem 'jquery-mask-plugin'
 gem 'jquery-datatables'
 
+<<<<<<< HEAD
 gem 'prawn'
 gem 'prawn-table'
 
 gem "webpacker"
 gem 'bootsnap', '>= 1.1.0', :require => false
 
+=======
+ 
+>>>>>>> developer
 group :development, :test do
-  
   gem 'byebug', :platforms => [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
+<<<<<<< HEAD
   gem 'capistrano', '~> 3.11', :require => false
   gem 'capistrano-rails', '~> 1.4', :require => false
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
+=======
+>>>>>>> developer
   gem 'pry'
-  
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'rspec_junit_formatter'
+  gem 'rspec-rails'
+  # gem 'rubocop-rspec', '~> 1.44.1', require: false
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+ 
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
-  gem 'robocop', :require => false
+  gem 'rubocop-rails', :require => false
   gem 'rubocop-performance', :require => false
-  gem 'rubocop-rspec', :require => false
+   
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+ 
+  gem 'capybara'
   gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
-  gem 'rspec-rails', '~> 3.6' 
+ 
+  # gem 'chromedriver-helper' is deprecated
+  gem 'rspec-rails'
   gem 'rspec-collection_matchers'
   gem 'faker'  
   gem 'shoulda-matchers', '4.0.0.rc1'
@@ -87,10 +94,13 @@ group :test do
   gem 'vcr'
   gem 'rspec-json_expectations'
   gem 'json_matchers'
-  gem 'robocop', :require => false
+  gem 'rubocop-rails', :require => false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', :platforms => [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "fast_jsonapi", "~> 1.5"
+gem 'fast_jsonapi', '~> 1.5'
+gem 'prawn'
+gem 'prawn-table'
+gem 'webpacker', '>= 5.0'

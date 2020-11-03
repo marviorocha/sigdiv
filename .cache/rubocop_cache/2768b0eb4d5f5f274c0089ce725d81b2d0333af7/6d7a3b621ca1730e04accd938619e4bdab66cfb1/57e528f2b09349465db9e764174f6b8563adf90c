@@ -1,1 +1,0 @@
-[{"severity":"convention","location":{"begin_pos":694,"end_pos":722},"message":"Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.","cop_name":"Layout/HashAlignment","status":"uncorrected"}]

@@ -11,9 +11,9 @@ class Debt < ApplicationRecord
   
   accepts_nested_attributes_for :transaction_infos, :allow_destroy => true
 
-  enum :category => [:interno, :externo]
-  enum :amortization_type => [:sac, :price, :single]
-  enum :legislation_level => [:federal, :estadual, :municipal]
+  enum :category => { :interno => 0, :externo => 1 }
+  enum :amortization_type => { :sac => 0, :price => 1, :single => 2 }
+  enum :legislation_level => { :federal => 0, :estadual => 1, :municipal => 2 }
   
   validates :code, :presence => true, :numericality => { :only_integer => true }, :length => { :is => 6 }
   validates :contract_value, :presence => true
@@ -82,7 +82,7 @@ class Debt < ApplicationRecord
   # Juros
   def interest(interest_rate = self.interest_rate)
     withdraws_total = 0
-    withdraws.where(:date => reference_period).each do |withdraw|
+    withdraws.where(:date => reference_period).find_each do |withdraw|
       withdraws_total += withdraw.value * interest_rate / 360 * (payment_date - (withdraw.date - 1.day)).to_i
     end
 
@@ -135,7 +135,7 @@ class Debt < ApplicationRecord
 
   def withdraws_pro_rata
     result = []
-    withdraws.where(:date => reference_period).each do |withdraw|
+    withdraws.where(:date => reference_period).find_each do |withdraw|
       result += result + [withdraw.value * withdraw.period]
     end
   end
@@ -164,9 +164,7 @@ class Debt < ApplicationRecord
     transaction_items.where('date < ?', end_date).reject(&:withdraw?).sort_by(&:date).last.try(:exchange_rate)
   end
 
-  def amortizations_count
-    amortizations.count
-  end
+  delegate :count, :to => :amortizations, :prefix => true
 
   def grace_period_payments_number
     (grace_period.year * 12 + grace_period.month) - (signature_date.year * 12 + signature_date.month)

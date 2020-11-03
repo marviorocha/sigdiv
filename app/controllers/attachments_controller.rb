@@ -14,9 +14,7 @@ class AttachmentsController < ApplicationController
 
   # GET /attachments/1
   # GET /attachments/1.json
-  def show
-    redirect_to @attachment.file.url
-  end
+  def show; end
 
   # GET /attachments/new
   def new
@@ -54,6 +52,7 @@ class AttachmentsController < ApplicationController
       if @attachment.update(attachment_params)
         format.html { render :index, :layout => false, :notice => 'O registro foi salvo com sucesso.' }
         format.json { render :show, :status => :ok, :location => @attachment }
+
       else
         format.html { render :edit }
         format.json { render :json => @attachment.errors, :status => :unprocessable_entity }
@@ -65,9 +64,11 @@ class AttachmentsController < ApplicationController
   # DELETE /attachments/1.json
   def destroy
     @attachment.destroy
+    @attachment.file.purge
     respond_to do |format|
       format.html { render :index, :layout => false, :notice => 'O registro foi removido com sucesso.' }
       format.json { head :no_content }
+      
     end
   end
 

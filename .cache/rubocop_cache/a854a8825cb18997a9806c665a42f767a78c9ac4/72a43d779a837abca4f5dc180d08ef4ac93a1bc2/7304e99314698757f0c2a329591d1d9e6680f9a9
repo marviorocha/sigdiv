@@ -1,1 +1,0 @@
-[{"severity":"convention","location":{"begin_pos":145,"end_pos":154},"message":"Style/HashSyntax: Use hash rockets syntax.","cop_name":"Style/HashSyntax","status":"uncorrected"},{"severity":"convention","location":{"begin_pos":179,"end_pos":188},"message":"Style/HashSyntax: Use hash rockets syntax.","cop_name":"Style/HashSyntax","status":"uncorrected"}]

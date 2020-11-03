@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'factory_bot'
 FactoryBot.define do
   factory :transaction_item do
     factory :withdraw_20151221 do

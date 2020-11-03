@@ -12,7 +12,7 @@ class TransactionSet
   def balance_by(date)
     result = 0
     items.select { |i| i.date.year == date.year && i.date.month == date.month }.each_with_index do |item, index|
-      result = item.start_balance if index == 0
+      result = item.start_balance if index.zero?
       result = Dentaku("#{result} #{item.transaction_info.category.operation} #{item.value}") if item.amortization? || item.withdraw?
     end
     result

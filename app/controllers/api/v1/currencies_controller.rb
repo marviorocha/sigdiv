@@ -1,22 +1,24 @@
+# frozen_string_literal: true
+
 module Api 
     module V1
         class CurrenciesController < ApplicationController
             
-            before_action :set_currencies, only: [:update, :show, :destroy]
-            protect_from_forgery with: :null_session
+            before_action :set_currencies, :only => [:update, :show, :destroy]
+            protect_from_forgery :with => :null_session
             # Get method to all url: /api/v1/
             def index
                 currencies = Currency.all
-                render json: CurrenciesSerializer.new(currencies).serialized_json
+                render :json => CurrenciesSerializer.new(currencies).serialized_json
             end
             
             # Post method to url: /api/v1/new
             def create
                 currencies = Currency.new(params_currencies)
                 if currencies.save 
-                render json: CurrenciesSerializer.new(currencies).serialized_json
+                render :json => CurrenciesSerializer.new(currencies).serialized_json
                 else
-                 render json: {error: currencies.errors.messages }, status: 422
+                 render :json => { :error => currencies.errors.messages }, :status => :unprocessable_entity
                 end
             end
 
@@ -24,15 +26,15 @@ module Api
             def update
                 
                 if @currencies.update(params_currencies) 
-                render json: CurrenciesSerializer.new(@currencies).serialized_json
+                render :json => CurrenciesSerializer.new(@currencies).serialized_json
                 else
-                 render json: {error: currencies.errors.messages }, status: 422
+                 render :json => { :error => currencies.errors.messages }, :status => :unprocessable_entity
                 end
             end
             
             # Get method to url: /api/v1/:id
             def show 
-                render json: CurrenciesSerializer.new(@currencies).serialized_json, status: :ok
+                render :json => CurrenciesSerializer.new(@currencies).serialized_json, :status => :ok
             end
 
             # Delete method to url: /api/v1/:id
@@ -41,11 +43,11 @@ module Api
                 if @currencies.destroy
                 head :no_content
                 else
-                render json: {error: currencies.errors.messages }, status: 422
+                render :json => { :error => currencies.errors.messages }, :status => :unprocessable_entity
                 end
             end
 
-            private
+          private
 
             def set_currencies
                 @currencies = Currency.find(params[:id])
@@ -54,7 +56,6 @@ module Api
             def params_currencies
                 params.require(:currency).permit(:id, :name, :formula, :description)
             end
-
         end
     end
 end

@@ -3768,14 +3768,14 @@ TransactionItem.create!(
 value = BigDecimal('7754.1005')
 value_brl = BigDecimal('1.12459645'),
 
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 1, 15),
-  :value_brl => value_brl,
-  :exchange_rate =>BigDecimal('1.12459645'),
-  :transaction_info => interest_bnds_sub_a,
-  :start_balance => BigDecimal('1479494.08130')
-)
+            TransactionItem.create!(
+              :value => value,
+              :date => Date.new(2016, 1, 15),
+              :value_brl => value_brl,
+              :exchange_rate => BigDecimal('1.12459645'),
+              :transaction_info => interest_bnds_sub_a,
+              :start_balance => BigDecimal('1479494.08130')
+            )
 
 value = BigDecimal('11517.4879')
 value_brl = BigDecimal('1.73571224')
@@ -3802,25 +3802,25 @@ TransactionItem.create!(
 )
 
 value = BigDecimal('22067.3857')
-value_brl =BigDecimal('1.73571224')
+value_brl = BigDecimal('1.73571224')
 
 TransactionItem.create!(
   :value => value,
   :date => Date.new(2016, 10, 15),
   :value_brl => value_brl,
-  :exchange_rate =>BigDecimal('1.73571224'),
+  :exchange_rate => BigDecimal('1.73571224'),
   :transaction_info => interest_bnds_sub_a,
   :start_balance => BigDecimal('3981845.13040')
 )
 
 value = BigDecimal('21720.9652')
-value_brl =BigDecimal('1.73571224')
+value_brl = BigDecimal('1.73571224')
 
 TransactionItem.create!(
   :value => value,
   :date => Date.new(2017, 1, 15),
   :value_brl => value_brl,
-  :exchange_rate =>BigDecimal('1.73571224'),
+  :exchange_rate => BigDecimal('1.73571224'),
   :transaction_info => interest_bnds_sub_a,
   :start_balance => BigDecimal('3981845.13040')
 )
@@ -3960,97 +3960,97 @@ TransactionItem.create!(
 #Sub B interests
 
 value = BigDecimal('8672.18320')
-value_brl =BigDecimal('1.73571224')
+value_brl = BigDecimal('1.73571224')
 
 TransactionItem.create!(
   :value => value,
   :date => Date.new(2015, 4, 15),
   :value_brl => value_brl,
-  :exchange_rate =>BigDecimal('1.73571224'),
+  :exchange_rate => BigDecimal('1.73571224'),
   :transaction_info => interest_bnds_sub_b,
   :start_balance => BigDecimal('706945.8532')
 )
 
 value = BigDecimal('36793.90520')
-value_brl =BigDecimal('1.73571224')
+value_brl = BigDecimal('1.73571224')
 
 TransactionItem.create!(
   :value => value,
   :date => Date.new(2015, 7, 15),
   :value_brl => value_brl,
-  :exchange_rate =>BigDecimal('1.73571224'),
+  :exchange_rate => BigDecimal('1.73571224'),
   :transaction_info => interest_bnds_sub_b,
   :start_balance => BigDecimal('2069187.7810')
 )
 
 value = BigDecimal('41100.27689')
-value_brl =BigDecimal('1.73571224')
+value_brl = BigDecimal('1.73571224')
 
 TransactionItem.create!(
   :value => value,
   :date => Date.new(2015, 10, 15),
   :value_brl => value_brl,
-  :exchange_rate =>BigDecimal('1.73571224'),
+  :exchange_rate => BigDecimal('1.73571224'),
   :transaction_info => interest_bnds_sub_b,
   :start_balance => BigDecimal('2069187.7810')
 )
 
 value = BigDecimal('60317.66040')
-value_brl =BigDecimal('1.73571224')
+value_brl = BigDecimal('1.73571224')
 
 TransactionItem.create!(
   :value => value,
   :date => Date.new(2016, 1, 15),
   :value_brl => value_brl,
-  :exchange_rate =>BigDecimal('1.73571224'),
+  :exchange_rate => BigDecimal('1.73571224'),
   :transaction_info => interest_bnds_sub_b,
   :start_balance => BigDecimal('3169503.2319')
 )
 
 value = BigDecimal('131258.76350')
-value_brl =BigDecimal('1.73571224')
+value_brl = BigDecimal('1.73571224')
 
 TransactionItem.create!(
   :value => value,
   :date => Date.new(2016, 4, 15),
   :value_brl => value_brl,
-  :exchange_rate =>BigDecimal('1.73571224'),
+  :exchange_rate => BigDecimal('1.73571224'),
   :transaction_info => interest_bnds_sub_b,
   :start_balance => BigDecimal('6576619.0617')
 )
 
 value = BigDecimal('131258.76350')
-value_brl =BigDecimal('1.73571224')
+value_brl = BigDecimal('1.73571224')
 
 TransactionItem.create!(
   :value => value,
   :date => Date.new(2016, 7, 15),
   :value_brl => value_brl,
-  :exchange_rate =>BigDecimal('1.73571224'),
+  :exchange_rate => BigDecimal('1.73571224'),
   :transaction_info => interest_bnds_sub_b,
   :start_balance => BigDecimal('6995873.5642')
 )
 
 value = BigDecimal('148184.55750')
-value_brl =BigDecimal('1.73571224')
+value_brl = BigDecimal('1.73571224')
 
 TransactionItem.create!(
   :value => value,
   :date => Date.new(2016, 10, 15),
   :value_brl => value_brl,
-  :exchange_rate =>BigDecimal('1.73571224'),
+  :exchange_rate => BigDecimal('1.73571224'),
   :transaction_info => interest_bnds_sub_b,
   :start_balance => BigDecimal('8370399.6889')
 )
 
 value = BigDecimal('190016.06960')
-value_brl =BigDecimal('1.73571224')
+value_brl = BigDecimal('1.73571224')
 
 TransactionItem.create!(
   :value => value,
   :date => Date.new(2017, 1, 15),
   :value_brl => value_brl,
-  :exchange_rate =>BigDecimal('1.73571224'),
+  :exchange_rate => BigDecimal('1.73571224'),
   :transaction_info => interest_bnds_sub_b,
   :start_balance => BigDecimal('10712929.0320')
 )

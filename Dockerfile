@@ -30,32 +30,8 @@ RUN apk add --update --no-cache \
       imagemagick \
       graphicsmagick-dev \
       ruby-dev \
-      musl-dev 
-
-# Install binary to run PDF
-# libstdc++ \
-# libx11 \
-# libxrender \
-# libxext \
-# libssl1.1 \
-# ca-certificates \
-# fontconfig \
-# freetype \
-# ttf-dejavu \
-# ttf-droid \
-# ttf-freefont \
-# ttf-liberation \
-# ttf-ubuntu-font-family \
-# && apk add --update --no-cache --virtual .build-deps \
-# msttcorefonts-installer \
-# \
-# # Install microsoft fonts
-# && update-ms-fonts \
-# && fc-cache -f \
-# \
-# # Clean up when done
-# && rm -rf /tmp/* \
-# && apk del .build-deps
+      musl-dev \
+      chromium-chromedriver
 
 RUN gem install bundler
 ENV HOME /home/marviorocha/sigdiv
@@ -73,6 +49,7 @@ RUN yarn install --check-files
 RUN gem install rubocop
 
 RUN apk update
+
 
 COPY . ./ 
 

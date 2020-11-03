@@ -23,4 +23,9 @@ console.log('Hello World from Webpacker')
 // require("@rails/activestorage").start()
 // require("channels");
 import "./libs/transaction";
+<<<<<<< HEAD
+>>>>>>> developer
+=======
+import "./libs/direct_uploads.js";
+import "./src/direct_upload.css";
 >>>>>>> developer

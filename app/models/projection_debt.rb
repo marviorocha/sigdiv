@@ -23,15 +23,15 @@ class ProjectionDebt
 
       debt.transaction_infos.sort_by(&:order).reject(&:withdraw?).reject(&:extra_event?).each do |transaction_info|
 
-        if (result.empty?)
+        self.balance_projection = if (result.empty?)
           if self.start_date == signature_date
-            self.balance_projection = debt.transaction_items.where.not(:confirmed => false).last.final_outstanding_balance
+            debt.transaction_items.where.not(:confirmed => false).last.final_outstanding_balance
           else
-            self.balance_projection = debt.transaction_items.where('date <= ?', self.start_date).last.final_outstanding_balance           
+            debt.transaction_items.where('date <= ?', self.start_date).last.final_outstanding_balance           
           end
-        else 
-          self.balance_projection = result.last.final_outstanding_balance
-        end
+                                  else 
+          result.last.final_outstanding_balance
+                                  end
         
         if (amt_in_grace_period? transaction_info, future_transaction_count) && (index % transaction_info.frequency_before_type_cast == 0)
           future_transaction = FutureTransaction.new(:debt => debt,
