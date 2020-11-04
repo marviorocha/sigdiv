@@ -14,10 +14,12 @@
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-
+// rails
+//require("@rails/ujs").start()
+// require("@rails/activestorage").start()
+// require("channels");
 
 import "./libs/transaction";
  
 import "./libs/direct_uploads.js";
-import "./src/direct_upload.css";
- 
+import "./src/direct_upload.scss";
