@@ -6,6 +6,17 @@ TransactionInfo.destroy_all
 TransactionItem.destroy_all
 Debt.destroy_all
 
+
+ 
+
+  # sql = File.read('sigdiv_production_bkp.sql')
+  # statements = sql.split(/;$/)
+  # statements.pop
+
+ 
+ 
+
+
 creditor1 = Creditor.create!(:name => 'CAIXA ECONÔMICA FEDERAL', :financial_agent => true)
 creditor2 = Creditor.create!(:name => 'Corporação Andina de Fomento - CAF', :financial_agent => false)
 creditor3 = Creditor.create!(:name => 'BNDES', :financial_agent => true)
