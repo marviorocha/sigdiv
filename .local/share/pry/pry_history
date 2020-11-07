@@ -210,3 +210,9 @@ Time.zone.current
 Date.current
 DateTime.current
 exit
+require 'date'
+Date.today
+Date.today.to_i
+Date.new(Date.today)
+Date.today.to_time.to_i
+exit
