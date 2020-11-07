@@ -8,6 +8,7 @@ class MonthReportsController < ApplicationController
   def show
     
     start_date = Date.new(params[:year].to_i, params[:month].to_i)
+
     
     @projection_debt = ProjectionDebt.new(Debt.find(params[:debt_id]), start_date + 1.month)
     @start_date = @projection_debt.start_date
@@ -69,7 +70,7 @@ class MonthReportsController < ApplicationController
     pdf.move_down 5
     pdf.stroke_horizontal_rule
     pdf.move_down 5 
-    
+  
     
     # 1 - A Realizado no Exercício
     
@@ -113,7 +114,7 @@ class MonthReportsController < ApplicationController
         
     pdf.render_file 'public/reports.pdf' 
     
-    redirect_to "#{root_path}reports.pdf"
+    # redirect_to "#{root_path}reports.pdf"
     
         
         

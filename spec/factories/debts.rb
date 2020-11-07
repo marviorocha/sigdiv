@@ -2,7 +2,7 @@
 require 'factory_bot'
 FactoryBot.define do
   factory :debt do
-    code { Faker::Number.number(6) }
+    code { Faker::Number.number(digits: 6) }
     contract_value { 10050 }
     signature_date { Faker::Date.between(from: Date.parse('01/01/2010'), to: Date.parse('01/01/2013')) }
     creditor

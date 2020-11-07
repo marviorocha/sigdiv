@@ -22,7 +22,11 @@
              <%= fa_icon('external-link', title: 'Abrir') %> Abrir
           <% end %>
         </td>
-        <td><%= link_to(fa_icon("edit 2x", title: "Editar"), edit_debt_attachment_path(@debt, attachment), class: "edit-attachment" )%></td>
+        <td>
+         <a  data-toggle="modal" class="edit-attachment" data-target="#attachmentModal" href="<%= edit_debt_attachment_path(@debt, attachment) %>">
+         <%= fa_icon('edit 2x') %>
+         </a>
+        </td>
         <td><%= link_to(fa_icon("trash 2x", title: "Remover"), [@debt, attachment], class: "remove-attachment", data: { confirm: 'Tem certeza?' } ) %></td>
       </tr>
     <% end %>
@@ -53,13 +57,13 @@
       })
   })
 
-  $('a.edit-attachment').on('click', function(e){
+  $('.edit-attachment').on('click', function(e){
     e.preventDefault();
     $.get($(this).attr('href'))
       .done(function( data ) {
         $('#attachmentModal .modal-content').html(data);
         initSubmitAttachment();
-        $('#attachmentModal').modal('show')
+         
       });
     })
 

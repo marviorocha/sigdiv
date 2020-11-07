@@ -59,19 +59,24 @@ module MonthReportsHelper
     data += [['TOTAL', big_decimal_to_currency_cents(sum_values), big_decimal_to_currency_cents(sum_values_brl)]]       
     
     pdf.table(data, :width => 250, :row_colors => ['E9ECEF'] + the_color)
-    
+  
+
   end
   
   def schema_b_right(_protection, pdf)
     pdf.text '1 - Parcelas Recebidas', :style => :bold, :size => 9
     pdf.move_down 2
     data = [['Mês/Ano', 'Valores - Moeda Original'], ['', '']]
+    
     pdf.table(data, :width => 220, :row_colors => %w[E9ECEF FFFFFF FFFFFF])
+
   end
   
   ## C - Esquema de Pagamentos
   
   def exercicio_1(_protection, pdf)
+
+ 
     paid_principal_year_amount = @projection_debt.debt.transaction_items_year_total @start_date, 2 
     paid_interest_year_amount = @projection_debt.debt.transaction_items_year_total @start_date, 3 
     paid_charges_year_amount = @projection_debt.debt.transaction_items_year_total @start_date, 4 
