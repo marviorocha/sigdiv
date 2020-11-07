@@ -7,6 +7,7 @@ class ProjectionDebt
   attr_accessor :amortizations_count
   attr_accessor :transaction_items
   attr_accessor :final_outstanding_balance
+ 
   
   def initialize(debt, start_date = signature_date)
     self.debt = debt

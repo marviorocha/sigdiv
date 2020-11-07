@@ -188,3 +188,25 @@ require"banco_central"
 BancoCentral.last
 BancoCentral.last(:dolar)
 exit
+require 'faker'
+Faker::Date.between(from: '2013', to: '2020')
+Faker::Date.between(from: '2013-01-01', to: '2020-01-01')
+MinhaData = Faker::Date.between(from: '2013-01-01', to: '2020-01-01')
+MinhaData.strftime("%m/%Y")
+require 'date'
+require 'Date'
+Date.current
+Datetime.current
+DateTime
+require 'DateTime'
+DateTime.current
+Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today)
+require 'Date'
+1.year.go
+1.year.ago
+Faker::Date.backward(days: 14)
+Time.zone
+Time.zone.current
+Date.current
+DateTime.current
+exit
