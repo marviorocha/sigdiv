@@ -216,3 +216,7 @@ Date.today.to_i
 Date.new(Date.today)
 Date.today.to_time.to_i
 exit
+require 'date'
+Date.new(2013, 02)
+Date.today
+exit

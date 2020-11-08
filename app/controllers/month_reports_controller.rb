@@ -6,10 +6,19 @@ class MonthReportsController < ApplicationController
   include ActionView::Helpers::NumberHelper
  
   def show
-    
-    start_date = Date.new(params[:year].to_i, params[:month].to_i)
 
-    
+    params_year = params[:year]
+    params_month = params[:month]
+
+    if params_year and params_month == ""
+      amortizacao_final = Debt.find(params[:debt_id])
+      amortizacao_date = amortizacao_final.amortization_period
+      start_date = Date.new(amortizacao_date.strftime("%Y").to_i, amortizacao_date.strftime("%m").to_i)
+    else
+      start_date = Date.new(params[:year].to_i, params[:month].to_i)
+    end
+   
+ 
     @projection_debt = ProjectionDebt.new(Debt.find(params[:debt_id]), start_date + 1.month)
     @start_date = @projection_debt.start_date
     @future_transactions = @projection_debt.transaction_items    
