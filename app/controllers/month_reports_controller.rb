@@ -15,7 +15,7 @@ class MonthReportsController < ApplicationController
       amortizacao_date = amortizacao_final.amortization_period
       start_date = Date.new(amortizacao_date.strftime("%Y").to_i, amortizacao_date.strftime("%m").to_i)
     else
-      start_date = Date.new(params[:year].to_i, params[:month].to_i)
+      start_date = Date.new(params_year.to_i, params_month.to_i)
     end
    
  
@@ -123,9 +123,8 @@ class MonthReportsController < ApplicationController
         
     pdf.render_file 'public/reports.pdf' 
     
-    # redirect_to "#{root_path}reports.pdf"
-    
-        
+    redirect_to "#{root_path}reports.pdf"
+   
         
   end
       
