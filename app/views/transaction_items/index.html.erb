@@ -28,7 +28,7 @@
         <% transaction_item.editable? ? transaction_class = 'edit-transaction' : transaction_class = 'block-edit-transaction' %>
         <% transaction_edit_path = edit_debt_transaction_item_path(@debt, transaction_item) if transaction_item.editable? %>
         
-        <% date_transaction = transaction_item.date.to_time.to_i < Date.today.to_time.to_i %>
+        <% date_transaction = transaction_item.date.to_i < Date.today.to_i %>
         <% transaction_class = transaction_class + 'table-danger' if transaction_item.withdraw? and 
            date_transaction and !transaction_item.confirmed? %>
         <tr id="ti_<%= transaction_item.id %>" class="<%= transaction_class %>" data-path='<%= transaction_edit_path %>'>
