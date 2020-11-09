@@ -5,7 +5,7 @@ FactoryBot.define do
     code { Faker::Number.number(digits: 6) }
     contract_value { 10050 }
     signature_date { Faker::Date.between(from: Date.parse('01/01/2010'), to: Date.parse('01/01/2013')) }
-    creditor
+    creditor {Faker::Bank.name }
     grace_period { Faker::Date.between(from: Date.parse('01/01/2013'), to: Date.parse('01/12/2013')) }
     amortization_type { Debt.amortization_types.values.sample }
     amortization_period  { Faker::Date.between(from: Date.parse('01/01/2014'), to: Date.parse('01/12/2014')) }		
