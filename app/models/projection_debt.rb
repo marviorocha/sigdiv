@@ -42,7 +42,7 @@ class ProjectionDebt
                                           :start_balance => balance_projection)
           
           future_transaction.value = FormulaService.eval(future_transaction)
-          future_transaction.value_brl = future_transaction.value * exchange_rate
+          future_transaction.value_brl = future_transaction.value.to_s * exchange_rate
 
           result << future_transaction unless (transaction_info.bind_withdraw? && paid_in?) || (transaction_info.interest? && balance_projection.zero?)
 
