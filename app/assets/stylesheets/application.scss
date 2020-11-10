@@ -16,9 +16,8 @@
 @import "jquery-ui";
 @import "bootstrap";
 @import "font-awesome";
-@import "datatables";
 @import "material_blue";
-
+@import 'datatables';
 .logo {
   width: 51px;
   height: 48px;  
@@ -112,3 +111,4 @@ hr.dashed-hr {
 body.report {
   
 }
+@import "datatables";

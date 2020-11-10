@@ -58,15 +58,19 @@ class TransactionItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_debt
-      @debt = Debt.find(params[:debt_id])
+        @debt = Debt.find(params[:debt_id])
+         
     end
 
     def set_transaction
       @transaction_item = TransactionItem.find(params[:id])
+      
     end
 
     def set_transaction_set       
-      @transaction_set = TransactionSet.new(@debt, @start_date)
+     @transaction_set =  TransactionSet.new(@debt, @start_date)
+
+      
     end
 
     def set_start_date      

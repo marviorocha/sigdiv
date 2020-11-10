@@ -77,3 +77,5 @@ gem 'fast_jsonapi', '~> 1.5'
 gem 'prawn'
 gem 'prawn-table'
 gem 'webpacker'
+gem "redis"
+gem "pagy", "~> 3.9"

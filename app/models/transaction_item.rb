@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TransactionItem < ApplicationRecord
-  belongs_to :transaction_info
+  belongs_to :transaction_info, touch: :transaction_info_updated_at, counter_cache: true
   has_one :debt, :through => :transaction_info
 
   before_save :set_start_balance, :if => :blank_start_balance?

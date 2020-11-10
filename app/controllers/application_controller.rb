@@ -2,4 +2,5 @@
 
 class ApplicationController < ActionController::Base
     helper :all
+    include Pagy::Backend
 end

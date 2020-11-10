@@ -16,8 +16,18 @@
         <%= f.input :formula %>
       </div>
     </div>
-    <%= f.text_field :date, as: :date, label: 'Data da liberação', class: "form-control string" %>
-    <%= f.text_field :internalization_date, as: :date, include_blank: true if debt.externo? %>    
+    <div class="row">
+    <div class="col-6">
+    <%= f.label :date, "Data da liberação" %>
+     <%= f.text_field :date, as: :date, class: "form-control string" %>
+    </div>
+    <div class="col-6">
+    <%= f.label :date, "Data:", include_blank: true if debt.externo? %>
+     <%= f.text_field :internalization_date, as: :date, class: "form-control string", include_blank: true if debt.externo? %>  
+    </div>
+    </div>
+   
+     
     <%= f.input :confirmed, wrapper_html: {class: 'pull-right'} if transaction_item.withdraw? %>
   </div>
 <% end %>

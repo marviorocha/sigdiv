@@ -19,6 +19,6 @@ install:
 	$(db)
 	exit
 logs:
-	tail -f log/production.log
+	tail -f log/development.log
 prune:
 	$(docker) system prune

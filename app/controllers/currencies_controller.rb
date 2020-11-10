@@ -5,7 +5,8 @@ class CurrenciesController < ApplicationController
 
  
   def index
-    @currencies = Currency.all
+   
+    @pagy, @currencies = pagy(Currency.all)
     
   end
   
