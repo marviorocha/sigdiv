@@ -18,17 +18,18 @@
     </div>
     <div class="row">
     <div class="col-6">
-    <%= f.label :date, "Data da liberação" %>
-     <%= f.text_field :date, as: :date, class: "form-control string" %>
+     <%= f.label :date %>
+     
+     <%= f.text_field :date, as: :date, class: "form-control string date_flatpickr" %>
     </div>
     <div class="col-6">
-    <%= f.label :date, "Data:", include_blank: true if debt.externo? %>
-     <%= f.text_field :internalization_date, as: :date, class: "form-control string", include_blank: true if debt.externo? %>  
+    <%= f.label :internalization_date, include_blank: true if debt.externo? %>
+    <%= f.text_field :internalization_date, as: :date, class: "form-control string date_flatpickr", include_blank: true if debt.externo? %>  
     </div>
     </div>
    
      
-    <%= f.input :confirmed, wrapper_html: {class: 'pull-right'} if transaction_item.withdraw? %>
+    
   </div>
 <% end %>
 
@@ -46,7 +47,6 @@
   <button type="button" class="btn btn-success transaction-save" data-http-verb="<%= http_verb %>" data-path='<%= path %>'>Salvar</button>
 </div>
  
-  <%= javascript_pack_tag 'libs/transaction'  %>
-
+<%= javascript_pack_tag 'libs/transaction'  %>
 
 

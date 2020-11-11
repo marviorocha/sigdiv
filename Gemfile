@@ -79,3 +79,5 @@ gem 'prawn-table'
 gem 'webpacker'
 gem "redis"
 gem "pagy", "~> 3.9"
+
+gem "active_record_query_trace", "~> 1.8"

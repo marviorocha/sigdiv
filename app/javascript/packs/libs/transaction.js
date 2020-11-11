@@ -6,9 +6,7 @@ import "jquery-mask-plugin/dist/jquery.mask";
 
 // function to flatpickr
 flatpickr.localize(Portuguese);
- $("#transaction_item_date").flatpickr(
-  {dateFormat: "d/m/Y",}
- );
+ $(".date_flatpickr").flatpickr({ dateFormat: "d/m/Y" });
 
  // stared form script below 
   $(".currency-brl").unmask();

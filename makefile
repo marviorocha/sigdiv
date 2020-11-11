@@ -8,6 +8,8 @@ stop ?= (docker ps -aq)
 build:
 	$(development) build
 server:
+	$(development) up
+up:
 	$(development) up -d
 down:
 	$(development) down

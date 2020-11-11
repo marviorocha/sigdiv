@@ -69,7 +69,7 @@ class TransactionItemsController < ApplicationController
 
     def set_transaction_set       
      @transaction_set =  TransactionSet.new(@debt, @start_date)
-
+     
       
     end
 

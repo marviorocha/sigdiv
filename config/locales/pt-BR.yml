@@ -52,9 +52,9 @@ pt-BR:
         slug: Sigla
         bind_withdraw: Vincular a desembolso
       transaction_item:
-        value: Valor
-        value_brl: Valor (BRL)
-        date: Data
+        value: Valor de lançamento
+        value_brl: Valor original
+        date: Data de lançamento
         exchange_rate: Taxa de conversão
         internalization_date: Data de internalização
         confirmed: Confirmar

@@ -15,19 +15,19 @@
 	
 		<thead>
 			<tr class="table-primary">
-				 
+				 <th></th>
 				<th class="td-right">Data</th>
 				<th class="td-right val_moeda">Valor em moeda </th>
 				<th class="td-right val_brl">Valor em moeda (BRL)</th>
 				<th class="td-right">Operação</th>
-				<th></th>
+				
 				 
 			</tr>
 		</thead>
 		
 		<tbody>
-	 
- 
+
+			 
 			<%  @transaction_set.items.each_with_index do |transaction_item, index| %>
 			<% transaction_item.editable? ? transaction_class = 'edit-transaction' : transaction_class = 'block-edit-transaction' %>
 			<% transaction_edit_path = edit_debt_transaction_item_path(@debt, transaction_item) if transaction_item.editable? %>
@@ -77,14 +77,13 @@
 							<td class="td-right"><strong><%= big_decimal_to_currency((@transaction_set.balance_by transaction_item.date), @debt.decimal_places) %></strong></td>
 							 
 							<td></td>
-							<td></td>
-							<td></td>
+						 
 							 
 						</tr>
 					<% end %>
 					
 				<% end %>
-			<% end %>  
+			<%  end %>  
 				
 		</tbody>
 			<thead>
@@ -130,9 +129,8 @@
 		<button type="button" class="btn btn-success new-withdraw" data-toggle="modal" data-target="#transactionModal" data-path="<%= new_debt_transaction_item_path(@debt) %>">Registrar movimentação</button>
 	</div>  
 </div>
-
 <script type="text/javascript">
-	$("#datatable").dataTable();
+	 
 	initTransactionActions();
 
 	$('.val_brl').hide();
