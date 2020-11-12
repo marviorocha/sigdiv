@@ -30,9 +30,8 @@ class MonthReportsController < ApplicationController
     pdf.image 'app/assets/images/logo_niteroi.jpg', :at => [0, 700], :scale => 0.60
     pdf.draw_text 'PREFEITURA NITERÓI - SECRETARIA MUNICIPAL DE FAZENDA', :at => [90, 680], :size => 13
     pdf.define_grid(columns: 2, rows: 24, gutter: 5)
-    #pdf.grid.show_all
-    
-  
+    pdf.grid.show_all
+    pdf.stroke_axis
    
     ## A Indentificação do Contrato
     
@@ -62,26 +61,34 @@ class MonthReportsController < ApplicationController
       
     end
  
-    pdf.grid([8, 0], [18, 0]).bounding_box do
-      
-      schema_b(@projection_debt, pdf) 
-      
-    end
-   
-     pdf.grid([8, 1], [18, 1]).bounding_box do
-      
-      schema_b_right(@projection_debt, pdf) 
+    
+    pdf.grid([8, 1], [12, 1]).bounding_box do
+      schema_b_right(@projection_debt, pdf)   
       
     end
-
-    pdf.bounding_box([0, 340], width: 520, height: 350) do
+     
+    
+    
+    
+     
+    pdf.grid([8, 0], [23, 1]).bounding_box do
+    
+ 
+     
+      schema_b(@projection_debt, pdf)
       
+      pdf.pad(5){pdf.text 'C - Esquema de Pagamentos', :style => :bold, :size => 10}
+      pdf.stroke_horizontal_rule  
       exercicio_1(@projection_debt, pdf)
       pdf.move_down 10
       exercicio_2(@projection_debt, pdf)
       pdf.move_down 10
       exercicio_3(@projection_debt, pdf)
-      
+     
+          
+       
+    
+    
     end
        
     
@@ -89,8 +96,7 @@ class MonthReportsController < ApplicationController
    
     
     # 1 - A Realizado no Exercício
-    
-     
+         
     
     pdf.start_new_page
     
@@ -118,7 +124,10 @@ class MonthReportsController < ApplicationController
                '']]
       pdf.table(data, :width => 540, :row_colors => %w[E9ECEF FFFFFF FFFFFF FFFFFF FFFFFF])                   
     end
-
+ 
+  
+  
+  
         
     pdf.render_file 'public/reports.pdf' 
     
