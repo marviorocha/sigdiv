@@ -30,7 +30,7 @@ class MonthReportsController < ApplicationController
     pdf.image 'app/assets/images/logo_niteroi.jpg', :at => [0, 700], :scale => 0.60
     pdf.draw_text 'PREFEITURA NITERÓI - SECRETARIA MUNICIPAL DE FAZENDA', :at => [90, 680], :size => 13
     pdf.define_grid(columns: 2, rows: 24, gutter: 5)
-     pdf.grid.show_all
+    #pdf.grid.show_all
     
   
    
@@ -73,6 +73,7 @@ class MonthReportsController < ApplicationController
       schema_b_right(@projection_debt, pdf) 
       
     end
+
     pdf.bounding_box([0, 340], width: 520, height: 350) do
       
       exercicio_1(@projection_debt, pdf)
