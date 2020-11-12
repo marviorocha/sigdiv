@@ -30,15 +30,15 @@ class MonthReportsController < ApplicationController
     pdf.image 'app/assets/images/logo_niteroi.jpg', :at => [0, 700], :scale => 0.60
     pdf.draw_text 'PREFEITURA NITERÓI - SECRETARIA MUNICIPAL DE FAZENDA', :at => [90, 680], :size => 13
     pdf.define_grid(columns: 2, rows: 24, gutter: 5)
-    pdf.grid.show_all
-    pdf.stroke_axis
+    #pdf.grid.show_all
+    #pdf.stroke_axis
    
     ## A Indentificação do Contrato
     
     pdf.grid([3, 0], [3, 1]).bounding_box do
       pdf.text 'A - Identificação do Contrato', :style => :bold, :size => 10
       pdf.stroke_horizontal_rule    
-      
+
     end
    
     pdf.grid([4,0], [6,0]).bounding_box do
