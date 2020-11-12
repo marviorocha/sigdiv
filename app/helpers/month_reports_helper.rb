@@ -51,7 +51,7 @@ module MonthReportsHelper
     end
     
     the_color = @projection_debt.debt.withdraws_values_by_year(@start_date).map { |_x| + 'FFFFFF' }
-    data += [['TOTAL', big_decimal_to_currency_cents(sum_values), big_decimal_to_currency_cents(sum_values_brl)]] * 10   
+    data += [['TOTAL', big_decimal_to_currency_cents(sum_values), big_decimal_to_currency_cents(sum_values_brl)]]   
     
     pdf.table(data, :width => 250, :row_colors => ['E9ECEF'] + the_color, :header => true)
   
@@ -62,7 +62,7 @@ module MonthReportsHelper
     
     pdf.text '2 - Parcelas Recebidas', :style => :bold, :size => 9
     pdf.move_down 2
-    data = [['Mês/Ano', 'Valores - Moeda Original'], ['', '']]
+    data = [['Mês/Ano', 'Valores - Moeda Original'], ['', '0,00']]
     
     pdf.table(data, :width => 220, :row_colors => %w[E9ECEF FFFFFF FFFFFF], :header => true)
 
