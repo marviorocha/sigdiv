@@ -28,7 +28,7 @@ class ProjectionDebt
           if self.start_date == signature_date
             debt.transaction_items.where.not(:confirmed => false).last.final_outstanding_balance
           else
-            debt.transaction_items.where('date <= ?', self.start_date).last.final_outstanding_balance           
+            debt.transaction_items.where('date <= ?', self.start_date.to_s).last.final_outstanding_balance           
           end
                                   else 
           result.last.final_outstanding_balance
@@ -44,7 +44,7 @@ class ProjectionDebt
           future_transaction.value = FormulaService.eval(future_transaction)
           future_transaction.value_brl = future_transaction.value.to_s * exchange_rate
 
-          result << future_transaction unless (transaction_info.bind_withdraw? && paid_in?) || (transaction_info.interest? && balance_projection.zero?)
+          result << future_transaction unless (transaction_info.bind_withdraw? && paid_in?) || (transaction_info.interest? && balance_projection.blank?)
 
           self.amortizations_count += 1 if transaction_info.amortization?
         end
@@ -65,7 +65,7 @@ class ProjectionDebt
   end
 
   def brl_lacking_total_by(date, category_number)		
-    self.transaction_items.reduce(0) { |sum, transaction| transaction.date.year == date.year && transaction.date > date && transaction.transaction_info.category_number == category_number ? sum + transaction.value_brl : sum }
+    self.transaction_items.reduce(0) { |sum, transaction| transaction.date.year == date.year.to_s && transaction.date > date && transaction.transaction_info.category_number == category_number ? sum + transaction.value_brl : sum }
   end
 
   def brl_total_by(year, category_number)

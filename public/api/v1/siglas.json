@@ -1,0 +1,2708 @@
+[
+    {
+      "sigla": "BIRD",
+      "code": 867
+    },
+    {
+      "sigla": "BT0915",
+      "code": 465
+    },
+    {
+      "sigla": "BT0917",
+      "code": 466
+    },
+    {
+      "sigla": "BT1015",
+      "code": 467
+    },
+    {
+      "sigla": "BTN (P/ TR)",
+      "code": 107
+    },
+    {
+      "sigla": "CAN$",
+      "code": 612
+    },
+    {
+      "sigla": "CUST ENDIV EM DOLAR",
+      "code": 7
+    },
+    {
+      "sigla": "DM",
+      "code": 620
+    },
+    {
+      "sigla": "EUR",
+      "code": 795
+    },
+    {
+      "sigla": "EUR C",
+      "code": 796
+    },
+    {
+      "sigla": "EUR D-2",
+      "code": 797
+    },
+    {
+      "sigla": "FFR",
+      "code": 655
+    },
+    {
+      "sigla": "FLS",
+      "code": 701
+    },
+    {
+      "sigla": "FUNTTEL-DERI TR226",
+      "code": 202
+    },
+    {
+      "sigla": "I.R.635",
+      "code": 2
+    },
+    {
+      "sigla": "IP0915",
+      "code": 462
+    },
+    {
+      "sigla": "IP0917",
+      "code": 463
+    },
+    {
+      "sigla": "IP1015",
+      "code": 464
+    },
+    {
+      "sigla": "IPC-R",
+      "code": 10
+    },
+    {
+      "sigla": "IPCA TLP",
+      "code": 185
+    },
+    {
+      "sigla": "J.RES.635",
+      "code": 1
+    },
+    {
+      "sigla": "JURO FIXO PRE-EMBAR",
+      "code": 8
+    },
+    {
+      "sigla": "LIB",
+      "code": 639
+    },
+    {
+      "sigla": "MILENIO 28",
+      "code": 87
+    },
+    {
+      "sigla": "OFND-B",
+      "code": 495
+    },
+    {
+      "sigla": "OFND-I",
+      "code": 496
+    },
+    {
+      "sigla": "OTNA",
+      "code": 43
+    },
+    {
+      "sigla": "PESO URUGUAIO",
+      "code": 629
+    },
+    {
+      "sigla": "PESO URUGUAIO C",
+      "code": 630
+    },
+    {
+      "sigla": "SBTX LIBOR3 25 A 48M",
+      "code": 38
+    },
+    {
+      "sigla": "SBTX LIBOR3 49 A 72M",
+      "code": 39
+    },
+    {
+      "sigla": "SBTX LIBOR3 ACIMA72M",
+      "code": 41
+    },
+    {
+      "sigla": "SBTX LIBOR3 ATE 24M",
+      "code": 36
+    },
+    {
+      "sigla": "SELIC ACUM",
+      "code": 541
+    },
+    {
+      "sigla": "SELIC ACUM. * 1000",
+      "code": 141
+    },
+    {
+      "sigla": "SELIC ACUM. D-2",
+      "code": 143
+    },
+    {
+      "sigla": "SELIC ACUM. D-2(75%)",
+      "code": 147
+    },
+    {
+      "sigla": "SELIC ACUM. D-2(90%)",
+      "code": 149
+    },
+    {
+      "sigla": "SELIC ACUMULADA",
+      "code": 142
+    },
+    {
+      "sigla": "SOBRETAXA FIXA SELIC",
+      "code": 24
+    },
+    {
+      "sigla": "SOBRETAXA FIXA TJ3",
+      "code": 22
+    },
+    {
+      "sigla": "SOBRETAXA FIXA TJ6",
+      "code": 23
+    },
+    {
+      "sigla": "SOBRETAXA REF IPCA",
+      "code": 21
+    },
+    {
+      "sigla": "SWFR",
+      "code": 663
+    },
+    {
+      "sigla": "T.JUROS BIRD",
+      "code": 3
+    },
+    {
+      "sigla": "T.JUROS FATC",
+      "code": 4
+    },
+    {
+      "sigla": "T.JUROS RES.635/87",
+      "code": 6
+    },
+    {
+      "sigla": "TAXA FLAT",
+      "code": 28
+    },
+    {
+      "sigla": "TAXA SELIC D-10",
+      "code": 52
+    },
+    {
+      "sigla": "TAXA SELIC D-2",
+      "code": 15
+    },
+    {
+      "sigla": "TAXA SELIC D-4",
+      "code": 544
+    },
+    {
+      "sigla": "TJ PRO-360",
+      "code": 319
+    },
+    {
+      "sigla": "TJ PRO-365",
+      "code": 318
+    },
+    {
+      "sigla": "TJ3 INTERPOLADA",
+      "code": 11
+    },
+    {
+      "sigla": "TJ3BNDES",
+      "code": 13
+    },
+    {
+      "sigla": "TJ6 INTERPOLADA",
+      "code": 12
+    },
+    {
+      "sigla": "TJ6BNDES",
+      "code": 14
+    },
+    {
+      "sigla": "TJLP",
+      "code": 311
+    },
+    {
+      "sigla": "TLP -TAXA PRE-FIXADA",
+      "code": 777
+    },
+    {
+      "sigla": "TLP-IPCA",
+      "code": 236
+    },
+    {
+      "sigla": "TR",
+      "code": 200
+    },
+    {
+      "sigla": "TR1015",
+      "code": 37
+    },
+    {
+      "sigla": "TRBT01",
+      "code": 54
+    },
+    {
+      "sigla": "TRBT02",
+      "code": 55
+    },
+    {
+      "sigla": "TRBT03",
+      "code": 56
+    },
+    {
+      "sigla": "TRBT04",
+      "code": 57
+    },
+    {
+      "sigla": "TRBT05",
+      "code": 58
+    },
+    {
+      "sigla": "TRBT06",
+      "code": 59
+    },
+    {
+      "sigla": "TRBT07",
+      "code": 30
+    },
+    {
+      "sigla": "TRBT08",
+      "code": 62
+    },
+    {
+      "sigla": "TRBT09",
+      "code": 63
+    },
+    {
+      "sigla": "TRBT10",
+      "code": 64
+    },
+    {
+      "sigla": "TRBT11",
+      "code": 65
+    },
+    {
+      "sigla": "TRBT12",
+      "code": 66
+    },
+    {
+      "sigla": "TRBT13",
+      "code": 67
+    },
+    {
+      "sigla": "TRBT14",
+      "code": 68
+    },
+    {
+      "sigla": "TRBT15",
+      "code": 69
+    },
+    {
+      "sigla": "TRBT16",
+      "code": 71
+    },
+    {
+      "sigla": "TRBT17",
+      "code": 72
+    },
+    {
+      "sigla": "TRBT18",
+      "code": 61
+    },
+    {
+      "sigla": "TRBT19",
+      "code": 74
+    },
+    {
+      "sigla": "TRBT20",
+      "code": 75
+    },
+    {
+      "sigla": "TRBT21",
+      "code": 76
+    },
+    {
+      "sigla": "TRBT22",
+      "code": 77
+    },
+    {
+      "sigla": "TRBT23",
+      "code": 73
+    },
+    {
+      "sigla": "TRBT24",
+      "code": 79
+    },
+    {
+      "sigla": "TRBT25",
+      "code": 80
+    },
+    {
+      "sigla": "TRBT26",
+      "code": 81
+    },
+    {
+      "sigla": "TRBT27",
+      "code": 82
+    },
+    {
+      "sigla": "TRBT28",
+      "code": 83
+    },
+    {
+      "sigla": "TRBT29",
+      "code": 84
+    },
+    {
+      "sigla": "TRBT30",
+      "code": 85
+    },
+    {
+      "sigla": "TRBT31",
+      "code": 26
+    },
+    {
+      "sigla": "TRIP01",
+      "code": 89
+    },
+    {
+      "sigla": "TRIP15",
+      "code": 105
+    },
+    {
+      "sigla": "TRIP25",
+      "code": 115
+    },
+    {
+      "sigla": "TX FIX USD 25 A 48M",
+      "code": 33
+    },
+    {
+      "sigla": "TX FIX USD 49 A 72M",
+      "code": 34
+    },
+    {
+      "sigla": "TX FIX USD ACIMA 72M",
+      "code": 35
+    },
+    {
+      "sigla": "TX FIX USD ATE 24M",
+      "code": 32
+    },
+    {
+      "sigla": "TX RF IPCA 25 A 48M",
+      "code": 17
+    },
+    {
+      "sigla": "TX RF IPCA 49 A 72M",
+      "code": 18
+    },
+    {
+      "sigla": "TX RF IPCA ACIMA 72M",
+      "code": 19
+    },
+    {
+      "sigla": "TX RF IPCA ATE 24M",
+      "code": 16
+    },
+    {
+      "sigla": "TX. REFER. EM IPCA",
+      "code": 9
+    },
+    {
+      "sigla": "UMBNDES",
+      "code": 590
+    },
+    {
+      "sigla": "UMCDI",
+      "code": 301
+    },
+    {
+      "sigla": "UMG$",
+      "code": 605
+    },
+    {
+      "sigla": "UMIPCA",
+      "code": 180
+    },
+    {
+      "sigla": "UMIPCA-M",
+      "code": 184
+    },
+    {
+      "sigla": "UR IGP-DI",
+      "code": 469
+    },
+    {
+      "sigla": "UR IGPM PRO-RATA",
+      "code": 484
+    },
+    {
+      "sigla": "UR IPC",
+      "code": 299
+    },
+    {
+      "sigla": "UR-CDI",
+      "code": 300
+    },
+    {
+      "sigla": "UR-IPC PRO-RATA",
+      "code": 310
+    },
+    {
+      "sigla": "UR-UB",
+      "code": 497
+    },
+    {
+      "sigla": "UR-UI",
+      "code": 500
+    },
+    {
+      "sigla": "UR1516",
+      "code": 468
+    },
+    {
+      "sigla": "UR4015",
+      "code": 470
+    },
+    {
+      "sigla": "UR5015",
+      "code": 461
+    },
+    {
+      "sigla": "UR6015",
+      "code": 473
+    },
+    {
+      "sigla": "UR9515",
+      "code": 492
+    },
+    {
+      "sigla": "URBT01",
+      "code": 354
+    },
+    {
+      "sigla": "URBT02",
+      "code": 355
+    },
+    {
+      "sigla": "URBT03",
+      "code": 356
+    },
+    {
+      "sigla": "URBT04",
+      "code": 357
+    },
+    {
+      "sigla": "URBT05",
+      "code": 358
+    },
+    {
+      "sigla": "URBT06",
+      "code": 359
+    },
+    {
+      "sigla": "URBT07",
+      "code": 360
+    },
+    {
+      "sigla": "URBT08",
+      "code": 362
+    },
+    {
+      "sigla": "URBT09",
+      "code": 363
+    },
+    {
+      "sigla": "URBT10",
+      "code": 364
+    },
+    {
+      "sigla": "URBT11",
+      "code": 365
+    },
+    {
+      "sigla": "URBT12",
+      "code": 366
+    },
+    {
+      "sigla": "URBT13",
+      "code": 367
+    },
+    {
+      "sigla": "URBT14",
+      "code": 368
+    },
+    {
+      "sigla": "URBT15",
+      "code": 369
+    },
+    {
+      "sigla": "URBT16",
+      "code": 371
+    },
+    {
+      "sigla": "URBT17",
+      "code": 372
+    },
+    {
+      "sigla": "URBT18",
+      "code": 373
+    },
+    {
+      "sigla": "URBT19",
+      "code": 374
+    },
+    {
+      "sigla": "URBT20",
+      "code": 375
+    },
+    {
+      "sigla": "URBT21",
+      "code": 376
+    },
+    {
+      "sigla": "URBT22",
+      "code": 377
+    },
+    {
+      "sigla": "URBT23",
+      "code": 378
+    },
+    {
+      "sigla": "URBT24",
+      "code": 379
+    },
+    {
+      "sigla": "URBT25",
+      "code": 380
+    },
+    {
+      "sigla": "URBT26",
+      "code": 381
+    },
+    {
+      "sigla": "URBT27",
+      "code": 382
+    },
+    {
+      "sigla": "URBT28",
+      "code": 383
+    },
+    {
+      "sigla": "URBT29",
+      "code": 384
+    },
+    {
+      "sigla": "URBT30",
+      "code": 385
+    },
+    {
+      "sigla": "URBT31",
+      "code": 386
+    },
+    {
+      "sigla": "URD01",
+      "code": 427
+    },
+    {
+      "sigla": "URD02",
+      "code": 428
+    },
+    {
+      "sigla": "URD03",
+      "code": 429
+    },
+    {
+      "sigla": "URD04",
+      "code": 430
+    },
+    {
+      "sigla": "URD05",
+      "code": 431
+    },
+    {
+      "sigla": "URD06",
+      "code": 432
+    },
+    {
+      "sigla": "URD07",
+      "code": 433
+    },
+    {
+      "sigla": "URD08",
+      "code": 435
+    },
+    {
+      "sigla": "URD09",
+      "code": 436
+    },
+    {
+      "sigla": "URD10",
+      "code": 437
+    },
+    {
+      "sigla": "URD11",
+      "code": 438
+    },
+    {
+      "sigla": "URD12",
+      "code": 439
+    },
+    {
+      "sigla": "URD13",
+      "code": 440
+    },
+    {
+      "sigla": "URD14",
+      "code": 441
+    },
+    {
+      "sigla": "URD15",
+      "code": 443
+    },
+    {
+      "sigla": "URD16",
+      "code": 44
+    },
+    {
+      "sigla": "URD17",
+      "code": 445
+    },
+    {
+      "sigla": "URD18",
+      "code": 446
+    },
+    {
+      "sigla": "URD19",
+      "code": 447
+    },
+    {
+      "sigla": "URD20",
+      "code": 448
+    },
+    {
+      "sigla": "URD21",
+      "code": 449
+    },
+    {
+      "sigla": "URD22",
+      "code": 451
+    },
+    {
+      "sigla": "URD23",
+      "code": 452
+    },
+    {
+      "sigla": "URD24",
+      "code": 453
+    },
+    {
+      "sigla": "URD25",
+      "code": 454
+    },
+    {
+      "sigla": "URD26",
+      "code": 455
+    },
+    {
+      "sigla": "URD27",
+      "code": 456
+    },
+    {
+      "sigla": "URD28",
+      "code": 457
+    },
+    {
+      "sigla": "URD29",
+      "code": 458
+    },
+    {
+      "sigla": "URD30",
+      "code": 459
+    },
+    {
+      "sigla": "URD31",
+      "code": 460
+    },
+    {
+      "sigla": "URDTJ16",
+      "code": 444
+    },
+    {
+      "sigla": "URDTJ20",
+      "code": 40
+    },
+    {
+      "sigla": "URIGPM",
+      "code": 558
+    },
+    {
+      "sigla": "URIGPM LIM. 0,759%AM",
+      "code": 599
+    },
+    {
+      "sigla": "URIGPM PRO-RATA POS",
+      "code": 598
+    },
+    {
+      "sigla": "URIGPM PRORATA M.ANT",
+      "code": 485
+    },
+    {
+      "sigla": "URINPC",
+      "code": 329
+    },
+    {
+      "sigla": "URINPC ANT",
+      "code": 330
+    },
+    {
+      "sigla": "URINPC PRORATA(DC)",
+      "code": 328
+    },
+    {
+      "sigla": "URIP01",
+      "code": 389
+    },
+    {
+      "sigla": "URIP02",
+      "code": 390
+    },
+    {
+      "sigla": "URIP03",
+      "code": 391
+    },
+    {
+      "sigla": "URIP05",
+      "code": 393
+    },
+    {
+      "sigla": "URIP09",
+      "code": 398
+    },
+    {
+      "sigla": "URIP10",
+      "code": 399
+    },
+    {
+      "sigla": "URIP11",
+      "code": 401
+    },
+    {
+      "sigla": "URIP13",
+      "code": 403
+    },
+    {
+      "sigla": "URIP15",
+      "code": 405
+    },
+    {
+      "sigla": "URIP17",
+      "code": 407
+    },
+    {
+      "sigla": "URIP20",
+      "code": 410
+    },
+    {
+      "sigla": "URIP26",
+      "code": 416
+    },
+    {
+      "sigla": "URIP27",
+      "code": 417
+    },
+    {
+      "sigla": "URIP30",
+      "code": 421
+    },
+    {
+      "sigla": "URIPCTR",
+      "code": 29
+    },
+    {
+      "sigla": "URPND",
+      "code": 499
+    },
+    {
+      "sigla": "URTJ",
+      "code": 27
+    },
+    {
+      "sigla": "URTJ01",
+      "code": 501
+    },
+    {
+      "sigla": "URTJ05",
+      "code": 505
+    },
+    {
+      "sigla": "URTJ09",
+      "code": 509
+    },
+    {
+      "sigla": "URTJ10",
+      "code": 510
+    },
+    {
+      "sigla": "URTJ15",
+      "code": 535
+    },
+    {
+      "sigla": "URTJ20",
+      "code": 520
+    },
+    {
+      "sigla": "URTJ30",
+      "code": 530
+    },
+    {
+      "sigla": "URTJLP",
+      "code": 314
+    },
+    {
+      "sigla": "URTJLP 365/366",
+      "code": 321
+    },
+    {
+      "sigla": "URTR",
+      "code": 20
+    },
+    {
+      "sigla": "URTR01",
+      "code": 101
+    },
+    {
+      "sigla": "URTR15",
+      "code": 25
+    },
+    {
+      "sigla": "US$",
+      "code": 604
+    },
+    {
+      "sigla": "US$ COMPRA",
+      "code": 833
+    },
+    {
+      "sigla": "US$ MEDIA",
+      "code": 835
+    },
+    {
+      "sigla": "YEN",
+      "code": "671BIRD",
+      "": 867
+    },
+    {
+      "sigla": "BT0915",
+      "code": 465
+    },
+    {
+      "sigla": "BT0917",
+      "code": 466
+    },
+    {
+      "sigla": "BT1015",
+      "code": 467
+    },
+    {
+      "sigla": "BTN (P/ TR)",
+      "code": 107
+    },
+    {
+      "sigla": "CAN$",
+      "code": 612
+    },
+    {
+      "sigla": "CUST ENDIV EM DOLAR",
+      "code": 7
+    },
+    {
+      "sigla": "DM",
+      "code": 620
+    },
+    {
+      "sigla": "EUR",
+      "code": 795
+    },
+    {
+      "sigla": "EUR C",
+      "code": 796
+    },
+    {
+      "sigla": "EUR D-2",
+      "code": 797
+    },
+    {
+      "sigla": "FFR",
+      "code": 655
+    },
+    {
+      "sigla": "FLS",
+      "code": 701
+    },
+    {
+      "sigla": "FUNTTEL-DERI TR226",
+      "code": 202
+    },
+    {
+      "sigla": "I.R.635",
+      "code": 2
+    },
+    {
+      "sigla": "IP0915",
+      "code": 462
+    },
+    {
+      "sigla": "IP0917",
+      "code": 463
+    },
+    {
+      "sigla": "IP1015",
+      "code": 464
+    },
+    {
+      "sigla": "IPC-R",
+      "code": 10
+    },
+    {
+      "sigla": "IPCA TLP",
+      "code": 185
+    },
+    {
+      "sigla": "J.RES.635",
+      "code": 1
+    },
+    {
+      "sigla": "JURO FIXO PRE-EMBAR",
+      "code": 8
+    },
+    {
+      "sigla": "LIB",
+      "code": 639
+    },
+    {
+      "sigla": "MILENIO 28",
+      "code": 87
+    },
+    {
+      "sigla": "OFND-B",
+      "code": 495
+    },
+    {
+      "sigla": "OFND-I",
+      "code": 496
+    },
+    {
+      "sigla": "OTNA",
+      "code": 43
+    },
+    {
+      "sigla": "PESO URUGUAIO",
+      "code": 629
+    },
+    {
+      "sigla": "PESO URUGUAIO C",
+      "code": 630
+    },
+    {
+      "sigla": "SBTX LIBOR3 25 A 48M",
+      "code": 38
+    },
+    {
+      "sigla": "SBTX LIBOR3 49 A 72M",
+      "code": 39
+    },
+    {
+      "sigla": "SBTX LIBOR3 ACIMA72M",
+      "code": 41
+    },
+    {
+      "sigla": "SBTX LIBOR3 ATE 24M",
+      "code": 36
+    },
+    {
+      "sigla": "SELIC ACUM",
+      "code": 541
+    },
+    {
+      "sigla": "SELIC ACUM. * 1000",
+      "code": 141
+    },
+    {
+      "sigla": "SELIC ACUM. D-2",
+      "code": 143
+    },
+    {
+      "sigla": "SELIC ACUM. D-2(75%)",
+      "code": 147
+    },
+    {
+      "sigla": "SELIC ACUM. D-2(90%)",
+      "code": 149
+    },
+    {
+      "sigla": "SELIC ACUMULADA",
+      "code": 142
+    },
+    {
+      "sigla": "SOBRETAXA FIXA SELIC",
+      "code": 24
+    },
+    {
+      "sigla": "SOBRETAXA FIXA TJ3",
+      "code": 22
+    },
+    {
+      "sigla": "SOBRETAXA FIXA TJ6",
+      "code": 23
+    },
+    {
+      "sigla": "SOBRETAXA REF IPCA",
+      "code": 21
+    },
+    {
+      "sigla": "SWFR",
+      "code": 663
+    },
+    {
+      "sigla": "T.JUROS BIRD",
+      "code": 3
+    },
+    {
+      "sigla": "T.JUROS FATC",
+      "code": 4
+    },
+    {
+      "sigla": "T.JUROS RES.635/87",
+      "code": 6
+    },
+    {
+      "sigla": "TAXA FLAT",
+      "code": 28
+    },
+    {
+      "sigla": "TAXA SELIC D-10",
+      "code": 52
+    },
+    {
+      "sigla": "TAXA SELIC D-2",
+      "code": 15
+    },
+    {
+      "sigla": "TAXA SELIC D-4",
+      "code": 544
+    },
+    {
+      "sigla": "TJ PRO-360",
+      "code": 319
+    },
+    {
+      "sigla": "TJ PRO-365",
+      "code": 318
+    },
+    {
+      "sigla": "TJ3 INTERPOLADA",
+      "code": 11
+    },
+    {
+      "sigla": "TJ3BNDES",
+      "code": 13
+    },
+    {
+      "sigla": "TJ6 INTERPOLADA",
+      "code": 12
+    },
+    {
+      "sigla": "TJ6BNDES",
+      "code": 14
+    },
+    {
+      "sigla": "TJLP",
+      "code": 311
+    },
+    {
+      "sigla": "TLP -TAXA PRE-FIXADA",
+      "code": 777
+    },
+    {
+      "sigla": "TLP-IPCA",
+      "code": 236
+    },
+    {
+      "sigla": "TR",
+      "code": 200
+    },
+    {
+      "sigla": "TR1015",
+      "code": 37
+    },
+    {
+      "sigla": "TRBT01",
+      "code": 54
+    },
+    {
+      "sigla": "TRBT02",
+      "code": 55
+    },
+    {
+      "sigla": "TRBT03",
+      "code": 56
+    },
+    {
+      "sigla": "TRBT04",
+      "code": 57
+    },
+    {
+      "sigla": "TRBT05",
+      "code": 58
+    },
+    {
+      "sigla": "TRBT06",
+      "code": 59
+    },
+    {
+      "sigla": "TRBT07",
+      "code": 30
+    },
+    {
+      "sigla": "TRBT08",
+      "code": 62
+    },
+    {
+      "sigla": "TRBT09",
+      "code": 63
+    },
+    {
+      "sigla": "TRBT10",
+      "code": 64
+    },
+    {
+      "sigla": "TRBT11",
+      "code": 65
+    },
+    {
+      "sigla": "TRBT12",
+      "code": 66
+    },
+    {
+      "sigla": "TRBT13",
+      "code": 67
+    },
+    {
+      "sigla": "TRBT14",
+      "code": 68
+    },
+    {
+      "sigla": "TRBT15",
+      "code": 69
+    },
+    {
+      "sigla": "TRBT16",
+      "code": 71
+    },
+    {
+      "sigla": "TRBT17",
+      "code": 72
+    },
+    {
+      "sigla": "TRBT18",
+      "code": 61
+    },
+    {
+      "sigla": "TRBT19",
+      "code": 74
+    },
+    {
+      "sigla": "TRBT20",
+      "code": 75
+    },
+    {
+      "sigla": "TRBT21",
+      "code": 76
+    },
+    {
+      "sigla": "TRBT22",
+      "code": 77
+    },
+    {
+      "sigla": "TRBT23",
+      "code": 73
+    },
+    {
+      "sigla": "TRBT24",
+      "code": 79
+    },
+    {
+      "sigla": "TRBT25",
+      "code": 80
+    },
+    {
+      "sigla": "TRBT26",
+      "code": 81
+    },
+    {
+      "sigla": "TRBT27",
+      "code": 82
+    },
+    {
+      "sigla": "TRBT28",
+      "code": 83
+    },
+    {
+      "sigla": "TRBT29",
+      "code": 84
+    },
+    {
+      "sigla": "TRBT30",
+      "code": 85
+    },
+    {
+      "sigla": "TRBT31",
+      "code": 26
+    },
+    {
+      "sigla": "TRIP01",
+      "code": 89
+    },
+    {
+      "sigla": "TRIP15",
+      "code": 105
+    },
+    {
+      "sigla": "TRIP25",
+      "code": 115
+    },
+    {
+      "sigla": "TX FIX USD 25 A 48M",
+      "code": 33
+    },
+    {
+      "sigla": "TX FIX USD 49 A 72M",
+      "code": 34
+    },
+    {
+      "sigla": "TX FIX USD ACIMA 72M",
+      "code": 35
+    },
+    {
+      "sigla": "TX FIX USD ATE 24M",
+      "code": 32
+    },
+    {
+      "sigla": "TX RF IPCA 25 A 48M",
+      "code": 17
+    },
+    {
+      "sigla": "TX RF IPCA 49 A 72M",
+      "code": 18
+    },
+    {
+      "sigla": "TX RF IPCA ACIMA 72M",
+      "code": 19
+    },
+    {
+      "sigla": "TX RF IPCA ATE 24M",
+      "code": 16
+    },
+    {
+      "sigla": "TX. REFER. EM IPCA",
+      "code": 9
+    },
+    {
+      "sigla": "UMBNDES",
+      "code": 590
+    },
+    {
+      "sigla": "UMCDI",
+      "code": 301
+    },
+    {
+      "sigla": "UMG$",
+      "code": 605
+    },
+    {
+      "sigla": "UMIPCA",
+      "code": 180
+    },
+    {
+      "sigla": "UMIPCA-M",
+      "code": 184
+    },
+    {
+      "sigla": "UR IGP-DI",
+      "code": 469
+    },
+    {
+      "sigla": "UR IGPM PRO-RATA",
+      "code": 484
+    },
+    {
+      "sigla": "UR IPC",
+      "code": 299
+    },
+    {
+      "sigla": "UR-CDI",
+      "code": 300
+    },
+    {
+      "sigla": "UR-IPC PRO-RATA",
+      "code": 310
+    },
+    {
+      "sigla": "UR-UB",
+      "code": 497
+    },
+    {
+      "sigla": "UR-UI",
+      "code": 500
+    },
+    {
+      "sigla": "UR1516",
+      "code": 468
+    },
+    {
+      "sigla": "UR4015",
+      "code": 470
+    },
+    {
+      "sigla": "UR5015",
+      "code": 461
+    },
+    {
+      "sigla": "UR6015",
+      "code": 473
+    },
+    {
+      "sigla": "UR9515",
+      "code": 492
+    },
+    {
+      "sigla": "URBT01",
+      "code": 354
+    },
+    {
+      "sigla": "URBT02",
+      "code": 355
+    },
+    {
+      "sigla": "URBT03",
+      "code": 356
+    },
+    {
+      "sigla": "URBT04",
+      "code": 357
+    },
+    {
+      "sigla": "URBT05",
+      "code": 358
+    },
+    {
+      "sigla": "URBT06",
+      "code": 359
+    },
+    {
+      "sigla": "URBT07",
+      "code": 360
+    },
+    {
+      "sigla": "URBT08",
+      "code": 362
+    },
+    {
+      "sigla": "URBT09",
+      "code": 363
+    },
+    {
+      "sigla": "URBT10",
+      "code": 364
+    },
+    {
+      "sigla": "URBT11",
+      "code": 365
+    },
+    {
+      "sigla": "URBT12",
+      "code": 366
+    },
+    {
+      "sigla": "URBT13",
+      "code": 367
+    },
+    {
+      "sigla": "URBT14",
+      "code": 368
+    },
+    {
+      "sigla": "URBT15",
+      "code": 369
+    },
+    {
+      "sigla": "URBT16",
+      "code": 371
+    },
+    {
+      "sigla": "URBT17",
+      "code": 372
+    },
+    {
+      "sigla": "URBT18",
+      "code": 373
+    },
+    {
+      "sigla": "URBT19",
+      "code": 374
+    },
+    {
+      "sigla": "URBT20",
+      "code": 375
+    },
+    {
+      "sigla": "URBT21",
+      "code": 376
+    },
+    {
+      "sigla": "URBT22",
+      "code": 377
+    },
+    {
+      "sigla": "URBT23",
+      "code": 378
+    },
+    {
+      "sigla": "URBT24",
+      "code": 379
+    },
+    {
+      "sigla": "URBT25",
+      "code": 380
+    },
+    {
+      "sigla": "URBT26",
+      "code": 381
+    },
+    {
+      "sigla": "URBT27",
+      "code": 382
+    },
+    {
+      "sigla": "URBT28",
+      "code": 383
+    },
+    {
+      "sigla": "URBT29",
+      "code": 384
+    },
+    {
+      "sigla": "URBT30",
+      "code": 385
+    },
+    {
+      "sigla": "URBT31",
+      "code": 386
+    },
+    {
+      "sigla": "URD01",
+      "code": 427
+    },
+    {
+      "sigla": "URD02",
+      "code": 428
+    },
+    {
+      "sigla": "URD03",
+      "code": 429
+    },
+    {
+      "sigla": "URD04",
+      "code": 430
+    },
+    {
+      "sigla": "URD05",
+      "code": 431
+    },
+    {
+      "sigla": "URD06",
+      "code": 432
+    },
+    {
+      "sigla": "URD07",
+      "code": 433
+    },
+    {
+      "sigla": "URD08",
+      "code": 435
+    },
+    {
+      "sigla": "URD09",
+      "code": 436
+    },
+    {
+      "sigla": "URD10",
+      "code": 437
+    },
+    {
+      "sigla": "URD11",
+      "code": 438
+    },
+    {
+      "sigla": "URD12",
+      "code": 439
+    },
+    {
+      "sigla": "URD13",
+      "code": 440
+    },
+    {
+      "sigla": "URD14",
+      "code": 441
+    },
+    {
+      "sigla": "URD15",
+      "code": 443
+    },
+    {
+      "sigla": "URD16",
+      "code": 44
+    },
+    {
+      "sigla": "URD17",
+      "code": 445
+    },
+    {
+      "sigla": "URD18",
+      "code": 446
+    },
+    {
+      "sigla": "URD19",
+      "code": 447
+    },
+    {
+      "sigla": "URD20",
+      "code": 448
+    },
+    {
+      "sigla": "URD21",
+      "code": 449
+    },
+    {
+      "sigla": "URD22",
+      "code": 451
+    },
+    {
+      "sigla": "URD23",
+      "code": 452
+    },
+    {
+      "sigla": "URD24",
+      "code": 453
+    },
+    {
+      "sigla": "URD25",
+      "code": 454
+    },
+    {
+      "sigla": "URD26",
+      "code": 455
+    },
+    {
+      "sigla": "URD27",
+      "code": 456
+    },
+    {
+      "sigla": "URD28",
+      "code": 457
+    },
+    {
+      "sigla": "URD29",
+      "code": 458
+    },
+    {
+      "sigla": "URD30",
+      "code": 459
+    },
+    {
+      "sigla": "URD31",
+      "code": 460
+    },
+    {
+      "sigla": "URDTJ16",
+      "code": 444
+    },
+    {
+      "sigla": "URDTJ20",
+      "code": 40
+    },
+    {
+      "sigla": "URIGPM",
+      "code": 558
+    },
+    {
+      "sigla": "URIGPM LIM. 0,759%AM",
+      "code": 599
+    },
+    {
+      "sigla": "URIGPM PRO-RATA POS",
+      "code": 598
+    },
+    {
+      "sigla": "URIGPM PRORATA M.ANT",
+      "code": 485
+    },
+    {
+      "sigla": "URINPC",
+      "code": 329
+    },
+    {
+      "sigla": "URINPC ANT",
+      "code": 330
+    },
+    {
+      "sigla": "URINPC PRORATA(DC)",
+      "code": 328
+    },
+    {
+      "sigla": "URIP01",
+      "code": 389
+    },
+    {
+      "sigla": "URIP02",
+      "code": 390
+    },
+    {
+      "sigla": "URIP03",
+      "code": 391
+    },
+    {
+      "sigla": "URIP05",
+      "code": 393
+    },
+    {
+      "sigla": "URIP09",
+      "code": 398
+    },
+    {
+      "sigla": "URIP10",
+      "code": 399
+    },
+    {
+      "sigla": "URIP11",
+      "code": 401
+    },
+    {
+      "sigla": "URIP13",
+      "code": 403
+    },
+    {
+      "sigla": "URIP15",
+      "code": 405
+    },
+    {
+      "sigla": "URIP17",
+      "code": 407
+    },
+    {
+      "sigla": "URIP20",
+      "code": 410
+    },
+    {
+      "sigla": "URIP26",
+      "code": 416
+    },
+    {
+      "sigla": "URIP27",
+      "code": 417
+    },
+    {
+      "sigla": "URIP30",
+      "code": 421
+    },
+    {
+      "sigla": "URIPCTR",
+      "code": 29
+    },
+    {
+      "sigla": "URPND",
+      "code": 499
+    },
+    {
+      "sigla": "URTJ",
+      "code": 27
+    },
+    {
+      "sigla": "URTJ01",
+      "code": 501
+    },
+    {
+      "sigla": "URTJ05",
+      "code": 505
+    },
+    {
+      "sigla": "URTJ09",
+      "code": 509
+    },
+    {
+      "sigla": "URTJ10",
+      "code": 510
+    },
+    {
+      "sigla": "URTJ15",
+      "code": 535
+    },
+    {
+      "sigla": "URTJ20",
+      "code": 520
+    },
+    {
+      "sigla": "URTJ30",
+      "code": 530
+    },
+    {
+      "sigla": "URTJLP",
+      "code": 314
+    },
+    {
+      "sigla": "URTJLP 365/366",
+      "code": 321
+    },
+    {
+      "sigla": "URTR",
+      "code": 20
+    },
+    {
+      "sigla": "URTR01",
+      "code": 101
+    },
+    {
+      "sigla": "URTR15",
+      "code": 25
+    },
+    {
+      "sigla": "US$",
+      "code": 604
+    },
+    {
+      "sigla": "US$ COMPRA",
+      "code": 833
+    },
+    {
+      "sigla": "US$ MEDIA",
+      "code": 835
+    },
+    {
+      "sigla": "YEN",
+      "code": "671BIRD",
+      "": 867
+    },
+    {
+      "sigla": "BT0915",
+      "code": 465
+    },
+    {
+      "sigla": "BT0917",
+      "code": 466
+    },
+    {
+      "sigla": "BT1015",
+      "code": 467
+    },
+    {
+      "sigla": "BTN (P/ TR)",
+      "code": 107
+    },
+    {
+      "sigla": "CAN$",
+      "code": 612
+    },
+    {
+      "sigla": "CUST ENDIV EM DOLAR",
+      "code": 7
+    },
+    {
+      "sigla": "DM",
+      "code": 620
+    },
+    {
+      "sigla": "EUR",
+      "code": 795
+    },
+    {
+      "sigla": "EUR C",
+      "code": 796
+    },
+    {
+      "sigla": "EUR D-2",
+      "code": 797
+    },
+    {
+      "sigla": "FFR",
+      "code": 655
+    },
+    {
+      "sigla": "FLS",
+      "code": 701
+    },
+    {
+      "sigla": "FUNTTEL-DERI TR226",
+      "code": 202
+    },
+    {
+      "sigla": "I.R.635",
+      "code": 2
+    },
+    {
+      "sigla": "IP0915",
+      "code": 462
+    },
+    {
+      "sigla": "IP0917",
+      "code": 463
+    },
+    {
+      "sigla": "IP1015",
+      "code": 464
+    },
+    {
+      "sigla": "IPC-R",
+      "code": 10
+    },
+    {
+      "sigla": "IPCA TLP",
+      "code": 185
+    },
+    {
+      "sigla": "J.RES.635",
+      "code": 1
+    },
+    {
+      "sigla": "JURO FIXO PRE-EMBAR",
+      "code": 8
+    },
+    {
+      "sigla": "LIB",
+      "code": 639
+    },
+    {
+      "sigla": "MILENIO 28",
+      "code": 87
+    },
+    {
+      "sigla": "OFND-B",
+      "code": 495
+    },
+    {
+      "sigla": "OFND-I",
+      "code": 496
+    },
+    {
+      "sigla": "OTNA",
+      "code": 43
+    },
+    {
+      "sigla": "PESO URUGUAIO",
+      "code": 629
+    },
+    {
+      "sigla": "PESO URUGUAIO C",
+      "code": 630
+    },
+    {
+      "sigla": "SBTX LIBOR3 25 A 48M",
+      "code": 38
+    },
+    {
+      "sigla": "SBTX LIBOR3 49 A 72M",
+      "code": 39
+    },
+    {
+      "sigla": "SBTX LIBOR3 ACIMA72M",
+      "code": 41
+    },
+    {
+      "sigla": "SBTX LIBOR3 ATE 24M",
+      "code": 36
+    },
+    {
+      "sigla": "SELIC ACUM",
+      "code": 541
+    },
+    {
+      "sigla": "SELIC ACUM. * 1000",
+      "code": 141
+    },
+    {
+      "sigla": "SELIC ACUM. D-2",
+      "code": 143
+    },
+    {
+      "sigla": "SELIC ACUM. D-2(75%)",
+      "code": 147
+    },
+    {
+      "sigla": "SELIC ACUM. D-2(90%)",
+      "code": 149
+    },
+    {
+      "sigla": "SELIC ACUMULADA",
+      "code": 142
+    },
+    {
+      "sigla": "SOBRETAXA FIXA SELIC",
+      "code": 24
+    },
+    {
+      "sigla": "SOBRETAXA FIXA TJ3",
+      "code": 22
+    },
+    {
+      "sigla": "SOBRETAXA FIXA TJ6",
+      "code": 23
+    },
+    {
+      "sigla": "SOBRETAXA REF IPCA",
+      "code": 21
+    },
+    {
+      "sigla": "SWFR",
+      "code": 663
+    },
+    {
+      "sigla": "T.JUROS BIRD",
+      "code": 3
+    },
+    {
+      "sigla": "T.JUROS FATC",
+      "code": 4
+    },
+    {
+      "sigla": "T.JUROS RES.635/87",
+      "code": 6
+    },
+    {
+      "sigla": "TAXA FLAT",
+      "code": 28
+    },
+    {
+      "sigla": "TAXA SELIC D-10",
+      "code": 52
+    },
+    {
+      "sigla": "TAXA SELIC D-2",
+      "code": 15
+    },
+    {
+      "sigla": "TAXA SELIC D-4",
+      "code": 544
+    },
+    {
+      "sigla": "TJ PRO-360",
+      "code": 319
+    },
+    {
+      "sigla": "TJ PRO-365",
+      "code": 318
+    },
+    {
+      "sigla": "TJ3 INTERPOLADA",
+      "code": 11
+    },
+    {
+      "sigla": "TJ3BNDES",
+      "code": 13
+    },
+    {
+      "sigla": "TJ6 INTERPOLADA",
+      "code": 12
+    },
+    {
+      "sigla": "TJ6BNDES",
+      "code": 14
+    },
+    {
+      "sigla": "TJLP",
+      "code": 311
+    },
+    {
+      "sigla": "TLP -TAXA PRE-FIXADA",
+      "code": 777
+    },
+    {
+      "sigla": "TLP-IPCA",
+      "code": 236
+    },
+    {
+      "sigla": "TR",
+      "code": 200
+    },
+    {
+      "sigla": "TR1015",
+      "code": 37
+    },
+    {
+      "sigla": "TRBT01",
+      "code": 54
+    },
+    {
+      "sigla": "TRBT02",
+      "code": 55
+    },
+    {
+      "sigla": "TRBT03",
+      "code": 56
+    },
+    {
+      "sigla": "TRBT04",
+      "code": 57
+    },
+    {
+      "sigla": "TRBT05",
+      "code": 58
+    },
+    {
+      "sigla": "TRBT06",
+      "code": 59
+    },
+    {
+      "sigla": "TRBT07",
+      "code": 30
+    },
+    {
+      "sigla": "TRBT08",
+      "code": 62
+    },
+    {
+      "sigla": "TRBT09",
+      "code": 63
+    },
+    {
+      "sigla": "TRBT10",
+      "code": 64
+    },
+    {
+      "sigla": "TRBT11",
+      "code": 65
+    },
+    {
+      "sigla": "TRBT12",
+      "code": 66
+    },
+    {
+      "sigla": "TRBT13",
+      "code": 67
+    },
+    {
+      "sigla": "TRBT14",
+      "code": 68
+    },
+    {
+      "sigla": "TRBT15",
+      "code": 69
+    },
+    {
+      "sigla": "TRBT16",
+      "code": 71
+    },
+    {
+      "sigla": "TRBT17",
+      "code": 72
+    },
+    {
+      "sigla": "TRBT18",
+      "code": 61
+    },
+    {
+      "sigla": "TRBT19",
+      "code": 74
+    },
+    {
+      "sigla": "TRBT20",
+      "code": 75
+    },
+    {
+      "sigla": "TRBT21",
+      "code": 76
+    },
+    {
+      "sigla": "TRBT22",
+      "code": 77
+    },
+    {
+      "sigla": "TRBT23",
+      "code": 73
+    },
+    {
+      "sigla": "TRBT24",
+      "code": 79
+    },
+    {
+      "sigla": "TRBT25",
+      "code": 80
+    },
+    {
+      "sigla": "TRBT26",
+      "code": 81
+    },
+    {
+      "sigla": "TRBT27",
+      "code": 82
+    },
+    {
+      "sigla": "TRBT28",
+      "code": 83
+    },
+    {
+      "sigla": "TRBT29",
+      "code": 84
+    },
+    {
+      "sigla": "TRBT30",
+      "code": 85
+    },
+    {
+      "sigla": "TRBT31",
+      "code": 26
+    },
+    {
+      "sigla": "TRIP01",
+      "code": 89
+    },
+    {
+      "sigla": "TRIP15",
+      "code": 105
+    },
+    {
+      "sigla": "TRIP25",
+      "code": 115
+    },
+    {
+      "sigla": "TX FIX USD 25 A 48M",
+      "code": 33
+    },
+    {
+      "sigla": "TX FIX USD 49 A 72M",
+      "code": 34
+    },
+    {
+      "sigla": "TX FIX USD ACIMA 72M",
+      "code": 35
+    },
+    {
+      "sigla": "TX FIX USD ATE 24M",
+      "code": 32
+    },
+    {
+      "sigla": "TX RF IPCA 25 A 48M",
+      "code": 17
+    },
+    {
+      "sigla": "TX RF IPCA 49 A 72M",
+      "code": 18
+    },
+    {
+      "sigla": "TX RF IPCA ACIMA 72M",
+      "code": 19
+    },
+    {
+      "sigla": "TX RF IPCA ATE 24M",
+      "code": 16
+    },
+    {
+      "sigla": "TX. REFER. EM IPCA",
+      "code": 9
+    },
+    {
+      "sigla": "UMBNDES",
+      "code": 590
+    },
+    {
+      "sigla": "UMCDI",
+      "code": 301
+    },
+    {
+      "sigla": "UMG$",
+      "code": 605
+    },
+    {
+      "sigla": "UMIPCA",
+      "code": 180
+    },
+    {
+      "sigla": "UMIPCA-M",
+      "code": 184
+    },
+    {
+      "sigla": "UR IGP-DI",
+      "code": 469
+    },
+    {
+      "sigla": "UR IGPM PRO-RATA",
+      "code": 484
+    },
+    {
+      "sigla": "UR IPC",
+      "code": 299
+    },
+    {
+      "sigla": "UR-CDI",
+      "code": 300
+    },
+    {
+      "sigla": "UR-IPC PRO-RATA",
+      "code": 310
+    },
+    {
+      "sigla": "UR-UB",
+      "code": 497
+    },
+    {
+      "sigla": "UR-UI",
+      "code": 500
+    },
+    {
+      "sigla": "UR1516",
+      "code": 468
+    },
+    {
+      "sigla": "UR4015",
+      "code": 470
+    },
+    {
+      "sigla": "UR5015",
+      "code": 461
+    },
+    {
+      "sigla": "UR6015",
+      "code": 473
+    },
+    {
+      "sigla": "UR9515",
+      "code": 492
+    },
+    {
+      "sigla": "URBT01",
+      "code": 354
+    },
+    {
+      "sigla": "URBT02",
+      "code": 355
+    },
+    {
+      "sigla": "URBT03",
+      "code": 356
+    },
+    {
+      "sigla": "URBT04",
+      "code": 357
+    },
+    {
+      "sigla": "URBT05",
+      "code": 358
+    },
+    {
+      "sigla": "URBT06",
+      "code": 359
+    },
+    {
+      "sigla": "URBT07",
+      "code": 360
+    },
+    {
+      "sigla": "URBT08",
+      "code": 362
+    },
+    {
+      "sigla": "URBT09",
+      "code": 363
+    },
+    {
+      "sigla": "URBT10",
+      "code": 364
+    },
+    {
+      "sigla": "URBT11",
+      "code": 365
+    },
+    {
+      "sigla": "URBT12",
+      "code": 366
+    },
+    {
+      "sigla": "URBT13",
+      "code": 367
+    },
+    {
+      "sigla": "URBT14",
+      "code": 368
+    },
+    {
+      "sigla": "URBT15",
+      "code": 369
+    },
+    {
+      "sigla": "URBT16",
+      "code": 371
+    },
+    {
+      "sigla": "URBT17",
+      "code": 372
+    },
+    {
+      "sigla": "URBT18",
+      "code": 373
+    },
+    {
+      "sigla": "URBT19",
+      "code": 374
+    },
+    {
+      "sigla": "URBT20",
+      "code": 375
+    },
+    {
+      "sigla": "URBT21",
+      "code": 376
+    },
+    {
+      "sigla": "URBT22",
+      "code": 377
+    },
+    {
+      "sigla": "URBT23",
+      "code": 378
+    },
+    {
+      "sigla": "URBT24",
+      "code": 379
+    },
+    {
+      "sigla": "URBT25",
+      "code": 380
+    },
+    {
+      "sigla": "URBT26",
+      "code": 381
+    },
+    {
+      "sigla": "URBT27",
+      "code": 382
+    },
+    {
+      "sigla": "URBT28",
+      "code": 383
+    },
+    {
+      "sigla": "URBT29",
+      "code": 384
+    },
+    {
+      "sigla": "URBT30",
+      "code": 385
+    },
+    {
+      "sigla": "URBT31",
+      "code": 386
+    },
+    {
+      "sigla": "URD01",
+      "code": 427
+    },
+    {
+      "sigla": "URD02",
+      "code": 428
+    },
+    {
+      "sigla": "URD03",
+      "code": 429
+    },
+    {
+      "sigla": "URD04",
+      "code": 430
+    },
+    {
+      "sigla": "URD05",
+      "code": 431
+    },
+    {
+      "sigla": "URD06",
+      "code": 432
+    },
+    {
+      "sigla": "URD07",
+      "code": 433
+    },
+    {
+      "sigla": "URD08",
+      "code": 435
+    },
+    {
+      "sigla": "URD09",
+      "code": 436
+    },
+    {
+      "sigla": "URD10",
+      "code": 437
+    },
+    {
+      "sigla": "URD11",
+      "code": 438
+    },
+    {
+      "sigla": "URD12",
+      "code": 439
+    },
+    {
+      "sigla": "URD13",
+      "code": 440
+    },
+    {
+      "sigla": "URD14",
+      "code": 441
+    },
+    {
+      "sigla": "URD15",
+      "code": 443
+    },
+    {
+      "sigla": "URD16",
+      "code": 44
+    },
+    {
+      "sigla": "URD17",
+      "code": 445
+    },
+    {
+      "sigla": "URD18",
+      "code": 446
+    },
+    {
+      "sigla": "URD19",
+      "code": 447
+    },
+    {
+      "sigla": "URD20",
+      "code": 448
+    },
+    {
+      "sigla": "URD21",
+      "code": 449
+    },
+    {
+      "sigla": "URD22",
+      "code": 451
+    },
+    {
+      "sigla": "URD23",
+      "code": 452
+    },
+    {
+      "sigla": "URD24",
+      "code": 453
+    },
+    {
+      "sigla": "URD25",
+      "code": 454
+    },
+    {
+      "sigla": "URD26",
+      "code": 455
+    },
+    {
+      "sigla": "URD27",
+      "code": 456
+    },
+    {
+      "sigla": "URD28",
+      "code": 457
+    },
+    {
+      "sigla": "URD29",
+      "code": 458
+    },
+    {
+      "sigla": "URD30",
+      "code": 459
+    },
+    {
+      "sigla": "URD31",
+      "code": 460
+    },
+    {
+      "sigla": "URDTJ16",
+      "code": 444
+    },
+    {
+      "sigla": "URDTJ20",
+      "code": 40
+    },
+    {
+      "sigla": "URIGPM",
+      "code": 558
+    },
+    {
+      "sigla": "URIGPM LIM. 0,759%AM",
+      "code": 599
+    },
+    {
+      "sigla": "URIGPM PRO-RATA POS",
+      "code": 598
+    },
+    {
+      "sigla": "URIGPM PRORATA M.ANT",
+      "code": 485
+    },
+    {
+      "sigla": "URINPC",
+      "code": 329
+    },
+    {
+      "sigla": "URINPC ANT",
+      "code": 330
+    },
+    {
+      "sigla": "URINPC PRORATA(DC)",
+      "code": 328
+    },
+    {
+      "sigla": "URIP01",
+      "code": 389
+    },
+    {
+      "sigla": "URIP02",
+      "code": 390
+    },
+    {
+      "sigla": "URIP03",
+      "code": 391
+    },
+    {
+      "sigla": "URIP05",
+      "code": 393
+    },
+    {
+      "sigla": "URIP09",
+      "code": 398
+    },
+    {
+      "sigla": "URIP10",
+      "code": 399
+    },
+    {
+      "sigla": "URIP11",
+      "code": 401
+    },
+    {
+      "sigla": "URIP13",
+      "code": 403
+    },
+    {
+      "sigla": "URIP15",
+      "code": 405
+    },
+    {
+      "sigla": "URIP17",
+      "code": 407
+    },
+    {
+      "sigla": "URIP20",
+      "code": 410
+    },
+    {
+      "sigla": "URIP26",
+      "code": 416
+    },
+    {
+      "sigla": "URIP27",
+      "code": 417
+    },
+    {
+      "sigla": "URIP30",
+      "code": 421
+    },
+    {
+      "sigla": "URIPCTR",
+      "code": 29
+    },
+    {
+      "sigla": "URPND",
+      "code": 499
+    },
+    {
+      "sigla": "URTJ",
+      "code": 27
+    },
+    {
+      "sigla": "URTJ01",
+      "code": 501
+    },
+    {
+      "sigla": "URTJ05",
+      "code": 505
+    },
+    {
+      "sigla": "URTJ09",
+      "code": 509
+    },
+    {
+      "sigla": "URTJ10",
+      "code": 510
+    },
+    {
+      "sigla": "URTJ15",
+      "code": 535
+    },
+    {
+      "sigla": "URTJ20",
+      "code": 520
+    },
+    {
+      "sigla": "URTJ30",
+      "code": 530
+    },
+    {
+      "sigla": "URTJLP",
+      "code": 314
+    },
+    {
+      "sigla": "URTJLP 365/366",
+      "code": 321
+    },
+    {
+      "sigla": "URTR",
+      "code": 20
+    },
+    {
+      "sigla": "URTR01",
+      "code": 101
+    },
+    {
+      "sigla": "URTR15",
+      "code": 25
+    },
+    {
+      "sigla": "US$",
+      "code": 604
+    },
+    {
+      "sigla": "US$ COMPRA",
+      "code": 833
+    },
+    {
+      "sigla": "US$ MEDIA",
+      "code": 835
+    },
+    {
+      "sigla": "YEN",
+      "code": 671
+    }
+  ]

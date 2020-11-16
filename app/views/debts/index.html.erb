@@ -45,7 +45,7 @@
           <td><%= debt.status %></td>
           <td><%= link_to fa_icon("eye 2x", title: "Mostrar"), debt, id: "mostra-#{debt.id}" %></td>
           <td><%= link_to fa_icon("edit 2x", title: "Editar"), edit_debt_path(debt) %></td>
-          <td><%= link_to fa_icon("file 2x", title: "Relatório mensal"), month_report_path(debt_id: debt.id, format: 'pdf') %></td>
+          <td><%= link_to fa_icon("file 2x", title: "Relatório mensal"), month_report_path(debt_id: debt.id, :year => "", :month => ""), target: "_blank" %></td>
         </tr>
       <% end %>
     </tbody>

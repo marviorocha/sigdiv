@@ -1,11 +1,10 @@
 
 <h1>Moedas</h1>
  
- <div class="notifications">
- 
- 
- </div>
- 
+<div class="notifications">
+  </div>
+
+
 <table id="dttb" class='table table-striped table-hover'>
   <thead>
     <tr>
@@ -18,24 +17,14 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @currencies.each do |currency| %>
-      <tr>
-        <td><%= currency.name.upcase %></td>
-        <td><%= currency.formula %></td>
-        <td><%= currency.description %></td>
-        <td><%= currency.last_currency %></td>        
-        <td><%= currency.date_currency.blank? ? "" : currency.date_currency.strftime('%d/%m/%Y')  %> </td>        
-        <td><%= link_to fa_icon("money 2x", title: "Mostrar"),  currency_path(currency),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#openModal'} %></td>
-        <td><%= link_to fa_icon("edit 2x",  title: "Editar"),  edit_currency_path(currency), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#openModal'}  %></td>        
-        <td><%= link_to fa_icon("trash 2x", title: "Remover"), currency, method: :delete, data: { confirm: 'Tem certeza?'}, class: 'delete', remote: true %></td>
-      </tr>
-    <% end %>
-   
+  <tbody id="currencies">
+     
   </tbody>
 
 </table>
-   
+    <%= link_to 'Nova moeda', new_currency_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#openModal', class: "btn btn-success pull-right"} %>
+
+
  <br>
 
   <div class="modal fade" id="openModal" tabindex="-1" role="dialog" aria-labelledby="openModal" aria-hidden="true">
@@ -56,7 +45,3 @@
 </div>
  
   
- <%= link_to 'Nova moeda', new_currency_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#openModal', class: "btn btn-success pull-right"} %>
-
-
- 

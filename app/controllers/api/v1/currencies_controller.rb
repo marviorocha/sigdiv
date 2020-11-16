@@ -54,7 +54,7 @@ module Api
             end
 
             def params_currencies
-                params.require(:currency).permit(:id, :name, :formula, :description)
+                params.require(:currency).permit(:id, :name, :formula, :description, :last_currency, :date_currency)
             end
         end
     end
