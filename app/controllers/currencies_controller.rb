@@ -70,9 +70,15 @@ class CurrenciesController < ApplicationController
     
   def set_currency
     @currency = Currency.find_by(:id => params[:id])
+    @response = RestClient.get('https://apis-gateway.bndes.gov.br/moedascontratuais/v1/siglaSeries', 
+                            headers={ Authorization: "Bearer 95e1a099-ced5-3b11-b6c4-7766151c9ac6"})  
+    @json = JSON.parse @response 
+    
+    
+    
   end
   
   def currency_params
-    params.require(:currency).permit(:name, :formula, :description, :last_currency, :date_currency)
+    params.require(:currency).permit(:name, :formula, :description, :last_currency, :date_currency, :code)
   end
 end

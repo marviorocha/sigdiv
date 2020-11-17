@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_142940) do
   create_table "currencies", force: :cascade do |t|
     t.string "name"
     t.string "formula"
+    t.string "code"
     t.text "description"
     t.string "last_currency"
     t.date "date_currency"

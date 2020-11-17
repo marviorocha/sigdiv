@@ -100,7 +100,9 @@ GEM
     crass (1.0.6)
     dentaku (3.3.4)
     diff-lcs (1.4.4)
-    erubi (1.9.0)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    erubi (1.10.0)
     execjs (2.7.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
@@ -119,6 +121,9 @@ GEM
     gyoku (1.3.1)
       builder (>= 2.1.2)
     hashdiff (1.0.1)
+    http-accept (1.7.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     httparty (0.18.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -127,6 +132,7 @@ GEM
       socksify
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    jquery (0.0.1)
     jquery-datatables (1.10.20)
     jquery-mask-plugin (1.15.0)
       railties (> 3.1)
@@ -157,6 +163,7 @@ GEM
     minitest (5.14.2)
     msgpack (1.3.3)
     multi_xml (0.6.0)
+    netrc (0.11.0)
     nio4r (2.5.4)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
@@ -218,8 +225,13 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redis (4.2.2)
+    redis (4.2.3)
     regexp_parser (1.8.2)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rexml (3.2.4)
     rspec-collection_matchers (1.2.0)
       rspec-expectations (>= 2.99.0.beta1)
@@ -243,19 +255,19 @@ GEM
     rspec-support (3.10.0)
     rspec_junit_formatter (0.4.1)
       rspec-core (>= 2, < 4, != 2.12.0)
-    rubocop (1.2.0)
+    rubocop (1.3.1)
       parallel (~> 1.10)
       parser (>= 2.7.1.5)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8)
       rexml
-      rubocop-ast (>= 1.0.1)
+      rubocop-ast (>= 1.1.1)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
     rubocop-ast (1.1.1)
       parser (>= 2.7.1.5)
-    rubocop-performance (1.8.1)
-      rubocop (>= 0.87.0)
+    rubocop-performance (1.9.0)
+      rubocop (>= 0.90.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     rubocop-rails (2.8.1)
       activesupport (>= 4.2.0)
@@ -322,6 +334,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.7)
     unicode-display_width (1.7.0)
     vcr (6.0.0)
     wasabi (3.6.1)
@@ -333,7 +348,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webmock (3.9.5)
+    webmock (3.10.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -367,6 +382,7 @@ DEPENDENCIES
   font-awesome-rails
   httparty
   jbuilder!
+  jquery
   jquery-datatables
   jquery-mask-plugin
   jquery-ui-rails
@@ -382,6 +398,7 @@ DEPENDENCIES
   rails (~> 6.0.3.4)
   rails-controller-testing
   redis
+  rest-client (~> 2.1)
   rspec-collection_matchers
   rspec-json_expectations
   rspec-rails

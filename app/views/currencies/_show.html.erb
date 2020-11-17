@@ -1,5 +1,5 @@
  <%= simple_form_for(@currency,  html: { remote: true }) do |f| %>
- 
+
 <p>
   <strong>Name:</strong>
 <%= @currency.name %>
@@ -7,9 +7,11 @@
 </p>
  
 <p>
-  <strong>Formula:</strong>
-  <%= @currency.formula %>
-  
+ 
+      <label for="moeda">Moeda</label>
+    <%= select("currency", "code", @json.collect {|p| [ p['sigla'] + " - (#{p['serie']})", p['serie'] ] }, {}, { :class => 'form-control' } ) %>
+
+ 
 </p>
 
 <p>

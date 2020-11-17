@@ -22,6 +22,7 @@ gem 'banco_central'
 gem 'jbuilder', :github => 'rails/jbuilder', :branch => 'master'
 gem 'bootstrap', '>= 4.3.1'
 gem 'font-awesome-rails'
+gem 'jquery'
 gem 'jquery-ui-rails'
 gem 'jquery-validation-rails'
 gem 'jquery-mask-plugin'
@@ -81,3 +82,5 @@ gem "redis"
 gem "pagy", "~> 3.9"
 
 gem "active_record_query_trace", "~> 1.8"
+
+gem "rest-client", "~> 2.1"

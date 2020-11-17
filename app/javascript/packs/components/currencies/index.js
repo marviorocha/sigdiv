@@ -28,7 +28,7 @@ const Currencies = () => {
 
     axios
       .get(
-        `https://apis-gateway.bndes.gov.br/moedascontratuais/v1/servicoListaCotacoes?sigla=${item.attributes.name}&dataInicio=${item.attributes.date_currency}`,
+        `https://apis-gateway.bndes.gov.br/moedascontratuais/v1/servicoListaCotacoes?serie=${item.attributes.code}&dataInicio=${item.attributes.date_currency}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {

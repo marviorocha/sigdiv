@@ -4,8 +4,14 @@
    
   
   <div class="form-inputs">
+
+ 
+
     <%= f.input :name %>
-    <%= f.input :formula %>
+     <label for="moeda">Moeda</label>
+    <%= select("currency", "code", @json.collect {|p| [ p['sigla'] + " - (#{p['serie']})", p['serie'] ] }, {}, { :class => 'form-control' } ) %>
+
+ <p></p>
     <%= f.label :last_currency %>
     <%= f.text_field  :last_currency, class: "form-control" %>
     <%= f.label :date_currency %>
