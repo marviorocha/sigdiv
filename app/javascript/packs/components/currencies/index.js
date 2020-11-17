@@ -21,44 +21,60 @@ const Currencies = () => {
   }, [currencie.length]);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://apis-gateway.bndes.gov.br/moedascontratuais/v1/servicoListaCotacoes?sigla=CAN$&dataInicio=${Date.now()}`,
-        { headers: { Authorization: `Bearer ${token}` } }
-      )
-      .then((response) => {
-        setBndes(response.data.listaCotacaoMoeda);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+   
   }, [bndes.length]);
 
   const bndes_list = bndes.slice(0, 1).map((item) => {
     return <td key={item.data}>{item.valor}</td>;
   });
+  console.log(count);
 
-  // Update Currencies
-
+  
   useEffect(() => {
-    // axios
-    //   .put("api/v1/currencies/2", {
-    //     name: my_id,
-    //     formula: "[BT0915]",
-    //     description: "Atualizando description",
-    //     last_currency: "20000",
-    //     date_currency: "2020-11-16",
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-  });
+
+    axios
+    .get(
+      `https://apis-gateway.bndes.gov.br/moedascontratuais/v1/servicoListaCotacoes?sigla=CAN$&dataInicio=${Date.now()}`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+    .then((response) => {
+      setBndes(response.data.listaCotacaoMoeda);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+    
+    const intervalId = setInterval(() => {
+      setCount((prevCount) => prevCount + 1);
+    }, 10000);
+    return () => clearInterval(intervalId);
+   
+    axios.put(`api/v1/currencies/${count}`, {
+      name: Math.random(bndes),
+      formula: "[BT0915]",
+      description: "Atualizando description",
+      last_currency: "20000",
+      date_currency: "2020-11-16"
+    }).catch((error) => {
+      console.log(error);
+    });
+    
+    
+    
+ 
+  
+  },[]);
+
+  
 
   const currencie_list = currencie.map((item) => {
+    const edit_item = "/currencies/" + item.attributes.id + "/edit";
+    const delete_item = "/currencies/" + item.attributes.id;
+
     return (
       <Fragment>
-        <tr key={item.attributes.id}>
-          <td>{item.attributes.name}</td>
+        <tr key={item.attributes.id.toString()}>
+          <td id="name">{item.attributes.name}</td>
           <td>{item.attributes.formula}</td>
           <td>{item.attributes.description}</td>
           <td>{item.attributes.last_currency}</td>
@@ -69,7 +85,7 @@ const Currencies = () => {
               data-toggle="modal"
               data-target="#openModal"
               data-remote="true"
-              href="/currencies/3"
+              href={edit_item}
             >
               <i title="Mostrar" className="fa fa-money fa-2x"></i>
             </a>
@@ -79,7 +95,7 @@ const Currencies = () => {
               data-toggle="modal"
               data-target="#openModal"
               data-remote="true"
-              href="/currencies/3/edit"
+              href={edit_item}
             >
               <i title="Editar" className="fa fa-edit fa-2x"></i>
             </a>
@@ -91,7 +107,7 @@ const Currencies = () => {
               data-target="#openModal"
               data-remote="true"
               data-method="delete"
-              href="/currencies/3/edit"
+              href={delete_item}
             >
               <i title="Excluir" className="fa fa-trash fa-2x"></i>
             </a>
