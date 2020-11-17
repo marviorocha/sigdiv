@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CurrenciesController < ApplicationController
-  before_action :set_currency, :only => [:show, :edit, :update, :destroy]
+  before_action :set_currency, :only => [:show, :edit, :update, :destroy, :new]
 
  
   def index
@@ -18,6 +18,7 @@ class CurrenciesController < ApplicationController
   end
  
   def new
+
     @currency = Currency.new
     respond_to do |format|
       format.html

@@ -8,6 +8,9 @@
  
 
     <%= f.input :name %>
+    <p>
+    <%= f.input :formula %>
+    </p>
      <label for="moeda">Moeda</label>
     <%= select("currency", "code", @json.collect {|p| [ p['sigla'] + " - (#{p['serie']})", p['serie'] ] }, {}, { :class => 'form-control' } ) %>
 
