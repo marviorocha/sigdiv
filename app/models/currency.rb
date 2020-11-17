@@ -3,7 +3,7 @@
 # require 'bndes'
 
 class Currency < ApplicationRecord
-  validates :name, :presence => true
+  validates :name, :presence => true, uniqueness: true
   validates :formula, :presence => true
 
   def to_brl

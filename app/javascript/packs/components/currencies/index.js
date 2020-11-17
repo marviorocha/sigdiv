@@ -23,52 +23,44 @@ const Currencies = () => {
 
  
   const currencie_list = currencie.map((item) => {
-
     const edit_item = "/currencies/" + item.attributes.id + "/edit";
     const delete_item = "/currencies/" + item.attributes.id;
 
- 
-     
-      axios
+    axios
       .get(
         `https://apis-gateway.bndes.gov.br/moedascontratuais/v1/servicoListaCotacoes?sigla=${item.attributes.name}&dataInicio=${item.attributes.date_currency}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
-         
-
-        axios.patch(`api/v1/currencies/${item.attributes.id}`, {
-      
-          last_currency: response.data.listaCotacaoMoeda[0]['valor'],
-         
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-
+        axios
+          .patch(`api/v1/currencies/${item.attributes.id}`, {
+            last_currency: response.data.listaCotacaoMoeda[0]["valor"],
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
         console.log(error);
       });
-      
- 
 
     return (
-
       <Fragment>
         <tr key={item.attributes.id}>
           <td>{item.attributes.name}</td>
           <td>{item.attributes.formula}</td>
           <td>{item.attributes.description}</td>
           <td>{item.attributes.last_currency}</td>
-          <td>{strftime("%d/%m/%Y",  new Date(item.attributes.date_currency)) }</td>
+          <td>
+            {strftime("%d/%m/%Y", new Date(item.attributes.date_currency))}
+          </td>
 
           <td>
             <a
               data-toggle="modal"
               data-target="#openModal"
               data-remote="true"
-              href={edit_item}
+              href={delete_item}
             >
               <i title="Mostrar" className="fa fa-money fa-2x"></i>
             </a>

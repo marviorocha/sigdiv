@@ -2,7 +2,7 @@
  
 <p>
   <strong>Name:</strong>
-  <%= @currency.name %>
+<%= @currency.name %>
   
 </p>
  
@@ -14,27 +14,26 @@
 
 <p>
   <strong>Última cotação:</strong>
- <%= name_to_currency(@currency.name)[:value] %>
-  <%#= @currency.date_currency.nil? ? name_to_currency(@currency.name)[:value] : @currency.date_currency  %>
+   <%= f.label :last_currency %>
+   <%= f.text_field  :last_currency, class: "form-control" %>
+  
 </p>
 <p>
   <strong>Data da cotação:</strong>
-  <%= f.hidden_field :date_currency,  class: "form-control string" %>
+ <%= f.label :date_currency %>
+  <%= f.text_field :date_currency,  class: "form-control string" %>
   
 </p>
  
 <p>
-  <strong>Description:</strong>
-  <%= name_to_currency(@currency.name)[:name] %>
+   
+    <%= f.input :description %>
 </p>
 
   <div class="modal-footer">
      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
  
-    <%= f.hidden_field :name %>
-    <%= f.hidden_field :formula %>
-    <%= f.hidden_field  :last_currency, value: name_to_currency(@currency.name)[:value], class: "form-control" %>
-    <%= f.hidden_field :description, value: name_to_currency(@currency.name)[:name] %>
+ 
     <%= f.button :submit, value: 'Atualizar Moeda', class: "btn btn-success pull-right" %>
   
 <% end %>
