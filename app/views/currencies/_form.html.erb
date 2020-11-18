@@ -12,9 +12,9 @@
     <%= f.input :formula %>
     </p>
      <label for="moeda">Moeda</label>
-    <%= select("currency", "code", @json.collect {|p| [ p['sigla'] + " - (#{p['serie']})", p['serie'] ] }, {}, { :class => 'form-control' } ) %>
-
- <p></p>
+     <p>
+    <%= select("currency", "code", @json.collect {|bndes| [ bndes['sigla'] + " - (#{bndes['serie']})", bndes['serie'] ] }, {}, { :class => 'form-control' } ) %>
+    </p>
     <%= f.label :last_currency %>
     <%= f.text_field  :last_currency, class: "form-control" %>
     <%= f.label :date_currency %>

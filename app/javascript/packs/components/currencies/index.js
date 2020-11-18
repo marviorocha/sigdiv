@@ -6,10 +6,9 @@ import strftime from "strftime";
 const Currencies = () => {
   const [currencie, setCurrencie] = useState([]);
   const [bndes, setBndes] = useState([]);
-   
+
   const token = "95e1a099-ced5-3b11-b6c4-7766151c9ac6";
 
-  // Get List Currencies
   useEffect(() => {
     axios
       .get("/api/v1/currencies.json")
@@ -21,8 +20,7 @@ const Currencies = () => {
       });
   }, [currencie.length]);
 
- 
-  const currencie_list = currencie.map((item) => {
+    const currenciesPages = currencie.map((item) => {
     const edit_item = "/currencies/" + item.attributes.id + "/edit";
     const delete_item = "/currencies/" + item.attributes.id;
 
@@ -35,6 +33,8 @@ const Currencies = () => {
         axios
           .patch(`api/v1/currencies/${item.attributes.id}`, {
             last_currency: response.data.listaCotacaoMoeda[0]["valor"],
+            date_currency: item.attributes.date_currency,
+
           })
           .catch((error) => {
             console.log(error);
@@ -92,7 +92,7 @@ const Currencies = () => {
     );
   });
 
-  return <Fragment>{currencie_list}</Fragment>;
+  return <Fragment>{currenciesPages}</Fragment>;
 };
 
 document.addEventListener("DOMContentLoaded", () => {
