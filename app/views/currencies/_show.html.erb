@@ -9,14 +9,14 @@
 <p>
  
       <label for="moeda">Moeda</label>
-    <%= select("currency", "code", @json.collect {|bndes| [ bndes['sigla'] + " - (#{bndes['serie']})", bndes['serie'] ] }, {}, { :class => 'form-control' } ) %>
+    <%= select("currency", "code", @json.collect {|bndes| [ bndes['sigla'] + " - (#{bndes['serie']})", bndes['serie'] ] }, {include_blank: '--- Nenhuma Moeda ---'}, { :class => 'form-control', include_blank: 'None' } ) %>
 
  
 </p>
 
 <p>
   
-  <label for="last_currency"><strong>Última cotação:</strong></label>
+  <label for="last_currency"><strong>Valor da cotação:</strong></label>
     
    <%= f.text_field  :last_currency, class: "form-control" %>
   
@@ -28,10 +28,6 @@
   
 </p>
  
-<p>
-   
-    <%= f.input :description %>
-</p>
 
   <div class="modal-footer">
      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

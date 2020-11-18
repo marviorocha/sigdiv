@@ -9,6 +9,7 @@
     "@rails/webpacker": "5.2.1",
     "axios": "^0.21.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "dayjs": "^1.9.6",
     "flatpickr": "^4.6.6",
     "formulajs": "^1.0.8",
     "jquery": "^3.5.1",
@@ -17,8 +18,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "strftime": "^0.10.0"
+    "react-router-dom": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
