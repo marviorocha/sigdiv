@@ -111,5 +111,9 @@ hr.dashed-hr {
 body.report {
   
 }
- 
+.center {
+  margin-left:35%;
+  padding: 10px;
+  position: absolute;
+}
 @import "datatables";
