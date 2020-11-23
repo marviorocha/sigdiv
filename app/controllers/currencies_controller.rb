@@ -11,6 +11,7 @@ class CurrenciesController < ApplicationController
   end
   
   def show
+    @manual = @currency.manuals.order(updated_at: :desc)
     respond_to do |format|
       format.html
       format.js

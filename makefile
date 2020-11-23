@@ -24,3 +24,8 @@ logs:
 	tail -f log/development.log
 prune:
 	$(docker) system prune
+deploy:
+	git checkout master
+	git merge development
+	git push
+	git checkout master

@@ -8,7 +8,7 @@
  
 <p>
  
-    <label for="moeda">Moeda</label>
+  <label for="moeda">Moeda</label>
   <%= select("currency", "code", @json.collect {|bndes| [ bndes['sigla'] + " - (#{bndes['serie']})", bndes['serie'] ] }, {include_blank: '--- Nenhuma Moeda ---'}, { :class => 'form-control', include_blank: 'None' } ) %>
 
 </p>
@@ -32,10 +32,10 @@
   </thead>
   <tbody>
 
-   <% currency.manuals.each do |manual| %>
+   <% @manual.each do |manual| %>
     <tr class="table-sm">
+      <td><%= manual.date_currency %></td>
       <td><%= manual.last_currency %></td>
-      <td><%=  manual.date_currency %></td>
     </tr>
   <% end %>
     
