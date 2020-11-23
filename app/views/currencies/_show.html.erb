@@ -8,9 +8,9 @@
  
 <p>
  
-      <label for="moeda">Moeda</label>
-    <%= select("currency", "code", @json.collect {|bndes| [ bndes['sigla'] + " - (#{bndes['serie']})", bndes['serie'] ] }, {include_blank: '--- Nenhuma Moeda ---'}, { :class => 'form-control', include_blank: 'None' } ) %>
- 
+    <label for="moeda">Moeda</label>
+  <%= select("currency", "code", @json.collect {|bndes| [ bndes['sigla'] + " - (#{bndes['serie']})", bndes['serie'] ] }, {include_blank: '--- Nenhuma Moeda ---'}, { :class => 'form-control', include_blank: 'None' } ) %>
+
 </p>
 
 <p>
@@ -26,8 +26,8 @@
   <%= f.text_field :date_currency,  class: "form-control string" %>
 </p>
  
- <table class="fixed_header table table-striped table-sm">
-  <thead>
+ <table class="fixed_header table table-sm">
+  <thead class="thead-dark">
     <tr>
       <th>Data da cotação:</th>
       <th>Valor do dia:</th>
@@ -35,9 +35,9 @@
   </thead>
   <tbody>
    <% currency.manuals.each do |manual| %>
-    <tr>
+    <tr class="table-sm">
       <td><%= manual.last_currency %></td>
-      <td><%= manual.date_currency %></td>
+      <td><%=  manual.date_currency %></td>
     
     </tr>
   <% end %>

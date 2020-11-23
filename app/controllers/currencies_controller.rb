@@ -39,17 +39,19 @@ class CurrenciesController < ApplicationController
 
     respond_to do |format|
       if @currency.save
+         
         format.js { flash.now[:notice] = 'A moeda foi criado com sucesso!' }
       else
         format.js { render :new, :alert => 'Não foi possível adicionar' }
       end
     end
+
   end
 
   def update
     respond_to do |format|
       if @currency.update(currency_params)
-       
+         @currency.manuals.create(last_currency: @currency.last_currency, date_currency:  @currency.date_currency)
         format.js { flash.now[:notice] = "A moeda (#{@currency.name}) foi atualizada!" } 
       else
        
