@@ -10,7 +10,6 @@
  
       <label for="moeda">Moeda</label>
     <%= select("currency", "code", @json.collect {|bndes| [ bndes['sigla'] + " - (#{bndes['serie']})", bndes['serie'] ] }, {include_blank: '--- Nenhuma Moeda ---'}, { :class => 'form-control', include_blank: 'None' } ) %>
-
  
 </p>
 
@@ -25,15 +24,32 @@
   
  <label for="date_currency"><strong>Data da cotação:</strong></label>
   <%= f.text_field :date_currency,  class: "form-control string" %>
-  
 </p>
  
-
+ <table class="fixed_header table table-striped table-sm">
+  <thead>
+    <tr>
+      <th>Data da cotação:</th>
+      <th>Valor do dia:</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% currency.manuals.each do |manual| %>
+    <tr>
+      <td><%= manual.last_currency %></td>
+      <td><%= manual.date_currency %></td>
+    
+    </tr>
+  <% end %>
+    
+  </tbody>
+</table>
+ 
   <div class="modal-footer">
      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
  
  
-    <%= f.button :submit, value: 'Atualizar Moeda', class: "btn btn-success pull-right" %>
+    <%= f.button :submit, value: 'Incluir Cotação', class: "btn btn-success pull-right" %>
   
 <% end %>
 

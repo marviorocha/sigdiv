@@ -5,7 +5,7 @@
 class Currency < ApplicationRecord
   validates :name, :presence => true, uniqueness: true
   validates :formula, :presence => true
-
+  has_many :manuals
   def to_brl
     Dentaku(eval_formula.gsub(',', '.'))
   end
