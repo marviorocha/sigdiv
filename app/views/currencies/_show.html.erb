@@ -35,7 +35,7 @@
 
    <% @manual.each do |manual| %>
     <tr class="table-sm">
-      <td><%= manual.try(:date_currency).try(:strftime , "%d/%m/%Y") %></td>
+      <td><%= manual.try(:date_currency).try(:strftime, "%d/%m/%Y") %></td>
       <td><%= manual.try(:last_currency) %></td>
     </tr>
   <% end %>
