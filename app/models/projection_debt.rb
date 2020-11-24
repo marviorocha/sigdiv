@@ -9,6 +9,7 @@ class ProjectionDebt
   attr_accessor :final_outstanding_balance
  
   
+  
   def initialize(debt, start_date = signature_date)
     self.debt = debt
     self.start_date = start_date
@@ -28,7 +29,7 @@ class ProjectionDebt
           if self.start_date == signature_date
             debt.transaction_items.where.not(:confirmed => false).last.final_outstanding_balance
           else
-            debt.transaction_items.where('date <= ?', self.start_date.to_s).last.final_outstanding_balance           
+            debt.transaction_items.where('date <= ?', self.start_date).last.final_outstanding_balance           
           end
                                   else 
           result.last.final_outstanding_balance

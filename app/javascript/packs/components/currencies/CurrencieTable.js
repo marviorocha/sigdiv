@@ -5,20 +5,7 @@ const CurrencieTable = (props) => {
   const edit_item = "/currencies/" + props.currencies.id + "/edit";
   const delete_item = "/currencies/" + props.currencies.id;
 
-  const tableCode = () => {
-    if (props.currencies.code == "") {
-      <tr className="table-sm">
-        <td className="table-info">{console.log(props.currencies.manuals)}</td>
-        <td className="table-info"></td>
-        <td className="table-info"></td>
-        <td className="table-info"></td>
-        <td className="table-info"></td>
-        <td className="table-info"></td>
-        <td className="table-info"></td>
-        <td className="table-info"></td>
-      </tr>;
-    }
-  };
+   
 
   return (
     <Fragment>
@@ -66,7 +53,7 @@ const CurrencieTable = (props) => {
           </a>
         </td>
       </tr>
-      {tableCode()}
+      
     </Fragment>
   );
 };

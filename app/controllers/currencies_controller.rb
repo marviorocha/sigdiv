@@ -11,7 +11,7 @@ class CurrenciesController < ApplicationController
   end
   
   def show
-    @manual = @currency.manuals.order(updated_at: :desc)
+    @manual = @currency.manuals.order(date_currency: :desc)
     respond_to do |format|
       format.html
       format.js
@@ -51,8 +51,10 @@ class CurrenciesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @currency.update(currency_params)
-         @currency.manuals.create(last_currency: @currency.last_currency, date_currency:  @currency.date_currency)
+      
+      @currency.manuals.create(last_currency: @currency.last_currency, date_currency:  @currency.date_currency)
+
+      if @currency.update(currency_params)    
         format.js { flash.now[:notice] = "A moeda (#{@currency.name}) foi atualizada!" } 
       else
        

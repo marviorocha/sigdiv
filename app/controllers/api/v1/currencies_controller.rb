@@ -8,7 +8,7 @@ module Api
             protect_from_forgery :with => :null_session
             # Get method to all url: /api/v1/
             def index
-                currencies = Currency.all
+                currencies = Currency.all.order(:name)
                 render :json => CurrenciesSerializer.new(currencies).serialized_json
             end
             

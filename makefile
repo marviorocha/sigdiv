@@ -26,6 +26,6 @@ prune:
 	$(docker) system prune
 deploy:
 	git checkout master
-	git merge development
+	git merge developer
 	git push
-	git checkout master
+	git checkout developer

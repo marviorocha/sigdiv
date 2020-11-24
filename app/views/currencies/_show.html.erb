@@ -32,9 +32,10 @@
   </thead>
   <tbody>
 
+
    <% @manual.each do |manual| %>
     <tr class="table-sm">
-      <td><%= manual.date_currency %></td>
+      <td><%= manual.date_currency.strftime("%D") %></td>
       <td><%= manual.last_currency %></td>
     </tr>
   <% end %>
