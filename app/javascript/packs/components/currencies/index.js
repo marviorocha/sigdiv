@@ -20,7 +20,7 @@ const Currencies = () => {
     const started = setInterval(() => {
       setLoad(false);
       CurrencieAll();
-    }, 1000);
+    }, 100);
     return () => {
       clearInterval(started);
     };
