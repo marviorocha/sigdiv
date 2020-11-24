@@ -17,14 +17,14 @@ const Currencies = () => {
   }
 
   useEffect(() => {
-    setLoad(false);
-    CurrencieAll();
-    // const started = setInterval(() => {
+    const started = setInterval(() => {
+      setLoad(false);
+      CurrencieAll();
      
-    // }, 1000);
-    // return () => {
-    //   clearInterval(started);
-    // };
+    }, 1000);
+    return () => {
+      clearInterval(started);
+    };
   }, [currencie.length]);
 
 
