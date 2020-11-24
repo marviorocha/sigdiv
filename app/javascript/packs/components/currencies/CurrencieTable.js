@@ -5,7 +5,7 @@ const CurrencieTable = (props) => {
   const edit_item = "/currencies/" + props.currencies.id + "/edit";
   const delete_item = "/currencies/" + props.currencies.id;
 
-   
+   currencies;
 
   return (
     <Fragment>
@@ -53,7 +53,6 @@ const CurrencieTable = (props) => {
           </a>
         </td>
       </tr>
-      
     </Fragment>
   );
 };

@@ -52,9 +52,9 @@ class CurrenciesController < ApplicationController
   def update
     respond_to do |format|
       
-      @currency.manuals.create(last_currency: @currency.last_currency, date_currency:  @currency.date_currency)
-
+      
       if @currency.update(currency_params)    
+        @currency.manuals.create(last_currency: @currency.last_currency, date_currency:  @currency.date_currency)
         format.js { flash.now[:notice] = "A moeda (#{@currency.name}) foi atualizada!" } 
       else
        
@@ -67,7 +67,7 @@ class CurrenciesController < ApplicationController
     @currency.destroy
     respond_to do |format|
       format.js
-      
+      format.html
        
     end
   end
@@ -79,9 +79,7 @@ class CurrenciesController < ApplicationController
     @response = RestClient.get('https://apis-gateway.bndes.gov.br/moedascontratuais/v1/siglaSeries', 
                             headers={ Authorization: "Bearer 95e1a099-ced5-3b11-b6c4-7766151c9ac6"})  
     @json = JSON.parse @response 
-    
-    
-    
+ 
   end
   
   def currency_params

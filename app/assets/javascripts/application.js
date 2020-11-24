@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.mask.min.js
 //= require jquery-ui
 //= require rails-ujs
+//= require jquery.mask.min.js
 //= require bootstrap
 //= require activestorage
 //= require datatables

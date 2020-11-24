@@ -17,14 +17,14 @@ const Currencies = () => {
   }
 
   useEffect(() => {
-    const started = setInterval(() => {
+    const started = setTimeout(() => {
       setLoad(false);
-      CurrencieAll();
-    }, 100);
+          CurrencieAll();
+    }, 1000);
     return () => {
-      clearInterval(started);
+      clearTimeout(started);
     };
-  }, [currencie.length]);
+  }, [currencie]);
 
   const currenciesPages = currencie.map((item) => {
 
