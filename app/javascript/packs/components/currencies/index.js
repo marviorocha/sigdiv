@@ -17,13 +17,14 @@ const Currencies = () => {
   }
 
   useEffect(() => {
-    const started = setInterval(() => {
-      setLoad(false);
-      CurrencieAll();
-    }, 1000);
-    return () => {
-      clearInterval(started);
-    };
+    setLoad(false);
+    CurrencieAll();
+    // const started = setInterval(() => {
+     
+    // }, 1000);
+    // return () => {
+    //   clearInterval(started);
+    // };
   }, [currencie.length]);
 
 
@@ -32,26 +33,44 @@ const Currencies = () => {
 
  
     const dataStarted = dayjs(item.attributes.date_currency).format('YYYYMMDD') 
-  
     
-       axios
-         .get(
-           `https://apis-gateway.bndes.gov.br/moedascontratuais/v1/servicoListaCotacoes?serie=${item.attributes.code}&dataInicio=${dataStarted}&dataFim=${dataStarted}&limite=1`,
-           { headers: { Authorization: `Bearer ${token}` } }
-         )
-         .then((response) => {
-           axios
-             .patch(`api/v1/currencies/${item.attributes.id}`, {
-               last_currency: response.data.listaCotacaoMoeda[0]["valor"],
-               date_currency: item.attributes.date_currency,
-             })
-             .catch((error) => {
-               console.log(error);
-             });
-         })
-         .catch((error) => {
-           console.log(error);
-         });
+    if (item.attributes.code == "") {
+
+      axios
+      .get(
+        `https://apis-gateway.bndes.gov.br/moedascontratuais/v1/servicoListaCotacoes?serie=${item.attributes.code}&dataInicio=${dataStarted}&dataFim=${dataStarted}&limite=1`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then((response) => {
+        axios
+          .patch(`api/v1/currencies/${item.attributes.id}`, {
+            last_currency: item.attributes.last_currency,
+            date_currency: item.attributes.date_currency,
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+
+        
+    } else {
+    
+      axios
+        .get(
+          `https://apis-gateway.bndes.gov.br/moedascontratuais/v1/servicoListaCotacoes?serie=${item.attributes.code}&dataInicio=${dataStarted}&dataFim=${dataStarted}&limite=1`,
+          { headers: { Authorization: `Bearer ${token}` } }
+        )
+        .then((response) => {
+          axios
+            .patch(`api/v1/currencies/${item.attributes.id}`, {
+              last_currency: response.data.listaCotacaoMoeda[0]["valor"],
+              date_currency: item.attributes.date_currency,
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        })
+    }
   
 
     return (
