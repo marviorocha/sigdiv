@@ -38,14 +38,14 @@ const Currencies = () => {
          .then((response) => {
            
            
-          axios.patch(`api/v1/currencies/${item.attributes.id}`, {
-          
-          last_currency: response.data.listaCotacaoMoeda[0]["valor"],
-          date_currency: item.attributes.date_currency,
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+          axios
+            .patch(`api/v1/currencies/${item.attributes.id}`, {
+              last_currency: response.data.listaCotacaoMoeda[0]["valor"],
+              date_currency: item.attributes.date_currency,
+            })
+            .catch((error) => {
+              console.log(error);
+            });
 
       })
       .catch((error) => {
