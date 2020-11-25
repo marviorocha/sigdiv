@@ -6,7 +6,6 @@ import dayjs from "dayjs";
 
 const Currencies = () => {
   const [currencie, setCurrencie] = useState([]);
-  const [manual, setManual] = useState([]);
   const [bndes, setBndes] = useState([]);
   const [load, setLoad] = useState(true);
   const token = "95e1a099-ced5-3b11-b6c4-7766151c9ac6";
@@ -28,20 +27,7 @@ const Currencies = () => {
   }, [currencie.length]);
 
   const currenciesPages = currencie.map((item) => {
-    const dataStarted = dayjs(Date.now()).format("YYYYMMDD");
-
-    axios
-      .get(`/api/v1/currencies/${item.attributes.id}/manuals/`)
-      .then((response) => {
-        axios
-          .patch(`api/v1/currencies/${item.attributes.id}`, {
-            last_currency: response.data[0]["last_currency"],
-            date_currency: response.data[0]["date_currency"],
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      });
+    const dataStarted = dayjs(item.attributes.date_currency).format("YYYYMMDD");
 
     axios
       .get(
