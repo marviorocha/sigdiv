@@ -34,6 +34,7 @@ module Api
             
             # Get method to url: /api/v1/:id
             def show 
+               # render json: @currencies.manuals.take(1), status: :ok
                 render :json => CurrenciesSerializer.new(@currencies).serialized_json, :status => :ok
             end
 

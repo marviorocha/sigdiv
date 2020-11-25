@@ -51,8 +51,7 @@ class CurrenciesController < ApplicationController
 
   def update
     respond_to do |format|
-      
-      
+     
       if @currency.update(currency_params)    
          @currency.manuals.create(last_currency: @currency.last_currency, date_currency:  @currency.date_currency)
         format.js { flash.now[:notice] = "A moeda (#{@currency.name}) foi atualizada!" } 
