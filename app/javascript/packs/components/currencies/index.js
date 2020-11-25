@@ -18,13 +18,9 @@ const Currencies = () => {
 
   useEffect(() => {
    
-    const started = setInterval(() => {
-      setLoad(false);
-      CurrencieAll();
-    }, 1000);
-    return () => {
-      clearInterval(started);
-    };
+    setLoad(false);
+    CurrencieAll();
+ 
   }, [currencie.length]);
 
   const currenciesPages = currencie.map((item) => {
