@@ -10,12 +10,14 @@ Rails.application.routes.draw do
   # Api v1
   namespace :api do
     namespace :v1 do
-     resources :currencies
+     resources :currencies do 
+      resources :manuals
+     end
     end
   end
 
-  resources :transaction_types
   resources :currencies
+  resources :transaction_types
   resources :creditors
     
   resources :debts do
