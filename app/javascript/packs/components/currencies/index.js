@@ -18,9 +18,13 @@ const Currencies = () => {
 
   useEffect(() => {
    
-    setLoad(false);
-    CurrencieAll();
- 
+    const started = setInterval(() => {
+      setLoad(false);
+      CurrencieAll();
+    }, 1000);
+    return () => {
+      clearInterval(started);
+    };
   }, [currencie.length]);
 
   const currenciesPages = currencie.map((item) => {
@@ -33,8 +37,11 @@ const Currencies = () => {
       )
       .then((response) => {
         axios
-          .patch(`api/v1/currencies/${item.attributes.id}`, {
-            last_currency: response.data.listaCotacaoMoeda[0]["valor"],
+          .put(`api/v1/currencies/${item.attributes.id}`, {
+            last_currency:
+              item.attributes.code == ""
+                ? item.attributes.last_currency
+                : response.data.listaCotacaoMoeda[0]["valor"],
             date_currency: item.attributes.date_currency,
           })
           .catch((error) => {
