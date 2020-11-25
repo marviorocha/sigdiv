@@ -18,13 +18,13 @@ const Currencies = () => {
   }
 
   useEffect(() => {
-    setLoad(false);
-    CurrencieAll();
-    // const started = setInterval(() => {
-    // }, 1000);
-    // return () => {
-    //   clearInterval(started);
-    // };
+    const started = setInterval(() => {
+      setLoad(false);
+      CurrencieAll();
+    }, 1000);
+    return () => {
+      clearInterval(started);
+    };
   }, [currencie.length]);
 
   const currenciesPages = currencie.map((item) => {
@@ -43,21 +43,21 @@ const Currencies = () => {
           });
       });
 
-    // axios
-    //   .get(
-    //     `https://apis-gateway.bndes.gov.br/moedascontratuais/v1/servicoListaCotacoes?serie=${item.attributes.code}&dataInicio=${dataStarted}&dataFim=${dataStarted}&limite=1`,
-    //     { headers: { Authorization: `Bearer ${token}` } }
-    //   )
-    //   .then((response) => {
-    //     axios
-    //       .patch(`api/v1/currencies/${item.attributes.id}`, {
-    //         last_currency: response.data.listaCotacaoMoeda[0]["valor"],
-    //         date_currency: item.attributes.date_currency,
-    //       })
-    //       .catch((error) => {
-    //         console.log(error);
-    //       });
-    //   });
+    axios
+      .get(
+        `https://apis-gateway.bndes.gov.br/moedascontratuais/v1/servicoListaCotacoes?serie=${item.attributes.code}&dataInicio=${dataStarted}&dataFim=${dataStarted}&limite=1`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then((response) => {
+        axios
+          .patch(`api/v1/currencies/${item.attributes.id}`, {
+            last_currency: response.data.listaCotacaoMoeda[0]["valor"],
+            date_currency: item.attributes.date_currency,
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      });
 
     return (
       <CurrencieTable key={item.attributes.id} currencies={item.attributes} />
