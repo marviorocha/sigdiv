@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import dayjs from "dayjs";
+import axios from "axios";
 
+ 
 const CurrencieTable = (props) => {
   const edit_item = "/currencies/" + props.currencies.id + "/edit";
   const delete_item = "/currencies/" + props.currencies.id;
-
-   currencies;
 
   return (
     <Fragment>
