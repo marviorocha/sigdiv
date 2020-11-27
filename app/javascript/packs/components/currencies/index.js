@@ -21,7 +21,7 @@ const Currencies = () => {
     const started = setInterval(() => {
       setLoad(false);
       CurrencieAll();
-    }, 500);
+    }, 400);
     return () => {
       clearInterval(started);
     };
