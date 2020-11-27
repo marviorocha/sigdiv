@@ -26,8 +26,8 @@ const Currencies = () => {
   }, [currencie.length]);
 
   const currenciesPages = currencie.map((item) => {
-    const dataStarted = dayjs(item.attributes.date_currency).format("YYYYMMDD");
-
+    const dataStarted = dayjs(Date.now()).format("YYYYMMDD");
+    console.log(dataStarted);
     axios
       .get(
         `https://apis-gateway.bndes.gov.br/moedascontratuais/v1/servicoListaCotacoes?serie=${item.attributes.code}&dataInicio=${dataStarted}&dataFim=${dataStarted}&limite=1`,
