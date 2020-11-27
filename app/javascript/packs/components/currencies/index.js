@@ -18,13 +18,11 @@ const Currencies = () => {
 
   useEffect(() => {
    
-    const started = setInterval(() => {
+    
       setLoad(false);
       CurrencieAll();
-    }, 400);
-    return () => {
-      clearInterval(started);
-    };
+ 
+   
   }, [currencie.length]);
 
   const currenciesPages = currencie.map((item) => {
@@ -42,7 +40,7 @@ const Currencies = () => {
               item.attributes.code == ""
                 ? item.attributes.last_currency
                 : response.data.listaCotacaoMoeda[0]["valor"],
-            date_currency: item.attributes.date_currency,
+                 date_currency: item.attributes.date_currency,
           })
           .catch((error) => {
             console.log(error);

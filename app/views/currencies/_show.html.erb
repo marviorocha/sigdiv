@@ -38,8 +38,8 @@
    <% @manual.each do |manual| %>
     <tr class="table-sm">
       <td><%= manual.try(:date_currency).try(:strftime, "%d/%m/%Y") %></td>
-      <td><%= manual.try(:last_currency) %></td>
-      <td class="text-center"><a   href="javascript:;" ><i class='fa fa-trash'></i></a></td>
+      <td clas="text-right" ><%= manual.try(:last_currency) %></td>
+ 
     </tr>
   <% end %>
     
@@ -55,7 +55,7 @@
 <% end %>
 
 <%= javascript_pack_tag('libs/flatpicker') %>
-
+ 
  
  </div>
  
