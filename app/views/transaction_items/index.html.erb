@@ -123,7 +123,7 @@
 			<% @debt.transaction_infos.where(category_number: 4).order(:slug).each do |transaction_info| %>
 				<li><span class="badge badge-secondary badge-pill"><%= transaction_info.slug %></span> <%= transaction_info.description %></li>
 			<% end %>              
-			<span hidden class="currency-name"><%= @debt.currency.name %></span>      
+			<span hidden class="currency-name"><%= @debt.currency.try(:name) %></span>      
 		</ul>
 		<br>
 		<button type="button" class="btn btn-success new-withdraw" data-toggle="modal" data-target="#transactionModal" data-path="<%= new_debt_transaction_item_path(@debt) %>">Registrar movimentação</button>
@@ -150,7 +150,7 @@
 	//   } else if($('.val_brl').is( ":hidden" )){
 	//     $('.val_brl').show();
 	//     $('.val_moeda').hide();
-	//     $('.btn-converte').text('Converter para ' + '<%= @debt.currency.name %>');
+	//     $('.btn-converte').text('Converter para ' + '<%= @debt.currency.try(:name) %>');
 	//   }
 	// })
 </script>

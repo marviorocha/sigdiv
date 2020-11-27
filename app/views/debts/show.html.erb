@@ -25,7 +25,7 @@
         <div class="card-body">
           <p class="card-text">
             <%= number_to_currency @debt.contract_value %>
-            <%= @debt.currency.name %>
+            <%= @debt.currency.try(:name) %>
           </p>
         </div>
       </div>
@@ -79,7 +79,7 @@
       <div class="card">
         <div class="card-header alert-primary"><strong>Moeda</strong></div>
         <div class="card-body">
-          <p class="card-text"><%= @debt.currency.name %></p>      
+          <p class="card-text"><%= @debt.currency.try(:name) %></p>      
         </div>
       </div>
     </div>
