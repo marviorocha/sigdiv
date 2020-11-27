@@ -21,7 +21,7 @@ const Currencies = () => {
     const started = setInterval(() => {
       setLoad(false);
       CurrencieAll();
-    }, 1000);
+    }, 500);
     return () => {
       clearInterval(started);
     };
@@ -54,9 +54,11 @@ const Currencies = () => {
     );
   });
   const spinnel = (
-    <div className="center">
-      <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-    </div>
+    <tr className="center table-default">
+      <td>
+        <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      </td>
+    </tr>
   );
 
   return <Fragment>{load ? spinnel : currenciesPages}</Fragment>;

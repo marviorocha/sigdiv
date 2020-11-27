@@ -4,11 +4,12 @@ module Api
     module V1
         class ManualsController < ApplicationController
             
-            before_action :set_currencies, :only => [:index, :create]
+            before_action :set_currencies, :only => [:index, :create, :destroy]
+            before_action :manuals_params, only: [:destroy]
             protect_from_forgery :with => :null_session
             # Get method to all url: /api/v1/
             def index  
-                render json: @currencies.manuals.take(1), status: :ok
+                render json: @currencies.manuals, status: :ok
             end
             
             def create
@@ -20,11 +21,26 @@ module Api
                 end
             end
             
+            def destroy
+
+                  
+            if  @manuals.destroy 
+                head :no_content
+                else
+                render :json => { :error => @manuals.errors.messages }, :status => :unprocessable_entity
+                end
+                
+            end
+            
 
           private
 
             def set_currencies
                 @currencies = Currency.find(params[:currency_id])
+            end
+            
+            def manuals_params
+                 @manuals = @currencies.manuals.find(params[:id])
             end
 
             def params_currencies
