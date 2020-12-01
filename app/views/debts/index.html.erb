@@ -40,9 +40,9 @@
         <tr>
           <td><%= debt.code %></td>
           <td><%= debt.name %></td>
-          <td><%= debt.signature_date %></td>
+          <td><%= debt.try(:signature_date).try(:strftime, "%d/%m/%Y") %></td>
           <td><%= debt.creditor.name %></td>
-          <td><%= debt.status %></td>
+          <td><%= status(debt.status) %></td>
           <td><%= link_to fa_icon("eye 2x", title: "Mostrar"), debt, id: "mostra-#{debt.id}" %></td>
           <td><%= link_to fa_icon("edit 2x", title: "Editar"), edit_debt_path(debt) %></td>
           <td><%= link_to fa_icon("file 2x", title: "Relatório mensal"), month_report_path(debt_id: debt.id, :year => "", :month => ""), target: "_blank" %></td>
@@ -50,9 +50,17 @@
       <% end %>
     </tbody>
   </table>
-
 <% end %>
-
+ 
+  <div class="row">
+  <div class="col sm  pull-left">
+  <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+    <div class="col sm">
+<%= link_to 'Cadastrar operação', new_debt_path, class: 'btn btn-success pull-right' %>
+  </div>
+  </div>
+ 
 <br>
 
-<%= link_to 'Cadastrar operação', new_debt_path, class: 'btn btn-success pull-right' %>
+

@@ -6,7 +6,7 @@ class DebtsController < ApplicationController
   # GET /debts
   # GET /debts.json
   def index
-    @debts = Debt.search(params[:code_query], params[:name_query], params[:creditor_query], params[:signature_year_query], params[:status_query])
+    @pagy, @debts = pagy(Debt.search(params[:code_query], params[:name_query], params[:creditor_query], params[:signature_year_query], params[:status_query]))
   end
 
   # GET /debts/1
