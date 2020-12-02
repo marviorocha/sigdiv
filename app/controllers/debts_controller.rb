@@ -2,6 +2,7 @@
 
 class DebtsController < ApplicationController
   before_action :set_debt, :only => [:show, :edit, :update, :destroy]
+  before_action :set_start_date, :only => [:show]
  
   # GET /debts
   # GET /debts.json
@@ -12,6 +13,10 @@ class DebtsController < ApplicationController
   # GET /debts/1
   # GET /debts/1.json
   def show
+    @transaction_item = TransactionItem.find(params[:id])
+    @transaction_set =  TransactionSet.new(@debt, @start_date)
+   
+    @attachments = Attachment.all.where(:debt_id => @debt.id)
   end
 
   # GET /debts/new
@@ -70,6 +75,13 @@ class DebtsController < ApplicationController
       @debt = Debt.find(params[:id])
     end
 
+    def set_start_date      
+      @start_date = @debt.projection_start_date
+    end
+
+ 
+
+ 
     # Never trust parameters from the scary internet, only allow the white list through.
     def debt_params
       params.require(:debt).permit(:code, 
