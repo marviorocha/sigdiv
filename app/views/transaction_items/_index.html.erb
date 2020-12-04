@@ -3,7 +3,7 @@
 	<ul class=" list-group">
 		<% @debt.years_list.each do |year| %> 
 			<li class="nav-item">
-				<a class="nav-link list-group-item list-group-item-action year-link <%= 'active' if year == Date.today.year %>" href="#<%= year %>" data-turbolinks="false"><%= year %></a>
+				<a class="nav-link list-group-item list-group-item-action year-link <%= 'active' if year == Date.today.year %>" href="#<%= year %>"><%= year %></a>
 			</li>
 		<% end %>
 	</ul>
@@ -37,6 +37,7 @@
 			
 			<tr id="ti_<%= transaction_item.id %>" class="<%= transaction_class %>" data-path='<%= transaction_edit_path %>'>
 					 
+					
 					<td class="td-right">
 						<% if transaction_item.future_transaction? %>
 							<span class="badge badge-secondary badge-pill"><%= transaction_item.transaction_info.slug %></span>
@@ -50,9 +51,9 @@
 							<span class="badge badge-info badge-pill"><%= transaction_item.transaction_info.slug %></span>            
 						<% end %>
 					</td>
-					
 					<td class="td-right">
-						<%= transaction_item.date %>
+					<a id="<%= transaction_item.date.try(:strftime, "%Y")%>"></a>
+						<%= transaction_item.date.try(:strftime, "%d/%m/%Y") %>
 					</td>
 				
 					<td class="td-right val_moeda">
@@ -73,10 +74,11 @@
 				 
 					<% (0..( @transaction_set.items[index + 1].date.year * 12 + @transaction_set.items[index + 1].date.month) - (transaction_item.date.year * 12 + transaction_item.date.month) - 1 ).each do |month| %>
 						<tr class="table-info">
-							<td class="td-right" colspan="2"><strong>Saldo em <%= (transaction_item.date + month.month).end_of_month %>:</strong></td>
+							<td class="td-right" colspan="2"><strong>Saldo em: <%= (transaction_item.date + month.month).end_of_month.try(:strftime, "%d/%m/%Y") %>:</strong></td>
 							<td class="td-right"><strong><%= big_decimal_to_currency((@transaction_set.balance_by transaction_item.date), @debt.decimal_places) %></strong></td>
 							 
 							<td></td>
+
 						 
 							 
 						</tr>
@@ -129,6 +131,7 @@
 		<button type="button" class="btn btn-success new-withdraw" data-toggle="modal" data-target="#transactionModal" data-path="<%= new_debt_transaction_item_path(@debt) %>">Registrar movimentação</button>
 	</div>  
 </div>
+<%= javascript_pack_tag('libs/ancora') %>
 <script type="text/javascript">
 	 
 	initTransactionActions();

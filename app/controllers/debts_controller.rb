@@ -13,8 +13,6 @@ class DebtsController < ApplicationController
   # GET /debts/1
   # GET /debts/1.json
   def show
-    @transaction_item = TransactionItem.find(params[:id])
-    @transaction_set =  TransactionSet.new(@debt, @start_date)
    
     @attachments = Attachment.all.where(:debt_id => @debt.id)
   end
@@ -75,8 +73,10 @@ class DebtsController < ApplicationController
       @debt = Debt.find(params[:id])
     end
 
-    def set_start_date      
+    def set_start_date
+      @transaction_item = TransactionItem.find(params[:id])
       @start_date = @debt.projection_start_date
+      @transaction_set =  TransactionSet.new(@debt, @start_date)        
     end
 
  

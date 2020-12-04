@@ -13,7 +13,7 @@
    
   </head>
 
-  <body>
+  <body data-flash-mensager="<%= JSON.dump(flash.to_a) %>">
     <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
       <div class="wide-container container">
         <a class="navbar-brand" href="<%= root_path %>"><%= image_tag asset_path("sigdiv.png"), class: "logo" %>SIGDIV</a>
@@ -24,6 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link <%= controller_name == root_path ? "active" : "" %>" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
+           
             <%= link_to 'Operações', debts_path, class: "nav-item nav-link #{controller_name == "debts" ? "active" : ""}" %>
             <%= link_to 'Credores', creditors_path, class: "nav-item nav-link #{controller_name == "creditors" ? "active" : ""}" %>
             <%= link_to 'Moedas', currencies_path, class: "nav-item nav-link #{controller_name == "currencies" ? "active" : ""}"  %>
