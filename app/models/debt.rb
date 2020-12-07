@@ -10,7 +10,7 @@ class Debt < ApplicationRecord
   has_many :transaction_items, :through => :transaction_infos, :source => :items
   
   accepts_nested_attributes_for :transaction_infos, :allow_destroy => true
-
+ 
   enum :category => { :interno => 0, :externo => 1 }
   enum :amortization_type => { :sac => 0, :price => 1, :single => 2 }
   enum :legislation_level => { :federal => 0, :estadual => 1, :municipal => 2 }
@@ -22,25 +22,16 @@ class Debt < ApplicationRecord
   validates :currency, :presence => true
   validates :loan_term, :presence => true
   validates :decimal_places, :presence => true
-  validate :valid_dates?
+  validate  :valid_dates?
+ 
+  scope :code_query, -> (code_query) {where code: code_query}
+  scope :name_query, -> (name_query) {where("name like ?", "#{name_query}%")}
+  scope :signature_year_query, -> (signature_year_query) {
+             where signature_date: date_range_from_year(signature_year_query.to_i)}
+  scope :creditor_query, -> (name_query) {where(where creditor_id: creditor_query)}
+  #scope :status_query, -> (status_query) {select(Debt.status == status_query)}
 
-  def self.search(code_query = '', name_query = '', creditor_query = '', signature_year_query = '', status_query = '')
-    result = Debt.all
-
-    if code_query.present? 
-      return Debt.where(:code => code_query)
-    elsif creditor_query.present?
-      result = result.where(:creditor_id => creditor_query)
-    end
-
-    result = result.where('name ILIKE ?', "%#{name_query}%") if name_query.present?
-    result = result.where(:signature_date => date_range_from_year(signature_year_query.to_i)) if signature_year_query.present?
-
-    result = result.select { |debt| debt.status == status_query } if status_query.present?
-
-    result
-  end
-
+  
   def init
     TransactionInfo::BASIC_TYPES.keys.each do |category_number|
       transaction_infos << TransactionInfo.new( :category_number => category_number )

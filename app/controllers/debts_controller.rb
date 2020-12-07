@@ -7,7 +7,16 @@ class DebtsController < ApplicationController
   # GET /debts
   # GET /debts.json
   def index
-    @pagy, @debts = pagy(Debt.search(params[:code_query], params[:name_query], params[:creditor_query], params[:signature_year_query], params[:status_query]))
+     @pagy, @debts = pagy(Debt.all)
+  end
+
+  def search 
+    @debts = Debt.where(nil)
+    @debts = Debt.code_query(params[:code_query]) if params[:code_query].present?
+    @debts = Debt.name_query(params[:name_query]) if params[:name_query].present?
+    #@debts = Debt.status_query(params[:status_query]) if params[:status_query].present?
+    @debts = Debt.creditor_query(params[:creditor_query]) if params[:creditor_query].present?
+    @debts = Debt.signature_year_query(params[:signature_year_query]) if params[:signature_year_query].present?
   end
 
   # GET /debts/1

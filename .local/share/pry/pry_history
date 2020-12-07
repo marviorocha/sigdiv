@@ -2,3 +2,7 @@ require 'rest-client'
 RestClient.get(https://randomuser.me/api/)
 RestClient.get("https://randomuser.me/api/")
 exit
+ls
+controller
+url
+exit

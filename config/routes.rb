@@ -19,11 +19,15 @@ Rails.application.routes.draw do
   resources :currencies
   resources :transaction_types
   resources :creditors
-    
+  
   resources :debts do
     resources :attachments
+      collection do
+        get 'search'
+      end
     resources :transaction_items, :except => :show
   end
-
+  
+ 
   root 'debts#index'
 end
