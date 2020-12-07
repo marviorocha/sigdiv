@@ -83,9 +83,9 @@ class DebtsController < ApplicationController
     end
 
     def set_start_date
-      @transaction_item = TransactionItem.find(params[:id])
+      @transaction_item = TransactionItem.find(params[:id]) 
       @start_date = @debt.projection_start_date
-      @transaction_set =  TransactionSet.new(@debt, @start_date)        
+      @transaction_set =  TransactionSet.new(@debt, @start_date)     
     end
 
  

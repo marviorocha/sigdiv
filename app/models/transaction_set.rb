@@ -2,7 +2,7 @@
 
 class TransactionSet
   attr_accessor :items
-
+  Dentaku.enable_ast_cache!
   def initialize(debt, start_date)
     self.items = debt.transaction_items.includes(:transaction_info) + ProjectionDebt.new(debt, start_date).transaction_items
     

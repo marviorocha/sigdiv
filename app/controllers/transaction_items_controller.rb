@@ -68,7 +68,7 @@ class TransactionItemsController < ApplicationController
     end
 
     def set_transaction_set       
-    @pagy, @transaction_set =  pagy(TransactionSet.new(@debt, @start_date))
+      @transaction_set =  TransactionSet.new(@debt, @start_date)
 
     end
 

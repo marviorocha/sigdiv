@@ -28,7 +28,7 @@ class Debt < ApplicationRecord
   scope :name_query, -> (name_query) {where("name like ?", "#{name_query}%")}
   scope :signature_year_query, -> (signature_year_query) {
              where signature_date: date_range_from_year(signature_year_query.to_i)}
-  scope :creditor_query, -> (name_query) {where(where creditor_id: creditor_query)}
+  scope :creditor_query, -> (creditor_query) {where creditor_id: creditor_query}
   #scope :status_query, -> (status_query) {select(Debt.status == status_query)}
 
   
@@ -40,7 +40,7 @@ class Debt < ApplicationRecord
   
   # Desembolsos
   def withdraws
-    transaction_items.where(:transaction_infos => { :category_number => 1 }) 
+    transaction_items.where(:transaction_infos => { :category_number => 1 })
   end
 
   # Amortizações
@@ -74,7 +74,7 @@ class Debt < ApplicationRecord
   def interest(interest_rate = self.interest_rate)
     withdraws_total = 0
     withdraws.where(:date => reference_period).find_each do |withdraw|
-      withdraws_total += withdraw.value * interest_rate / 360 * (payment_date - (withdraw.date - 1.day)).to_i
+    withdraws_total += withdraw.value * interest_rate / 360 * (payment_date - (withdraw.date - 1.day)).to_i
     end
 
     (30 * outstanding_balance * interest_rate / 360 ) - withdraws_total

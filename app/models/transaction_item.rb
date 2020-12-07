@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class TransactionItem < ApplicationRecord
+  
   belongs_to :transaction_info
   has_one :debt, :through => :transaction_info
 
@@ -15,6 +16,7 @@ class TransactionItem < ApplicationRecord
   end
 
   def final_outstanding_balance
+    Dentaku.enable_ast_cache!
     result = start_balance
     result = Dentaku("#{start_balance} #{transaction_info.category.operation} #{value}") if amortization? || withdraw?
     

@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
 class Charge < ApplicationRecord
+  
+ 
+
   belongs_to :debt
   has_many :payment_charges
-  
   validates :name, :presence => true
 
   def total
+    Dentaku.enable_ast_cache!
     Dentaku(eval_formula)
   end
 
