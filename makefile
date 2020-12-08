@@ -4,7 +4,13 @@ run := docker-compose run
 prod := docker-compose -f prod.yml
 development := docker-compose
 stop ?= (docker ps -aq)
- 
+
+## Docker commands ##
+
+prune:
+	$(docker) system prune
+
+## Developer Envaroments ##
 build:
 	$(development) build
 server:
@@ -22,12 +28,28 @@ install:
 	exit
 logs:
 	tail -f log/development.log
-prune:
-	$(docker) system prune
+
+## Production Envaroments ##
+
 production:
+	$(prod) up -d
+production-up:
 	$(prod) up -d
 production-dash:
 	$(prod) run app /bin/sh
+production-build:
+	$(prod) build
+production-server:
+	$(prod) up
+production-down:
+	$(prod) down
+production-restart:
+	$(prod) restart
+production-bash:
+	$(prod) run app /bin/sh
+production-logs:
+	tail -f log/production.log
+
 deploy:
 	git checkout master
 	git merge developer
