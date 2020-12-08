@@ -1,0 +1,45 @@
+version: '3'
+networks:
+    RUBY:
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    restart: always
+    env_file: .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - RUBY
+  app:
+    build: .
+    container_name: ruby
+    command: "bundle exec puma -p 3000 -e production"
+    environment:
+      - RAILS_ENV=production
+    env_file: .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/marviorocha/sigdiv
+    depends_on:
+      - db
+    networks:
+      - RUBY
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/app.conf
+    links:
+      - app
+    ports:
+      - "80:80"
+    networks:
+      - RUBY
+  redis:
+    container_name: redis
+    image: redis:6.0.9-alpine
+volumes:
+  postgres_data: {}

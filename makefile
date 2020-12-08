@@ -24,6 +24,8 @@ logs:
 	tail -f log/development.log
 prune:
 	$(docker) system prune
+production:
+	$(prod) up -d
 deploy:
 	git checkout master
 	git merge developer
