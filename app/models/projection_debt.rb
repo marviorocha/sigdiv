@@ -21,7 +21,7 @@ class ProjectionDebt
   def build_transaction_items
     result = []		
 
-    projection_period.each_with_index do |future_transaction_count, index|
+    projection_period.take(10).each_with_index do |future_transaction_count, index|
 
       debt.transaction_infos.sort_by(&:order).reject(&:withdraw?).reject(&:extra_event?).each do |transaction_info|
 
