@@ -26,6 +26,8 @@ prune:
 	$(docker) system prune
 production:
 	$(prod) up -d
+production-dash:
+	$(prod) run app /bin/sh
 deploy:
 	git checkout master
 	git merge developer
