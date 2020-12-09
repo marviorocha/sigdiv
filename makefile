@@ -4,7 +4,7 @@ run := docker-compose run
 prod := docker-compose -f prod.yml
 development := docker-compose
 stop ?= (docker ps -aq)
-
+IMAGE_NAME := panubo/$(NAME)
 ## Docker commands ##
 
 prune:
@@ -55,3 +55,7 @@ deploy:
 	git merge developer
 	git push
 	git checkout developer
+
+clean: 
+	docker rmi $(IMAGE_NAME):latest || true
+	docker rmi $(IMAGE_NAME):$(TAG) || true
