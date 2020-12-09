@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de operações</h1>
+<hr>
+
+<form class="form-inline my-2 my-lg-0" action="<%= search_debts_path %>" accept-charset="UTF-8" method="get">        
+  
+  <input class="form-control mr-sm-2" type="search" placeholder="Código" aria-label="Search" name="code_query" value="<%= params[:code_query] %>">
+  <span class="mr-sm-2" >ou</span>
+  <input class="form-control mr-sm-2" type="search" placeholder="Identificador" aria-label="Search" name="name_query" value="<%= params[:name_query] %>">
+  <input class="form-control mr-sm-2 col-sm-2" type="search" placeholder="Ano da assinatura" aria-label="Search" name="signature_year_query" value="<%= params[:signature_year_query] %>">
+  <%= select_tag "creditor_query", options_from_collection_for_select(Creditor.all, :id, :name, params[:creditor_query]), class: 'form-control select optional mr-sm-2 col-md-3', prompt: 'Selecionar credor' %>
+  <%= select_tag "status_query", options_for_select(["Carência", "Amortização", "Finalizado"],
+ params[:status_query]), class: 'form-control select optional mr-sm-2' , prompt: 'Selecionar status' %>
+  <button class="btn btn-light my-2 my-sm-0" type="submit"><%= fa_icon("search", title: "Buscar") %></button>
+</form>
+
+<br>
+
+<% if @debts.blank? %>
+
+  <p class="text-center"><span class="mr-sm-2"><%= fa_icon("exclamation-triangle 2x") %></span>Não foram encontradas operações.</p>
+
+<% else %>
+
+  <table class='table table-striped table-hover'>
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Identificador</th>
+        <th>Data da assinatura</th>
+        <th>Credor</th>
+        <th>Status</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @debts.each do |debt| %>
+        <tr>
+          <td><%= debt.code %></td>
+          <td><%= debt.name %></td>
+          <td><%= debt.try(:signature_date).try(:strftime, "%d/%m/%Y") %></td>
+          <td><%= debt.creditor.name %></td>
+          <td><%= status(debt.status) %></td>
+          <td><%= link_to fa_icon("eye 2x", title: "Mostrar"), debt, id: "mostra-#{debt.id}" %></td>
+          <td><%= link_to fa_icon("edit 2x", title: "Editar"), edit_debt_path(debt) %></td>
+          <td><%= link_to fa_icon("file 2x", title: "Relatório mensal"), month_report_path(debt_id: debt.id, :year => "", :month => ""), target: "_blank" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+ 
+  <div class="row">
+  <div class="col sm  pull-left">
+  
+  </div>
+    <div class="col sm">
+<%= link_to 'Cadastrar operação', new_debt_path, class: 'btn btn-success pull-right' %>
+  </div>
+  </div>
+ 
+<br>
+
+

@@ -1,0 +1,159 @@
+ 
+<div class='nav transactions-year-list position-fixed'>
+	<ul class=" list-group">
+		<% @debt.years_list.each do |year| %> 
+			<li class="nav-item">
+				<a class="nav-link list-group-item list-group-item-action year-link <%= 'active' if year == Date.today.year %>" href="#<%= year %>"><%= year %></a>
+			</li>
+		<% end %>
+	</ul>
+</div>
+
+<div class='pull-left debt-ops'>
+	
+	<table id="datatable" class="table table-hover">
+	
+		<thead>
+			<tr class="table-primary">
+				 <th></th>
+				<th class="td-right">Data</th>
+				<th class="td-right val_moeda">Valor em moeda </th>
+				<th class="td-right val_brl">Valor em moeda (BRL)</th>
+				<th class="td-right">Operação</th>
+				
+				 
+			</tr>
+		</thead>
+		
+		<tbody>
+
+			 
+			<%  @transaction_set.items.each_with_index do |transaction_item, index| %>
+			<% transaction_item.editable? ? transaction_class = 'edit-transaction' : transaction_class = 'block-edit-transaction' %>
+			<% transaction_edit_path = edit_debt_transaction_item_path(@debt, transaction_item) if transaction_item.editable? %>
+			<% date_transaction = transaction_item.date.to_s < Date.today.to_s %>
+			<% transaction_class = transaction_class + 'table-danger' if transaction_item.withdraw? and 
+			    date_transaction and !transaction_item.confirmed? %>
+			
+			<tr id="ti_<%= transaction_item.id %>" class="<%= transaction_class %>" data-path='<%= transaction_edit_path %>'>
+					 
+					
+					<td class="td-right">
+						<% if transaction_item.future_transaction? %>
+							<span class="badge badge-secondary badge-pill"><%= transaction_item.transaction_info.slug %></span>
+						<% elsif transaction_item.withdraw? %>
+							<span class="badge badge-primary badge-pill"><%= transaction_item.transaction_info.slug %></span>
+						<% elsif transaction_item.amortization?  %>
+							<span class="badge badge-warning badge-pill"><%= transaction_item.transaction_info.slug %></span>
+						<% elsif transaction_item.interest?  %>
+							<span class="badge badge-success badge-pill"><%= transaction_item.transaction_info.slug %></span>
+						<% elsif transaction_item.charge?  %>
+							<span class="badge badge-info badge-pill"><%= transaction_item.transaction_info.slug %></span>            
+						<% end %>
+					</td>
+					<td class="td-right">
+					<a id="<%= transaction_item.date.try(:strftime, "%Y")%>"></a>
+						<%= transaction_item.date.try(:strftime, "%d/%m/%Y") %>
+					</td>
+				
+					<td class="td-right val_moeda">
+					 <%= big_decimal_to_currency(transaction_item.value, @debt.decimal_places) || '-'  %>                 
+					</td>
+
+					<td class="td-right val_brl">
+					 <%= big_decimal_to_currency(transaction_item.value_brl, @debt.decimal_places) || '-'  %>                 
+					</td>
+
+					<td class="td-right">            
+						<%= transaction_item.transaction_info.category.name %>
+					</td>     
+						 
+				</tr>
+
+				<% if (@transaction_set.items[index + 1].present? && transaction_item.date.month != @transaction_set.items[index + 1].date.month)  || @transaction_set.items.count == index - 1 %>
+				 
+					<% (0..( @transaction_set.items[index + 1].date.year * 12 + @transaction_set.items[index + 1].date.month) - (transaction_item.date.year * 12 + transaction_item.date.month) - 1 ).each do |month| %>
+						<tr class="table-info">
+							<td class="td-right" colspan="2"><strong>Saldo em: <%= (transaction_item.date + month.month).end_of_month.try(:strftime, "%d/%m/%Y") %>:</strong></td>
+							<td class="td-right"><strong><%= big_decimal_to_currency((@transaction_set.balance_by transaction_item.date), @debt.decimal_places) %></strong></td>
+							 
+							<td></td>
+
+						 
+							 
+						</tr>
+					<% end %>
+					
+				<% end %>
+			<%  end %>  
+				
+		</tbody>
+			<thead>
+			<tr class="table-primary">
+				 
+				<th class="td-right">Data</th>
+				<th class="td-right val_moeda">Valor em moeda </th>
+				<th class="td-right val_brl">Valor em moeda (BRL)</th>
+				<th class="td-right">Operação</th>
+				 <th></th>
+				  
+			</tr>
+		</thead>
+	</table>
+		
+	<br>
+		 
+</div>
+
+<div class="pull-left transactions-legend">
+	<div class='position-fixed'>
+		<!-- <button type="button" class="btn btn-primary btn-converte">Converter Moeda</button>
+		<br><br> -->
+		<ul class="nav flex-column list-group">     
+			<li><span class="badge badge-primary badge-pill"><%= @debt.transaction_infos.find_by(category_number: 1).slug %></span> Desembolso</li>           
+			<li><span class="badge badge-warning badge-pill"><%= @debt.transaction_infos.find_by(category_number: 2).slug %></span> Amortização</li>
+			<li><span class="badge badge-success badge-pill"><%= @debt.transaction_infos.find_by(category_number: 3).slug %></span> Juros</li>
+
+			<% @debt.transaction_infos.where(category_number: 4).order(:slug).each do |transaction_info| %>
+				<li><span class="badge badge-info badge-pill"><%= transaction_info.slug %></span> <%= transaction_info.description %></li>
+			<% end %>
+			<li>&nbsp</li>
+			<li>Operações futuras:</li>
+			<li><span class="badge badge-secondary badge-pill"><%= @debt.transaction_infos.find_by(category_number: 1).slug %></span> Desembolso</li>           
+			<li><span class="badge badge-secondary badge-pill"><%= @debt.transaction_infos.find_by(category_number: 2).slug %></span> Amortização</li>
+			<li><span class="badge badge-secondary badge-pill"><%= @debt.transaction_infos.find_by(category_number: 3).slug %></span> Juros</li>
+			<% @debt.transaction_infos.where(category_number: 4).order(:slug).each do |transaction_info| %>
+				<li><span class="badge badge-secondary badge-pill"><%= transaction_info.slug %></span> <%= transaction_info.description %></li>
+			<% end %>              
+			<span hidden class="currency-name"><%= @debt.currency.try(:name) %></span>      
+		</ul>
+		<br>
+		<button type="button" class="btn btn-success new-withdraw" data-toggle="modal" data-target="#transactionModal" data-path="<%= new_debt_transaction_item_path(@debt) %>">Registrar movimentação</button>
+	</div>  
+</div>
+<%= javascript_pack_tag('libs/ancora') %>
+<script type="text/javascript">
+	 
+	initTransactionActions();
+
+	$('.val_brl').hide();
+	// $('.btn-converte').text('Converter para BRL');
+
+	// if ($('.currency-name').text() == 'BRL'){
+	//    $('.btn-converte').attr("disabled", true);
+	// }else{
+	//    $('.btn-converte').attr("disabled", false);
+	// }
+
+	// $('.btn-converte').on('click', function(e){
+	//   if( $('.val_moeda').is( ":hidden" ) ) {
+	//     $('.val_moeda').show();
+	//     $('.val_brl').hide();
+	//     $('.btn-converte').text('Converter para BRL');
+	//   } else if($('.val_brl').is( ":hidden" )){
+	//     $('.val_brl').show();
+	//     $('.val_moeda').hide();
+	//     $('.btn-converte').text('Converter para ' + '<%= @debt.currency.try(:name) %>');
+	//   }
+	// })
+</script>

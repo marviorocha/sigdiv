@@ -8,7 +8,7 @@ module Api
             protect_from_forgery :with => :null_session
             # Get method to all url: /api/v1/
             def index
-                currencies = Currency.all
+                currencies = Currency.all.order(:name)
                 render :json => CurrenciesSerializer.new(currencies).serialized_json
             end
             
@@ -34,6 +34,7 @@ module Api
             
             # Get method to url: /api/v1/:id
             def show 
+               # render json: @currencies.manuals.take(1), status: :ok
                 render :json => CurrenciesSerializer.new(@currencies).serialized_json, :status => :ok
             end
 
@@ -54,7 +55,7 @@ module Api
             end
 
             def params_currencies
-                params.require(:currency).permit(:id, :name, :formula, :description)
+                params.require(:currency).permit(:id, :name, :formula, :description, :last_currency, :date_currency, :code)
             end
         end
     end

@@ -52,9 +52,9 @@ pt-BR:
         slug: Sigla
         bind_withdraw: Vincular a desembolso
       transaction_item:
-        value: Valor
-        value_brl: Valor (BRL)
-        date: Data
+        value: Valor de lançamento
+        value_brl: Valor original
+        date: Data de lançamento
         exchange_rate: Taxa de conversão
         internalization_date: Data de internalização
         confirmed: Confirmar
@@ -310,3 +310,25 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
+
+# Translater of pagy
+
+  pagy:
+
+    item_name:
+      one: "item"
+      other: "itens"
+
+    nav:
+      prev: "&lsaquo;&nbsp;Anterior"
+      next: "Próximo&nbsp;&rsaquo;"
+      gap: "&hellip;"
+
+    info:
+      no_items: "Sem resultados"
+      single_page: "Mostrando %{count} %{item_name}"
+      multiple_pages: "Mostrando %{item_name} %{from}-%{to} do total de %{count}"
+
+    combo_nav_js: "Página %{page_input} de %{pages}"
+
+    items_selector_js: "Mostrar %{items_input} %{item_name} por página"

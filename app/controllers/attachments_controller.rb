@@ -36,7 +36,7 @@ class AttachmentsController < ApplicationController
     
     respond_to do |format|
       if @attachment.save
-        format.html { render :index, :layout => false, :notice => 'O registro foi salvo com sucesso.' }
+        format.html { render :_index, :layout => false, :notice => 'O registro foi salvo com sucesso.' }
         format.json { render :show, :status => :created, :location => @attachment }
       else
         format.html { render :new }
@@ -50,7 +50,7 @@ class AttachmentsController < ApplicationController
   def update
     respond_to do |format|
       if @attachment.update(attachment_params)
-        format.html { render :index, :layout => false, :notice => 'O registro foi salvo com sucesso.' }
+        format.html { render :_index, :layout => false, :notice => 'O registro foi salvo com sucesso.' }
         format.json { render :show, :status => :ok, :location => @attachment }
 
       else
@@ -66,7 +66,7 @@ class AttachmentsController < ApplicationController
     @attachment.destroy
     @attachment.file.purge
     respond_to do |format|
-      format.html { render :index, :layout => false, :notice => 'O registro foi removido com sucesso.' }
+      format.html { render :_index, :layout => false, :notice => 'O registro foi removido com sucesso.' }
       format.json { head :no_content }
       
     end

@@ -22,6 +22,7 @@ services:
       - "3000:3000"
     volumes:
       - .:/home/marviorocha/sigdiv
+      - bundle_cache:/usr/local/bundle
     depends_on:
       - db
     networks:
@@ -38,6 +39,10 @@ services:
       - "80:80"
     networks:
       - RUBY
+  redis:
+    container_name: redis
+    image: redis:6.0.9-alpine
 volumes:
   postgres_data: {}
+  bundle_cache:
 

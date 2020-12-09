@@ -24,6 +24,7 @@
 // require datatables/extensions/Responsive/responsive.bootstrap4
 
 
+
 //Global setting and initializer
 
 $.extend( $.fn.dataTable.defaults, {
@@ -63,3 +64,4 @@ $(document).on('turbolinks:before-cache', function() {
     return dataTable = null;
   }
 });
+

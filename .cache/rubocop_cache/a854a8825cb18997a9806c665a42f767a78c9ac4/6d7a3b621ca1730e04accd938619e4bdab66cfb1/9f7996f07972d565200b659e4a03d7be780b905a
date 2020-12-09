@@ -1,1 +1,0 @@
-[{"severity":"convention","location":{"begin_pos":6971,"end_pos":7000},"message":"Layout/LineLength: Line is too long. [291/262]","cop_name":"Layout/LineLength","status":"uncorrected"},{"severity":"convention","location":{"begin_pos":7852,"end_pos":7878},"message":"Layout/LineLength: Line is too long. [288/262]","cop_name":"Layout/LineLength","status":"uncorrected"}]

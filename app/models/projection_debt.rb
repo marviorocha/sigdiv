@@ -7,6 +7,8 @@ class ProjectionDebt
   attr_accessor :amortizations_count
   attr_accessor :transaction_items
   attr_accessor :final_outstanding_balance
+ 
+  
   
   def initialize(debt, start_date = signature_date)
     self.debt = debt
@@ -19,7 +21,7 @@ class ProjectionDebt
   def build_transaction_items
     result = []		
 
-    projection_period.each_with_index do |future_transaction_count, index|
+    projection_period.take(10).each_with_index do |future_transaction_count, index|
 
       debt.transaction_infos.sort_by(&:order).reject(&:withdraw?).reject(&:extra_event?).each do |transaction_info|
 
@@ -41,9 +43,9 @@ class ProjectionDebt
                                           :start_balance => balance_projection)
           
           future_transaction.value = FormulaService.eval(future_transaction)
-          future_transaction.value_brl = future_transaction.value * exchange_rate
+          future_transaction.value_brl = future_transaction.value.to_s * exchange_rate
 
-          result << future_transaction unless (transaction_info.bind_withdraw? && paid_in?) || (transaction_info.interest? && balance_projection.zero?)
+          result << future_transaction unless (transaction_info.bind_withdraw? && paid_in?) || (transaction_info.interest? && balance_projection.blank?)
 
           self.amortizations_count += 1 if transaction_info.amortization?
         end
@@ -64,7 +66,7 @@ class ProjectionDebt
   end
 
   def brl_lacking_total_by(date, category_number)		
-    self.transaction_items.reduce(0) { |sum, transaction| transaction.date.year == date.year && transaction.date > date && transaction.transaction_info.category_number == category_number ? sum + transaction.value_brl : sum }
+    self.transaction_items.reduce(0) { |sum, transaction| transaction.date.year == date.year.to_s && transaction.date > date && transaction.transaction_info.category_number == category_number ? sum + transaction.value_brl : sum }
   end
 
   def brl_total_by(year, category_number)

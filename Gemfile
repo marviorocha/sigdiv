@@ -22,7 +22,7 @@ gem 'banco_central'
 gem 'jbuilder', :github => 'rails/jbuilder', :branch => 'master'
 gem 'bootstrap', '>= 4.3.1'
 gem 'font-awesome-rails'
-gem 'jquery-rails'
+gem 'jquery'
 gem 'jquery-ui-rails'
 gem 'jquery-validation-rails'
 gem 'jquery-mask-plugin'
@@ -82,4 +82,10 @@ gem 'tzinfo-data', :platforms => [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'fast_jsonapi', '~> 1.5'
 gem 'prawn'
 gem 'prawn-table'
-gem 'webpacker', '>= 5.0'
+gem 'webpacker'
+gem "redis"
+gem "pagy", "~> 3.9"
+
+gem "active_record_query_trace", "~> 1.8"
+
+gem "rest-client", "~> 2.1"

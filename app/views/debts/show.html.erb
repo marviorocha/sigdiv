@@ -25,7 +25,7 @@
         <div class="card-body">
           <p class="card-text">
             <%= number_to_currency @debt.contract_value %>
-            <%= @debt.currency.name %>
+            <%= @debt.currency.try(:name) %>
           </p>
         </div>
       </div>
@@ -61,13 +61,13 @@
       <div class="card">
         <div class="card-header alert-primary"><strong>Prazo de carência</strong></div>
         <div class="card-body">
-          <p class="card-text"><%= @debt.grace_period.strftime("%d-%m-%Y") %></p>      
+          <p class="card-text"><%= @debt.grace_period.strftime("%d/%m/%Y") %></p>      
         </div>
       </div>
       <div class="card">
         <div class="card-header alert-primary"><strong>Prazo de amortização</strong></div>
         <div class="card-body">
-          <p class="card-text"><%= @debt.amortization_period.strftime("%d-%m-%Y")%></p>
+          <p class="card-text"><%= @debt.amortization_period.strftime("%d/%m/%Y")%></p>
         </div>
       </div>
       <div class="card">
@@ -79,7 +79,7 @@
       <div class="card">
         <div class="card-header alert-primary"><strong>Moeda</strong></div>
         <div class="card-body">
-          <p class="card-text"><%= @debt.currency.name %></p>      
+          <p class="card-text"><%= @debt.currency.try(:name) %></p>      
         </div>
       </div>
     </div>
@@ -139,9 +139,16 @@
   </div>
   
   <div class="tab-pane fade" id="nav-transactions" role="tabpanel" aria-labelledby="nav-transactions-tab">
-  
+ 
+    <%= render partial: "transaction_items/index", transaction_item: @transaction_item %>
+ 
+    
   </div>
-  <div class="tab-pane fade" id="nav-attachments" role="tabpanel" aria-labelledby="nav-attachments-tab"></div>
+  <div class="tab-pane fade" id="nav-attachments" role="tabpanel" aria-labelledby="nav-attachments-tab">
+ 
+     <%= render partial: "attachments/index", attachment: @attachment %>
+   
+  </div>
 
   <div class="modal fade" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="EdiçãoTransação" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -151,24 +158,4 @@
   </div>
 
 </div>
-
-<script type="text/javascript">
-  <% if (request.referrer == debt_url(@debt)) %> 
-    $('#nav-ops-tab').tab('show');
-  <% end %>
-
-  $('#nav-transactions-tab').on('click', function(){
-    $.get('<%= debt_transaction_items_path(@debt) %>').done(function(data){
-      $('#nav-transactions').html(data);
-    });
-  })
-
-
-  $('#nav-attachments-tab').on('click', function(){
-    $.get('<%= debt_attachments_path(@debt) %>').done(function(data){
-      $('#nav-attachments').html(data);
-    });
-  })
-
-  initTransactionActions();
-</script>
+ 

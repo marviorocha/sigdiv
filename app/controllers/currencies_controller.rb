@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 
 class CurrenciesController < ApplicationController
-  before_action :set_currency, :only => [:show, :edit, :update, :destroy]
+  before_action :set_currency, :only => [:show, :edit, :update, :destroy, :new]
 
  
   def index
-    @currencies = Currency.all
+   
+    @currency = Currency.all
     
   end
   
   def show
+    @manual = @currency.manuals.order(date_currency: :desc)
     respond_to do |format|
       format.html
       format.js
@@ -17,6 +19,7 @@ class CurrenciesController < ApplicationController
   end
  
   def new
+
     @currency = Currency.new
     respond_to do |format|
       format.html
@@ -37,17 +40,20 @@ class CurrenciesController < ApplicationController
 
     respond_to do |format|
       if @currency.save
+         
         format.js { flash.now[:notice] = 'A moeda foi criado com sucesso!' }
       else
         format.js { render :new, :alert => 'Não foi possível adicionar' }
       end
     end
+
   end
 
   def update
     respond_to do |format|
-      if @currency.update(currency_params)
-       
+     
+      if @currency.update(currency_params)    
+         @currency.manuals.create(last_currency: @currency.last_currency, date_currency:  @currency.date_currency)
         format.js { flash.now[:notice] = "A moeda (#{@currency.name}) foi atualizada!" } 
       else
        
@@ -60,7 +66,7 @@ class CurrenciesController < ApplicationController
     @currency.destroy
     respond_to do |format|
       format.js
-      
+      format.html
        
     end
   end
@@ -69,9 +75,13 @@ class CurrenciesController < ApplicationController
     
   def set_currency
     @currency = Currency.find_by(:id => params[:id])
+    @response = RestClient.get('https://apis-gateway.bndes.gov.br/moedascontratuais/v1/siglaSeries', 
+                            headers={ Authorization: "Bearer 95e1a099-ced5-3b11-b6c4-7766151c9ac6"})  
+    @json = JSON.parse @response 
+ 
   end
   
   def currency_params
-    params.require(:currency).permit(:name, :formula, :description, :last_currency, :date_currency)
+    params.require(:currency).permit(:name, :formula, :description, :last_currency, :date_currency, :code)
   end
 end

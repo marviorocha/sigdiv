@@ -1,1 +1,0 @@
-[{"severity":"convention","location":{"begin_pos":106,"end_pos":109},"message":"Layout/IndentationStyle: Tab detected in indentation.","cop_name":"Layout/IndentationStyle","status":"uncorrected"}]

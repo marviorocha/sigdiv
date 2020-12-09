@@ -1,1 +1,0 @@
-[{"severity":"warning","location":{"begin_pos":315,"end_pos":328},"message":"Lint/DuplicateCaseCondition: Duplicate `when` condition detected.","cop_name":"Lint/DuplicateCaseCondition","status":"unsupported"}]

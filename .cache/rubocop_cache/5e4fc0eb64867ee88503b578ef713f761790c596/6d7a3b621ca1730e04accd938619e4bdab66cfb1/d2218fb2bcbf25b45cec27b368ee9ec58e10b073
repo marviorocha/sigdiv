@@ -1,1 +1,0 @@
-[{"severity":"convention","location":{"begin_pos":69,"end_pos":80},"message":"Style/ExpandPathArguments: Use `expand_path('spring', __dir__)` instead of `expand_path('../spring', __FILE__)`.","cop_name":"Style/ExpandPathArguments","status":"uncorrected"}]

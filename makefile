@@ -1,4 +1,3 @@
-
 app_name := app
 docker := docker
 db := rake db:create db:migrate db:seed
@@ -19,13 +18,11 @@ bash:
 uninstall:
 	docker stop ($(stop)) 
 logs:
-	tail -f log/production.log
-
-deploy:
-	git merge developer 
-	git commit -m "deployer to production"
-
+	tail -f log/development.log
 prune:
 	$(docker) system prune
-
-	
+deploy:
+	git checkout master
+	git merge developer
+	git push
+	git checkout developer

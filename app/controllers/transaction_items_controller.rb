@@ -29,7 +29,7 @@ class TransactionItemsController < ApplicationController
     
     if @transaction_item.save
       set_transaction_set
-      render :index, :layout => false, :notice => 'O registro foi salvo com sucesso.'        
+      render :_index, :layout => false, :notice => 'O registro foi salvo com sucesso.'        
     else
       render :new, :layout => false, :status => :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class TransactionItemsController < ApplicationController
   def update
     if @transaction_item.update(transaction_item_params)
       set_transaction_set
-      render :index, :layout => false, :notice => 'O registro foi salvo com sucesso.'        
+      render :_index, :layout => false, :notice => 'O registro foi salvo com sucesso.'        
     else
       render :edit, :layout => false, :status => :unprocessable_entity        
     end
@@ -58,15 +58,18 @@ class TransactionItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_debt
-      @debt = Debt.find(params[:debt_id])
+        @debt = Debt.find(params[:debt_id])
+         
     end
 
     def set_transaction
       @transaction_item = TransactionItem.find(params[:id])
+      
     end
 
     def set_transaction_set       
-      @transaction_set = TransactionSet.new(@debt, @start_date)
+      @transaction_set =  TransactionSet.new(@debt, @start_date)
+
     end
 
     def set_start_date      

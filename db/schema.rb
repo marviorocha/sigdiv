@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_02_142940) do
+ActiveRecord::Schema.define(version: 2020_11_23_190737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_142940) do
   create_table "currencies", force: :cascade do |t|
     t.string "name"
     t.string "formula"
+    t.string "code"
     t.text "description"
     t.string "last_currency"
     t.date "date_currency"
@@ -84,6 +85,15 @@ ActiveRecord::Schema.define(version: 2020_11_02_142940) do
     t.decimal "interest_rate"
     t.integer "decimal_places"
     t.boolean "start_amt_next_month_to_grace_period"
+  end
+
+  create_table "manuals", force: :cascade do |t|
+    t.string "last_currency"
+    t.date "date_currency"
+    t.bigint "currency_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["currency_id"], name: "index_manuals_on_currency_id"
   end
 
   create_table "transaction_infos", force: :cascade do |t|
@@ -116,4 +126,5 @@ ActiveRecord::Schema.define(version: 2020_11_02_142940) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "manuals", "currencies"
 end

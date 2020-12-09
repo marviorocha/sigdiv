@@ -2,16 +2,28 @@
 
 class DebtsController < ApplicationController
   before_action :set_debt, :only => [:show, :edit, :update, :destroy]
+  before_action :set_start_date, :only => [:show]
  
   # GET /debts
   # GET /debts.json
   def index
-    @debts = Debt.search(params[:code_query], params[:name_query], params[:creditor_query], params[:signature_year_query], params[:status_query])
+     @pagy, @debts = pagy(Debt.all)
+  end
+
+  def search 
+    @debts = Debt.where(nil)
+    @debts = Debt.code_query(params[:code_query]) if params[:code_query].present?
+    @debts = Debt.name_query(params[:name_query]) if params[:name_query].present?
+    #@debts = Debt.status_query(params[:status_query]) if params[:status_query].present?
+    @debts = Debt.creditor_query(params[:creditor_query]) if params[:creditor_query].present?
+    @debts = Debt.signature_year_query(params[:signature_year_query]) if params[:signature_year_query].present?
   end
 
   # GET /debts/1
   # GET /debts/1.json
   def show
+   
+    @attachments = Attachment.all.where(:debt_id => @debt.id)
   end
 
   # GET /debts/new
@@ -70,6 +82,15 @@ class DebtsController < ApplicationController
       @debt = Debt.find(params[:id])
     end
 
+    def set_start_date
+      @transaction_item = TransactionItem.find(params[:id]) 
+      @start_date = @debt.projection_start_date
+      @transaction_set =  TransactionSet.new(@debt, @start_date)     
+    end
+
+ 
+
+ 
     # Never trust parameters from the scary internet, only allow the white list through.
     def debt_params
       params.require(:debt).permit(:code, 

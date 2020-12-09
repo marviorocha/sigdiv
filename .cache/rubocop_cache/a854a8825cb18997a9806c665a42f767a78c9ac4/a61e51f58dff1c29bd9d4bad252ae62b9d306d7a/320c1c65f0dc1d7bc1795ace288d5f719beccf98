@@ -1,1 +1,0 @@
-[{"severity":"convention","location":{"begin_pos":1523,"end_pos":1524},"message":"Layout/SpaceBeforeBlockBraces: Space missing to the left of {.","cop_name":"Layout/SpaceBeforeBlockBraces","status":"uncorrected"}]

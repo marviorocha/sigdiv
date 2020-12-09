@@ -8,15 +8,10 @@ module MonthReportsHelper
     pdf.text "<b>Tipo:</b> #{@projection_debt.category}", :inline_format => true
     pdf.text '<b>Mutuário:</b> Prefeitura Municipal de Niterói', :inline_format => true
     pdf.text "<b>Credor:</b> #{@projection_debt.creditor.name}", :inline_format => true
-    pdf.text "<b>Valor do Contrato:</b> 
-    #{"R$ #{big_decimal_to_currency_cents(@projection_debt.contract_value)}"}", :inline_format => true
-    pdf.text "<b>Fator de Conversão do Mês (moeda original) REAL:</b>
-    #{@projection_debt.category}", :inline_format => true
-    pdf.text "<b>Fator de Conversão do Mês (em Real):</b>
-    #{@projection_debt.category}", :inline_format => true
-    pdf.text "<b>Taxa de Encargos:</b> 
-    #{@projection_debt.transaction_infos.reduce('') do |result, info| 
-        if info.charge?
+    pdf.text "<b>Valor do Contrato:</b> #{"R$ #{big_decimal_to_currency_cents(@projection_debt.contract_value)}"}", :inline_format => true
+    pdf.text "<b>Fator de Conversão do Mês (moeda original) REAL:</b> #{@projection_debt.category}", :inline_format => true
+    pdf.text "<b>Fator de Conversão do Mês (em Real):</b> #{@projection_debt.category}", :inline_format => true
+    pdf.text "<b>Taxa de Encargos:</b> #{@projection_debt.transaction_infos.reduce('') do |result, info| if info.charge?
   result + 
     "#{info.description}: #{info.base}% "
         else
@@ -47,7 +42,7 @@ module MonthReportsHelper
     pdf.move_down 2
     sum_values = 0
     sum_values_brl = 0
-    data = [['Mês/Ano', 'Valores - Moeda Original', "Valores em R$\t"]]  
+    data = [['Mês/Ano', 'Valores - Moeda Original', "Valores em R$\t"]]
     
     @projection_debt.debt.withdraws_values_by_year(@start_date).each do |year_values|           
       data += [[year_values[0].to_i, big_decimal_to_currency_cents(year_values[1]), big_decimal_to_currency_cents(year_values[2])]]
@@ -56,22 +51,28 @@ module MonthReportsHelper
     end
     
     the_color = @projection_debt.debt.withdraws_values_by_year(@start_date).map { |_x| + 'FFFFFF' }
-    data += [['TOTAL', big_decimal_to_currency_cents(sum_values), big_decimal_to_currency_cents(sum_values_brl)]]       
+    data += [['TOTAL', big_decimal_to_currency_cents(sum_values), big_decimal_to_currency_cents(sum_values_brl)]]   
     
-    pdf.table(data, :width => 250, :row_colors => ['E9ECEF'] + the_color)
-    
+    pdf.table(data, :width => 250, :row_colors => ['E9ECEF'] + the_color, :header => true)
+  
+
   end
   
   def schema_b_right(_protection, pdf)
-    pdf.text '1 - Parcelas Recebidas', :style => :bold, :size => 9
+    
+    pdf.text '2 - Parcelas Recebidas', :style => :bold, :size => 9
     pdf.move_down 2
-    data = [['Mês/Ano', 'Valores - Moeda Original'], ['', '']]
-    pdf.table(data, :width => 220, :row_colors => %w[E9ECEF FFFFFF FFFFFF])
+    data = [['Mês/Ano', 'Valores - Moeda Original'], ['', '0,00']]
+    
+    pdf.table(data, :width => 220, :row_colors => %w[E9ECEF FFFFFF FFFFFF], :header => true)
+
   end
   
   ## C - Esquema de Pagamentos
   
   def exercicio_1(_protection, pdf)
+ 
+ 
     paid_principal_year_amount = @projection_debt.debt.transaction_items_year_total @start_date, 2 
     paid_interest_year_amount = @projection_debt.debt.transaction_items_year_total @start_date, 3 
     paid_charges_year_amount = @projection_debt.debt.transaction_items_year_total @start_date, 4 

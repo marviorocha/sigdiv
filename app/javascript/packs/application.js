@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* eslint no-console:0 */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
@@ -22,3 +23,12 @@
  
 import "./libs/transaction";
 import "/libs/flatpicker";
+=======
+import "./components/currencies";
+import "./libs/transaction";
+import "./libs/direct_uploads.js";
+import "./src/direct_upload.scss";
+
+
+
+>>>>>>> master
