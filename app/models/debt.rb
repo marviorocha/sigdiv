@@ -25,7 +25,7 @@ class Debt < ApplicationRecord
   validate  :valid_dates?
  
   scope :code_query, -> (code_query) {where code: code_query}
-  scope :name_query, -> (name_query) {where("name like ?", "#{name_query}%")}
+  scope :name_query, -> (name_query) {where("name ilike ?", "#{name_query}%")}
   scope :signature_year_query, -> (signature_year_query) {
              where signature_date: date_range_from_year(signature_year_query.to_i)}
   scope :creditor_query, -> (creditor_query) {where creditor_id: creditor_query}
