@@ -20,6 +20,7 @@ gem 'zeitwerk'
 gem 'dentaku'
 gem 'banco_central'
 gem 'jbuilder', :github => 'rails/jbuilder', :branch => 'master'
+gem 'coffee-rails', '~> 5.0.0'
 gem 'bootstrap', '>= 4.3.1'
 gem 'font-awesome-rails'
 gem 'jquery'
@@ -28,9 +29,7 @@ gem 'jquery-validation-rails'
 gem 'jquery-mask-plugin'
 gem 'jquery-datatables'
 
-gem 'prawn'
-gem 'prawn-table'
-
+ 
 gem "webpacker"
 gem 'bootsnap', '>= 1.1.0', :require => false
 

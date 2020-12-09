@@ -24,8 +24,11 @@ bash:
 uninstall:
 	docker stop ($(stop)) 
 logs:
-	tail -f log/development.log
-
+	tail -f log/production.log
+precompile:
+	$(prod) exec app rails ENV_RAILS=production assets:precompile
+tmp_clear:
+	$(prod) exec app rails ENV_RAILS=production tmp:cache:clear
 deploy:
 	git checkout master
 	git merge developer
