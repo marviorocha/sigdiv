@@ -30,14 +30,7 @@ RUN apk add --update --no-cache \
       imagemagick \
       graphicsmagick-dev \
       ruby-dev \
-<<<<<<< HEAD
       musl-dev 
-
-
-=======
-      musl-dev \
-      chromium-chromedriver
->>>>>>> developer
 
 RUN gem install bundler
 ENV HOME /home/marviorocha/sigdiv
@@ -65,7 +58,7 @@ RUN chmod +x /usr/bin/docker-entrypoint.sh
 
 # create credentials
 
-EDITOR="vi --wait" bin/rails credentials:edit
+#EDITOR="vi --wait" bin/rails credentials:edit
 
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
 

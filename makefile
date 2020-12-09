@@ -1,9 +1,7 @@
 
 app_name := app
-=======
 docker := docker
 db := rake db:create db:migrate db:seed
->>>>>>> developer
 run := docker-compose run 
 prod := docker-compose -f prod.yml 
 stop ?= (docker ps -aq)
