@@ -1,5 +1,3 @@
-![Deploy](https://github.com/smfazendaniteroi/sigdiv/workflows/Deploy/badge.svg)
-
 # SIGDIV
 Sistema de Gestão da Dívida Pública. É uma iniciativa da prefeitura municipal de Niterói, através da Secretaria Municipal de Fazenda para desenvolver um sistema que controla as dívidas públicas de um município.
 
