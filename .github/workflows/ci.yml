@@ -45,7 +45,5 @@ jobs:
           bundle install --jobs 4 --retry 3
           bundle exec rails db:prepare
       - name: Run security checks
-        run: |
-          bin/bundler-audit --update
-          bin/brakeman -q -w2
-  
+      - name: Run tests
+        run: bin/rspec
