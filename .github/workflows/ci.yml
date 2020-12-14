@@ -1,9 +1,17 @@
-name: CI
+name: Ruby-version
 on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
     services:
+      db:
+        image: postgres:11
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
       redis:
         image: redis
         ports: ['6379:6379']
@@ -17,12 +25,9 @@ jobs:
           ruby-version: 2.7.x
       - name: Build and run tests
         env:
+          RAILS_ENV: test
           DATABASE_URL: postgres://postgres:@localhost:5432/test
           REDIS_URL: redis://localhost:6379/0
-          RAILS_ENV: sigdiv_test
-          PGHOST: <%= ENV['POSTGRES_HOST'] %>
-          PGUSER: <%= ENV['POSTGRES_USER'] %>
-          PGPASSWORD: <%= ENV['POSTGRES_PASSWORD'] %>
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: |
           gem install bundler
