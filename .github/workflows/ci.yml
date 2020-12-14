@@ -22,7 +22,6 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
-
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
@@ -44,7 +43,7 @@ jobs:
       - name: Run linters
         run: |
           bin/rubocop --parallel
-       - name: Run security checks
+      - name: Run security checks
         run: |
           bin/bundler-audit --update
           bin/brakeman -q -w2
