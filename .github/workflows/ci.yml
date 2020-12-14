@@ -32,7 +32,7 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Run Tests
         env:
-          PG_DATABASE: sigdiv_test
+          PG_DATABASE: test
           PG_HOST: <%= ENV['POSTGRES_HOST'] %>
           PG_USER: <%= ENV['POSTGRES_USER'] %>
           PG_PASSWORD: <%= ENV['POSTGRES_PASSWORD'] %>
