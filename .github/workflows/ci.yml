@@ -41,7 +41,6 @@ jobs:
           DISABLE_SPRING: 1
         run: |
           gem install bundler
-          bin/rails db:setup
           bundle install --jobs 4 --retry 3
       - name: Run tests
         run: bin/rspec
