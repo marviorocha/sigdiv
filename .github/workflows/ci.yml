@@ -40,11 +40,9 @@ jobs:
           WITH_COVERAGE: true
           DISABLE_SPRING: 1
         run: |
+          gem install bundler
           bin/rails db:setup
           bundle exec rake test
-
-        run: |
-          gem install bundler
           bundle install --jobs 4 --retry 3
           bundle exec rails db:prepare
           bundle exec rails test
