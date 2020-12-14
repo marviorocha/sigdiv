@@ -24,10 +24,6 @@ jobs:
         ruby-version: ${{ matrix.version}}
     - name: ruby version
       run: ruby -v
-    - name: Install gems
-        run: |
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
 
     - name: Setup Node
       uses: actions/setup-node@v1
