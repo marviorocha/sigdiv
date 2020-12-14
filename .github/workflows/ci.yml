@@ -43,7 +43,5 @@ jobs:
           gem install bundler
           bin/rails db:setup
           bundle install --jobs 4 --retry 3
-          bundle exec rails db:prepare
-      - name: Run security checks
       - name: Run tests
         run: bin/rspec
