@@ -22,9 +22,10 @@ jobs:
       uses: ./
       with:
         ruby-version: ${{ matrix.version}}
-    - name: ruby version
-      run: ruby -v
-
+    - name: Install dependencies
+      run: bundle install
+    - name: Run bundle
+      run: bundle exec rake
     - name: Setup Node
       uses: actions/setup-node@v1
       with:
@@ -58,6 +59,7 @@ jobs:
         RAILS_ENV: sigdiv_test
         PGHOST: <%= ENV['POSTGRES_HOST'] %>
         PGUSER: <%= ENV['POSTGRES_USER'] %>
+        PGPASSWORD: <%= ENV['POSTGRES_PASSWORD'] %>
       run: |
         bin/rails db:setup
 
