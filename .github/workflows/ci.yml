@@ -31,17 +31,17 @@ jobs:
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
       - name: Run Tests
-            env:
-              PG_DATABASE: postgres
-              PG_HOST: <%= ENV['POSTGRES_HOST'] %>
-              PG_USER: <%= ENV['POSTGRES_USER'] %>
-              PG_PASSWORD: <%= ENV['POSTGRES_PASSWORD'] %>
-              RAILS_ENV: test
-              WITH_COVERAGE: true
-              DISABLE_SPRING: 1
-            run: |
-              bin/rails db:setup
-              bundle exec rake test
+        env:
+          PG_DATABASE: postgres
+          PG_HOST: <%= ENV['POSTGRES_HOST'] %>
+          PG_USER: <%= ENV['POSTGRES_USER'] %>
+          PG_PASSWORD: <%= ENV['POSTGRES_PASSWORD'] %>
+          RAILS_ENV: test
+          WITH_COVERAGE: true
+          DISABLE_SPRING: 1
+        run: |
+          bin/rails db:setup
+          bundle exec rake test
 
         run: |
           gem install bundler
