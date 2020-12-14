@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-# Creditor.destroy_all
-# Currency.destroy_all
-# TransactionInfo.destroy_all
-# TransactionItem.destroy_all
-# Debt.destroy_all
+Creditor.destroy_all
+Currency.destroy_all
+TransactionInfo.destroy_all
+TransactionItem.destroy_all
+Debt.destroy_all
 
 # connection = ActiveRecord::Base.connection
 
@@ -259,7 +259,7 @@ TransactionItem.create!(
   :value => BigDecimal('2027839.19399659'),
   :date => Date.new(2015, 12, 17),
   :value_brl => BigDecimal('42965630.86'),
-    :exchange_rate => BigDecimal('21.18788856'),
+    :exchange_rate => BigDecimal('21187.88856'),
   :transaction_info => withdraw,
   :start_balance => BigDecimal('1925340.22851'),
   :confirmed => true
@@ -270,7 +270,7 @@ puts Date.new(2016, 3, 15)
 TransactionItem.create!(
   :value => BigDecimal('1480367.51522129'),
   :date => Date.new(2016, 3, 15),
-  :value_brl => BigDecimal('31500447.14'),
+  :value_brl => BigDecimal('31500.44714'),
   :exchange_rate => BigDecimal('21.27880193'),
   :transaction_info => withdraw,
   :start_balance => BigDecimal('3953179.42250'),
@@ -3073,1008 +3073,1008 @@ TransactionItem.create!(
 )
 
 puts '>>>>>>>>>>>>>>>>>>>>>>>>>> CAF'
-value = BigDecimal('2408990.48')
-exchange_rate = BigDecimal('3.2530')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 05, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_caf,
-  :start_balance => BigDecimal('0'),
-  :confirmed => true
-)
-
-value = BigDecimal('11015060.44')
-exchange_rate = BigDecimal('3.2810')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 06, 05),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_caf,
-  :start_balance => BigDecimal('2408990.48'),
-  :confirmed => true
-)
-
-value = BigDecimal('4029385.92')
-exchange_rate = BigDecimal('3.2465')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 10, 20),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_caf,
-  :start_balance => BigDecimal('13424050.92'),
-  :confirmed => true
-)
-
-value = BigDecimal('2581628.50')
-exchange_rate = BigDecimal('3.2080')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 11, 22),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_caf,
-  :start_balance => BigDecimal('17453436.84'),
-  :confirmed => true
-)
-
-value = BigDecimal('4685650.71')
-exchange_rate = BigDecimal('3.3120')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 12, 20),
-  :internalization_date => Date.new(2017, 12, 22),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_caf,
-  :start_balance => BigDecimal('20035065.34'),
-  :confirmed => true
-)
-
-value = BigDecimal('1380706.92')
-exchange_rate = BigDecimal('3.5930')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2018, 05, 04),
-  :internalization_date => Date.new(2018, 05, 9),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_caf,
-  :start_balance => BigDecimal('24720716.05'),
-  :confirmed => true
-)
-
-value = BigDecimal('3987951.00')
-exchange_rate = BigDecimal('3.8625')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2018, 07, 05),
-  :internalization_date => Date.new(2018, 07, 11),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_caf,
-  :start_balance => BigDecimal('26101422.97'),
-  :confirmed => true
-)
-
-value = BigDecimal('6500000.00')
-exchange_rate = BigDecimal('3.6895')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2018, 10, 26),
-  :internalization_date => Date.new(2018, 10, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_caf,
-  :start_balance => BigDecimal('30089373.97'),
-  :confirmed => true
-)
-
-value = BigDecimal('3350000.00')
-exchange_rate = BigDecimal('3.8300')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 03, 12),
-  :internalization_date => Date.new(2018, 03, 18),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_caf,
-  :start_balance => BigDecimal('36589373.97'),
-  :confirmed => true
-)
-
-value = BigDecimal('215629.57')
-exchange_rate = BigDecimal('3.2330')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 11, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => interest_caf,
-  :start_balance => BigDecimal('17453436.84'),
-  :confirmed => true
-)
-
-value = BigDecimal('434329.90')
-exchange_rate = BigDecimal('3.7230')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2018, 05, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => interest_caf,
-  :start_balance => BigDecimal('24720716.05'),
-  :confirmed => true
-)
-
-value = BigDecimal('638654.30')
-exchange_rate = BigDecimal('3.8705')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2018, 11, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => interest_caf,
-  :start_balance => BigDecimal('36589373.97'),
-  :confirmed => true
-)
-
-value = BigDecimal('914022.69')
-exchange_rate = BigDecimal('4.0370')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 05, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => interest_caf,
-  :start_balance => BigDecimal('39939373.97'),
-  :confirmed => true
-)
-
-value = BigDecimal('987323.42')
-exchange_rate = BigDecimal('4.0370')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 11, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => interest_caf,
-  :start_balance => BigDecimal('39939373.97'),
-  :confirmed => true
-)
-
-value = BigDecimal('155517.30')
-exchange_rate = BigDecimal('3.2330')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 11, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => charges_cc_caf,
-  :start_balance => BigDecimal('17453436.84'),
-  :confirmed => true
-)
-
-value = BigDecimal('131574.78')
-exchange_rate = BigDecimal('3.7230')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2018, 05, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => charges_cc_caf,
-  :start_balance => BigDecimal('24720716.05'),
-  :confirmed => true
-)
-
-value = BigDecimal('126109.11')
-exchange_rate = BigDecimal('3.8705')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2018, 11, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => charges_cc_caf,
-  :start_balance => BigDecimal('36589373.97'),
-  :confirmed => true
-)
-
-value = BigDecimal('106800.29')
-exchange_rate = BigDecimal('4.0370')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 05, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => charges_cc_caf,
-  :start_balance => BigDecimal('39939373.97'),
-  :confirmed => true
-)
-
-value = BigDecimal('107441.79')
-exchange_rate = BigDecimal('4.0370')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 11, 30),
-  :value_brl => value * exchange_rate,
-  :exchange_rate => exchange_rate,
-  :transaction_info => charges_cc_caf,
-  :start_balance => BigDecimal('39939373.97'),
-  :confirmed => true
-)
-
-#BID
-value = BigDecimal('12030000')
-exchange_rate = BigDecimal('0.400112931')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2014, 11, 14),
-  :value_brl => BigDecimal('3006657.90'),
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_bid,
-  :start_balance => BigDecimal('0'),
-  :confirmed => true
-)
-
-value = BigDecimal('9943227.53')
-exchange_rate = BigDecimal('0.2898550720')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 05, 31),
-  :value_brl => BigDecimal('34304134.98'),
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_bid,
-  :start_balance => BigDecimal('1203000.00'),
-  :confirmed => true
-)
-
-value = BigDecimal('7591386.98')
-exchange_rate = BigDecimal('0.3124511795')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 12, 22),
-  :value_brl => BigDecimal('24296234.03'),
-  :internalization_date => Date.new(2018,1,19),
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_bid,
-  :start_balance => BigDecimal('11146227.53'),
-  :confirmed => true
-)
-
-value = BigDecimal('5051688.40')
-exchange_rate = BigDecimal('0.260960334')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 6, 21),
-  :internalization_date => Date.new(2019,6,26),
-  :value_brl => BigDecimal('3006657.90'),
-  :exchange_rate => exchange_rate,
-  :transaction_info => withdraw_bid,
-  :start_balance => BigDecimal('23320862.55'),
-  :confirmed => true
-)
-
-value = BigDecimal('5713.75')
-value_brl = BigDecimal('17426.92')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => interest_bid,
-  :start_balance => BigDecimal('1203000.00')
-)
-
-value = BigDecimal('7165.93')
-value_brl = BigDecimal('28240.93')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => interest_bid,
-  :start_balance => BigDecimal('1203000.00')
-)
-
-value = BigDecimal('11414.32')
-value_brl = BigDecimal('40264.01')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => interest_bid,
-  :start_balance => BigDecimal('1203000.00')
-)
-
-value = BigDecimal('82242.95')
-value_brl = BigDecimal('260874.64')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => interest_bid,
-  :start_balance => BigDecimal('11146227.53')
-)
-
-value = BigDecimal('114972.74')
-value_brl = BigDecimal('356530.47')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => interest_bid,
-  :start_balance => BigDecimal('11146227.53')
-)
-
-value = BigDecimal('122525.90')
-value_brl = BigDecimal('390122.47')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => interest_bid,
-  :start_balance => BigDecimal('11146227.53')
-)
-
-value = BigDecimal('202229.90')
-value_brl = BigDecimal('686853.63')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2018, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => interest_bid,
-  :start_balance => BigDecimal('18737614.51')
-)
-
-value = BigDecimal('309632.66')
-value_brl = BigDecimal('1164373.62')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2018, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => interest_bid,
-  :start_balance => BigDecimal('18737614.51')
-)
-
-value = BigDecimal('341394.19')
-value_brl = BigDecimal('1316928.09')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => interest_bid,
-  :start_balance => BigDecimal('18737614.51')
-)
-
-value = BigDecimal('358098.87')
-value_brl = BigDecimal('1466056.77')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => interest_bid,
-  :start_balance => BigDecimal('23320862.55')
-)
-
-#BID-ENCARGO
-
-value = BigDecimal('30639.93')
-value_brl = BigDecimal('74455.03')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2014, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => charges_bid,
-  :start_balance => BigDecimal('0')
-)
-
-value = BigDecimal('31772.41')
-value_brl = BigDecimal('96905.85')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => charges_bid,
-  :start_balance => BigDecimal('1203000.00')
-)
-
-value = BigDecimal('31670.28')
-value_brl = BigDecimal('124812.57')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => charges_bid,
-  :start_balance => BigDecimal('1203000.00')
-)
-
-value = BigDecimal('81585.81')
-value_brl = BigDecimal('287793.94')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => charges_bid,
-  :start_balance => BigDecimal('1203000.00')
-)
-
-value = BigDecimal('44557.91')
-value_brl = BigDecimal('141337.69')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => charges_bid,
-  :start_balance => BigDecimal('11146227.53')
-)
-
-value = BigDecimal('38159.74')
-value_brl = BigDecimal('118333.35')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => charges_bid,
-  :start_balance => BigDecimal('11146227.53')
-)
-
-value = BigDecimal('38414.39')
-value_brl = BigDecimal('122311.42')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => charges_bid,
-  :start_balance => BigDecimal('11146227.53')
-)
-
-value = BigDecimal('26349.43')
-value_brl = BigDecimal('89493.20')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2018, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => charges_bid,
-  :start_balance => BigDecimal('18737614.51')
-)
-
-value = BigDecimal('19383.93')
-value_brl = BigDecimal('72893.27')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2018, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => charges_bid,
-  :start_balance => BigDecimal('18737614.51')
-)
-
-value = BigDecimal('19278.00')
-value_brl = BigDecimal('74364.89')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => charges_bid,
-  :start_balance => BigDecimal('18737614.51')
-)
-
-value = BigDecimal('11356.59')
-value_brl = BigDecimal('46493.88')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => charges_bid,
-  :start_balance => BigDecimal('23320862.55')
-)
-
-value = BigDecimal('468440.36')
-value_brl = BigDecimal('1807008.69')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => amortization_bid,
-  :start_balance => BigDecimal('18737614.51')
-)
-
-value = BigDecimal('597970.87')
-value_brl = BigDecimal('2448092.74')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2019, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => value / value_brl,
-  :transaction_info => amortization_bid,
-  :start_balance => BigDecimal('23320862.55')
-)
-
-#BNDES
-
-value = BigDecimal('125371.278')
-value_brl = BigDecimal('175000')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 01, 29),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.3958540'),
-  :transaction_info => withdraw_bnds_sub_a,
-  :start_balance => BigDecimal('0'),
-  :confirmed => true
-)
-
-value = BigDecimal('206385.6910')
-value_brl = BigDecimal('290189.22')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 02, 24),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.4060530'),
-  :transaction_info => withdraw_bnds_sub_a,
-  :start_balance => BigDecimal('125371.278'),
-  :confirmed => true
-)
-
-value = BigDecimal('624784.5539')
-value_brl = BigDecimal('896391.52')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 04, 28),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.4347210'),
-  :transaction_info => withdraw_bnds_sub_a,
-  :start_balance => BigDecimal('331756.96900'),
-  :confirmed => true
-)
-
-value = BigDecimal('522952.5584')
-value_brl = BigDecimal('799858.03')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 10, 26),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.5295040'),
-  :transaction_info => withdraw_bnds_sub_a,
-  :start_balance => BigDecimal('956541.52290'),
-  :confirmed => true
-)
-
-value = BigDecimal('858739.6504')
-value_brl = BigDecimal('1371244.92')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 02, 24),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.5968110'),
-  :transaction_info => withdraw_bnds_sub_a,
-  :start_balance => BigDecimal('1479494.08130'),
-  :confirmed => true
-)
-
-value = BigDecimal('548930.0373')
-value_brl = BigDecimal('884398.20')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 03, 18),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.6111310'),
-  :transaction_info => withdraw_bnds_sub_a,
-  :start_balance => BigDecimal('2338233.73170'),
-  :confirmed => true
-)
-
-value = BigDecimal('1094681.3614')
-value_brl = BigDecimal('1824918.12')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 6, 22),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.6670770'),
-  :transaction_info => withdraw_bnds_sub_a,
-  :start_balance => BigDecimal('2887163.76900'),
-  :confirmed => true
-)
-
-#Sub A interests
-
-value = BigDecimal('1178.1416')
-value_brl = BigDecimal('5678.8467')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.12459645'),
-  :transaction_info => interest_bnds_sub_a,
-  :start_balance => BigDecimal('331756.96900')
-)
-
-value = BigDecimal('4701.1907')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 7, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.12459645'),
-  :transaction_info => interest_bnds_sub_a,
-  :start_balance => BigDecimal('956541.52290')
-)
-
-value = BigDecimal('5301.1531')
-value_brl = BigDecimal('4301.5484')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.12459645'),
-  :transaction_info => interest_bnds_sub_a,
-  :start_balance => BigDecimal('956541.52290')
-)
-
-value = BigDecimal('7754.1005')
-value_brl = BigDecimal('1.12459645'),
-
-            TransactionItem.create!(
-              :value => value,
-              :date => Date.new(2016, 1, 15),
-              :value_brl => value_brl,
-              :exchange_rate => BigDecimal('1.12459645'),
-              :transaction_info => interest_bnds_sub_a,
-              :start_balance => BigDecimal('1479494.08130')
-            )
-
-value = BigDecimal('11517.4879')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.65748987'),
-  :transaction_info => interest_bnds_sub_a,
-  :start_balance => BigDecimal('2887163.76900')
-)
-
-value = BigDecimal('17357.1224')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 7, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal(''),
-  :transaction_info => interest_bnds_sub_a,
-  :start_balance => BigDecimal('3981845.13040')
-)
-
-value = BigDecimal('22067.3857')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.73571224'),
-  :transaction_info => interest_bnds_sub_a,
-  :start_balance => BigDecimal('3981845.13040')
-)
-
-value = BigDecimal('21720.9652')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 1, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.73571224'),
-  :transaction_info => interest_bnds_sub_a,
-  :start_balance => BigDecimal('3981845.13040')
-)
-
-#Sub B
-
-value = BigDecimal('265946.66880')
-value_brl = BigDecimal('525000')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 01, 29),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1,97408'),
-  :transaction_info => withdraw_bnds_sub_b,
-  :start_balance => BigDecimal('0'),
-  :confirmed => true
-)
-
-value = BigDecimal('440999.18440')
-value_brl = BigDecimal('870567.67')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 02, 24),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.97408'),
-  :transaction_info => withdraw_bnds_sub_b,
-  :start_balance => BigDecimal('265946.6688'),
-  :confirmed => true
-)
-
-value = BigDecimal('1362241.92780')
-value_brl = BigDecimal('2689174.54')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 04, 28),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.97408'),
-  :transaction_info => withdraw_bnds_sub_b,
-  :start_balance => BigDecimal('706945.8532'),
-  :confirmed => true
-)
-
-value = BigDecimal('1100315.45090')
-value_brl = BigDecimal('2176173.09')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 10, 26),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.97777'),
-  :transaction_info => withdraw_bnds_sub_b,
-  :start_balance => BigDecimal('2069187.7810'),
-  :confirmed => true
-)
-
-value = BigDecimal('2071978.31780')
-value_brl = BigDecimal('4113734.76')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 02, 24),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.98541'),
-  :transaction_info => withdraw_bnds_sub_b,
-  :start_balance => BigDecimal('3169503.2319'),
-  :confirmed => true
-)
-
-value = BigDecimal('1335137.51200')
-value_brl = BigDecimal('2653194.61')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 03, 18),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.98721'),
-  :transaction_info => withdraw_bnds_sub_b,
-  :start_balance => BigDecimal('5241481.5497'),
-  :confirmed => true
-)
-
-value = BigDecimal('419254.50250')
-value_brl = BigDecimal('836284.86')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 6, 22),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.99470'),
-  :transaction_info => withdraw_bnds_sub_b,
-  :start_balance => BigDecimal('6576619.0617'),
-  :confirmed => true
-)
-
-value = BigDecimal('1374526.12470')
-value_brl = BigDecimal('2752052.84')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 9, 26),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('2.00218'),
-  :transaction_info => withdraw_bnds_sub_b,
-  :start_balance => BigDecimal('6995873.5642'),
-  :confirmed => true
-)
-
-value = BigDecimal('575106.83670')
-value_brl = BigDecimal('1152590.59')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 10, 21),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('2.00413'),
-  :transaction_info => withdraw_bnds_sub_b,
-  :start_balance => BigDecimal('8370399.6889'),
-  :confirmed => true
-)
-
-value = BigDecimal('1767422.50640')
-value_brl = BigDecimal('3548767')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 12, 8),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('2.00788'),
-  :transaction_info => withdraw_bnds_sub_b,
-  :start_balance => BigDecimal('8945506.5256'),
-  :confirmed => true
-)
-
-#Sub B interests
-
-value = BigDecimal('8672.18320')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.73571224'),
-  :transaction_info => interest_bnds_sub_b,
-  :start_balance => BigDecimal('706945.8532')
-)
-
-value = BigDecimal('36793.90520')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 7, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.73571224'),
-  :transaction_info => interest_bnds_sub_b,
-  :start_balance => BigDecimal('2069187.7810')
-)
-
-value = BigDecimal('41100.27689')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2015, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.73571224'),
-  :transaction_info => interest_bnds_sub_b,
-  :start_balance => BigDecimal('2069187.7810')
-)
-
-value = BigDecimal('60317.66040')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 1, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.73571224'),
-  :transaction_info => interest_bnds_sub_b,
-  :start_balance => BigDecimal('3169503.2319')
-)
-
-value = BigDecimal('131258.76350')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 4, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.73571224'),
-  :transaction_info => interest_bnds_sub_b,
-  :start_balance => BigDecimal('6576619.0617')
-)
-
-value = BigDecimal('131258.76350')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 7, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.73571224'),
-  :transaction_info => interest_bnds_sub_b,
-  :start_balance => BigDecimal('6995873.5642')
-)
-
-value = BigDecimal('148184.55750')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2016, 10, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.73571224'),
-  :transaction_info => interest_bnds_sub_b,
-  :start_balance => BigDecimal('8370399.6889')
-)
-
-value = BigDecimal('190016.06960')
-value_brl = BigDecimal('1.73571224')
-
-TransactionItem.create!(
-  :value => value,
-  :date => Date.new(2017, 1, 15),
-  :value_brl => value_brl,
-  :exchange_rate => BigDecimal('1.73571224'),
-  :transaction_info => interest_bnds_sub_b,
-  :start_balance => BigDecimal('10712929.0320')
-)
+# value = BigDecimal('98754.06595')
+# exchange_rate = BigDecimal('3.2530')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 05, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_caf,
+#   :start_balance => BigDecimal('0'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('11015.06044')
+# exchange_rate = BigDecimal('3.2810')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 06, 05),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_caf,
+#   :start_balance => BigDecimal('24089.9048'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('40293.8592')
+# exchange_rate = BigDecimal('3.2465')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 10, 20),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_caf,
+#   :start_balance => BigDecimal('13424.05092'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('25816.2850')
+# exchange_rate = BigDecimal('3.2080')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 11, 22),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_caf,
+#   :start_balance => BigDecimal('17453436.84'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('46856.5071')
+# exchange_rate = BigDecimal('3.3120')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 12, 20),
+#   :internalization_date => Date.new(2017, 12, 22),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_caf,
+#   :start_balance => BigDecimal('20.035065.34'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('13807.0692')
+# exchange_rate = BigDecimal('3.5930')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2018, 05, 04),
+#   :internalization_date => Date.new(2018, 05, 9),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_caf,
+#   :start_balance => BigDecimal('24720716.05'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('3987.95100')
+# exchange_rate = BigDecimal('3.8625')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2018, 07, 05),
+#   :internalization_date => Date.new(2018, 07, 11),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_caf,
+#   :start_balance => BigDecimal('26101422.97'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('65000.0000')
+# exchange_rate = BigDecimal('3.6895')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2018, 10, 26),
+#   :internalization_date => Date.new(2018, 10, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_caf,
+#   :start_balance => BigDecimal('30.089373.97'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('33.50000.00')
+# exchange_rate = BigDecimal('3.8300')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 03, 12),
+#   :internalization_date => Date.new(2018, 03, 18),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_caf,
+#   :start_balance => BigDecimal('36.589373.97'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('21.5629.57')
+# exchange_rate = BigDecimal('3.2330')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 11, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => interest_caf,
+#   :start_balance => BigDecimal('17.453436.84'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('43.4329.90')
+# exchange_rate = BigDecimal('3.7230')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2018, 05, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => interest_caf,
+#   :start_balance => BigDecimal('24.720716.05'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('63.8654.30')
+# exchange_rate = BigDecimal('3.8705')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2018, 11, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => interest_caf,
+#   :start_balance => BigDecimal('36.589373.97'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('91.4022.69')
+# exchange_rate = BigDecimal('4.0370')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 05, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => interest_caf,
+#   :start_balance => BigDecimal('39.939373.97'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('98.7323.42')
+# exchange_rate = BigDecimal('4.0370')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 11, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => interest_caf,
+#   :start_balance => BigDecimal('39.939373.97'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('15.5517.30')
+# exchange_rate = BigDecimal('3.2330')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 11, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => charges_cc_caf,
+#   :start_balance => BigDecimal('17.453436.84'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('13.1574.78')
+# exchange_rate = BigDecimal('3.7230')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2018, 05, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => charges_cc_caf,
+#   :start_balance => BigDecimal('24720716.05'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('126109.11')
+# exchange_rate = BigDecimal('3.8705')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2018, 11, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => charges_cc_caf,
+#   :start_balance => BigDecimal('36589373.97'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('106800.29')
+# exchange_rate = BigDecimal('4.0370')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 05, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => charges_cc_caf,
+#   :start_balance => BigDecimal('39939373.97'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('107441.79')
+# exchange_rate = BigDecimal('4.0370')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 11, 30),
+#   :value_brl => value * exchange_rate,
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => charges_cc_caf,
+#   :start_balance => BigDecimal('39939373.97'),
+#   :confirmed => true
+# )
+
+# #BID
+# value = BigDecimal('12030000')
+# exchange_rate = BigDecimal('0.400112931')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2014, 11, 14),
+#   :value_brl => BigDecimal('3006657.90'),
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_bid,
+#   :start_balance => BigDecimal('0'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('9943227.53')
+# exchange_rate = BigDecimal('0.2898550720')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 05, 31),
+#   :value_brl => BigDecimal('34304134.98'),
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_bid,
+#   :start_balance => BigDecimal('1203000.00'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('7591386.98')
+# exchange_rate = BigDecimal('0.3124511795')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 12, 22),
+#   :value_brl => BigDecimal('24296234.03'),
+#   :internalization_date => Date.new(2018,1,19),
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_bid,
+#   :start_balance => BigDecimal('11146227.53'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('5051688.40')
+# exchange_rate = BigDecimal('0.260960334')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 6, 21),
+#   :internalization_date => Date.new(2019,6,26),
+#   :value_brl => BigDecimal('3006657.90'),
+#   :exchange_rate => exchange_rate,
+#   :transaction_info => withdraw_bid,
+#   :start_balance => BigDecimal('23320862.55'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('5713.75')
+# value_brl = BigDecimal('17426.92')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => interest_bid,
+#   :start_balance => BigDecimal('1203000.00')
+# )
+
+# value = BigDecimal('7165.93')
+# value_brl = BigDecimal('28240.93')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => interest_bid,
+#   :start_balance => BigDecimal('1203000.00')
+# )
+
+# value = BigDecimal('11414.32')
+# value_brl = BigDecimal('40264.01')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => interest_bid,
+#   :start_balance => BigDecimal('1203000.00')
+# )
+
+# value = BigDecimal('82242.95')
+# value_brl = BigDecimal('260874.64')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => interest_bid,
+#   :start_balance => BigDecimal('11146227.53')
+# )
+
+# value = BigDecimal('114972.74')
+# value_brl = BigDecimal('356530.47')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => interest_bid,
+#   :start_balance => BigDecimal('11146227.53')
+# )
+
+# value = BigDecimal('122525.90')
+# value_brl = BigDecimal('390122.47')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => interest_bid,
+#   :start_balance => BigDecimal('11146227.53')
+# )
+
+# value = BigDecimal('202229.90')
+# value_brl = BigDecimal('686853.63')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2018, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => interest_bid,
+#   :start_balance => BigDecimal('18737614.51')
+# )
+
+# value = BigDecimal('309632.66')
+# value_brl = BigDecimal('1164373.62')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2018, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => interest_bid,
+#   :start_balance => BigDecimal('18737614.51')
+# )
+
+# value = BigDecimal('341394.19')
+# value_brl = BigDecimal('1316928.09')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => interest_bid,
+#   :start_balance => BigDecimal('18737614.51')
+# )
+
+# value = BigDecimal('358098.87')
+# value_brl = BigDecimal('1466056.77')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => interest_bid,
+#   :start_balance => BigDecimal('23320862.55')
+# )
+
+# #BID-ENCARGO
+
+# value = BigDecimal('30639.93')
+# value_brl = BigDecimal('74455.03')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2014, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => charges_bid,
+#   :start_balance => BigDecimal('0')
+# )
+
+# value = BigDecimal('31772.41')
+# value_brl = BigDecimal('96905.85')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => charges_bid,
+#   :start_balance => BigDecimal('1203000.00')
+# )
+
+# value = BigDecimal('31670.28')
+# value_brl = BigDecimal('124812.57')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => charges_bid,
+#   :start_balance => BigDecimal('1203000.00')
+# )
+
+# value = BigDecimal('81585.81')
+# value_brl = BigDecimal('287793.94')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => charges_bid,
+#   :start_balance => BigDecimal('1203000.00')
+# )
+
+# value = BigDecimal('44557.91')
+# value_brl = BigDecimal('141337.69')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => charges_bid,
+#   :start_balance => BigDecimal('11146227.53')
+# )
+
+# value = BigDecimal('38159.74')
+# value_brl = BigDecimal('118333.35')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => charges_bid,
+#   :start_balance => BigDecimal('11146227.53')
+# )
+
+# value = BigDecimal('38414.39')
+# value_brl = BigDecimal('122311.42')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => charges_bid,
+#   :start_balance => BigDecimal('11146227.53')
+# )
+
+# value = BigDecimal('26349.43')
+# value_brl = BigDecimal('89493.20')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2018, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => charges_bid,
+#   :start_balance => BigDecimal('18737614.51')
+# )
+
+# value = BigDecimal('19383.93')
+# value_brl = BigDecimal('72893.27')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2018, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => charges_bid,
+#   :start_balance => BigDecimal('18737614.51')
+# )
+
+# value = BigDecimal('19278.00')
+# value_brl = BigDecimal('74364.89')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => charges_bid,
+#   :start_balance => BigDecimal('18737614.51')
+# )
+
+# value = BigDecimal('11356.59')
+# value_brl = BigDecimal('46493.88')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => charges_bid,
+#   :start_balance => BigDecimal('23320862.55')
+# )
+
+# value = BigDecimal('468440.36')
+# value_brl = BigDecimal('1807008.69')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => amortization_bid,
+#   :start_balance => BigDecimal('18737614.51')
+# )
+
+# value = BigDecimal('597970.87')
+# value_brl = BigDecimal('2448092.74')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2019, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => value / value_brl,
+#   :transaction_info => amortization_bid,
+#   :start_balance => BigDecimal('23320862.55')
+# )
+
+# #BNDES
+
+# value = BigDecimal('125371.278')
+# value_brl = BigDecimal('175000')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 01, 29),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.3958540'),
+#   :transaction_info => withdraw_bnds_sub_a,
+#   :start_balance => BigDecimal('0'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('206385.6910')
+# value_brl = BigDecimal('290189.22')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 02, 24),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.4060530'),
+#   :transaction_info => withdraw_bnds_sub_a,
+#   :start_balance => BigDecimal('125371.278'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('624784.5539')
+# value_brl = BigDecimal('896391.52')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 04, 28),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.4347210'),
+#   :transaction_info => withdraw_bnds_sub_a,
+#   :start_balance => BigDecimal('331756.96900'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('522952.5584')
+# value_brl = BigDecimal('799858.03')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 10, 26),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.5295040'),
+#   :transaction_info => withdraw_bnds_sub_a,
+#   :start_balance => BigDecimal('956541.52290'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('858739.6504')
+# value_brl = BigDecimal('1371244.92')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 02, 24),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.5968110'),
+#   :transaction_info => withdraw_bnds_sub_a,
+#   :start_balance => BigDecimal('1479494.08130'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('548930.0373')
+# value_brl = BigDecimal('884398.20')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 03, 18),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.6111310'),
+#   :transaction_info => withdraw_bnds_sub_a,
+#   :start_balance => BigDecimal('2338233.73170'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('1094681.3614')
+# value_brl = BigDecimal('1824918.12')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 6, 22),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.6670770'),
+#   :transaction_info => withdraw_bnds_sub_a,
+#   :start_balance => BigDecimal('2887163.76900'),
+#   :confirmed => true
+# )
+
+# #Sub A interests
+
+# value = BigDecimal('1178.1416')
+# value_brl = BigDecimal('5678.8467')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.12459645'),
+#   :transaction_info => interest_bnds_sub_a,
+#   :start_balance => BigDecimal('331756.96900')
+# )
+
+# value = BigDecimal('4701.1907')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 7, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.12459645'),
+#   :transaction_info => interest_bnds_sub_a,
+#   :start_balance => BigDecimal('956541.52290')
+# )
+
+# value = BigDecimal('5301.1531')
+# value_brl = BigDecimal('4301.5484')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.12459645'),
+#   :transaction_info => interest_bnds_sub_a,
+#   :start_balance => BigDecimal('956541.52290')
+# )
+
+# value = BigDecimal('7754.1005')
+# value_brl = BigDecimal('1.12459645'),
+
+#             TransactionItem.create!(
+#               :value => value,
+#               :date => Date.new(2016, 1, 15),
+#               :value_brl => value_brl,
+#               :exchange_rate => BigDecimal('1.12459645'),
+#               :transaction_info => interest_bnds_sub_a,
+#               :start_balance => BigDecimal('1479494.08130')
+#             )
+
+# value = BigDecimal('11517.4879')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.65748987'),
+#   :transaction_info => interest_bnds_sub_a,
+#   :start_balance => BigDecimal('2887163.76900')
+# )
+
+# value = BigDecimal('17357.1224')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 7, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal(''),
+#   :transaction_info => interest_bnds_sub_a,
+#   :start_balance => BigDecimal('3981845.13040')
+# )
+
+# value = BigDecimal('22067.3857')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.73571224'),
+#   :transaction_info => interest_bnds_sub_a,
+#   :start_balance => BigDecimal('3981845.13040')
+# )
+
+# value = BigDecimal('21720.9652')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 1, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.73571224'),
+#   :transaction_info => interest_bnds_sub_a,
+#   :start_balance => BigDecimal('3981845.13040')
+# )
+
+# #Sub B
+
+# value = BigDecimal('265946.66880')
+# value_brl = BigDecimal('525000')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 01, 29),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1,97408'),
+#   :transaction_info => withdraw_bnds_sub_b,
+#   :start_balance => BigDecimal('0'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('440999.18440')
+# value_brl = BigDecimal('870567.67')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 02, 24),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.97408'),
+#   :transaction_info => withdraw_bnds_sub_b,
+#   :start_balance => BigDecimal('265946.6688'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('1362241.92780')
+# value_brl = BigDecimal('2689174.54')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 04, 28),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.97408'),
+#   :transaction_info => withdraw_bnds_sub_b,
+#   :start_balance => BigDecimal('706945.8532'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('1100315.45090')
+# value_brl = BigDecimal('2176173.09')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 10, 26),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.97777'),
+#   :transaction_info => withdraw_bnds_sub_b,
+#   :start_balance => BigDecimal('2069187.7810'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('2071978.31780')
+# value_brl = BigDecimal('4113734.76')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 02, 24),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.98541'),
+#   :transaction_info => withdraw_bnds_sub_b,
+#   :start_balance => BigDecimal('3169503.2319'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('1335137.51200')
+# value_brl = BigDecimal('2653194.61')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 03, 18),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.98721'),
+#   :transaction_info => withdraw_bnds_sub_b,
+#   :start_balance => BigDecimal('5241481.5497'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('419254.50250')
+# value_brl = BigDecimal('836284.86')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 6, 22),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.99470'),
+#   :transaction_info => withdraw_bnds_sub_b,
+#   :start_balance => BigDecimal('6576619.0617'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('1374526.12470')
+# value_brl = BigDecimal('2752052.84')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 9, 26),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('2.00218'),
+#   :transaction_info => withdraw_bnds_sub_b,
+#   :start_balance => BigDecimal('6995873.5642'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('575106.83670')
+# value_brl = BigDecimal('1152590.59')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 10, 21),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('2.00413'),
+#   :transaction_info => withdraw_bnds_sub_b,
+#   :start_balance => BigDecimal('8370399.6889'),
+#   :confirmed => true
+# )
+
+# value = BigDecimal('1767422.50640')
+# value_brl = BigDecimal('3548767')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 12, 8),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('2.00788'),
+#   :transaction_info => withdraw_bnds_sub_b,
+#   :start_balance => BigDecimal('8945506.5256'),
+#   :confirmed => true
+# )
+
+# #Sub B interests
+
+# value = BigDecimal('8672.18320')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.73571224'),
+#   :transaction_info => interest_bnds_sub_b,
+#   :start_balance => BigDecimal('706945.8532')
+# )
+
+# value = BigDecimal('36793.90520')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 7, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.73571224'),
+#   :transaction_info => interest_bnds_sub_b,
+#   :start_balance => BigDecimal('2069187.7810')
+# )
+
+# value = BigDecimal('41100.27689')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2015, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.73571224'),
+#   :transaction_info => interest_bnds_sub_b,
+#   :start_balance => BigDecimal('2069187.7810')
+# )
+
+# value = BigDecimal('60317.66040')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 1, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.73571224'),
+#   :transaction_info => interest_bnds_sub_b,
+#   :start_balance => BigDecimal('3169503.2319')
+# )
+
+# value = BigDecimal('131258.76350')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 4, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.73571224'),
+#   :transaction_info => interest_bnds_sub_b,
+#   :start_balance => BigDecimal('6576619.0617')
+# )
+
+# value = BigDecimal('131258.76350')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 7, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.73571224'),
+#   :transaction_info => interest_bnds_sub_b,
+#   :start_balance => BigDecimal('6995873.5642')
+# )
+
+# value = BigDecimal('148184.55750')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2016, 10, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.73571224'),
+#   :transaction_info => interest_bnds_sub_b,
+#   :start_balance => BigDecimal('8370399.6889')
+# )
+
+# value = BigDecimal('190016.06960')
+# value_brl = BigDecimal('1.73571224')
+
+# TransactionItem.create!(
+#   :value => value,
+#   :date => Date.new(2017, 1, 15),
+#   :value_brl => value_brl,
+#   :exchange_rate => BigDecimal('1.73571224'),
+#   :transaction_info => interest_bnds_sub_b,
+#   :start_balance => BigDecimal('10712929.0320')
+# )
