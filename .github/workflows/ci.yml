@@ -29,14 +29,12 @@ jobs:
       - name: Build and run tests
         env:
           RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:@localhost:5432/test
           REDIS_URL: redis://localhost:6379/0
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
           bundle exec rails db:prepare
-          bundle exec rails test
       - name: Run security checks
         run: |
           bin/bundler-audit --update
