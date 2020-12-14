@@ -7,10 +7,10 @@ jobs:
       postgres:
         image: postgres:11
         env:
-          POSTGRES_HOST: <%= ENV['POSTGRES_HOST'] %>
-          POSTGRES_USER: <%= ENV['POSTGRES_USER'] %>
-          POSTGRES_PASSWORD: <%= ENV['POSTGRES_PASSWORD'] %>
-          POSTGRES_DB: sigdiv_test
+          POSTGRES_HOST: 127.0.0.1
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: admin123
+          PG_DATABASE: sigdiv_test
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
@@ -32,10 +32,10 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Run Tests
         env:
-          PG_DATABASE: test
-          PG_HOST: <%= ENV['POSTGRES_HOST'] %>
-          PG_USER: <%= ENV['POSTGRES_USER'] %>
-          PG_PASSWORD: <%= ENV['POSTGRES_PASSWORD'] %>
+          POSTGRES_HOST: 127.0.0.1
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: admin123
+          PG_DATABASE: sigdiv_test
           RAILS_ENV: test
           WITH_COVERAGE: true
           DISABLE_SPRING: 1
