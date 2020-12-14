@@ -27,14 +27,36 @@ jobs:
         with:
           ruby-version: 2.7.x
       - name: Build and run tests
-        env:
+       environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: sigdiv_test
+          POSTGRES_PASSWORD: admin123
+       environment:
+          BUNDLE_JOBS: "3"
+          BUNDLE_RETRY: "3"
+          PGHOST: 127.0.0.1
+          PGUSER: postgres
+          PGPASSWORD: admin123
           RAILS_ENV: test
+        steps:
+          - checkout
+          - ruby/install-deps
+          - node/install-packages:
+              pkg-manager: yarn
+              cache-key: "yarn.lock"
+          - run:
+              name: Wait for DB
+              command: dockerize -wait tcp://localhost:5432 -timeout 1m
+          - run:
+              name: Database setup
+              command: bundle exec rails db:schema:load --trace
           REDIS_URL: redis://localhost:6379/0
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
           bundle exec rails db:prepare
+          bundle exec rails test
       - name: Run security checks
         run: |
           bin/bundler-audit --update
