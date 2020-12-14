@@ -61,7 +61,7 @@ jobs:
         env:
           RAILS_ENV: sigdiv_test
           PGHOST: <%= ENV['POSTGRES_HOST'] %>
-          PGUSER: %= ENV['POSTGRES_USER'] %>
+          PGUSER: <%= ENV['POSTGRES_USER'] %>
         run: |
           bin/rails db:setup
 
