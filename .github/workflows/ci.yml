@@ -15,29 +15,25 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.7.x
-      # - name: Build and run tests
-      #   env:
-      #     DATABASE_URL: postgres://postgres:@localhost:5432/test
-      #     REDIS_URL: redis://localhost:6379/0
-      #     RAILS_ENV: sigdiv_test
-      #     PGHOST: <%= ENV['POSTGRES_HOST'] %>
-      #     PGUSER: <%= ENV['POSTGRES_USER'] %>
-      #     PGPASSWORD: <%= ENV['POSTGRES_PASSWORD'] %>
-      #     RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
-      #   run: |
-      #     sudo apt-get -yqq install libpq-dev
-      #     gem install bundler
-      #     bundle install --jobs 4 --retry 3
-      #     bundle exec rails db:prepare
-      #     bundle exec rails test
-      # - name: Run security checks
-      #   run: |
-      #     bin/bundler-audit --update
-      #     bin/brakeman -q -w2
-      # - name: Setup test database
+      - name: Build and run tests
+        env:
+          DATABASE_URL: postgres://postgres:@localhost:5432/test
+          REDIS_URL: redis://localhost:6379/0
+          RAILS_ENV: sigdiv_test
+          PGHOST: <%= ENV['POSTGRES_HOST'] %>
+          PGUSER: <%= ENV['POSTGRES_USER'] %>
+          PGPASSWORD: <%= ENV['POSTGRES_PASSWORD'] %>
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          bundle exec rails db:prepare
+          bundle exec rails test
+      - name: Run security checks
+        run: |
+          bin/bundler-audit --update
+          bin/brakeman -q -w2
   
-      #   run: |
-      #     bin/rails db:setup
 
       # - name: Run tests
       #   run: bin/rspec
