@@ -27,7 +27,6 @@ jobs:
         with:
           ruby-version: 2.7.x
       - name: Build and run tests
-      - name: Cache Ruby Gems
           uses: actions/cache@v2
           with:
             path: vendor/bundle
