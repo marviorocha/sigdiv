@@ -1,50 +1,47 @@
 name: CI
 on: [push, pull_request]
-
 jobs:
-  run:
-    name: Ruby
-    runs-on: ${{ matrix.operating-system }}
-    strategy:
-      fail-fast: false
-      matrix:
-        operating-system: [ubuntu-18.04]
-        version: [2.7.x]
-        exclude:
-          - operating-system: ubuntu-18.04
-            version: 2.4
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Rails Tagger
-      uses: melheffe/rails_version_tagger@1.1.0
-    - name: use-ruby ${{ matrix.version }}
-      uses: ./
-      with:
-        ruby-version: ${{ matrix.version}}
-    - name: Install dependencies
-      run: bundle install
-    - name: Run bundle
-      run: bundle exec rake
-    - name: Setup Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10.13.0
-    - name: Find yarn cache location
-      id: yarn-cache
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-    - name: JS package cache
-      uses: actions/cache@v1
-      with:
-        path: ${{ steps.yarn-cache.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-    - name: Install packages
-      run: |
-        yarn install --pure-lockfile
+  test:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:latest
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis
+        ports: ['6379:6379']
+        options: --entrypoint redis-server
 
-    - name: Run linters
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.7.x
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - name: Build and run tests
+        env:
+          DATABASE_URL: postgres://postgres:@localhost:5432/test
+          REDIS_URL: redis://localhost:6379/0
+          RAILS_ENV: sigdiv_test
+          PGHOST: <%= ENV['POSTGRES_HOST'] %>
+          PGUSER: <%= ENV['POSTGRES_USER'] %>
+          PGPASSWORD: <%= ENV['POSTGRES_PASSWORD'] %>
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+        run: |
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          bundle exec rails db:prepare
+          bundle exec rails test
+
       run: |
         bin/rubocop --parallel
         bin/stylelint
@@ -55,11 +52,7 @@ jobs:
         bin/bundler-audit --update
         bin/brakeman -q -w2
     - name: Setup test database
-      env:
-        RAILS_ENV: sigdiv_test
-        PGHOST: <%= ENV['POSTGRES_HOST'] %>
-        PGUSER: <%= ENV['POSTGRES_USER'] %>
-        PGPASSWORD: <%= ENV['POSTGRES_PASSWORD'] %>
+ 
       run: |
         bin/rails db:setup
 
