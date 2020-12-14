@@ -1,7 +1,7 @@
 name: Ruby-version
 on: [push, pull_request]
 jobs:
-  test:
+  ruby:
     runs-on: ubuntu-latest
     services:
       postgres:
