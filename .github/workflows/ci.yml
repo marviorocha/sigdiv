@@ -42,19 +42,19 @@ jobs:
           bundle exec rails db:prepare
           bundle exec rails test
 
-      run: |
-        bin/rubocop --parallel
-        bin/stylelint
-        bin/prettier
-        bin/eslint
-    - name: Run security checks
-      run: |
-        bin/bundler-audit --update
-        bin/brakeman -q -w2
-    - name: Setup test database
- 
-      run: |
-        bin/rails db:setup
+        run: |
+          bin/rubocop --parallel
+          bin/stylelint
+          bin/prettier
+          bin/eslint
+      - name: Run security checks
+        run: |
+          bin/bundler-audit --update
+          bin/brakeman -q -w2
+      - name: Setup test database
+  
+        run: |
+          bin/rails db:setup
 
-    - name: Run tests
-      run: bin/rspec
+      - name: Run tests
+        run: bin/rspec
