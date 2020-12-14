@@ -42,7 +42,6 @@ jobs:
         run: |
           gem install bundler
           bin/rails db:setup
-          bundle exec rake test
           bundle install --jobs 4 --retry 3
           bundle exec rails db:prepare
       - name: Run security checks
