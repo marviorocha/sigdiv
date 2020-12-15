@@ -33,11 +33,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-<<<<<<< HEAD
-Gemfile.lock
-
- 
-=======
 .ash_history
+nginx.conf
  
->>>>>>> master

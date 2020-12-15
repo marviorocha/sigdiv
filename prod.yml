@@ -35,7 +35,7 @@ services:
     links:
       - app
     ports:
-      - "80:80"
+      - "8088:80"
     networks:
       - RUBY
   redis:
