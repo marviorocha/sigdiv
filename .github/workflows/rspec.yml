@@ -32,7 +32,7 @@ jobs:
               bundle exec rake db:create
               bundle exec rake db:schema:load
             env:
-              RAILS_ENV: sigdiv_test
+              RAILS_ENV: test
               POSTGRES_USER: postgres
               POSTGRES_PASSWORD: admin123
 
