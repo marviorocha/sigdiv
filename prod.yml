@@ -43,3 +43,5 @@ services:
     image: redis:6.0.9-alpine
 volumes:
   postgres_data: {}
+
+  
