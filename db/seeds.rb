@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-# Creditor.destroy_all
-# Currency.destroy_all
-# TransactionInfo.destroy_all
-# TransactionItem.destroy_all
-# Debt.destroy_all
+Creditor.destroy_all
+Currency.destroy_all
+TransactionInfo.destroy_all
+TransactionItem.destroy_all
+Debt.destroy_all
 
 # connection = ActiveRecord::Base.connection
 
@@ -18,17 +18,12 @@
 #   end
 # end
 
-
-
  
-
   # sql = File.read('sigdiv_production_bkp.sql')
   # statements = sql.split(/;$/)
   # statements.pop
 
  
- 
-
 
 creditor1 = Creditor.create!(:name => 'CAIXA ECONÔMICA FEDERAL', :financial_agent => true)
 creditor2 = Creditor.create!(:name => 'Corporação Andina de Fomento - CAF', :financial_agent => false)
