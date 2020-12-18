@@ -5,6 +5,32 @@ Sistema de Gestão da Dívida Pública.
 ![Ruby-version](https://github.com/smfazendaniteroi/sigdiv/workflows/Ruby-version/badge.svg)
 ![RSpec CI](https://github.com/smfazendaniteroi/sigdiv/workflows/RSpec%20CI/badge.svg)
 
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Best-README-Template</h3>
+
+  <p align="center">
+    An awesome README template to jumpstart your projects!
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template">Heroku</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+  </p>
+</p>
+
+
+
   
 Sistema de Gestão da Dívida Pública. É uma iniciativa da prefeitura municipal de Niterói, através da Secretaria Municipal de Fazenda para desenvolver um sistema que controla as dívidas públicas de um município.
   
@@ -13,7 +39,7 @@ Sistema de Gestão da Dívida Pública. É uma iniciativa da prefeitura municipa
 
   
 - Sistema OS X Linux ou Windows
-- Docker e docker-compose Instalado
+- Docker e docker-compose
 - Makefile
 - Terminal de sua preferência
     
@@ -37,7 +63,8 @@ cd /sigdiv
 **2 - Rodando o docker e subindo os containers:**
 
 ```
-make server
+make up
+make install
 ```
 
 **3 - Acessando o projeto:**
@@ -47,7 +74,6 @@ localhost:3000
 ```
 ## Exemplo de uso
 
-  
 
 Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado. Adicione blocos de códigos e, se necessário, screenshots.
 
@@ -106,10 +132,6 @@ npm test
   
 
 ## Meta
-
-  
-
-Seu Nome – [@SeuNome](https://twitter.com/...) – SeuEmail@exemplo.com
 
   
 

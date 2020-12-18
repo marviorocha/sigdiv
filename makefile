@@ -1,10 +1,11 @@
 docker := docker
-db := rake db:create db:migrate db:seed
+db := docker-compose exec app rake db:create db:migrate db:seed
+compile := docker-compose exec app rails assets:precompile
 run := docker-compose run 
 prod := docker-compose -f prod.yml
 development := docker-compose
 stop ?= (docker ps -aq)
-IMAGE_NAME := panubo/$(NAME)
+
 ## Docker commands ##
 
 prune:
@@ -23,9 +24,12 @@ restart:
 	$(development) restart
 bash:
 	$(development) run app /bin/sh
+precompile:
+	$(compile) 
 install:
-	$(db)
-	exit
+	$(db) 
+	
+	
 logs:
 	tail -f log/development.log
 

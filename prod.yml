@@ -19,7 +19,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/home/marviorocha/sigdiv
+      - .:/home/sistema/sigdiv
     depends_on:
       - db
     networks:
