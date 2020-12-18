@@ -1,6 +1,4 @@
-version: '3'
-networks:
-    RUBY:
+version: '2'
 services:
   db:
     container_name: postgres
@@ -10,7 +8,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
-      - RUBY
+      - sigdiv_net
   app:
     build: .
     container_name: ruby
@@ -24,11 +22,27 @@ services:
     depends_on:
       - db
     networks:
-      - RUBY
+      - sigdiv_net
   redis:
     container_name: redis
     image: redis:6.0.9-alpine
+    networks:
+      - sigdiv_net
+  pgadmin:
+    container_name: pagadmin
+    image: dpage/pgadmin4:latest
+    ports: 
+      - 5050:80
+    networks: 
+      - sigdiv_net
 volumes:
   postgres_data: {}
   bundle_cache:
 
+networks:
+  sigdiv_net:
+    ipam:
+        driver: default
+        config:
+            - subnet: 192.168.1.0/27
+              gateway: 192.168.1.1 
