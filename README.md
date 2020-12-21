@@ -18,14 +18,14 @@ Sistema de Gestão da Dívida Pública.
   <p align="center">
    Sistema de Gestão da Dívida Pública. É uma iniciativa da prefeitura municipal de Niterói, através da Secretaria Municipal de Fazenda para desenvolver um sistema que controla as dívidas públicas de um município.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+     [Pré requisitos](#ancora1)
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">Heroku</a>
+    [Instalação](#ancora2)
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    [Desenvolvedor](#ancora3)
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    [Histórico](#ancora4)
   </p>
 </p>
 
@@ -34,7 +34,7 @@ Sistema de Gestão da Dívida Pública.
   
 
   
-
+<a id="ancora1"></a>
 # Pré requisitos
 
   
@@ -45,7 +45,7 @@ Sistema de Gestão da Dívida Pública.
     
 
 # Instalação
-
+<a id="ancora2"></a>
  
 **1 - Clonando o projeto:**
 
@@ -83,7 +83,7 @@ Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado
   
 
 ## Configuração para Desenvolvimento
-
+<a id="ancora3"></a>
   
 
 Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
@@ -101,7 +101,7 @@ npm test
   
 
 ## Histórico de lançamentos
-
+<a id="ancora4"></a>
   
 
 * 0.2.1
@@ -131,7 +131,7 @@ npm test
   
 
 ## Meta
-
+<a id="ancora5"></a>
   
 
 Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
