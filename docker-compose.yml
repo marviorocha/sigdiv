@@ -12,42 +12,37 @@ services:
   app:
     build: .
     container_name: ruby
-    command: "bundle exec puma -p 3000 -e production"
-    environment:
-      - RAILS_ENV=production
+    command: bundle exec puma -C config/puma.rb
     env_file: .env
     ports:
-      - "3000:3000"
+      - 3000:3000
     volumes:
-      - .:/home/sistema/sigdiv
+      - .:/home/marviorocha/sigdiv
+      - bundle_cache:/usr/local/bundle
     depends_on:
       - db
-    networks:
-      - sigdiv_net
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile-nginx
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/app.conf
-    links:
-      - app
-    ports:
-      - "8088:80"
     networks:
       - sigdiv_net
   redis:
     container_name: redis
     image: redis:6.0.9-alpine
     networks:
-      - sigdiv_net 
+      - sigdiv_net
+  pgadmin:
+    container_name: pagadmin
+    image: dpage/pgadmin4:latest
+    ports: 
+      - 5050:80
+    networks: 
+      - sigdiv_net
 volumes:
   postgres_data: {}
+  bundle_cache:
 
 networks:
   sigdiv_net:
     ipam:
         driver: default
         config:
-            - subnet: 172.16.238.0/24
-              gateway: 172.16.238.1
+            - subnet: 100.110.1.0/27
+              gateway: 100.110.1.1 

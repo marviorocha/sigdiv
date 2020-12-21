@@ -19,9 +19,8 @@ gem 'cocoon'
 gem 'zeitwerk'
 gem 'dentaku'
 gem 'banco_central'
+gem 'bootstrap', '>= 4.3.1' 
 gem 'jbuilder', :github => 'rails/jbuilder', :branch => 'master'
-gem 'coffee-rails', '~> 5.0.0'
-gem 'bootstrap', '>= 4.3.1'
 gem 'font-awesome-rails'
 gem 'jquery'
 gem 'jquery-ui-rails'
@@ -30,7 +29,6 @@ gem 'jquery-mask-plugin'
 gem 'jquery-datatables'
 
  
-gem "webpacker"
 gem 'bootsnap', '>= 1.1.0', :require => false
 
 group :development, :test do
@@ -81,10 +79,11 @@ gem 'tzinfo-data', :platforms => [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'fast_jsonapi', '~> 1.5'
 gem 'prawn'
 gem 'prawn-table'
-gem 'webpacker'
 gem "redis"
 gem "pagy", "~> 3.9"
+gem "webpacker", "~> 5.2"
 
 gem "active_record_query_trace", "~> 1.8"
 
 gem "rest-client", "~> 2.1"
+
