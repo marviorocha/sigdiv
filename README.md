@@ -4,7 +4,7 @@ Sistema de Gestão da Dívida Pública.
 ![Node.js CI](https://github.com/smfazendaniteroi/sigdiv/workflows/Node.js%20CI/badge.svg)
 ![Ruby-version](https://github.com/smfazendaniteroi/sigdiv/workflows/Ruby-version/badge.svg)
 ![RSpec CI](https://github.com/smfazendaniteroi/sigdiv/workflows/RSpec%20CI/badge.svg)
-[![MIT License][license-shield]][license-url]
+
 
 <!-- PROJECT LOGO -->
 <br />
@@ -18,15 +18,10 @@ Sistema de Gestão da Dívida Pública.
   <p align="center">
    Sistema de Gestão da Dívida Pública. É uma iniciativa da prefeitura municipal de Niterói, através da Secretaria Municipal de Fazenda para desenvolver um sistema que controla as dívidas públicas de um município.
     <br />
-     <a href="#ancora1">Pré requisitos</a>
-   
-    <br />
-    <br />
-     <a href="#ancora2">Instalaçãp</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+     <a href="#ancora1">Pré requisitos</a> |
+     <a href="#ancora2">Instalação</a> |
+     <a href="#ancora3">Para Desenvolvedor</a> |
+     <a href="#ancora4">Histórico de lançamentos</a> 
   </p>
 </p>
 
@@ -88,16 +83,17 @@ Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado
   
 
 Existe comandos via Makefile esses são  úteis e podem tornar a vida do desenvolvedor mais fácil alguns desses comandos são esses:
-
-- make down ( para todos os container que tiver rodando)
+ 
 
   
 
 ```sh
 
-make install
+make server (Roda todos os container)
+make down (para todos os container que tiver rodando)
+make build (faz o rebuild de todos os container)
+make bash (Acessa o bash do app)
 
-npm test
 
 ```
 
@@ -137,7 +133,7 @@ npm test
 
 
 
-Copyright (c) [year] [fullname]
+Copyright (c) 2020 Sigdiv
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -159,7 +155,7 @@ SOFTWARE.
 
   
 
-## Contributing
+## Contribuição
 
   
 
