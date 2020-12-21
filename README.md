@@ -18,7 +18,7 @@ Sistema de Gestão da Dívida Pública.
   <p align="center">
    Sistema de Gestão da Dívida Pública. É uma iniciativa da prefeitura municipal de Niterói, através da Secretaria Municipal de Fazenda para desenvolver um sistema que controla as dívidas públicas de um município.
     <br />
-     <a href="#ancora1">Pré requisitos</a> |
+     <a href="#pré-requisitos">Pré requisitos</a> |
      <a href="#ancora2">Instalação</a> |
      <a href="#ancora3">Para Desenvolvedor</a> |
      <a href="#ancora4">Histórico de lançamentos</a> 
@@ -76,7 +76,7 @@ Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado
   
  
 
-  
+ 
 
 ## Configuração para Desenvolvimento
 <a id="ancora3"></a>
@@ -116,9 +116,9 @@ docker-compose exec app rails bundle update
 
 * 0.1.2
 
-* MUDANÇA: Remove `setDefaultXYZ()`
+* MUDANÇA: Nova API para `Currencies`
 
-* ADD: Adiciona `init()`
+* ADD: Adiciona `currency`
 
 * 0.1.1
 
@@ -166,7 +166,7 @@ SOFTWARE.
 
   
 
-1. Faça o _fork_ do projeto (<https://github.com/yourname/yourproject/fork>)
+1. Faça o _fork_ do projeto (<https://github.com/smfazendaniteroi/sigdiv/fork>)
 
 2. Crie uma _branch_ para sua modificação (`git checkout -b feature/fooBar`)
 
