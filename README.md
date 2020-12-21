@@ -93,6 +93,7 @@ make server (Roda todos os container)
 make down (Para todos os container que tiver rodando)
 make build (Faz o rebuild de todos os container)
 make bash (Acessa o bash)
+make logs (Checar os logs)
 
 
 ```
