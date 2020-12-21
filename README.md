@@ -82,7 +82,7 @@ Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado
 <a id="ancora3"></a>
   
 
-Existe comandos via Makefile esses são  úteis e podem tornar a vida do desenvolvedor mais fácil alguns desses comandos são esses:
+Existem comandos via CLI usando o Makefile que pode tornar a vida do desenvolvedor, mas fácil a baixo está alguns desses comandos:
  
 
   
@@ -90,12 +90,19 @@ Existe comandos via Makefile esses são  úteis e podem tornar a vida do desenvo
 ```sh
 
 make server (Roda todos os container)
-make down (para todos os container que tiver rodando)
-make build (faz o rebuild de todos os container)
-make bash (Acessa o bash do app)
+make down (Para todos os container que tiver rodando)
+make build (Faz o rebuild de todos os container)
+make bash (Acessa o bash)
 
 
 ```
+
+Para rodar comando rails com container em execução. Por exemplo:
+
+```sh
+docker-compose exec app rails bundle update
+```
+
 
   
 
