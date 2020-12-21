@@ -18,14 +18,15 @@ Sistema de Gestão da Dívida Pública.
   <p align="center">
    Sistema de Gestão da Dívida Pública. É uma iniciativa da prefeitura municipal de Niterói, através da Secretaria Municipal de Fazenda para desenvolver um sistema que controla as dívidas públicas de um município.
     <br />
-     [Pré requisitos](#ancora1)
+     <a href="#ancora1">Pré requisitos</a>
+   
     <br />
     <br />
-    [Instalação](#ancora2)
+     <a href="#ancora2">Instalaçãp</a>
     ·
-    [Desenvolvedor](#ancora3)
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
     ·
-    [Histórico](#ancora4)
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
   </p>
 </p>
 
@@ -86,7 +87,9 @@ Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado
 <a id="ancora3"></a>
   
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+Existe comandos via Makefile esses são  úteis e podem tornar a vida do desenvolvedor mais fácil alguns desses comandos são esses:
+
+- make down ( para todos os container que tiver rodando)
 
   
 
@@ -104,11 +107,11 @@ npm test
 <a id="ancora4"></a>
   
 
-* 0.2.1
+* 0.1.3
 
-* MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
+* MUDANÇA: Atualização de docs
 
-* 0.2.0
+* 0.1.2
 
 * MUDANÇA: Remove `setDefaultXYZ()`
 
@@ -116,13 +119,11 @@ npm test
 
 * 0.1.1
 
-* CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
+* Novas 'futures' para desenvolvimento e produção
 
 * 0.1.0
 
-* O primeiro lançamento adequado
-
-* MUDANÇA: Renomeia `foo()` para `bar()`
+* MUDANÇA: Rails v5 para v6
 
 * 0.0.1
 
@@ -130,15 +131,31 @@ npm test
 
   
 
-## Meta
+## MIT License
 <a id="ancora5"></a>
   
 
-Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
 
-  
 
-[https://github.com/yourname/github-link](https://github.com/othonalberto/)
+Copyright (c) [year] [fullname]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
   
 
