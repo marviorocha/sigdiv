@@ -4,19 +4,19 @@ Sistema de Gestão da Dívida Pública.
 ![Node.js CI](https://github.com/smfazendaniteroi/sigdiv/workflows/Node.js%20CI/badge.svg)
 ![Ruby-version](https://github.com/smfazendaniteroi/sigdiv/workflows/Ruby-version/badge.svg)
 ![RSpec CI](https://github.com/smfazendaniteroi/sigdiv/workflows/RSpec%20CI/badge.svg)
-
+[![MIT License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/marviorocha/sigdiv/developer/app/assets/images/sigdiv.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Sigdiv </h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+   Sistema de Gestão da Dívida Pública. É uma iniciativa da prefeitura municipal de Niterói, através da Secretaria Municipal de Fazenda para desenvolver um sistema que controla as dívidas públicas de um município.
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
@@ -32,7 +32,7 @@ Sistema de Gestão da Dívida Pública.
 
 
   
-Sistema de Gestão da Dívida Pública. É uma iniciativa da prefeitura municipal de Niterói, através da Secretaria Municipal de Fazenda para desenvolver um sistema que controla as dívidas públicas de um município.
+
   
 
 # Pré requisitos
@@ -78,8 +78,7 @@ localhost:3000
 Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado. Adicione blocos de códigos e, se necessário, screenshots.
 
   
-
-_Para mais exemplos, consulte a [Wiki][wiki]._
+ 
 
   
 
