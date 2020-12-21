@@ -19,9 +19,9 @@ Sistema de Gestão da Dívida Pública.
    Sistema de Gestão da Dívida Pública. É uma iniciativa da prefeitura municipal de Niterói, através da Secretaria Municipal de Fazenda para desenvolver um sistema que controla as dívidas públicas de um município.
     <br />
      <a href="#pré-requisitos">Pré requisitos</a> |
-     <a href="#ancora2">Instalação</a> |
-     <a href="#ancora3">Para Desenvolvedor</a> |
-     <a href="#ancora4">Histórico de lançamentos</a> 
+     <a href="#instalação">Instalação</a> |
+     <a href="#configuração-para-desenvolvimento">Para Desenvolvedor</a> |
+     <a href="#histórico-de-lançamentos">Histórico de lançamentos</a> 
   </p>
 </p>
 
@@ -30,7 +30,7 @@ Sistema de Gestão da Dívida Pública.
   
 
   
-<a id="ancora1"></a>
+ 
 # Pré requisitos
 
   
@@ -41,7 +41,7 @@ Sistema de Gestão da Dívida Pública.
     
 
 # Instalação
-<a id="ancora2"></a>
+ 
  
 **1 - Clonando o projeto:**
 
