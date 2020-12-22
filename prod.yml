@@ -10,7 +10,7 @@ services:
     networks:
       - sigdiv_net
   app:
-    build: .
+    build: ./docker-tools/
     container_name: ruby
     command: "bundle exec puma -p 3000 -e production"
     environment:
