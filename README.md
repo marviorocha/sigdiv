@@ -4,7 +4,7 @@ Sistema de Gestão da Dívida Pública.
 ![Node.js CI](https://github.com/smfazendaniteroi/sigdiv/workflows/Node.js%20CI/badge.svg)
 ![Ruby-version](https://github.com/smfazendaniteroi/sigdiv/workflows/Ruby-version/badge.svg)
 ![RSpec CI](https://github.com/smfazendaniteroi/sigdiv/workflows/RSpec%20CI/badge.svg)
-[![MIT License][license-shield]][license-url]
+
 
 <!-- PROJECT LOGO -->
 <br />
@@ -18,14 +18,10 @@ Sistema de Gestão da Dívida Pública.
   <p align="center">
    Sistema de Gestão da Dívida Pública. É uma iniciativa da prefeitura municipal de Niterói, através da Secretaria Municipal de Fazenda para desenvolver um sistema que controla as dívidas públicas de um município.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">Heroku</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+     <a href="#pré-requisitos">Pré requisitos</a> |
+     <a href="#instalação">Instalação</a> |
+     <a href="#configuração-para-desenvolvimento">Para Desenvolvedor</a> |
+     <a href="#histórico-de-lançamentos">Histórico de lançamentos</a> 
   </p>
 </p>
 
@@ -34,7 +30,7 @@ Sistema de Gestão da Dívida Pública.
   
 
   
-
+ 
 # Pré requisitos
 
   
@@ -45,7 +41,7 @@ Sistema de Gestão da Dívida Pública.
     
 
 # Instalação
-
+ 
  
 **1 - Clonando o projeto:**
 
@@ -80,49 +76,58 @@ Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado
   
  
 
-  
+ 
 
 ## Configuração para Desenvolvimento
-
+<a id="ancora3"></a>
   
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+Existem comandos via CLI usando o Makefile que pode tornar a vida do desenvolvedor mais fácil abaixo alguns desses comandos:
+ 
 
   
 
 ```sh
 
-make install
+make server (Roda todos os container)
+make down (Para todos os container que tiver rodando)
+make build (Faz o rebuild de todos os container)
+make bash (Acessa o bash)
+make logs (Checar os logs)
 
-npm test
 
 ```
+
+Para rodar comando rails com container em execução. Por exemplo:
+
+```sh
+docker-compose exec app rails bundle update
+```
+
 
   
 
 ## Histórico de lançamentos
-
+<a id="ancora4"></a>
   
 
-* 0.2.1
+* 0.1.3
 
-* MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
+* MUDANÇA: Atualização de docs
 
-* 0.2.0
+* 0.1.2
 
-* MUDANÇA: Remove `setDefaultXYZ()`
+* MUDANÇA: Nova API para `Currencies`
 
-* ADD: Adiciona `init()`
+* ADD: Adiciona `currency`
 
 * 0.1.1
 
-* CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
+* Novas 'futures' para desenvolvimento e produção
 
 * 0.1.0
 
-* O primeiro lançamento adequado
-
-* MUDANÇA: Renomeia `foo()` para `bar()`
+* MUDANÇA: Rails v5 para v6
 
 * 0.0.1
 
@@ -130,23 +135,39 @@ npm test
 
   
 
-## Meta
+## MIT License
+<a id="ancora5"></a>
+  
+
+
+
+Copyright (c) 2020 Sigdiv
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
   
 
-Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
+## Contribuição
 
   
 
-[https://github.com/yourname/github-link](https://github.com/othonalberto/)
-
-  
-
-## Contributing
-
-  
-
-1. Faça o _fork_ do projeto (<https://github.com/yourname/yourproject/fork>)
+1. Faça o _fork_ do projeto (<https://github.com/smfazendaniteroi/sigdiv/fork>)
 
 2. Crie uma _branch_ para sua modificação (`git checkout -b feature/fooBar`)
 
