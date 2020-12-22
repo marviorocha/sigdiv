@@ -51,3 +51,5 @@ networks:
         config:
             - subnet: 100.10.238.0/24
               gateway: 100.10.238.1
+            - subnet: 255:255:255:192/26
+              gateway: 255:255:255:1

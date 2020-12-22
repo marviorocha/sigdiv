@@ -82,7 +82,7 @@ Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado
 <a id="ancora3"></a>
   
 
-Existem comandos via CLI usando o Makefile que pode tornar a vida do desenvolvedor, mas fácil a baixo está alguns desses comandos:
+Existem comandos via CLI usando o Makefile que pode tornar a vida do desenvolvedor mais fácil abaixo alguns desses comandos:
  
 
   
