@@ -44,7 +44,7 @@ services:
       - sigdiv_net 
 volumes:
   postgres_data: {}
-
+  bundle_cache:
 networks:
   sigdiv_net:
     ipam:
