@@ -34,4 +34,4 @@
 yarn-debug.log*
 .yarn-integrity
 .ash_history
- 
+yarn.lock

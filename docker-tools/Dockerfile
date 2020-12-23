@@ -50,8 +50,8 @@ RUN gem install rubocop
 
 RUN apk update
 
+RUN bundle update
 
-COPY . ./ 
 
 COPY ./docker-entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/docker-entrypoint.sh

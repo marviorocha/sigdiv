@@ -10,7 +10,7 @@ services:
     networks:
       - sigdiv_net
   app:
-    build: ./docker-tools/
+    build: .
     container_name: ruby
     command: "bundle exec puma -p 3000 -e production"
     environment:
@@ -20,6 +20,7 @@ services:
       - "3000:3000"
     volumes:
       - .:/home/marviorocha/sigdiv
+      - bundle_cache:/usr/local/bundle
     depends_on:
       - db
     networks:
@@ -51,5 +52,3 @@ networks:
         config:
             - subnet: 100.10.238.0/24
               gateway: 100.10.238.1
-            - subnet: 255:255:255:192/26
-              gateway: 255:255:255:1
