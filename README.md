@@ -117,9 +117,9 @@ docker-compose exec app rails bundle update
 
 * 0.1.2
 
-* MUDANÇA: Nova API para `Currencies`
+* MUDANÇA: Nova API para `/currencies/v1/`
 
-* ADD: Adiciona `currency`
+* ADD: nova dados na  `currency`
 
 * 0.1.1
 
