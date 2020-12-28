@@ -21,7 +21,7 @@ down:
 restart:
 	$(prod) restart
 bash:
-	$(prod) run app /bin/sh
+	$(prod) exec app /bin/sh
 uninstall:
 	docker stop ($(stop)) 
 logs:
