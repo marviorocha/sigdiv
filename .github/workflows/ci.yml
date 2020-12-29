@@ -1,5 +1,6 @@
 name: Ruby-version
 on: [push, pull_request]
+
 jobs:
   ruby:
     runs-on: ubuntu-latest
