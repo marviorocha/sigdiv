@@ -1,6 +1,8 @@
 {
-  "application.js": "/packs/js/application-8e22799749e044ff7847.js",
-  "application.js.map": "/packs/js/application-8e22799749e044ff7847.js.map",
+  "application.css": "/packs/css/application-7858bdb5.css",
+  "application.css.map": "/packs/css/application-7858bdb5.css.map",
+  "application.js": "/packs/js/application-b59b96110cd559edb087.js",
+  "application.js.map": "/packs/js/application-b59b96110cd559edb087.js.map",
   "components/currencies/CurrencieTable.js": "/packs/js/components/currencies/CurrencieTable-836a9cf21b600036136f.js",
   "components/currencies/CurrencieTable.js.map": "/packs/js/components/currencies/CurrencieTable-836a9cf21b600036136f.js.map",
   "components/currencies/ManualsCurrencie.js": "/packs/js/components/currencies/ManualsCurrencie-83b2d91012862de5e68e.js",
@@ -9,11 +11,17 @@
   "components/currencies/index.js.map": "/packs/js/components/currencies/index-793984640b2206abec64.js.map",
   "entrypoints": {
     "application": {
+      "css": [
+        "/packs/css/application-7858bdb5.css"
+      ],
       "js": [
-        "/packs/js/application-8e22799749e044ff7847.js"
+        "/packs/js/application-b59b96110cd559edb087.js"
+      ],
+      "css.map": [
+        "/packs/css/application-7858bdb5.css.map"
       ],
       "js.map": [
-        "/packs/js/application-8e22799749e044ff7847.js.map"
+        "/packs/js/application-b59b96110cd559edb087.js.map"
       ]
     },
     "components/currencies/CurrencieTable": {
@@ -57,27 +65,45 @@
       ]
     },
     "libs/flatpicker": {
+      "css": [
+        "/packs/css/libs/flatpicker-4bbf1fcb.css"
+      ],
       "js": [
-        "/packs/js/libs/flatpicker-af4c931cfa8cfc61c8f6.js"
+        "/packs/js/libs/flatpicker-c375795c41905d8d7139.js"
+      ],
+      "css.map": [
+        "/packs/css/libs/flatpicker-4bbf1fcb.css.map"
       ],
       "js.map": [
-        "/packs/js/libs/flatpicker-af4c931cfa8cfc61c8f6.js.map"
+        "/packs/js/libs/flatpicker-c375795c41905d8d7139.js.map"
       ]
     },
     "libs/transaction": {
+      "css": [
+        "/packs/css/libs/transaction-4bbf1fcb.css"
+      ],
       "js": [
-        "/packs/js/libs/transaction-b40f95bd44427d1a0f9b.js"
+        "/packs/js/libs/transaction-73845f4081768d4aa80a.js"
+      ],
+      "css.map": [
+        "/packs/css/libs/transaction-4bbf1fcb.css.map"
       ],
       "js.map": [
-        "/packs/js/libs/transaction-b40f95bd44427d1a0f9b.js.map"
+        "/packs/js/libs/transaction-73845f4081768d4aa80a.js.map"
       ]
     },
     "src/direct_upload": {
+      "css": [
+        "/packs/css/src/direct_upload-237b1286.css"
+      ],
       "js": [
-        "/packs/js/src/direct_upload-864f925d9b8da2510d1c.js"
+        "/packs/js/src/direct_upload-30202de3db6af77e1e42.js"
+      ],
+      "css.map": [
+        "/packs/css/src/direct_upload-237b1286.css.map"
       ],
       "js.map": [
-        "/packs/js/src/direct_upload-864f925d9b8da2510d1c.js.map"
+        "/packs/js/src/direct_upload-30202de3db6af77e1e42.js.map"
       ]
     }
   },
@@ -85,10 +111,16 @@
   "libs/ancora.js.map": "/packs/js/libs/ancora-fd1cce857f1dd46d8afb.js.map",
   "libs/direct_uploads.js": "/packs/js/libs/direct_uploads-9b5ac027f9d9e872bf27.js",
   "libs/direct_uploads.js.map": "/packs/js/libs/direct_uploads-9b5ac027f9d9e872bf27.js.map",
-  "libs/flatpicker.js": "/packs/js/libs/flatpicker-af4c931cfa8cfc61c8f6.js",
-  "libs/flatpicker.js.map": "/packs/js/libs/flatpicker-af4c931cfa8cfc61c8f6.js.map",
-  "libs/transaction.js": "/packs/js/libs/transaction-b40f95bd44427d1a0f9b.js",
-  "libs/transaction.js.map": "/packs/js/libs/transaction-b40f95bd44427d1a0f9b.js.map",
-  "src/direct_upload.js": "/packs/js/src/direct_upload-864f925d9b8da2510d1c.js",
-  "src/direct_upload.js.map": "/packs/js/src/direct_upload-864f925d9b8da2510d1c.js.map"
+  "libs/flatpicker.css": "/packs/css/libs/flatpicker-4bbf1fcb.css",
+  "libs/flatpicker.css.map": "/packs/css/libs/flatpicker-4bbf1fcb.css.map",
+  "libs/flatpicker.js": "/packs/js/libs/flatpicker-c375795c41905d8d7139.js",
+  "libs/flatpicker.js.map": "/packs/js/libs/flatpicker-c375795c41905d8d7139.js.map",
+  "libs/transaction.css": "/packs/css/libs/transaction-4bbf1fcb.css",
+  "libs/transaction.css.map": "/packs/css/libs/transaction-4bbf1fcb.css.map",
+  "libs/transaction.js": "/packs/js/libs/transaction-73845f4081768d4aa80a.js",
+  "libs/transaction.js.map": "/packs/js/libs/transaction-73845f4081768d4aa80a.js.map",
+  "src/direct_upload.css": "/packs/css/src/direct_upload-237b1286.css",
+  "src/direct_upload.css.map": "/packs/css/src/direct_upload-237b1286.css.map",
+  "src/direct_upload.js": "/packs/js/src/direct_upload-30202de3db6af77e1e42.js",
+  "src/direct_upload.js.map": "/packs/js/src/direct_upload-30202de3db6af77e1e42.js.map"
 }
