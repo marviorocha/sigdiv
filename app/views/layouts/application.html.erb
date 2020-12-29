@@ -6,11 +6,13 @@
     <title>SIGDIV</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+  <!-- Style Sheet here -->
+   <%= stylesheet_pack_tag 'application' %>
+  <!-- Style Sheet here -->
 
     <%= stylesheet_link_tag 'application' %>
    <%= javascript_include_tag 'application'  %>
     <%= javascript_pack_tag 'application'  %>
-   
   </head>
 
   <body data-flash-mensager="<%= JSON.dump(flash.to_a) %>">
