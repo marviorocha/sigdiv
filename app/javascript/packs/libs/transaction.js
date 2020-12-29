@@ -1,4 +1,5 @@
 import "jstat/dist/jstat";
+require("flatpickr/dist/themes/material_green.css");
 import flatpickr from "flatpickr";
 import { Portuguese } from "flatpickr/dist/l10n/pt.js";
 import formulajs from "formulajs";
