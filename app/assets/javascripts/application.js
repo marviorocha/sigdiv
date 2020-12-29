@@ -20,8 +20,3 @@
 //= require cocoon
 //= require big.min
 //= require_tree .
- 
-
-
-
- 
