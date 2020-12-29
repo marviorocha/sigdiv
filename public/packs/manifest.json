@@ -1,43 +1,35 @@
 {
-  "application.css": "/packs/css/application-a77d8739.css",
-  "application.css.map": "/packs/css/application-a77d8739.css.map",
-  "application.js": "/packs/js/application-78314623606c50c309b3.js",
-  "application.js.map": "/packs/js/application-78314623606c50c309b3.js.map",
-  "components/currencies/CurrencieTable.js": "/packs/js/components/currencies/CurrencieTable-7c37e3af5c1fcd70e736.js",
-  "components/currencies/CurrencieTable.js.map": "/packs/js/components/currencies/CurrencieTable-7c37e3af5c1fcd70e736.js.map",
+  "application.js": "/packs/js/application-8e22799749e044ff7847.js",
+  "application.js.map": "/packs/js/application-8e22799749e044ff7847.js.map",
+  "components/currencies/CurrencieTable.js": "/packs/js/components/currencies/CurrencieTable-836a9cf21b600036136f.js",
+  "components/currencies/CurrencieTable.js.map": "/packs/js/components/currencies/CurrencieTable-836a9cf21b600036136f.js.map",
   "components/currencies/ManualsCurrencie.js": "/packs/js/components/currencies/ManualsCurrencie-83b2d91012862de5e68e.js",
   "components/currencies/ManualsCurrencie.js.map": "/packs/js/components/currencies/ManualsCurrencie-83b2d91012862de5e68e.js.map",
-  "components/currencies/index.js": "/packs/js/components/currencies/index-89161678938220d43b3a.js",
-  "components/currencies/index.js.map": "/packs/js/components/currencies/index-89161678938220d43b3a.js.map",
+  "components/currencies/index.js": "/packs/js/components/currencies/index-793984640b2206abec64.js",
+  "components/currencies/index.js.map": "/packs/js/components/currencies/index-793984640b2206abec64.js.map",
   "entrypoints": {
     "application": {
-      "css": [
-        "/packs/css/application-a77d8739.css"
-      ],
       "js": [
-        "/packs/js/application-78314623606c50c309b3.js"
-      ],
-      "css.map": [
-        "/packs/css/application-a77d8739.css.map"
+        "/packs/js/application-8e22799749e044ff7847.js"
       ],
       "js.map": [
-        "/packs/js/application-78314623606c50c309b3.js.map"
+        "/packs/js/application-8e22799749e044ff7847.js.map"
       ]
     },
     "components/currencies/CurrencieTable": {
       "js": [
-        "/packs/js/components/currencies/CurrencieTable-7c37e3af5c1fcd70e736.js"
+        "/packs/js/components/currencies/CurrencieTable-836a9cf21b600036136f.js"
       ],
       "js.map": [
-        "/packs/js/components/currencies/CurrencieTable-7c37e3af5c1fcd70e736.js.map"
+        "/packs/js/components/currencies/CurrencieTable-836a9cf21b600036136f.js.map"
       ]
     },
     "components/currencies/index": {
       "js": [
-        "/packs/js/components/currencies/index-89161678938220d43b3a.js"
+        "/packs/js/components/currencies/index-793984640b2206abec64.js"
       ],
       "js.map": [
-        "/packs/js/components/currencies/index-89161678938220d43b3a.js.map"
+        "/packs/js/components/currencies/index-793984640b2206abec64.js.map"
       ]
     },
     "components/currencies/ManualsCurrencie": {
@@ -66,32 +58,26 @@
     },
     "libs/flatpicker": {
       "js": [
-        "/packs/js/libs/flatpicker-0344951d4ba79035bde9.js"
+        "/packs/js/libs/flatpicker-af4c931cfa8cfc61c8f6.js"
       ],
       "js.map": [
-        "/packs/js/libs/flatpicker-0344951d4ba79035bde9.js.map"
+        "/packs/js/libs/flatpicker-af4c931cfa8cfc61c8f6.js.map"
       ]
     },
     "libs/transaction": {
       "js": [
-        "/packs/js/libs/transaction-ae474f385ce145926eac.js"
+        "/packs/js/libs/transaction-b40f95bd44427d1a0f9b.js"
       ],
       "js.map": [
-        "/packs/js/libs/transaction-ae474f385ce145926eac.js.map"
+        "/packs/js/libs/transaction-b40f95bd44427d1a0f9b.js.map"
       ]
     },
     "src/direct_upload": {
-      "css": [
-        "/packs/css/src/direct_upload-a77d8739.css"
-      ],
       "js": [
-        "/packs/js/src/direct_upload-28da5af75a7441538f0b.js"
-      ],
-      "css.map": [
-        "/packs/css/src/direct_upload-a77d8739.css.map"
+        "/packs/js/src/direct_upload-864f925d9b8da2510d1c.js"
       ],
       "js.map": [
-        "/packs/js/src/direct_upload-28da5af75a7441538f0b.js.map"
+        "/packs/js/src/direct_upload-864f925d9b8da2510d1c.js.map"
       ]
     }
   },
@@ -99,12 +85,10 @@
   "libs/ancora.js.map": "/packs/js/libs/ancora-fd1cce857f1dd46d8afb.js.map",
   "libs/direct_uploads.js": "/packs/js/libs/direct_uploads-9b5ac027f9d9e872bf27.js",
   "libs/direct_uploads.js.map": "/packs/js/libs/direct_uploads-9b5ac027f9d9e872bf27.js.map",
-  "libs/flatpicker.js": "/packs/js/libs/flatpicker-0344951d4ba79035bde9.js",
-  "libs/flatpicker.js.map": "/packs/js/libs/flatpicker-0344951d4ba79035bde9.js.map",
-  "libs/transaction.js": "/packs/js/libs/transaction-ae474f385ce145926eac.js",
-  "libs/transaction.js.map": "/packs/js/libs/transaction-ae474f385ce145926eac.js.map",
-  "src/direct_upload.css": "/packs/css/src/direct_upload-a77d8739.css",
-  "src/direct_upload.css.map": "/packs/css/src/direct_upload-a77d8739.css.map",
-  "src/direct_upload.js": "/packs/js/src/direct_upload-28da5af75a7441538f0b.js",
-  "src/direct_upload.js.map": "/packs/js/src/direct_upload-28da5af75a7441538f0b.js.map"
+  "libs/flatpicker.js": "/packs/js/libs/flatpicker-af4c931cfa8cfc61c8f6.js",
+  "libs/flatpicker.js.map": "/packs/js/libs/flatpicker-af4c931cfa8cfc61c8f6.js.map",
+  "libs/transaction.js": "/packs/js/libs/transaction-b40f95bd44427d1a0f9b.js",
+  "libs/transaction.js.map": "/packs/js/libs/transaction-b40f95bd44427d1a0f9b.js.map",
+  "src/direct_upload.js": "/packs/js/src/direct_upload-864f925d9b8da2510d1c.js",
+  "src/direct_upload.js.map": "/packs/js/src/direct_upload-864f925d9b8da2510d1c.js.map"
 }
