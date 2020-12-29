@@ -1,9 +1,9 @@
-app_name := app
 docker := docker
 db := docker-compose exec app rake db:create db:migrate db:seed
 compile := docker-compose exec app rails assets:precompile
 run := docker-compose run 
-prod := docker-compose -f prod.yml 
+prod := docker-compose -f prod.yml
+development := docker-compose
 stop ?= (docker ps -aq)
 
 ## Docker commands ##
@@ -13,23 +13,47 @@ prune:
 
 ## Developer Envaroments ##
 build:
-	$(prod) build
+	$(development) build
 server:
-	$(prod) up -d
+	$(development) up
+up:
+	$(development) up -d
 down:
-	$(prod) down
+	$(development) down
 restart:
-	$(prod) restart
+	$(development) restart
 bash:
-	$(prod) exec app /bin/sh
-uninstall:
-	docker stop ($(stop)) 
-logs:
-	tail -f log/production.log
+	$(development) run app /bin/sh
 precompile:
-	$(prod) exec app rails ENV_RAILS=production assets:precompile
-tmp_clear:
-	$(prod) exec app rails ENV_RAILS=production tmp:cache:clear
+	$(compile) 
+install:
+	$(db) 
+	
+	
+logs:
+	tail -f log/development.log
+
+## Production Envaroments ##
+
+production:
+	$(prod) up -d
+production-up:
+	$(prod) up -d
+production-dash:
+	$(prod) run app /bin/sh
+production-build:
+	$(prod) build
+production-server:
+	$(prod) up
+production-down:
+	$(prod) down
+production-restart:
+	$(prod) restart
+production-bash:
+	$(prod) run app /bin/sh
+production-logs:
+	tail -f log/production.log
+
 deploy:
 	git checkout master
 	git merge developer
