@@ -1,4 +1,5 @@
-import flatpickr from "flatpickr/dist/flatpickr";
+require("flatpickr/dist/themes/material_green.css");
+import flatpickr from "flatpickr";
 import { Portuguese } from "flatpickr/dist/l10n/pt.js";
 
 // function to flatpickr
