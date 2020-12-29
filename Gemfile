@@ -9,7 +9,7 @@ ruby '2.7.2'
 gem 'rails', '~> 6.0.3.4'
  
 gem 'pg'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootsnap', '>= 1.1.0', :require => false
