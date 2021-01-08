@@ -81,7 +81,6 @@ class MonthReportsController < ApplicationController
       pdf.pad(5){pdf.text 'C - Esquema de Pagamentos', :style => :bold, :size => 10}
       pdf.stroke_horizontal_rule  
       pdf.move_down 10
-
       exercicio_1(@projection_debt, pdf)
       pdf.move_down 10
       exercicio_2(@projection_debt, pdf)
