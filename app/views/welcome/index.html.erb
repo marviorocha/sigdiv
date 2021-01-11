@@ -1,0 +1,50 @@
+<div class="container">
+  
+  <div class="row">
+    
+    <div class="col-sm-6 col-md-3">
+      <div class="card text-center">
+        <div class="card-header">Lista de operações</div>
+        <%= image_tag('icon_4.png') %>
+        <div class="card-body">
+        <%= link_to 'Operações', debts_path, class: "btn btn-block btn-outline-success" %>
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-3">
+      <div class="card text-center">
+        <div class="card-header">Credores</div>
+        <%= image_tag('icon_6.png') %>
+        <div class="card-body">
+         <%= link_to 'Credores', creditors_path, class: "btn btn-block btn-outline-success" %>
+        </div>
+      </div>
+    </div>
+
+   <div class="col-sm-6 col-md-3">
+      <div class="card text-center">
+        <div class="card-header">Moedas</div>
+        <%= image_tag('icon_1.png') %>
+        <div class="card-body">
+          <%= link_to 'Moedas', currencies_path, class: "btn btn-block btn-outline-success" %>
+        </div>
+      </div>
+    </div>
+
+       <div class="col-sm-6 col-md-3">
+      <div class="card text-center">
+        <div class="card-header">Relatórios</div>
+        <%= image_tag('icon_2.png') %>
+        <div class="card-body">
+         <%= link_to 'Relatórios', reports_path, class: "btn btn-block btn-outline-success" %>
+        </div>
+      </div>
+    </div>
+
+   
+
+
+  </div>
+</div>
