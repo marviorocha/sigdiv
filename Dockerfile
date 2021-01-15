@@ -60,7 +60,7 @@ RUN chmod +x /usr/bin/docker-entrypoint.sh
 
 #EDITOR="vi --wait" bin/rails credentials:edit
 
-ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
+#ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
 
 EXPOSE 3000
 
