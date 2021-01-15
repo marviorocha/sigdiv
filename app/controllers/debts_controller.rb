@@ -46,8 +46,7 @@ class DebtsController < ApplicationController
         format.html { redirect_to @debt, :notice => I18n.t(:save_success) }
         format.json { render :show, :status => :created, :location => @debt }
       else
-        format.html { render :new, :notice => "Não foi possível realizar o registro" }
-        flash.alert = @debt.errors.full_messages.to_sentence
+        format.html { render :new }
         format.json { render :json => @debt.errors, :status => :unprocessable_entity }
       end
     end
@@ -61,8 +60,7 @@ class DebtsController < ApplicationController
         format.html { redirect_to @debt, :notice => I18n.t(:save_success) }
         format.json { render :show, :status => :ok, :location => @debt }
       else
-        format.html { render :edit, :alert => "Ops! Algo de errado aconteceu!" }
-        flash.alert = @debt.errors.full_messages.to_sentence
+        format.html { render :edit }
         format.json { render :json => @debt.errors, :status => :unprocessable_entity }
       end
     end

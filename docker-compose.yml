@@ -28,18 +28,18 @@ services:
     image: redis:6.0.9-alpine
     networks:
       - sigdiv_net
-  # pgadmin:
-  #   container_name: pagadmin
-  #   image: dpage/pgadmin4:latest
-  #   environment: 
-  #     - PGADMIN_DEFAULT_EMAIL=sigdiv@sigdiv.com
-  #     - PGADMIN_DEFAULT_PASSWORD= admin123
-  #   ports: 
-  #     - 5050:80
-  #   depends_on:
-  #     - db
-  #   networks: 
-  #     - sigdiv_net
+  pgadmin:
+    container_name: pagadmin
+    image: dpage/pgadmin4:latest
+    environment: 
+      - PGADMIN_DEFAULT_EMAIL=sigdiv@sigdiv.com
+      - PGADMIN_DEFAULT_PASSWORD= admin123
+    ports: 
+      - 5050:80
+    depends_on:
+      - db
+    networks: 
+      - sigdiv_net
 volumes:
   postgres_data: {}
   bundle_cache:

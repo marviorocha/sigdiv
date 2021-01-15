@@ -22,7 +22,7 @@ class Debt < ApplicationRecord
   validates :currency, :presence => true
   validates :loan_term, :presence => true
   validates :decimal_places, :presence => true
-  validate :valid_dates?
+  validate  :valid_dates?
  
   scope :code_query, -> (code_query) {where code: code_query}
   scope :name_query, -> (name_query) {where("name ilike ?", "#{name_query}%")}

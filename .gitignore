@@ -20,7 +20,6 @@
 /yarn-error.log
 
 /public/assets
-/public/reports.pdf
 .byebug_history
 
 /.cache

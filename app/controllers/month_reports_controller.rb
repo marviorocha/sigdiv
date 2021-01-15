@@ -30,8 +30,8 @@ class MonthReportsController < ApplicationController
     pdf.image 'app/assets/images/logo_niteroi.jpg', :at => [0, 700], :scale => 0.60
     pdf.draw_text 'PREFEITURA NITERÓI - SECRETARIA MUNICIPAL DE FAZENDA', :at => [90, 680], :size => 13
     pdf.define_grid(columns: 2, rows: 24, gutter: 5)
-    # pdf.grid.show_all
-    # pdf.stroke_axis
+    #pdf.grid.show_all
+    #pdf.stroke_axis
    
     ## A Indentificação do Contrato
     
@@ -70,7 +70,6 @@ class MonthReportsController < ApplicationController
     
     
     
-    
      
     pdf.grid([8, 0], [23, 1]).bounding_box do
     
@@ -80,7 +79,6 @@ class MonthReportsController < ApplicationController
       
       pdf.pad(5){pdf.text 'C - Esquema de Pagamentos', :style => :bold, :size => 10}
       pdf.stroke_horizontal_rule  
-      pdf.move_down 10
       exercicio_1(@projection_debt, pdf)
       pdf.move_down 10
       exercicio_2(@projection_debt, pdf)
@@ -108,7 +106,7 @@ class MonthReportsController < ApplicationController
     pdf.bounding_box([0, 700], :width => 540) do	
      
       exercicio_4(@projection_debt, pdf)
-     
+      pdf.move_down 10 
       saldo_devedor(@projection_debt, pdf)
 
       pdf.move_down 20
