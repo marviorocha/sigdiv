@@ -29,5 +29,5 @@ Rails.application.routes.draw do
   end
   
  
-  root 'debts#index'
+  root 'welcome#index'
 end
